@@ -1,0 +1,122 @@
+{
+  "updatedAt": "2026-07-20 09:19 CST",
+  "statusMessage": "本轮重点核验 Nature 系、Cell/Science 系、arXiv、bioRxiv 与 medRxiv；7 月 19–20 日未发现更高相关新增。",
+  "categories": [
+    {
+      "name": "单细胞基础模型",
+      "description": "通用细胞表征、预训练模型与跨任务迁移",
+      "color": "#0b7d74"
+    },
+    {
+      "name": "虚拟细胞与扰动",
+      "description": "扰动响应、机制建模与可预测细胞系统",
+      "color": "#ed7d61"
+    },
+    {
+      "name": "空间与时空组学",
+      "description": "空间转录组、组织结构与时间动态整合",
+      "color": "#6c9cff"
+    },
+    {
+      "name": "多组学与调控",
+      "description": "染色质、调控网络与跨模态联合建模",
+      "color": "#f5bd53"
+    },
+    {
+      "name": "细胞图谱与数据底座",
+      "description": "大规模图谱、联盟标准与训练数据基础设施",
+      "color": "#8b78d7"
+    },
+    {
+      "name": "测序与方法学",
+      "description": "测序技术、实验流程、算法与评测体系",
+      "color": "#58a86b"
+    }
+  ],
+  "items": [
+    {
+      "id": "10.1038/s41586-026-10689-z",
+      "title": "Universal cell embedding provides a foundation model for cell biology",
+      "link": "https://doi.org/10.1038/s41586-026-10689-z",
+      "source": "Nature",
+      "date": "2026-07-08",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": ["单细胞基础模型", "细胞图谱与数据底座"],
+      "summary": "论文报告通用细胞嵌入模型，将大规模单细胞转录组映射到统一表示空间，覆盖多物种、多组织和多疾病场景，并支持跨数据集比较及下游生物学任务。",
+      "relevance": "这是单细胞 foundation model 主线中最直接的近期正式发表之一。",
+      "followUp": "关注外部复现、开源权重与标准 benchmark 表现。",
+      "priority": 1
+    },
+    {
+      "id": "arxiv:2607.14163",
+      "title": "A vision foundation model for single-cell biology via spatial gene cartography",
+      "link": "https://arxiv.org/abs/2607.14163",
+      "source": "arXiv",
+      "date": "2026-07-15",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": ["单细胞基础模型", "空间与时空组学", "多组学与调控"],
+      "summary": "scVision 将基因表达映射为空间基因图谱，再以视觉基础模型学习细胞表征。摘要报告了显微图像推断、缺失基因鲁棒性和跨物种泛化能力。",
+      "relevance": "代表单细胞大模型从表达矩阵编码向视觉化、空间化表征扩展。",
+      "followUp": "比较其与 UCE、Geneformer 等方法的公开基准和代码可用性。",
+      "priority": 2
+    },
+    {
+      "id": "10.64898/2026.07.08.737248",
+      "title": "OCellus: A Language-Model Framework for Single-Cell, Spatial, and Perturbation Biology with Natural-Language Reasoning",
+      "link": "https://doi.org/10.64898/2026.07.08.737248",
+      "source": "bioRxiv",
+      "date": "2026-07-12",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": ["单细胞基础模型", "虚拟细胞与扰动", "空间与时空组学"],
+      "summary": "该工作将语言模型框架对接单细胞、空间组学和扰动生物学，并突出自然语言推理能力；其定位更接近覆盖多类组学任务的统一语言接口。",
+      "relevance": "体现 LLM、空间组学与扰动生物学三条路线的合流。",
+      "followUp": "关注评测集、代理任务设计以及真实实验决策闭环。",
+      "priority": 3
+    },
+    {
+      "id": "10.1038/s41592-026-03150-6",
+      "title": "SpatioTemporal Omics Consortium: a global effort for biological discovery across species, space and time",
+      "link": "https://doi.org/10.1038/s41592-026-03150-6",
+      "source": "Nature Methods",
+      "date": "2026-07-09",
+      "updateType": "联盟倡议/正式发表",
+      "evidence": "同行评审",
+      "categories": ["空间与时空组学", "细胞图谱与数据底座", "测序与方法学"],
+      "summary": "文章提出跨物种、空间尺度与时间维度的组学协作框架，强调数据标准、共享和可比性，是未来大规模时空生物模型的重要数据基础设施信号。",
+      "relevance": "高质量时空组学底座将直接影响 virtual cell 与多模态基础模型的能力上限。",
+      "followUp": "追踪联盟后续统一数据 schema、基准任务与公开资源。",
+      "priority": 4
+    },
+    {
+      "id": "10.1038/s41587-026-03234-w",
+      "title": "Integrating chromatin architecture and functional analysis",
+      "link": "https://doi.org/10.1038/s41587-026-03234-w",
+      "source": "Nature Biotechnology",
+      "date": "2026-07-14",
+      "updateType": "研究亮点",
+      "evidence": "观点与解读",
+      "categories": ["多组学与调控"],
+      "summary": "Research Highlight 关注 HiCFoundation：联合 DNA 序列与染色质互作数据，预测三维染色质组织及遗传变异影响，反映组学基础模型正向调控层拓展。",
+      "relevance": "调控组学基础模型是构建机制性虚拟细胞的重要组成。",
+      "followUp": "关注单细胞 ATAC、multiome 与 3D genome 联合基础模型。",
+      "priority": 5
+    },
+    {
+      "id": "10.1038/s41587-026-03139-8",
+      "title": "Toward mechanistic virtual immune cells",
+      "link": "https://doi.org/10.1038/s41587-026-03139-8",
+      "source": "Nature Biotechnology",
+      "date": "2026-06-25",
+      "updateType": "评论/观点",
+      "evidence": "观点与解读",
+      "categories": ["虚拟细胞与扰动", "多组学与调控"],
+      "summary": "文章讨论如何从数据驱动的细胞表征走向具备机制解释和可干预预测能力的虚拟免疫细胞，并强调多尺度数据、因果建模与实验验证之间的衔接。",
+      "relevance": "为 virtual cell 从相关性预测走向机制建模提供了清晰的问题框架。",
+      "followUp": "关注后续是否形成开放基准、因果任务和实验验证协议。",
+      "priority": 6
+    }
+  ]
+}

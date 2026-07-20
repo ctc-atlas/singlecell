@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="每日更新的单细胞大模型、虚拟细胞、空间组学与相关 AI 生物模型文献简报。"
+    />
+    <meta name="theme-color" content="#073b4c" />
+    <title>单细胞大模型文献简报</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#articleList">跳到文献列表</a>
+
+    <header class="hero">
+      <div class="hero__glow hero__glow--one" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--two" aria-hidden="true"></div>
+      <div class="shell hero__inner">
+        <div class="hero__copy">
+          <div class="eyebrow"><span class="pulse"></span> DAILY CELL INTELLIGENCE</div>
+          <h1>单细胞大模型<br /><span>文献简报</span></h1>
+          <p class="hero__lead">
+            持续追踪 single-cell foundation model、virtual cell、空间组学、细胞图谱与测序技术，
+            将分散的新进展整理成可核验、可检索、可持续积累的研究情报。
+          </p>
+          <div class="hero__meta">
+            <span id="refreshStatus" class="status-pill">正在读取最新简报…</span>
+            <a href="#overview" class="text-link">查看分类汇总 <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+
+        <aside class="hero__panel" aria-label="简报统计">
+          <div class="stat stat--wide">
+            <span class="stat__label">最近收录日期</span>
+            <strong id="latestDate">—</strong>
+          </div>
+          <div class="stat-grid">
+            <div class="stat">
+              <span class="stat__label">累计条目</span>
+              <strong id="totalCount">—</strong>
+            </div>
+            <div class="stat">
+              <span class="stat__label">同行评审</span>
+              <strong id="peerCount">—</strong>
+            </div>
+            <div class="stat">
+              <span class="stat__label">预印本</span>
+              <strong id="preprintCount">—</strong>
+            </div>
+            <div class="stat">
+              <span class="stat__label">研究方向</span>
+              <strong id="areaCount">—</strong>
+            </div>
+          </div>
+          <p id="coverageNote" class="coverage-note"></p>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section id="overview" class="section shell">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">RESEARCH MAP</p>
+            <h2>汇总分类</h2>
+          </div>
+          <p>点击任一方向即可筛选下方文献；同一论文可归入多个方向。</p>
+        </div>
+
+        <div class="overview-grid">
+          <div id="categoryChart" class="category-grid" aria-label="研究方向分类"></div>
+          <div class="summary-panel">
+            <div class="summary-block">
+              <div class="summary-block__heading">
+                <h3>发表状态</h3>
+                <span>证据成熟度</span>
+              </div>
+              <div id="evidenceSummary" class="bar-list"></div>
+            </div>
+            <div class="summary-block">
+              <div class="summary-block__heading">
+                <h3>来源分布</h3>
+                <span>按收录量</span>
+              </div>
+              <div id="sourceSummary" class="source-list"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tinted">
+        <div class="shell">
+          <div class="section-heading section-heading--compact">
+            <div>
+              <p class="section-kicker">LITERATURE FEED</p>
+              <h2>文献动态</h2>
+            </div>
+            <p id="resultCount" aria-live="polite"></p>
+          </div>
+
+          <form id="filters" class="filters" aria-label="文献筛选">
+            <label class="search-field">
+              <span class="sr-only">搜索标题、期刊或摘要</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" />
+              </svg>
+              <input id="searchInput" type="search" placeholder="搜索标题、期刊、关键词…" autocomplete="off" />
+            </label>
+            <label>
+              <span>研究方向</span>
+              <select id="areaFilter"><option value="">全部方向</option></select>
+            </label>
+            <label>
+              <span>发表状态</span>
+              <select id="evidenceFilter">
+                <option value="">全部状态</option>
+                <option value="同行评审">同行评审</option>
+                <option value="预印本">预印本</option>
+                <option value="观点与解读">观点与解读</option>
+              </select>
+            </label>
+            <label>
+              <span>来源</span>
+              <select id="sourceFilter"><option value="">全部来源</option></select>
+            </label>
+            <label>
+              <span>排序</span>
+              <select id="sortFilter">
+                <option value="priority">重要性优先</option>
+                <option value="date">日期最新</option>
+              </select>
+            </label>
+            <button id="resetFilters" class="reset-button" type="button">清除筛选</button>
+          </form>
+
+          <div id="activeFilter" class="active-filter" hidden></div>
+          <div id="articleList" class="article-list"></div>
+          <div id="emptyState" class="empty-state" hidden>
+            <strong>没有匹配的条目</strong>
+            <p>换一个关键词，或清除部分筛选条件。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell methodology">
+        <div>
+          <p class="section-kicker">METHODOLOGY</p>
+          <h2>如何生成这份简报</h2>
+        </div>
+        <div class="method-grid">
+          <article><span>01</span><h3>定向检索</h3><p>优先核验期刊页、DOI、PubMed 与预印本原始页面。</p></article>
+          <article><span>02</span><h3>事实去重</h3><p>使用 DOI、规范化链接与标题识别修订、正式发表和重复条目。</p></article>
+          <article><span>03</span><h3>分类归档</h3><p>按研究方向与证据状态多标签归类，支持持续累积和回溯。</p></article>
+          <article><span>04</span><h3>每日同步</h3><p>自动任务更新数据后，GitHub Pages 随仓库提交刷新。</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell footer__inner">
+        <div><strong>单细胞大模型文献简报</strong><p>公开信息研究整理，不替代论文原文与同行评议。</p></div>
+        <a href="https://github.com/jianqing666/singlecell" rel="noreferrer">GitHub Repository ↗</a>
+      </div>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
