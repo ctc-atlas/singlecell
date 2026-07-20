@@ -249,7 +249,7 @@ h1 span { color: var(--lime); }
 
 .filters {
   display: grid;
-  grid-template-columns: minmax(240px, 1.7fr) repeat(4, minmax(128px, .7fr)) auto;
+  grid-template-columns: minmax(230px, 1.55fr) repeat(5, minmax(112px, .65fr)) auto;
   gap: 10px;
   align-items: end;
   padding: 16px;
@@ -301,6 +301,26 @@ h1 span { color: var(--lime); }
 .article-card h3 a { text-decoration: none; }
 .article-card h3 a:hover { color: var(--teal); text-decoration: underline; text-underline-offset: 4px; }
 .article-card__summary { margin-bottom: 16px; color: #3c5860; font-size: .93rem; }
+.article-detail {
+  margin: 0 0 16px;
+  border: 1px solid #d6e7e1;
+  border-radius: 13px;
+  background: #f7fbf9;
+}
+.article-detail summary {
+  padding: 11px 14px;
+  color: var(--teal);
+  font-size: .8rem;
+  font-weight: 800;
+  cursor: pointer;
+  list-style-position: inside;
+}
+.article-detail[open] summary { border-bottom: 1px solid #d6e7e1; }
+.article-detail__grid { display: grid; gap: 0; }
+.article-detail__grid section { padding: 14px 16px; }
+.article-detail__grid section + section { border-top: 1px solid #dfebe7; }
+.article-detail__grid h4 { margin: 0 0 5px; color: var(--ink); font-size: .78rem; }
+.article-detail__grid p { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.7; }
 .insight { display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; margin: 0; padding-top: 14px; border-top: 1px solid var(--line); font-size: .82rem; }
 .insight dt { color: var(--teal); font-weight: 800; }
 .insight dd { margin: 0; color: var(--muted); }

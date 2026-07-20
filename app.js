@@ -4,6 +4,7 @@ const state = {
   area: "",
   evidence: "",
   source: "",
+  year: "",
   sort: "priority",
 };
 
@@ -23,6 +24,7 @@ const refs = {
   areaFilter: document.querySelector("#areaFilter"),
   evidenceFilter: document.querySelector("#evidenceFilter"),
   sourceFilter: document.querySelector("#sourceFilter"),
+  yearFilter: document.querySelector("#yearFilter"),
   sortFilter: document.querySelector("#sortFilter"),
   resetFilters: document.querySelector("#resetFilters"),
   activeFilter: document.querySelector("#activeFilter"),
@@ -133,7 +135,17 @@ function renderSources(items) {
 }
 
 function articleSearchText(item) {
-  return [item.title, item.source, item.summary, item.relevance, item.followUp, ...item.categories].join(" ").toLocaleLowerCase("zh-CN");
+  return [
+    item.title,
+    item.source,
+    item.summary,
+    item.details?.methods,
+    item.details?.findings,
+    item.details?.limitations,
+    item.relevance,
+    item.followUp,
+    ...item.categories,
+  ].filter(Boolean).join(" ").toLocaleLowerCase("zh-CN");
 }
 
 function getFilteredItems() {
@@ -143,6 +155,7 @@ function getFilteredItems() {
     if (state.area && !item.categories.includes(state.area)) return false;
     if (state.evidence && item.evidence !== state.evidence) return false;
     if (state.source && item.source !== state.source) return false;
+    if (state.year && !item.date.startsWith(state.year)) return false;
     return true;
   });
 
@@ -170,10 +183,25 @@ function renderArticle(item, index) {
     element("dd", { text: item.followUp }),
   ]);
 
+  const detailSections = [
+    ["方法与数据", item.details?.methods],
+    ["主要结果", item.details?.findings],
+    ["局限与证据边界", item.details?.limitations],
+  ].filter(([, value]) => value);
+  const details = detailSections.length
+    ? element("details", { className: "article-detail" }, [
+        element("summary", { text: "展开详细解读" }),
+        element("div", { className: "article-detail__grid" }, detailSections.map(([label, value]) =>
+          element("section", {}, [element("h4", { text: label }), element("p", { text: value })])
+        )),
+      ])
+    : null;
+
   const content = element("div", { className: "article-card__content" }, [
     element("div", { className: "article-card__meta" }, tags),
     element("h3", {}, [titleLink]),
     element("p", { className: "article-card__summary", text: item.summary }),
+    details,
     insight,
   ]);
 
@@ -212,9 +240,10 @@ function bindFilters() {
   refs.areaFilter.addEventListener("change", (event) => { state.area = event.target.value; renderAll(); });
   refs.evidenceFilter.addEventListener("change", (event) => { state.evidence = event.target.value; renderArticles(); });
   refs.sourceFilter.addEventListener("change", (event) => { state.source = event.target.value; renderArticles(); });
+  refs.yearFilter.addEventListener("change", (event) => { state.year = event.target.value; renderArticles(); });
   refs.sortFilter.addEventListener("change", (event) => { state.sort = event.target.value; renderArticles(); });
   refs.resetFilters.addEventListener("click", () => {
-    Object.assign(state, { query: "", area: "", evidence: "", source: "", sort: "priority" });
+    Object.assign(state, { query: "", area: "", evidence: "", source: "", year: "", sort: "priority" });
     document.querySelector("#filters").reset();
     renderAll();
   });
@@ -228,6 +257,7 @@ async function init() {
 
     fillSelect(refs.areaFilter, state.data.categories.map((category) => category.name));
     fillSelect(refs.sourceFilter, [...new Set(state.data.items.map((item) => item.source))].sort());
+    fillSelect(refs.yearFilter, [...new Set(state.data.items.map((item) => item.date.slice(0, 4)))].sort().reverse());
     bindFilters();
     renderHeader(state.data.items);
     renderEvidence(state.data.items);

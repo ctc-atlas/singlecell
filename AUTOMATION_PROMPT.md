@@ -25,5 +25,6 @@
 
 - 优先使用 DOI、PubMed、期刊页或预印本原始页面。
 - 明确区分同行评审、预印本、评论/观点与代码数据发布。
-- `summary` 只写核验过的事实；`relevance` 说明与单细胞大模型/虚拟细胞/测序方向的关联；`followUp` 给出具体后续观察点。
+- `summary` 使用 2–4 句说明研究问题、技术路线与核心结论；每条必须补全 `details.methods`、`details.findings`、`details.limitations`，分别写方法与数据、主要结果、局限与证据边界。
+- `relevance` 说明与单细胞大模型/虚拟细胞/测序方向的关联；`followUp` 给出具体后续观察点。
 - 不夸大结论；无法从原始来源确认的细节不写入 JSON。

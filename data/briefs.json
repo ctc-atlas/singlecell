@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-20 09:19 CST",
-  "statusMessage": "本轮重点核验 Nature 系、Cell/Science 系、arXiv、bioRxiv 与 medRxiv；7 月 19–20 日未发现更高相关新增。",
+  "updatedAt": "2026-07-20 18:10 CST",
+  "statusMessage": "已回填 2026-06-16 至 2026-07-20 历史简报，纠正早期错配的 arXiv 链接，并为每条补充方法、结果与局限。",
   "categories": [
     {
       "name": "单细胞基础模型",
@@ -42,10 +42,18 @@
       "date": "2026-07-08",
       "updateType": "正式发表",
       "evidence": "同行评审",
-      "categories": ["单细胞基础模型", "细胞图谱与数据底座"],
-      "summary": "论文报告通用细胞嵌入模型，将大规模单细胞转录组映射到统一表示空间，覆盖多物种、多组织和多疾病场景，并支持跨数据集比较及下游生物学任务。",
-      "relevance": "这是单细胞 foundation model 主线中最直接的近期正式发表之一。",
-      "followUp": "关注外部复现、开源权重与标准 benchmark 表现。",
+      "categories": [
+        "单细胞基础模型",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "UCE 构建跨组织、跨实验和跨物种的统一细胞表示空间，将大规模单细胞转录组压缩为可迁移的细胞嵌入。论文把基础模型与超大规模细胞图谱整合到同一框架，是单细胞 foundation model 路线的重要正式发表。",
+      "details": {
+        "methods": "模型采用自监督学习处理数千万细胞，覆盖数百项实验和多个物种，并以统一嵌入支持细胞注释、跨数据集比较和图谱整合。",
+        "findings": "论文报告在多种细胞表示和跨图谱任务上取得有竞争力的结果，并发布 Integrated Mega-scale Atlas；历史简报记录的训练规模超过 3,600 万细胞、覆盖 8 个物种。",
+        "limitations": "训练数据可能继承细胞类型、物种和测序平台的不均衡；统一嵌入表现不等同于具备因果扰动预测能力，稀有细胞和外部数据仍需独立复现。"
+      },
+      "relevance": "它为虚拟细胞、细胞图谱检索和跨物种建模提供通用表征底座。",
+      "followUp": "持续追踪模型权重、外部 benchmark、少数类表现和跨物种生物学一致性。",
       "priority": 1
     },
     {
@@ -56,10 +64,19 @@
       "date": "2026-07-15",
       "updateType": "新预印本",
       "evidence": "预印本",
-      "categories": ["单细胞基础模型", "空间与时空组学", "多组学与调控"],
-      "summary": "scVision 将基因表达映射为空间基因图谱，再以视觉基础模型学习细胞表征。摘要报告了显微图像推断、缺失基因鲁棒性和跨物种泛化能力。",
-      "relevance": "代表单细胞大模型从表达矩阵编码向视觉化、空间化表征扩展。",
-      "followUp": "比较其与 UCE、Geneformer 等方法的公开基准和代码可用性。",
+      "categories": [
+        "单细胞基础模型",
+        "空间与时空组学",
+        "多组学与调控"
+      ],
+      "summary": "scVision 不把细胞表达谱表示成基因 token 序列，而是通过空间基因制图把每个细胞渲染为连续图像，再用视觉 Transformer 学习表征。该路线保留表达幅度与基因邻接关系。",
+      "details": {
+        "methods": "作者用最优传输把共表达基因放到共享二维布局中，在 7,200 万人类细胞上进行 masked image modeling；评测时冻结编码器，不做任务微调。",
+        "findings": "在 6 个独立留出研究的零样本评测中，作者报告其细胞类型注释和基因程序恢复优于既有基础模型；打乱基因布局会显著降低性能。",
+        "limitations": "结果仍来自预印本和作者评测；二维布局可能受训练语料影响，跨物种、稀有细胞和不同测序深度下的稳健性尚待验证。"
+      },
+      "relevance": "它代表单细胞基础模型从语言范式向视觉范式扩展。",
+      "followUp": "关注代码、权重、布局构建细节以及与 UCE、Geneformer、scGPT 的独立比较。",
       "priority": 2
     },
     {
@@ -70,11 +87,470 @@
       "date": "2026-07-12",
       "updateType": "新预印本",
       "evidence": "预印本",
-      "categories": ["单细胞基础模型", "虚拟细胞与扰动", "空间与时空组学"],
-      "summary": "该工作将语言模型框架对接单细胞、空间组学和扰动生物学，并突出自然语言推理能力；其定位更接近覆盖多类组学任务的统一语言接口。",
-      "relevance": "体现 LLM、空间组学与扰动生物学三条路线的合流。",
-      "followUp": "关注评测集、代理任务设计以及真实实验决策闭环。",
+      "categories": [
+        "单细胞基础模型",
+        "虚拟细胞与扰动",
+        "空间与时空组学"
+      ],
+      "summary": "OCellus 试图用同一个 9B 语言模型骨干统一单细胞、空间转录组、基因扰动和自然语言解释，并将 virtual cell 明确设为目标。",
+      "details": {
+        "methods": "框架基于 Qwen3.5-9B，在 22 个生物任务上微调；EvenClock 把二维坐标编码为文本方向，基因语言模型嵌入替代人工 GO 注释，Planner-Router-Verifier 负责任务编排。",
+        "findings": "摘要报告空间邻域准确率 77%、spatial-cellchat 96%、去卷积比例余弦相似度 0.70；Replogle 未见敲除基因预测 Pearson 为 0.945，线性探针注释准确率为 95.1%。",
+        "limitations": "多个任务共享同一骨干时需警惕训练—测试泄漏；作者声明代码和权重将在发表时开放，当前并非已核实可用。"
+      },
+      "relevance": "这是单细胞大模型、空间组学和扰动预测三条路线合流的代表性工作。",
+      "followUp": "优先核对公开仓库、22 项任务拆分、未见基因定义和外部实验复现。",
       "priority": 3
+    },
+    {
+      "id": "10.1038/s41592-026-03153-3",
+      "title": "NicheTrans: spatial-aware cross-omics translation",
+      "link": "https://doi.org/10.1038/s41592-026-03153-3",
+      "source": "Nature Methods",
+      "date": "2026-07-09",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "多组学与调控"
+      ],
+      "summary": "NicheTrans 面向空间多组学跨组学翻译，把细胞微环境和邻域信息与多模态测量共同建模，目标是从较易获得的单组学推断空间多组学信号。",
+      "details": {
+        "methods": "方法采用空间感知 Transformer 表示局部细胞邻域和跨模态关系，并在阿尔茨海默病脑组织等案例中完成跨组学推断和空间域分析。",
+        "findings": "作者报告加入微环境信息后提高跨组学预测并改善空间域识别，说明邻域上下文对空间多模态推断有实际贡献。",
+        "limitations": "它不是通用单细胞基础模型，外推能力取决于空间平台、组织类型和训练配对数据；疾病案例仍需独立实验验证。"
+      },
+      "relevance": "该工作为虚拟细胞加入组织上下文和细胞间作用提供方法基础。",
+      "followUp": "关注代码、预训练资源、多平台外部验证和低覆盖空间数据鲁棒性。",
+      "priority": 4
+    },
+    {
+      "id": "10.64898/2026.06.18.733285",
+      "title": "Systematic benchmarking of zero-shot utility and robustness in single-cell transcriptomic foundation models",
+      "link": "https://doi.org/10.64898/2026.06.18.733285",
+      "source": "bioRxiv",
+      "date": "2026-07-13",
+      "updateType": "修订版预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "测序与方法学"
+      ],
+      "summary": "这项大规模基准把单细胞基础模型的零样本效用与结构扰动下的鲁棒性分开评价。它显示不存在对所有任务都占优的单一模型，原始数据高排名也不保证结构变化下稳定。",
+      "details": {
+        "methods": "研究比较 20 种方法、6 类下游任务和 1,607 个数据集，覆盖近 2,180 万细胞；系统改变细胞数、基因数、类别组成、不平衡和批次复杂度。",
+        "findings": "作者发现经典统计和任务专用方法在若干场景仍具竞争力，计算成本更高也不必然更好；数据集特征会显著影响模型排名。",
+        "limitations": "任务选择、数据清洗和指标会影响结论；零样本表现不能替代微调后或真实部署表现。"
+      },
+      "relevance": "它为单细胞基础模型选择提供了比单一排行榜更可靠的证据框架。",
+      "followUp": "关注正式发表版本、可复现代码以及是否新增扰动和跨物种任务。",
+      "priority": 5
+    },
+    {
+      "id": "10.64898/2026.07.06.736807",
+      "title": "CellPilot: an agentic framework that pilots small language models through autonomous single-cell annotation",
+      "link": "https://doi.org/10.64898/2026.07.06.736807",
+      "source": "bioRxiv",
+      "date": "2026-07-10",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "细胞图谱与数据底座",
+        "测序与方法学"
+      ],
+      "summary": "CellPilot 将 LLM 从 marker 列表后的终端注释器扩展为从原始 count matrix 开始规划、执行、检查并修正整个分析流程的代理。",
+      "details": {
+        "methods": "框架组合标准单细胞工具、结构化流程控制和观察驱动推理，并保留完整轨迹；在 GTEx、Tabula Sapiens 和 Mouse Cell Atlas 上评测本地 8B 模型。",
+        "findings": "在 GTEx 上，同一 8B 模型从 prompt-only 的 0.39 提升到 0.89，接近 GPT-4o 的 0.92；三个数据集 cluster-level 准确率分别为 0.891、0.750 和 0.773。",
+        "limitations": "准确率依赖上游聚类与参考标签，代理也可能利用数据集特定捷径；失败轨迹和工具参数敏感性仍需检查。"
+      },
+      "relevance": "它代表单细胞大模型从静态表征转向可执行分析代理。",
+      "followUp": "关注系统开放、运行成本、失败恢复和人工复核接口。",
+      "priority": 6
+    },
+    {
+      "id": "arxiv:2601.05648",
+      "title": "Open World Knowledge Aided Single-Cell Foundation Model with Robust Cross-Modal Cell-Language Pre-training",
+      "link": "https://arxiv.org/abs/2601.05648",
+      "source": "arXiv",
+      "date": "2026-01-09",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "多组学与调控"
+      ],
+      "summary": "OKR-CELL 把细胞表达与自然语言描述对齐，并通过开放世界知识增强细胞文本；它针对知识不足和跨模态噪声引入 RAG 与鲁棒对齐。",
+      "details": {
+        "methods": "模型在 3,200 万 cell-text pairs 上预训练；LLM+RAG 生成增强描述，Cross-modal Robust Alignment 结合可靠性评估、课程学习和动量对比学习。",
+        "findings": "作者在聚类、注释、批次校正、少样本、零样本和双向 cell-text retrieval 六类任务上报告领先结果。",
+        "limitations": "文本增强可能引入外部知识偏差或标签泄漏，配对数据构造质量决定可信度；预印本结果尚待复现。"
+      },
+      "relevance": "它是单细胞表示与生物语言知识融合的代表性方案。",
+      "followUp": "关注训练配对构造、RAG 来源、跨平台泛化和开源权重。",
+      "priority": 7
+    },
+    {
+      "id": "10.21203/rs.3.rs-10274933/v1",
+      "title": "Predictive single cell foundation model for gene regulation and aging with privacy-preserving tabular learning",
+      "link": "https://doi.org/10.21203/rs.3.rs-10274933/v1",
+      "source": "Research Square",
+      "date": "2026-07-09",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "虚拟细胞与扰动",
+        "多组学与调控"
+      ],
+      "summary": "Tabula 把单细胞表达视为无序表格而非文本序列，并将联邦学习用于跨机构协同训练；Chiron 平台允许各机构保留原始数据。",
+      "details": {
+        "methods": "方法显式建模表格结构，通过 federated learning 汇聚多站点更新；研究还生成配对年轻/衰老人类成纤维细胞数据筛选候选回春因子。",
+        "findings": "作者报告模型恢复造血、胰腺发生、神经发生和心脏发生中的组合调控逻辑，并称年龄与身份评分筛选优于常规方法。",
+        "limitations": "联邦学习不自动消除隐私泄漏，通信成本、站点异质性和更新攻击仍需评估；回春候选也不等于实验有效。"
+      },
+      "relevance": "它把单细胞基础模型、隐私保护和健康相关虚拟细胞连接起来。",
+      "followUp": "关注 Chiron 代码、隐私威胁模型、跨机构稳定性和候选因子实验验证。",
+      "priority": 8
+    },
+    {
+      "id": "10.1016/j.jbi.2026.105080",
+      "title": "Causal intervention validation of gene regulatory signals in scGPT",
+      "link": "https://doi.org/10.1016/j.jbi.2026.105080",
+      "source": "Journal of Biomedical Informatics",
+      "date": "2026-07-03",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "单细胞基础模型",
+        "虚拟细胞与扰动",
+        "多组学与调控"
+      ],
+      "summary": "这篇机制审计检验 scGPT 内部基因调控信号能否支持因果外推。结果提示表示与文献 TF-target 关系对齐，但未迁移到真实 CRISPR 扰动效应。",
+      "details": {
+        "methods": "研究干预模型内部 gene token，先与已知调控关系对照，再用实际 CRISPR 扰动数据检验因果一致性。",
+        "findings": "部分组织中存在与文献关系一致的内部信号，但对真实 CRISPR 结果的区分接近随机，历史简报记录 AUROC 约为 0.50。",
+        "limitations": "结论针对特定模型、干预和数据集，不能外推到所有模型；但它明确表明相关性表示不应直接当作因果机制。"
+      },
+      "relevance": "这为 virtual cell 的机制可信度设定了更严格验证门槛。",
+      "followUp": "关注其他基础模型的同类干预审计和更接近实验设计的因果 benchmark。",
+      "priority": 9
+    },
+    {
+      "id": "arxiv:2605.00930",
+      "title": "CellxPert: Inference-Time MCMC Steering of a Multi-Omics Single-Cell Foundation Model for In-Silico Perturbation",
+      "link": "https://arxiv.org/abs/2605.00930",
+      "source": "arXiv",
+      "date": "2026-04-30",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "虚拟细胞与扰动",
+        "空间与时空组学",
+        "多组学与调控"
+      ],
+      "summary": "CellxPert 在共同空间统一 scRNA-seq、ATAC-seq、CITE-seq、MERFISH 和成像质谱，并把扰动预测做成推理时 MCMC 状态转移，以减少直接改 token 的分布外伪影。",
+      "details": {
+        "methods": "模型支持 154 个细胞身份、LoRA、多组学整合和全基因组扰动预测；Metropolis-Hastings 提议分布来自 masked conditional distributions。",
+        "findings": "在 PBMC68K、Replogle Perturb-seq、Systema 和 BMMC 上，作者报告注释、扰动预测和多组学整合优于多类基线。",
+        "limitations": "MCMC 成本、收敛和轨迹真实性仍需独立验证；统一多模态也不保证每种模态同等受益。"
+      },
+      "relevance": "它是多组学基础模型直接走向 in silico perturbation 的高相关工作。",
+      "followUp": "关注代码、采样效率、Perturb-seq 外部复现和实验闭环。",
+      "priority": 10
+    },
+    {
+      "id": "arxiv:2603.25240",
+      "title": "Lingshu-Cell: A generative cellular world model for transcriptome modeling toward virtual cells",
+      "link": "https://arxiv.org/abs/2603.25240",
+      "source": "arXiv",
+      "date": "2026-03-26",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "虚拟细胞与扰动"
+      ],
+      "summary": "Lingshu-Cell 将单细胞转录组建模为可生成的细胞状态分布，而不只输出静态 embedding。其 masked discrete diffusion 直接在稀疏、非序列的表达空间中模拟完整转录组。",
+      "details": {
+        "methods": "模型覆盖约 18,000 个基因，不依赖高变基因筛选或表达排序；细胞类型、供体身份与扰动条件被联合嵌入，用于生成新身份—扰动组合。",
+        "findings": "作者报告模型可复现表达分布、marker 模式和亚型比例，并在 Virtual Cell Challenge H1 遗传扰动与人 PBMC 细胞因子响应预测中取得领先结果。",
+        "limitations": "离散 token 化和生成指标可能掩盖关键低表达基因误差；挑战赛表现需要与盲测规则和训练数据重叠共同解读。"
+      },
+      "relevance": "它代表从单细胞表征模型转向可条件生成的 cellular world model。",
+      "followUp": "关注权重、生成校准、未见组合泛化和真实扰动实验验证。",
+      "priority": 11
+    },
+    {
+      "id": "arxiv:2603.17380",
+      "title": "SCALE: Scalable Conditional Atlas-Level Endpoint transport for virtual cell perturbation prediction",
+      "link": "https://arxiv.org/abs/2603.17380",
+      "source": "arXiv",
+      "date": "2026-03-19",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "虚拟细胞与扰动",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "SCALE 同时处理虚拟细胞的系统吞吐、稀疏高维状态建模和生物学评测问题。它把扰动预测表述为 conditional transport，并在 atlas 级数据上使用 set-aware flow。",
+      "details": {
+        "methods": "系统基于 BioNeMo，耦合 LLaMA 风格细胞编码与 endpoint-oriented supervision；在 Tahoe-100M 上使用细胞级、生物学导向指标评测。",
+        "findings": "作者报告预训练吞吐提升 12.51 倍、推理提升 1.29 倍；相对 STATE，PDCorr 提升 12.02%，差异表达重叠提升 10.66%。",
+        "limitations": "加速和精度来自匹配系统条件下的作者评测；对其他硬件、数据集和未见扰动能否保持优势尚不清楚。"
+      },
+      "relevance": "它强调虚拟细胞需要模型、基础设施和评测共同设计。",
+      "followUp": "关注 Tahoe-100M 切分、硬件复现、未见扰动和开放训练流水线。",
+      "priority": 12
+    },
+    {
+      "id": "arxiv:2606.12838",
+      "title": "OCOO-T: A Simple and Scalable Virtual Cell Model for Transcriptional Perturbation Response Prediction",
+      "link": "https://arxiv.org/abs/2606.12838",
+      "source": "arXiv",
+      "date": "2026-06-11",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "单细胞基础模型"
+      ],
+      "summary": "OCOO-T 用较简单的 Transformer 与 flow matching 直接对连续基因表达做去噪式扰动预测，减少专用编码器、层级 VAE 和手工网络先验。",
+      "details": {
+        "methods": "模型把扰动类型、剂量与细胞系或细胞类型通过 adaptive layer normalization 和上下文 token 注入，并用 patching/depatching 处理长基因向量。",
+        "findings": "作者在 Tahoe100M、Replogle 和 PBMC 数据上报告多种遗传、化学和细胞因子扰动的领先结果。",
+        "limitations": "简化结构是否真正提升跨实验室泛化仍需验证；flow matching 的分布指标可能与关键差异基因恢复不一致。"
+      },
+      "relevance": "这是 virtual cell 中追求简单、可扩展转录扰动模拟的代表方案。",
+      "followUp": "关注统一盲测、剂量外推、计算成本和与 SCALE、CellxPert 的公平比较。",
+      "priority": 13
+    },
+    {
+      "id": "arxiv:2606.13713",
+      "title": "CisTransCell: Single-Cell Perturbation Prediction via Gene Function, Regulatory Control, and Cellular Context",
+      "link": "https://arxiv.org/abs/2606.13713",
+      "source": "arXiv",
+      "date": "2026-06-10",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "多组学与调控"
+      ],
+      "summary": "CisTransCell 针对未见基因或组合的零样本扰动预测，将基因功能、顺式调控与当前细胞状态串成响应级联。",
+      "details": {
+        "methods": "每个基因被赋予 coding-sequence prior 与 regulatory-sequence prior，再与细胞表达上下文融合，预测从蛋白功能到调控元件再到下游转录变化。",
+        "findings": "作者在标准单细胞扰动数据上报告较强 zero-shot 表现，尤其强调训练中未见扰动基因的外推。",
+        "limitations": "序列模型本身可能见过相关基因知识，零样本定义需严格审计；组合扰动和剂量稳定性尚不充分。"
+      },
+      "relevance": "它为 virtual cell 引入了更接近生物机制的多模态先验。",
+      "followUp": "关注数据泄漏审计、组合扰动、跨细胞类型验证和因果解释。",
+      "priority": 14
+    },
+    {
+      "id": "arxiv:2604.27646",
+      "title": "Benchmarking virtual cell models for in-the-wild perturbation response",
+      "link": "https://arxiv.org/abs/2604.27646",
+      "source": "arXiv",
+      "date": "2026-04-30",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "该工作提出模块化 virtual cell benchmark，专门测试未见细胞上下文、未见扰动和跨数据集泛化。结果显示常见简化设置会高估模型能力。",
+      "details": {
+        "methods": "框架统一多类模型和指标，分别考察 cellular context shift、perturbation shift 与 cross-dataset transfer，并比较聚合与单数据集训练。",
+        "findings": "作者发现模型排名高度依赖任务和指标，线性方法可抓住全局趋势，却难恢复扰动特异效应；朴素合并数据有时反而降低性能。",
+        "limitations": "benchmark 结论仍受数据覆盖和预处理影响；所谓 in-the-wild 也不等同于真实临床或实验室部署。"
+      },
+      "relevance": "它为判断 virtual cell 是否真正可用提供更严格框架。",
+      "followUp": "关注公开评测套件、盲测榜单和模型论文是否采用严格切分。",
+      "priority": 15
+    },
+    {
+      "id": "arxiv:2602.19685",
+      "title": "PerturbDiff: Functional Diffusion for Single-Cell Perturbation Modeling",
+      "link": "https://arxiv.org/abs/2602.19685",
+      "source": "arXiv",
+      "date": "2026-02-23",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "多组学与调控"
+      ],
+      "summary": "PerturbDiff 不预测单个配对细胞，而是在概率分布层面模拟对照群体到扰动群体的变化，以处理破坏性测序和隐藏微环境造成的多种可能响应。",
+      "details": {
+        "methods": "方法把细胞群分布嵌入 Hilbert 空间，在分布点之间定义 diffusion generative process，从而显式表示同一观测条件下的响应流形。",
+        "findings": "作者在既有扰动数据上报告领先的响应预测，并称对未见扰动具有更强泛化。",
+        "limitations": "分布级模型可能牺牲单细胞轨迹解释；Hilbert 嵌入、核选择和指标影响很大，代码仍以将公开为主。"
+      },
+      "relevance": "它为 virtual cell 处理群体不确定性和隐藏因素提供新生成视角。",
+      "followUp": "关注项目代码、未见扰动复现、不确定性校准和与 flow matching 的比较。",
+      "priority": 16
+    },
+    {
+      "id": "arxiv:2604.14838",
+      "title": "Intermediate Layers Encode Optimal Biological Representations in Single-Cell Foundation Models",
+      "link": "https://arxiv.org/abs/2604.14838",
+      "source": "arXiv",
+      "date": "2026-04-16",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "测序与方法学"
+      ],
+      "summary": "这项研究质疑默认从最后一层提取 embedding 的惯例。结果表明最佳层同时依赖任务和细胞状态，中间层甚至第一层可能保留更多生物信号。",
+      "details": {
+        "methods": "作者分析 scFoundation（100M）和 Tahoe-X1（1.3B）的逐层表示，覆盖轨迹推断和扰动响应，并比较不同 T 细胞激活状态。",
+        "findings": "轨迹任务最佳点约在 60% 深度，比最终层高 31%；扰动任务最优层可在 0–96% 深度变化，静息细胞中第一层最优。",
+        "limitations": "目前只覆盖两个模型和有限任务，层定义也难跨架构直接对齐。"
+      },
+      "relevance": "它说明单细胞基础模型的使用方式本身就是重要评测变量。",
+      "followUp": "关注 layer-wise API、更多模型复核和 benchmark 是否要求报告层选择。",
+      "priority": 17
+    },
+    {
+      "id": "arxiv:2604.03630",
+      "title": "A Multimodal Foundation Model of Spatial Transcriptomics and Histology for Biological Discovery and Clinical Prediction",
+      "link": "https://arxiv.org/abs/2604.03630",
+      "source": "arXiv",
+      "date": "2026-04-04",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "单细胞基础模型",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "STORM 联合空间转录组、H&E 形态和空间上下文，建立可迁移的分子—形态表示，覆盖空间域、表达预测、免疫治疗反应和预后。",
+      "details": {
+        "methods": "模型在 18 个器官的 120 万个空间 profile 及匹配组织学上训练，使用层级架构融合三类信息，覆盖 Visium、Xenium、Visium HD 与 CosMx。",
+        "findings": "作者报告在 11 类肿瘤的 H&E 到空间表达预测中优于既有方法，并在 23 个独立队列、7,245 名患者中改善免疫治疗和预后预测。",
+        "limitations": "临床结果来自回顾性队列和作者分析；不同平台、癌种和患者队列之间可能存在中心偏差或数据泄漏。"
+      },
+      "relevance": "它是空间组学基础模型连接临床病理 AI 的高影响力预印本。",
+      "followUp": "关注权重、队列划分、外部中心复现和前瞻性临床验证。",
+      "priority": 18
+    },
+    {
+      "id": "arxiv:2602.14177",
+      "title": "Towards Spatial Transcriptomics-driven Pathology Foundation Models",
+      "link": "https://arxiv.org/abs/2602.14177",
+      "source": "arXiv",
+      "date": "2026-02-15",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "多组学与调控"
+      ],
+      "summary": "SEAL 用空间转录组局部分子监督增强已有病理视觉基础模型，而不是从头训练新编码器，使视觉表示获得分子信息。",
+      "details": {
+        "methods": "框架采用参数高效 vision-omics self-supervised fine-tuning，在 14 个器官、70 多万个表达 spot—组织区域配对上训练。",
+        "findings": "在 38 个 slide-level 和 15 个 patch-level 任务上，作者报告分子状态、通路、治疗响应和表达预测持续优于视觉或 ST 基线，并支持 gene-to-image retrieval。",
+        "limitations": "ST spot 与图像区域存在分辨率错配，跨平台噪声和组织构成会影响对齐；临床任务需独立中心验证。"
+      },
+      "relevance": "它展示组学监督如何升级病理基础模型并支持跨模态检索。",
+      "followUp": "关注训练代码、不同视觉 backbone 的一致性和外部分子任务复现。",
+      "priority": 19
+    },
+    {
+      "id": "arxiv:2606.03644",
+      "title": "Spatial Transcriptomics-Guided Alignment Enhances Molecular Profiling in Pathology Foundation Model",
+      "link": "https://arxiv.org/abs/2606.03644",
+      "source": "arXiv",
+      "date": "2026-05-29",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "多组学与调控",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "STAMP 以空间转录组为监督，将 H&E 病理基础模型对齐到功能通路空间，目标是从形态中恢复亚视觉分子特征。",
+      "details": {
+        "methods": "作者构建 HumanST-1k，跨器官和平台形成 180 万个 H&E patch—转录组配对；先聚合为生物通路，再做参数高效对齐。",
+        "findings": "论文报告增强后的病理表示在多层次分子 profiling 任务中优于视觉中心方法，并强调 pathway-informed alignment 的稳定性。",
+        "limitations": "通路聚合会牺牲基因级分辨率；HumanST-1k 的患者重复和平台切分需审计。"
+      },
+      "relevance": "它为低成本病理图像推断空间分子状态提供可扩展路线。",
+      "followUp": "关注数据集开放、患者级切分、基因级性能和多中心验证。",
+      "priority": 20
+    },
+    {
+      "id": "arxiv:2601.15504",
+      "title": "SAGE-FM: A lightweight and interpretable spatial transcriptomics foundation model",
+      "link": "https://arxiv.org/abs/2601.15504",
+      "source": "arXiv",
+      "date": "2026-01-21",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "多组学与调控",
+        "单细胞基础模型"
+      ],
+      "summary": "SAGE-FM 说明空间基础模型不一定需要超大 Transformer：轻量 GCN 结合 masked central spot prediction 也能学习空间调控关系。",
+      "details": {
+        "methods": "模型在 15 个器官的 416 个人类 Visium 样本上训练，通过图卷积聚合邻域并恢复中心 spot 的遮蔽基因。",
+        "findings": "91% 被遮蔽基因达到显著相关；embedding 改善聚类和生物异质性保留，口咽鳞癌 spot 注释准确率为 81%，并展示配体—受体扰动方向。",
+        "limitations": "训练主要基于 Visium，能否迁移到单细胞分辨率平台仍不确定；显著相关比例不等同于高效应量。"
+      },
+      "relevance": "它为可解释、参数高效的空间组学基础模型提供重要对照。",
+      "followUp": "关注跨平台验证、图结构敏感性和扰动结论实验复核。",
+      "priority": 21
+    },
+    {
+      "id": "10.1038/s41587-026-03192-3",
+      "title": "Spatially resolved profiling of extracellular vesicles in tissues with Spatial-EV-seq",
+      "link": "https://doi.org/10.1038/s41587-026-03192-3",
+      "source": "Nature Biotechnology",
+      "date": "2026-06-26",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学",
+        "多组学与调控"
+      ],
+      "summary": "Spatial-EV-seq 在组织原位分析细胞外囊泡，并与空间转录组结合重建位置特异的 EV—细胞通信网络，为空间细胞状态模型提供新数据层。",
+      "details": {
+        "methods": "方法在组织切片中对 EV 做空间分辨 profiling，并将囊泡信号与局部转录组和邻域整合；包含抗 PD-1 处理乳腺癌小鼠案例。",
+        "findings": "研究观察到与免疫抑制相关的空间通信轴，显示 EV 信息可补充传统细胞和转录本空间测量。",
+        "limitations": "捕获效率、特异性和组织依赖性决定数据可比性；小鼠治疗模型不能直接外推到人类临床。"
+      },
+      "relevance": "它扩展空间组学可观测变量，为 virtual tissue 增加新数据来源。",
+      "followUp": "关注公开数据、跨组织复现、技术标准化以及是否进入 atlas 项目。",
+      "priority": 22
+    },
+    {
+      "id": "10.1038/s41586-026-09279-9",
+      "title": "Cell-level and multicellular-level understanding of spatial biology with AI",
+      "link": "https://doi.org/10.1038/s41586-026-09279-9",
+      "source": "Nature",
+      "date": "2026-06-05",
+      "updateType": "综述/观点",
+      "evidence": "观点与解读",
+      "categories": [
+        "空间与时空组学",
+        "虚拟细胞与扰动"
+      ],
+      "summary": "这篇综述梳理 AI 如何从细胞级测量走向多细胞空间组织理解，讨论表示、邻域、细胞通信和组织尺度建模。它不发布新模型，但为 virtual cell 扩展到 virtual tissue 划定问题边界。",
+      "details": {
+        "methods": "文章综合空间转录组、成像、多模态图谱和机器学习研究，比较细胞级表征、局部生态位与组织级预测任务。",
+        "findings": "核心判断是单细胞状态不足以解释组织功能，模型需要同时处理位置、邻域、跨尺度交互与动态变化。",
+        "limitations": "综述中的趋势判断不构成性能证据；引用文献受截稿时间限制，也可能低估新近预印本。"
+      },
+      "relevance": "它为分类空间基础模型和 AI virtual tissue 工作提供概念框架。",
+      "followUp": "沿其引用链追踪代表模型、标准任务和跨尺度验证协议。",
+      "priority": 23
     },
     {
       "id": "10.1038/s41592-026-03150-6",
@@ -84,11 +560,426 @@
       "date": "2026-07-09",
       "updateType": "联盟倡议/正式发表",
       "evidence": "同行评审",
-      "categories": ["空间与时空组学", "细胞图谱与数据底座", "测序与方法学"],
-      "summary": "文章提出跨物种、空间尺度与时间维度的组学协作框架，强调数据标准、共享和可比性，是未来大规模时空生物模型的重要数据基础设施信号。",
-      "relevance": "高质量时空组学底座将直接影响 virtual cell 与多模态基础模型的能力上限。",
-      "followUp": "追踪联盟后续统一数据 schema、基准任务与公开资源。",
-      "priority": 4
+      "categories": [
+        "空间与时空组学",
+        "细胞图谱与数据底座",
+        "测序与方法学"
+      ],
+      "summary": "SpatioTemporal Omics Consortium 提出跨物种、空间尺度和时间维度的全球协作框架，重点是数据标准、共享、可比性和资源建设。",
+      "details": {
+        "methods": "联盟文章描述跨平台、物种和组织的协作目标，涵盖样本、元数据、分析规范、数据共享和 benchmark 规划。",
+        "findings": "主要贡献是建立共同议程和基础设施方向，而非报告单一模型或实验指标；价值取决于后续公开数据和标准落地。",
+        "limitations": "联盟倡议本身不能保证数据质量或互操作性，实际影响取决于持续资金、成员覆盖和标准采用率。"
+      },
+      "relevance": "高质量时空图谱将直接决定多模态基础模型和 virtual tissue 的能力上限。",
+      "followUp": "追踪统一 schema、首批公开数据、benchmark 和版本化标准。",
+      "priority": 24
+    },
+    {
+      "id": "arxiv:2605.26904",
+      "title": "SpCAST: Decoding spatial transcriptomics at single-cell resolution with fast and interpretable analysis",
+      "link": "https://arxiv.org/abs/2605.26904",
+      "source": "arXiv",
+      "date": "2026-05-26",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "细胞图谱与数据底座",
+        "测序与方法学"
+      ],
+      "summary": "SpCAST 用单细胞 RNA 参考为稀疏或靶向空间转录组做细胞类型迁移、表达重建和 marker 候选排序，强调快速、可解释和跨技术迁移。",
+      "details": {
+        "methods": "框架采用 Kolmogorov–Arnold network 学习参考与空间表达之间的非线性映射，并用 feature attribution 解释支撑预测的基因。",
+        "findings": "在 5 种技术、53 个数据集和 413,376 个空间细胞上，作者报告竞争力注释精度和更低运行时间，并展示跨物种标签迁移。",
+        "limitations": "参考标签和跨物种同源映射会把偏差传入空间结果；表达重建不能替代直接测量。"
+      },
+      "relevance": "它连接大型细胞图谱与单细胞分辨空间数据。",
+      "followUp": "关注代码、跨平台盲测、稀有细胞表现和解释稳定性。",
+      "priority": 25
+    },
+    {
+      "id": "arxiv:2606.14251",
+      "title": "HiST: A Hierarchical Sparse Transformer for Cross-Modal Spatial Transcriptomics Modeling",
+      "link": "https://arxiv.org/abs/2606.14251",
+      "source": "arXiv",
+      "date": "2026-06-12",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "HiST 针对 gigapixel H&E 与稀疏不规则空间测量的尺度错配，用层级稀疏 Transformer 从图像预测空间表达；计算量随观测位置而不是整张稠密切片面积增长。",
+      "details": {
+        "methods": "模型在活跃组织格点建立 dyadic encoder–decoder，结合稀疏窗口注意力、分辨率变化算子和 slide calibration token。",
+        "findings": "作者在多器官、跨采集来源 benchmark 上报告更好的预测性能，同时降低运行时间和峰值显存；论文注明 ICML 2026。",
+        "limitations": "表达预测受 H&E 可见信息上限约束；slide token 可能吸收中心或批次捷径。"
+      },
+      "relevance": "它为大规模空间表达推断提供更实际的稀疏计算架构。",
+      "followUp": "关注代码、患者级切分、跨平台外推和速度—精度复现。",
+      "priority": 26
+    },
+    {
+      "id": "arxiv:2607.04740",
+      "title": "DriftST: One-Step Generative Inference of Spatial Transcriptomics from H&E Histology",
+      "link": "https://arxiv.org/abs/2607.04740",
+      "source": "arXiv",
+      "date": "2026-07-06",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "多组学与调控"
+      ],
+      "summary": "DriftST 兼顾生成模型的分布表达能力和单步推理速度，从 H&E 直接生成空间表达，并统一 spot 与 cell 两种分辨率。",
+      "details": {
+        "methods": "Cellular Drifting 学习从组织学条件源到表达分布的直接 drift；STransformer 由共表达注意力和 gene residual gate 组成。",
+        "findings": "作者在多组织和多平台实验中报告 spot-level 与 cell-level 均达到领先结果，并避免多步扩散推理成本。",
+        "limitations": "单步生成可能简化多峰不确定性；不同平台的 gene panel 不一致会影响比较，作者自报 SOTA 需盲测复核。"
+      },
+      "relevance": "它推进低成本病理图像到空间组学的高效生成式推断。",
+      "followUp": "关注速度实测、不确定性校准、外部中心和罕见基因表现。",
+      "priority": 27
+    },
+    {
+      "id": "arxiv:2606.07676",
+      "title": "Single-Cell Cross-Modal Transfer by Adversarial Fine-Tuning of Foundation Models",
+      "link": "https://arxiv.org/abs/2606.07676",
+      "source": "arXiv",
+      "date": "2026-06-04",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "空间与时空组学",
+        "多组学与调控"
+      ],
+      "summary": "该工作用对抗微调让单细胞基础模型在不成对的 scRNA-seq 与空间转录组之间迁移，利用解离细胞中仍保留的原空间邻域信号。",
+      "details": {
+        "methods": "方法不依赖稀缺配对 ST–scRNA 数据，而通过 adversarial objective 对齐两种独立采集的模态分布，再完成跨模态翻译。",
+        "findings": "作者报告其表现优于若干专门多组学翻译方法，说明通用基础模型可通过微调获得空间迁移能力。",
+        "limitations": "无配对对齐容易出现不可识别映射和生物语义漂移；细胞类型组成差异与真实空间验证仍是关键。"
+      },
+      "relevance": "它是统一细胞表示跨模态扩展的直接证据。",
+      "followUp": "关注映射可识别性、配对小样本验证和不同 backbone 的结果。",
+      "priority": 28
+    },
+    {
+      "id": "arxiv:2606.11286",
+      "title": "FreeBridge: Variational Schrödinger Bridges for Cellular Transition Dynamics",
+      "link": "https://arxiv.org/abs/2606.11286",
+      "source": "arXiv",
+      "date": "2026-06-09",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "空间与时空组学"
+      ],
+      "summary": "FreeBridge 从固定终点的高内涵成像数据推断细胞状态随机过渡，解决细胞固定后无法连续追踪的问题，并约束中间轨迹留在真实形态流形内。",
+      "details": {
+        "methods": "方法以实例分割的单细胞表示为原子状态，构造 endpoint-only Schrödinger Bridge，并用 empirical latent support regularization 约束传输。",
+        "findings": "在 BBBC021、RxRx1 和 JUMP 上，作者报告终点拟合与作用机制保留具有竞争力，并在 BBBC021 降低中间轨迹越界。",
+        "limitations": "中间轨迹仍是模型推断而非真实时间序列；latent manifold 质量和图像表征偏差会直接影响解释。"
+      },
+      "relevance": "它让 virtual cell 从终点预测走向带几何约束的动态模拟。",
+      "followUp": "关注 live-cell 对照、轨迹校准和不同成像基础模型的敏感性。",
+      "priority": 29
+    },
+    {
+      "id": "arxiv:2606.26563",
+      "title": "scBench-Long: Verifiable Benchmarking of Long-Horizon Single-Cell Biology",
+      "link": "https://arxiv.org/abs/2606.26563",
+      "source": "arXiv",
+      "date": "2026-06-25",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "测序与方法学",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "scBench-Long 测试 AI agent 能否从原始或近原始单细胞数据完成多步分析并恢复可验证生物学结论，而不是只回答局部工具问题。",
+      "details": {
+        "methods": "基准含 21 项评测，覆盖 scRNA/TCR、RNA+ATAC、跨物种、单核 RNA、免疫受体和配体—受体；结论被复核并转成确定性答案与轨迹 rubric。",
+        "findings": "1,068 条完成轨迹中，最强模型—工具组合仅通过 63 次运行中的 16 次，成功率 25.4%。",
+        "limitations": "基准规模仍小，答案词表和复现过程可能偏向特定路径；工具故障与推理失败需要分开统计。"
+      },
+      "relevance": "它为单细胞分析代理提供更接近真实科研的压力测试。",
+      "followUp": "关注公开任务、复现实验、错误分类和后续排行榜。",
+      "priority": 30
+    },
+    {
+      "id": "10.64898/2026.07.02.736180",
+      "title": "The SEA-AD DREAM Challenge: Community benchmarking human and AI agent solutions for Alzheimer’s disease neuropathology prediction from single-nucleus transcriptomics",
+      "link": "https://doi.org/10.64898/2026.07.02.736180",
+      "source": "bioRxiv",
+      "date": "2026-07-08",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "细胞图谱与数据底座",
+        "单细胞基础模型",
+        "测序与方法学"
+      ],
+      "summary": "SEA-AD DREAM Challenge 用阿尔茨海默病脑细胞图谱评测从单核转录组预测病理分期和定量负担，并首次加入 AI Agent Track，同时暴露 donor metadata 捷径。",
+      "details": {
+        "methods": "17 支来自 15 个国家的团队提交容器化模型，预测 ADNC、Braak、Thal、CERAD 及淀粉样蛋白和磷酸化 tau 定量负担。",
+        "findings": "最佳 ADNC quadratic weighted kappa 为 1.0，定量预测最高 concordance correlation coefficient 为 0.48；分类较依赖 donor metadata。",
+        "limitations": "近乎完美分类含明显泄漏风险，不能说明模型理解 AD 机制；参赛数量与任务特异性也限制泛化。"
+      },
+      "relevance": "它为细胞图谱驱动疾病预测和 AI agent 提供社区基准。",
+      "followUp": "关注去除 metadata 后榜单、容器公开和外部队列验证。",
+      "priority": 31
+    },
+    {
+      "id": "arxiv:2604.19606",
+      "title": "AblateCell: A Reproduce-then-Ablate Agent for Virtual Cell Repositories",
+      "link": "https://arxiv.org/abs/2604.19606",
+      "source": "arXiv",
+      "date": "2026-04-30",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "AblateCell 是面向 virtual cell 代码仓库的复现—消融代理：先重建官方基线，再自动隔离组件并验证性能来源。",
+      "details": {
+        "methods": "代理自动配置环境、修复依赖、运行官方评测并保存产物；随后构建 repository mutation graph，在性能影响与执行成本之间选择实验。",
+        "findings": "在 CPA、GEARS 和 BioLORD 上，作者报告端到端成功率 88.9%，比人工专家高 29.9 个百分点；关键组件识别准确率 93.3%。",
+        "limitations": "只覆盖三个仓库，成功定义和人工基线可能影响优势幅度；自动改代码也可能引入非等价实现。"
+      },
+      "relevance": "它把模型评测扩展到代码级可复现性和性能归因。",
+      "followUp": "关注更多仓库验证、容器化产物、成本统计和错误消融案例。",
+      "priority": 32
+    },
+    {
+      "id": "arxiv:2606.28465",
+      "title": "SVC-Probe: A Framework for Evaluating Perturbation Generalization in Spatial Foundation-Model Embeddings",
+      "link": "https://arxiv.org/abs/2606.28465",
+      "source": "arXiv",
+      "date": "2026-06-26",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "SVC-Probe 质疑空间成像模型能区分药物条件就等于学到可迁移扰动轴，框架同时检查 embedding 稳定性、邻域重连和跨药物质心预测。",
+      "details": {
+        "methods": "研究使用 CM4AI MDA-MB-468 图谱，含 462 个抗体标签与 1,536 维 SubCell embedding，并加入空模型校准和 leave-one-drug-out。",
+        "findings": "三分类准确率达 98.6%，但余弦相似度从域内 0.944 降到跨药物 0.30；vorinostat 有染色质信号，paclitaxel 轴不稳。",
+        "limitations": "目前只是两个药物的压力测试，不是通用 benchmark；抗体 panel 稀疏会限制机制评估。"
+      },
+      "relevance": "它说明扰动泛化比条件分类更适合检验空间 virtual cell。",
+      "followUp": "关注扩展药物、不同细胞系、更多 embedding 和盲测协议。",
+      "priority": 33
+    },
+    {
+      "id": "arxiv:2607.04595",
+      "title": "Score Distributions, Not Cells: Evaluating Single-Cell Perturbations Under Class Overlap",
+      "link": "https://arxiv.org/abs/2607.04595",
+      "source": "arXiv",
+      "date": "2026-07-06",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "该研究指出扰动群体高度重叠时，per-cell 准确率测量类重叠而不是模型质量，并提出群体层面的 Classifier Discrimination Score。",
+      "details": {
+        "methods": "在 Tahoe-100M 和 Virtual Cell Challenge 上，把同一扰动所有细胞的预测概率平均为 population profile，再按候选扰动排序。",
+        "findings": "线性、MLP 和 Transformer 的 per-cell macro-F1 均为 0.2–0.3，但 CDS 可从相同弱模型中恢复近乎完美的扰动识别。",
+        "limitations": "CDS 依赖分类器表示，可能奖励数据集捷径；识别扰动正确也不代表差异基因或机制预测准确。"
+      },
+      "relevance": "它直接影响 virtual cell benchmark 的模型排序和指标选择。",
+      "followUp": "关注多数据集复现、机制敏感指标组合和 challenge 是否采纳。",
+      "priority": 34
+    },
+    {
+      "id": "arxiv:2511.05708",
+      "title": "HuBMAP Data Portal: A Resource for Multimodal Spatial and Single-Cell Data of Healthy Human Tissues",
+      "link": "https://arxiv.org/abs/2511.05708",
+      "source": "arXiv",
+      "date": "2025-11-07",
+      "updateType": "资源论文修订（2026-06-25）",
+      "evidence": "预印本",
+      "categories": [
+        "细胞图谱与数据底座",
+        "空间与时空组学",
+        "多组学与调控"
+      ],
+      "summary": "HuBMAP Data Portal 是健康人体多模态、空间与单细胞数据的重要公共基础设施。2026 年 6 月修订版描述检索、可视化、浏览器分析和 HPC 工作区。",
+      "details": {
+        "methods": "门户包含 9,232 个公开数据集、25 种数据类型、29 类器官和 498 位供体；统一流水线与质量控制增强跨实验室比较，Vitessce 支持 2D/3D 浏览。",
+        "findings": "主要贡献是可复用数据、标准处理和协作工作区，而非新模型性能；规模相较早期版本继续增长。",
+        "limitations": "原始质量和健康供体覆盖仍不均衡，统一处理不能完全消除批次效应。"
+      },
+      "relevance": "此类标准化图谱是训练多模态基础模型和 virtual tissue 的关键底座。",
+      "followUp": "关注配对多模态比例、下载接口、版本追踪和数据许可。",
+      "priority": 35
+    },
+    {
+      "id": "arxiv:2606.29883",
+      "title": "Building artificial intelligence virtual tissue (AIVT) for tissue state representation, feature prediction, and dynamic simulation",
+      "link": "https://arxiv.org/abs/2606.29883",
+      "source": "arXiv",
+      "date": "2026-06-29",
+      "updateType": "概念框架预印本",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "空间与时空组学",
+        "多组学与调控"
+      ],
+      "summary": "AIVT 将 virtual cell 扩展为以空间多模态数据为基础的 artificial intelligence virtual tissue，目标是统一表示组织状态、预测分子与形态特征并模拟时空变化。",
+      "details": {
+        "methods": "文章提出基本假设、核心能力、架构组件以及数据和算法需求，强调组织是空间组织的多尺度系统，需要可操控、动态的状态表示。",
+        "findings": "主要产出是概念性框架和研究议程，而不是可直接比较的模型、数据集或新实验结果。",
+        "limitations": "缺少统一实现和 benchmark，框架中的动态模拟能力尚未得到实证；不同尺度如何耦合仍是开放问题。"
+      },
+      "relevance": "它为单细胞 virtual cell 向组织尺度扩展提供清晰术语和模块划分。",
+      "followUp": "关注后续具体模型、时序空间数据集和可证伪的组织模拟 benchmark。",
+      "priority": 36
+    },
+    {
+      "id": "arxiv:2601.22203",
+      "title": "Beyond Conditional Computation: Retrieval-Augmented Genomic Foundation Models with Gengram",
+      "link": "https://arxiv.org/abs/2601.22203",
+      "source": "arXiv",
+      "date": "2026-01-29",
+      "updateType": "新预印本/代码发布",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "多组学与调控"
+      ],
+      "summary": "Gengram 为基因组基础模型加入显式多碱基 motif 记忆，而不是完全依赖神经网络隐式学习保守序列模式，并用基因组专用哈希实现高效检索。",
+      "details": {
+        "methods": "模块作为条件记忆插入多种 genomic foundation model backbone，将多碱基序列映射到结构化 motif lookup，并分析记忆空间与已知知识的对应。",
+        "findings": "作者在多项功能基因组任务中报告最高 14% 提升，并称模块可跨架构迁移；代码与检查点已在 GitHub 和 Hugging Face 提供。",
+        "limitations": "它主要是基因组序列模型而非单细胞模型；提升取决于任务、backbone 和预算，motif 对齐也不等于因果调控。"
+      },
+      "relevance": "基因组先验可作为单细胞扰动和调控模型的上游组件。",
+      "followUp": "关注在 scATAC、多组学和未见基因扰动任务中的实际增益。",
+      "priority": 37
+    },
+    {
+      "id": "arxiv:2606.22138",
+      "title": "BioMatrix: Towards a Comprehensive Biological Foundation Model Spanning the Modality Matrix of Sequences, Structures, and Language",
+      "link": "https://arxiv.org/abs/2606.22138",
+      "source": "arXiv",
+      "date": "2026-06-20",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "多组学与调控"
+      ],
+      "summary": "BioMatrix 用单一 decoder-only 模型原生处理分子与蛋白的序列、结构和自然语言，并允许统一读取与生成这些模态；它可为细胞模型提供分子层表示。",
+      "details": {
+        "methods": "模型基于 Qwen3 1.7B 与 4B，将 SMILES/SELFIES、分子结构、蛋白序列、蛋白结构和文本离散到统一 token 空间，在 3,044 亿 token 上继续预训练。",
+        "findings": "经过覆盖 6 类、80 项任务的调优，作者报告其中 77 项达到领先或有竞争力的结果。",
+        "limitations": "任务数量多且语料极广，需审计 benchmark 污染和各模态贡献；它没有直接建模单细胞状态。"
+      },
+      "relevance": "它说明 future virtual cell 可能需要连接细胞、蛋白和小分子多尺度模型。",
+      "followUp": "关注数据去重、结构生成质量和与单细胞扰动模型的接口。",
+      "priority": 38
+    },
+    {
+      "id": "arxiv:2606.29463",
+      "title": "CellDETR: A Detection-Guided Framework for Scalable Cell Representation Learning from Histopathology Images",
+      "link": "https://arxiv.org/abs/2606.29463",
+      "source": "arXiv",
+      "date": "2026-06-28",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "单细胞基础模型"
+      ],
+      "summary": "CellDETR 从 whole-slide pathology 的 patch/slide 表示下沉到细胞级 embedding，目标是提高可解释性和细胞分辨迁移能力。",
+      "details": {
+        "methods": "框架基于 Deformable DETR，加入位置特征解耦和 box-constrained attention；同时在无标签 WSI 上对比预训练，并利用 Xenium 衍生细胞标签。",
+        "findings": "作者报告在 PanNuke 监督分类中优于既有方法，预训练提高下游分类，并在 Xenium 监督后实现跨数据集迁移。",
+        "limitations": "检测误差会级联到 embedding；Xenium panel 和病理标签可能限制细胞类型覆盖，具体数据规模需查全文。"
+      },
+      "relevance": "它连接病理基础模型与单细胞分辨空间组学。",
+      "followUp": "关注代码、检测—表示联合误差、跨癌种验证和分子标签一致性。",
+      "priority": 39
+    },
+    {
+      "id": "arxiv:2607.07467",
+      "title": "SpaCellAgent: A Self-Evolving LLM-Based Multi-Agent Framework for Trajectory Analysis",
+      "link": "https://arxiv.org/abs/2607.07467",
+      "source": "arXiv",
+      "date": "2026-07-08",
+      "updateType": "新预印本/代码发布",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "SpaCellAgent 用多代理系统自动完成单细胞与空间转录组轨迹推断和叙事生成，试图降低工具选择、参数配置和人工解释门槛。",
+      "details": {
+        "methods": "系统包含战略规划代理、动态工具编排引擎和反馈自进化模块，将自然语言需求转成工作流并迭代修正。",
+        "findings": "在 6 个异质数据集上，作者报告分析效率提高超过 40%，同时保持与专家一致的结果；代码和材料已给出 GitHub 地址。",
+        "limitations": "效率和 expert-aligned 定义可能依赖特定流程；自动叙事仍可能掩盖错误轨迹或错误工具选择。"
+      },
+      "relevance": "它是 LLM agent 进入单细胞时空分析的直接实例。",
+      "followUp": "关注失败案例、可复现环境、人工审核和 scBench-Long 类盲测。",
+      "priority": 40
+    },
+    {
+      "id": "arxiv:2606.30693",
+      "title": "DiSTILL: A Hybrid Cloud-HPC Workflow System for Reproducible Spatial Transcriptomics Analysis",
+      "link": "https://arxiv.org/abs/2606.30693",
+      "source": "arXiv",
+      "date": "2026-06-28",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "DiSTILL 解决空间转录组分析在 notebook、云端和 HPC 之间难以复现的问题，重点是运行编排、配置语义和审计产物。",
+      "details": {
+        "methods": "系统组合 FastAPI、Web 前端、数据与 preset registry、pipeline generator 和 SLURM，支持本地、SSH 与 pull-based poller。",
+        "findings": "论文用炎症性肠病空间转录组流程展示可审计运行包、队列提交和云—HPC 分离部署。",
+        "limitations": "贡献是工作流系统，生物学结论和算法性能不是主要创新；可用性取决于被封装流程和 HPC 环境。"
+      },
+      "relevance": "可复现基础设施是大规模空间模型和自动化分析的重要支撑层。",
+      "followUp": "关注开源部署、更多 schema、权限安全和真实多用户运行。",
+      "priority": 41
+    },
+    {
+      "id": "arxiv:2607.01508",
+      "title": "scMTNI: Leveraging cellular trajectory and context to infer dynamic GRNs from single-cell multi-omics data",
+      "link": "https://arxiv.org/abs/2607.01508",
+      "source": "arXiv",
+      "date": "2026-07-01",
+      "updateType": "方法章节/预印本",
+      "evidence": "预印本",
+      "categories": [
+        "多组学与调控",
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "scMTNI 用多任务学习从 scRNA-seq 与 scATAC-seq 推断细胞类型特异的动态基因调控网络，并利用细胞轨迹描述发育或疾病变化。",
+      "details": {
+        "methods": "工具同时建模多个细胞状态的 GRN，共享信息又保留状态特异关系；章节以细胞重编程多模态数据演示关键调控因子识别。",
+        "findings": "主要贡献是完整工具与应用教程，而不是新的大规模 foundation model benchmark。",
+        "limitations": "示例规模和对比有限；GRN 边仍是统计推断，不能自动解释为因果关系。"
+      },
+      "relevance": "动态 GRN 是机制性 virtual cell 从表达预测走向调控解释的重要组成。",
+      "followUp": "关注更新版软件、扰动验证和与 foundation embedding 的联合使用。",
+      "priority": 42
     },
     {
       "id": "10.1038/s41587-026-03234-w",
@@ -98,11 +989,19 @@
       "date": "2026-07-14",
       "updateType": "研究亮点",
       "evidence": "观点与解读",
-      "categories": ["多组学与调控"],
-      "summary": "Research Highlight 关注 HiCFoundation：联合 DNA 序列与染色质互作数据，预测三维染色质组织及遗传变异影响，反映组学基础模型正向调控层拓展。",
-      "relevance": "调控组学基础模型是构建机制性虚拟细胞的重要组成。",
-      "followUp": "关注单细胞 ATAC、multiome 与 3D genome 联合基础模型。",
-      "priority": 5
+      "categories": [
+        "多组学与调控",
+        "单细胞基础模型"
+      ],
+      "summary": "这篇 Research Highlight 解读 HiCFoundation 如何联合 DNA 序列和染色质互作数据，预测三维染色质组织与遗传变异影响。",
+      "details": {
+        "methods": "文章总结被评论研究的模型设计、功能分析和潜在应用，本身不提供独立训练或新增实验。",
+        "findings": "核心价值是把 chromatin architecture foundation model 放入功能基因组语境，并指出序列—结构联合建模潜力。",
+        "limitations": "Research Highlight 不是独立验证，结论依赖被解读论文；前景判断不能等同于已证实泛化。"
+      },
+      "relevance": "调控与三维基因组是构建机制性虚拟细胞的重要上游层。",
+      "followUp": "追踪 HiCFoundation 原论文、代码以及与单细胞 ATAC/multiome 的结合。",
+      "priority": 43
     },
     {
       "id": "10.1038/s41587-026-03139-8",
@@ -112,11 +1011,42 @@
       "date": "2026-06-25",
       "updateType": "评论/观点",
       "evidence": "观点与解读",
-      "categories": ["虚拟细胞与扰动", "多组学与调控"],
-      "summary": "文章讨论如何从数据驱动的细胞表征走向具备机制解释和可干预预测能力的虚拟免疫细胞，并强调多尺度数据、因果建模与实验验证之间的衔接。",
-      "relevance": "为 virtual cell 从相关性预测走向机制建模提供了清晰的问题框架。",
-      "followUp": "关注后续是否形成开放基准、因果任务和实验验证协议。",
-      "priority": 6
+      "categories": [
+        "虚拟细胞与扰动",
+        "多组学与调控"
+      ],
+      "summary": "这篇评论讨论如何从数据驱动细胞表示走向可解释、可干预、可实验验证的虚拟免疫细胞，强调多尺度状态和因果机制。",
+      "details": {
+        "methods": "文章综合单细胞多组学、扰动数据、机制模型和实验闭环，提出数据、因果任务与验证协议需协同设计。",
+        "findings": "主要贡献是问题框架：高相关预测不等于机制理解，真正的 virtual immune cell 应能对未见干预给出可检验预测。",
+        "limitations": "观点文章不提供新模型或 benchmark，提出路线仍需具体系统验证。"
+      },
+      "relevance": "它为评估 virtual cell 是否从相关性走向机制性提供标准。",
+      "followUp": "关注开放基准、免疫扰动数据和前瞻实验验证协议。",
+      "priority": 44
+    },
+    {
+      "id": "10.1111/bph.70585",
+      "title": "Virtual cell construction for artificial intelligence-driven drug discovery",
+      "link": "https://doi.org/10.1111/bph.70585",
+      "source": "British Journal of Pharmacology",
+      "date": "2026-07-10",
+      "updateType": "正式发表综述",
+      "evidence": "观点与解读",
+      "categories": [
+        "虚拟细胞与扰动",
+        "多组学与调控",
+        "单细胞基础模型"
+      ],
+      "summary": "该综述把细胞表示、多模态整合、扰动预测和机制推断放入 AI 药物发现的 virtual cell 框架，说明概念正形成明确技术议程。",
+      "details": {
+        "methods": "文章梳理单细胞与空间多组学、大规模扰动数据、生成模型和药物发现应用，比较不同建模层次。",
+        "findings": "主要产出是领域地图与应用路径，而非新增实验；它强调模型最终需服务靶点发现、药物反应和机制解释。",
+        "limitations": "综述受检索范围和发表时滞影响；对模型前景判断不能代替前瞻药物实验。"
+      },
+      "relevance": "它把 virtual cell 与药物研发的真实任务和验证需求连接起来。",
+      "followUp": "沿引用链追踪代表模型、产业验证和可重复药物发现 benchmark。",
+      "priority": 45
     }
   ]
 }
