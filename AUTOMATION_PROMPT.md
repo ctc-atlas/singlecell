@@ -1,6 +1,6 @@
 # “单细胞大模型文献简报”自动化追加说明
 
-在完成每日检索与中文简报后，将结构化结果同步到 GitHub 仓库 `jianqing666/singlecell`，使 GitHub Pages `https://jianqing666.github.io/singlecell/` 自动更新。
+在完成每日检索与中文简报后，将结构化结果同步到 GitHub 仓库 `ctc-atlas/singlecell`，使 GitHub Pages `https://ctc-atlas.github.io/singlecell/` 自动更新。
 
 ## 仓库更新流程
 

@@ -19,7 +19,7 @@
 
 仓库发布后，在 **Settings → Pages** 中选择 **Deploy from a branch**，分支选择 `main`，目录选择 `/ (root)`。目标地址为：
 
-<https://jianqing666.github.io/singlecell/>
+<https://ctc-atlas.github.io/singlecell/>
 
 页面不依赖构建工具，提交到 `main` 后可直接由 GitHub Pages 发布。
 
