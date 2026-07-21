@@ -10,6 +10,7 @@ const state = {
 
 const refs = {
   refreshStatus: document.querySelector("#refreshStatus"),
+  syncStatus: document.querySelector("#syncStatus"),
   latestDate: document.querySelector("#latestDate"),
   totalCount: document.querySelector("#totalCount"),
   peerCount: document.querySelector("#peerCount"),
@@ -87,12 +88,17 @@ function fillSelect(select, values) {
 
 function renderHeader(items) {
   const dates = items.map((item) => item.date).sort().reverse();
+  const sync = state.data.sync || null;
   refs.latestDate.textContent = dates[0] ? formatDate(dates[0]) : "—";
   refs.totalCount.textContent = String(items.length);
   refs.peerCount.textContent = String(items.filter((item) => item.evidence === "同行评审").length);
   refs.preprintCount.textContent = String(items.filter((item) => item.evidence === "预印本").length);
   refs.areaCount.textContent = String(state.data.categories.length);
   refs.refreshStatus.textContent = `数据同步于 ${state.data.updatedAt}`;
+  refs.syncStatus.textContent = sync
+    ? `GitHub 同步${sync.state === "success" ? "成功" : "失败"} · ${sync.updatedAt}`
+    : "GitHub 同步状态未记录";
+  refs.syncStatus.dataset.state = sync?.state || "unknown";
   refs.coverageNote.textContent = state.data.statusMessage;
 }
 

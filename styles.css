@@ -151,6 +151,18 @@ h1 span { color: var(--lime); }
   font-size: .86rem;
 }
 
+.status-pill--sync[data-state="success"] {
+  color: #f4ffe5;
+  border-color: rgba(213, 242, 119, .38);
+  background: rgba(213, 242, 119, .12);
+}
+
+.status-pill--sync[data-state="failed"] {
+  color: #fff1ea;
+  border-color: rgba(237, 125, 97, .4);
+  background: rgba(237, 125, 97, .14);
+}
+
 .text-link { color: var(--mint); text-underline-offset: 5px; }
 
 .hero__panel {

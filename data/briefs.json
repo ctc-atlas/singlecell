@@ -1,6 +1,13 @@
 {
   "updatedAt": "2026-07-21 09:28 CST",
-  "statusMessage": "2026-07-21 检索未发现比现有头部条目更高相关的新发布，补录 1 条遗漏的扰动预测预印本，并新增当日日报。",
+  "statusMessage": "2026-07-21 检索未发现比现有头部条目更高相关的新发布，补录 1 条遗漏的扰动预测预印本；GitHub Pages 已同步到最新提交。",
+  "sync": {
+    "state": "success",
+    "updatedAt": "2026-07-21 09:28 CST",
+    "commit": "ab678b7",
+    "url": "https://jianqing666.github.io/singlecell/",
+    "message": "GitHub Pages 已同步到 main 的最新简报提交。"
+  },
   "categories": [
     {
       "name": "单细胞基础模型",

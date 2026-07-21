@@ -17,9 +17,9 @@
    - 测序与方法学
 6. `evidence` 只能是：`同行评审`、`预印本`、`观点与解读`。
 7. `priority` 从 1 开始按当前重要性排序；历史条目可顺延，但不得因“今日无新增”而删除。
-8. 更新 `updatedAt` 和 `statusMessage`，再写回 `data/briefs.json`。
-9. 创建或更新 `reports/YYYY-MM-DD.md`，保存当日简报、检索来源、关键词和“无高相关更新”结论（如适用）。
-10. 完成远程写入后，在 Codex 输出中明确列出：新增数、修订数、累计数、更新过的仓库文件和网页地址。
+8. 更新 `updatedAt` 和 `statusMessage`，并在 `data/briefs.json` 顶层写入 `sync` 对象：`state` 只能是 `success` 或 `failed`，同时补全 `updatedAt`、`commit`、`url`、`message`。
+9. 创建或更新 `reports/YYYY-MM-DD.md`，保存当日简报、检索来源、关键词和“无高相关更新”结论（如适用），并固定增加“GitHub 同步状态”小节，明确写出成功/失败、提交哈希、网页地址；失败时写具体原因。
+10. 完成远程写入后，在 Codex 输出中明确列出：新增数、修订数、累计数、更新过的仓库文件、提交哈希、GitHub 同步状态和网页地址。
 
 ## 写作与事实要求
 
