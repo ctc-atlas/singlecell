@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-07-21 09:28 CST",
-  "statusMessage": "2026-07-21 检索未发现比现有头部条目更高相关的新发布，补录 1 条遗漏的扰动预测预印本；GitHub Pages 当前同步目标已切换为 ctc-atlas/singlecell。",
+  "updatedAt": "2026-07-21 11:34 CST",
+  "statusMessage": "2026-07-21 检索未发现比现有头部条目更高相关的新发布，补录 1 条遗漏的扰动预测预印本；内容已同步到 ctc-atlas/singlecell。",
   "sync": {
     "state": "success",
-    "updatedAt": "2026-07-21 09:28 CST",
-    "commit": "ab678b7",
+    "updatedAt": "2026-07-21 11:34 CST",
+    "commit": "5bf0ef0",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "GitHub Pages 当前同步目标已切换为 ctc-atlas/singlecell。"
+    "message": "GitHub Pages 已同步到 ctc-atlas/singlecell 的 main 最新提交。"
   },
   "categories": [
     {
