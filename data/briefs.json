@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-20 18:10 CST",
-  "statusMessage": "已回填 2026-06-16 至 2026-07-20 历史简报，纠正早期错配的 arXiv 链接，并为每条补充方法、结果与局限。",
+  "updatedAt": "2026-07-21 09:28 CST",
+  "statusMessage": "2026-07-21 检索未发现比现有头部条目更高相关的新发布，补录 1 条遗漏的扰动预测预印本，并新增当日日报。",
   "categories": [
     {
       "name": "单细胞基础模型",
@@ -1047,6 +1047,29 @@
       "relevance": "它把 virtual cell 与药物研发的真实任务和验证需求连接起来。",
       "followUp": "沿引用链追踪代表模型、产业验证和可重复药物发现 benchmark。",
       "priority": 45
+    },
+    {
+      "id": "10.64898/2026.06.28.735106",
+      "title": "Tabular Foundation Models Are Competitive Cellular Perturbation Predictors Across Biological Scales",
+      "link": "https://doi.org/10.64898/2026.06.28.735106",
+      "source": "bioRxiv",
+      "date": "2026-07-02",
+      "updateType": "修订版预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "这篇预印本直接比较表格基础模型与细胞语言模型在扰动预测任务上的表现，指出更贴近表格结构的模型未必输给更大的 Transformer。对“更大单细胞模型天然更强”的假设，它给出了更克制的反例。",
+      "details": {
+        "methods": "根据 bioRxiv 摘要，作者围绕 cellular perturbation prediction 组织跨生物尺度评测，比较 tabular foundation model 与现有细胞 foundation model 在多个任务设定中的表现。",
+        "findings": "摘要声称，任务适配的表格基础模型在若干基准上达到或超过更大的 cell language model，说明架构归纳偏置与任务匹配度会显著影响扰动预测结果。",
+        "limitations": "目前仍是预印本，外部复现、数据划分和 biological scales 的具体定义仍需查看正文与代码核实；竞争性基准结果也不等于可直接泛化到未见实验系统。"
+      },
+      "relevance": "它直接关联单细胞大模型与 virtual cell 的核心任务之一: 预测基因或条件扰动后的细胞状态变化。",
+      "followUp": "优先追踪公开代码、基准拆分、与 OmniCell/CellOT 类方法的独立比较，以及是否存在训练测试泄漏。",
+      "priority": 7
     }
   ]
 }
