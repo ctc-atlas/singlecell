@@ -96,7 +96,8 @@
           <div class="section-heading section-heading--compact">
             <div>
               <p class="section-kicker">LITERATURE FEED</p>
-              <h2>文献动态</h2>
+              <h2>每日文献更新</h2>
+              <p class="section-heading__note">按论文首次发布或最近修订日期分组，同一天内按重要性排列。</p>
             </div>
             <p id="resultCount" aria-live="polite"></p>
           </div>
@@ -133,8 +134,8 @@
             <label>
               <span>排序</span>
               <select id="sortFilter">
-                <option value="priority">重要性优先</option>
-                <option value="date">日期最新</option>
+                <option value="date-desc">日期最新</option>
+                <option value="date-asc">日期最早</option>
               </select>
             </label>
             <button id="resetFilters" class="reset-button" type="button">清除筛选</button>
@@ -157,7 +158,7 @@
         <div class="method-grid">
           <article><span>01</span><h3>定向检索</h3><p>优先核验期刊页、DOI、PubMed 与预印本原始页面。</p></article>
           <article><span>02</span><h3>事实去重</h3><p>使用 DOI、规范化链接与标题识别修订、正式发表和重复条目。</p></article>
-          <article><span>03</span><h3>分类归档</h3><p>按研究方向、证据状态与年份归档，历史记录持续累积并纠正链接。</p></article>
+          <article><span>03</span><h3>按天归档</h3><p>按论文首次发布或最近修订日期分组，再按方向、证据状态与年份筛选。</p></article>
           <article><span>04</span><h3>每日同步</h3><p>自动任务更新数据后，GitHub Pages 随仓库提交刷新。</p></article>
         </div>
       </section>

@@ -5,7 +5,7 @@ const state = {
   evidence: "",
   source: "",
   year: "",
-  sort: "priority",
+  sort: "date-desc",
 };
 
 const refs = {
@@ -49,6 +49,16 @@ function formatDate(value) {
     year: "numeric",
     month: "short",
     day: "numeric",
+  }).format(date);
+}
+
+function formatDayLabel(value) {
+  const date = new Date(`${value}T00:00:00+08:00`);
+  return new Intl.DateTimeFormat("zh-CN", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    weekday: "long",
   }).format(date);
 }
 
@@ -160,8 +170,10 @@ function getFilteredItems() {
   });
 
   return filtered.sort((a, b) => {
-    if (state.sort === "date") return b.date.localeCompare(a.date) || a.priority - b.priority;
-    return a.priority - b.priority || b.date.localeCompare(a.date);
+    const dateOrder = state.sort === "date-asc"
+      ? a.date.localeCompare(b.date)
+      : b.date.localeCompare(a.date);
+    return dateOrder || a.priority - b.priority;
   });
 }
 
@@ -219,13 +231,46 @@ function renderArticle(item, index) {
   ]);
 }
 
+function groupByDay(items) {
+  return items.reduce((groups, item) => {
+    const current = groups.get(item.date) || [];
+    current.push(item);
+    groups.set(item.date, current);
+    return groups;
+  }, new Map());
+}
+
+function renderDayGroup(date, items, startIndex) {
+  const headingId = `day-${date}`;
+  const heading = element("div", { className: "day-group__heading" }, [
+    element("h3", { attrs: { id: headingId } }, [
+      element("time", { text: formatDayLabel(date), attrs: { datetime: date } }),
+    ]),
+    element("span", { text: `当日 ${items.length} 篇` }),
+  ]);
+  const articles = element("div", { className: "day-group__articles" },
+    items.map((item, index) => renderArticle(item, startIndex + index))
+  );
+  return element("section", {
+    className: "day-group",
+    attrs: { "aria-labelledby": headingId },
+  }, [heading, articles]);
+}
+
 function renderArticles() {
   const items = getFilteredItems();
-  refs.articleList.replaceChildren(...items.map(renderArticle));
+  const groups = groupByDay(items);
+  let startIndex = 0;
+  const daySections = [...groups.entries()].map(([date, dayItems]) => {
+    const section = renderDayGroup(date, dayItems, startIndex);
+    startIndex += dayItems.length;
+    return section;
+  });
+  refs.articleList.replaceChildren(...daySections);
   refs.emptyState.hidden = items.length !== 0;
-  refs.resultCount.textContent = `显示 ${items.length} / ${state.data.items.length} 条`;
+  refs.resultCount.textContent = `显示 ${items.length} / ${state.data.items.length} 条 · ${groups.size} 个日期`;
 
-  const active = [state.area, state.evidence, state.source, state.query && `关键词：${state.query}`].filter(Boolean);
+  const active = [state.area, state.evidence, state.source, state.year && `年份：${state.year}`, state.query && `关键词：${state.query}`].filter(Boolean);
   refs.activeFilter.hidden = active.length === 0;
   refs.activeFilter.textContent = active.length ? `当前筛选：${active.join(" · ")}` : "";
 }
@@ -243,7 +288,7 @@ function bindFilters() {
   refs.yearFilter.addEventListener("change", (event) => { state.year = event.target.value; renderArticles(); });
   refs.sortFilter.addEventListener("change", (event) => { state.sort = event.target.value; renderArticles(); });
   refs.resetFilters.addEventListener("click", () => {
-    Object.assign(state, { query: "", area: "", evidence: "", source: "", year: "", sort: "priority" });
+    Object.assign(state, { query: "", area: "", evidence: "", source: "", year: "", sort: "date-desc" });
     document.querySelector("#filters").reset();
     renderAll();
   });
