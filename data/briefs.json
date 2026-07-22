@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-21 11:34 CST",
-  "statusMessage": "2026-07-21 检索未发现比现有头部条目更高相关的新发布，补录 1 条遗漏的扰动预测预印本；内容已同步到 ctc-atlas/singlecell。",
+  "updatedAt": "2026-07-22 10:35 CST",
+  "statusMessage": "2026-07-22 检索未发现 2026-07-21 至 2026-07-22 的更高相关新增发布；补录 2 条遗漏的单细胞基础模型/扰动方向预印本。",
   "sync": {
     "state": "success",
     "updatedAt": "2026-07-21 11:34 CST",
@@ -1077,6 +1077,51 @@
       "relevance": "它直接关联单细胞大模型与 virtual cell 的核心任务之一: 预测基因或条件扰动后的细胞状态变化。",
       "followUp": "优先追踪公开代码、基准拆分、与 OmniCell/CellOT 类方法的独立比较，以及是否存在训练测试泄漏。",
       "priority": 7
+    },
+    {
+      "id": "10.1101/2026.07.13.738265",
+      "title": "scWeave: A deep learning model that bidirectionally translates between gene expression and chromatin structure at single cell resolution",
+      "link": "https://doi.org/10.1101/2026.07.13.738265",
+      "source": "bioRxiv",
+      "date": "2026-07-18",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "多组学与调控"
+      ],
+      "summary": "scWeave 试图在单细胞分辨率下双向连接转录组与染色质结构，用深度生成模型把 RNA 表达和 chromatin conformation 放到同一潜空间中。它把单细胞 foundation model 从表达表征进一步推向调控结构建模。",
+      "details": {
+        "methods": "根据 bioRxiv 摘要，作者构建深度学习模型，在单细胞水平联合建模 gene expression 与 chromatin structure，并支持从一种模态推断另一种模态。",
+        "findings": "摘要称该模型可学习具有生物学意义的跨模态表示，并在缺失模态补全和双向翻译任务上优于现有方法，说明染色质结构与表达之间可被统一表征。",
+        "limitations": "当前仍是预印本，尚未看到独立复现与更大规模外部基准；单细胞染色质结构数据本身稀疏，双向翻译结果对训练数据质量和细胞类型覆盖较为敏感。"
+      },
+      "relevance": "它把单细胞大模型与染色质三维结构层直接连接，为机制性 virtual cell 与调控推断补上更上游的表征层。",
+      "followUp": "关注公开代码、外部 multiome/Hi-C 评测，以及是否能迁移到扰动或时空场景。",
+      "priority": 8
+    },
+    {
+      "id": "10.1101/2026.07.15.738608",
+      "title": "BaiZe: A Multi-View Dynamic Framework for Simulating and Interpreting Cellular Responses Across Perturbation Contexts",
+      "link": "https://doi.org/10.1101/2026.07.15.738608",
+      "source": "bioRxiv",
+      "date": "2026-07-20",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "虚拟细胞与扰动",
+        "多组学与调控"
+      ],
+      "summary": "BaiZe 面向细胞扰动响应模拟，试图在统一框架内预测 post-perturbation transcriptome，并同时给出可解释的动态机制视角。它非常贴近 virtual cell 的核心能力定义。",
+      "details": {
+        "methods": "根据 bioRxiv 摘要，框架采用 multi-view dynamic 建模思路，把不同扰动上下文中的细胞状态变化组织为统一模拟任务，并学习可解释的 response trajectory。",
+        "findings": "摘要称 BaiZe 能准确预测扰动后的转录组状态，并能解析跨条件共享与特异的响应模式，说明模型不仅追求点预测，还强调动态解释。",
+        "limitations": "目前只有预印本证据，具体数据规模、扰动类型构成和外部对照方法仍需正文与代码确认；在未见细胞类型、组合扰动和实验批次迁移下的稳健性尚未独立验证。"
+      },
+      "relevance": "它直接服务于虚拟细胞与 perturbation biology，属于单细胞基础模型从静态表征迈向可模拟干预响应的一类工作。",
+      "followUp": "优先追踪代码、基准拆分、与 OmniCell/GEARS/scFoundation 扰动任务的比较以及实验验证。",
+      "priority": 9
     }
   ]
 }
