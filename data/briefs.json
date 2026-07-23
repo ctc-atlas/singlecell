@@ -3,10 +3,10 @@
   "statusMessage": "2026-07-23 检索未发现 2026-07-22 至 2026-07-23 的高相关新增论文、预印本、修订、正式发表、代码数据发布或勘误。",
   "sync": {
     "state": "success",
-    "updatedAt": "2026-07-21 11:34 CST",
-    "commit": "5bf0ef0",
+    "updatedAt": "2026-07-23 10:14 CST",
+    "commit": "2110891",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "GitHub Pages 已同步到 ctc-atlas/singlecell 的 main 最新提交。"
+    "message": "GitHub Pages 已同步到 ctc-atlas/singlecell 的 main 最新提交（2110891）。"
   },
   "categories": [
     {
