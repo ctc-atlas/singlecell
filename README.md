@@ -11,6 +11,7 @@
 - `data/briefs.json` 顶层 `sync`：最近一次 GitHub Pages 同步状态、提交哈希与网页地址
 - `reports/`：每日中文简报归档
 - `scripts/rebuild_history.mjs`：经来源核对的历史记录重建脚本
+- `scripts/prepare_sync_worktree.sh`：创建基于 `origin/main` 的临时干净 worktree，供自动化安全提交每日简报
 - `AUTOMATION_PROMPT.md`：Codex 每日任务的远程同步规范
 
 当前已回填 45 条历史记录。网页按论文首次发布或最近修订日期分组展示；每篇文献均可展开阅读“方法与数据、主要结果、局限与证据边界”，并支持按年份筛选。
@@ -24,3 +25,4 @@
 页面不依赖构建工具，提交到 `main` 后可直接由 GitHub Pages 发布。
 
 从 `2026-07-21` 起，每日日报会固定写出 “GitHub 同步状态”，站点头图也会直接显示最近一次同步成功或失败。
+从 `2026-07-24` 起，自动化建议固定通过临时 worktree 同步，这样主工作树里的本地改动不会阻塞 GitHub Pages 更新。
