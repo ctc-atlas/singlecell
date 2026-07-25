@@ -3,10 +3,10 @@
   "statusMessage": "2026-07-25 检索确认 2026-07-24 至 2026-07-25 有 1 条高相关正式发表更新：Nature Methods 发表 primate brain 全长单细胞空间转录组方法论文；其余重点来源未发现更高相关新增、修订、代码数据发布或勘误。",
   "sync": {
     "state": "success",
-    "updatedAt": "2026-07-23 10:14 CST",
-    "commit": "2110891",
+    "updatedAt": "2026-07-25 23:26 CST",
+    "commit": "7f8d1c6",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "GitHub Pages 已同步到 ctc-atlas/singlecell 的 main 最新提交（2110891）。"
+    "message": "GitHub Pages 已同步到 ctc-atlas/singlecell 的 main 文献内容提交（7f8d1c6）。"
   },
   "categories": [
     {
