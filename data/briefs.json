@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-23 09:55 CST",
-  "statusMessage": "2026-07-23 检索未发现 2026-07-22 至 2026-07-23 的高相关新增论文、预印本、修订、正式发表、代码数据发布或勘误。",
+  "updatedAt": "2026-07-25 09:45 CST",
+  "statusMessage": "2026-07-25 检索确认 2026-07-24 至 2026-07-25 有 1 条高相关正式发表更新：Nature Methods 发表 primate brain 全长单细胞空间转录组方法论文；其余重点来源未发现更高相关新增、修订、代码数据发布或勘误。",
   "sync": {
     "state": "success",
     "updatedAt": "2026-07-23 10:14 CST",
@@ -1122,6 +1122,28 @@
       "relevance": "它直接服务于虚拟细胞与 perturbation biology，属于单细胞基础模型从静态表征迈向可模拟干预响应的一类工作。",
       "followUp": "优先追踪代码、基准拆分、与 OmniCell/GEARS/scFoundation 扰动任务的比较以及实验验证。",
       "priority": 9
+    },
+    {
+      "id": "10.1038/s41592-026-03174-y",
+      "title": "Full-length single-cell spatial transcriptomics reveals spatial and cell-type-specific transcript isoforms in the primate brain",
+      "link": "https://doi.org/10.1038/s41592-026-03174-y",
+      "source": "Nature Methods",
+      "date": "2026-07-24",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "这篇 Nature Methods 论文把全长转录本测量引入单细胞空间转录组，直接面向灵长类脑组织中的空间和细胞类型特异性 isoform 解析。它不属于 foundation model，但对空间组学与测序方法底座是高相关更新。",
+      "details": {
+        "methods": "论文提出全长 single-cell spatial transcriptomics 方法，并在 primate brain 组织中联合解析空间位置、单细胞分辨率与 transcript isoform 信息。",
+        "findings": "根据期刊摘要，作者报告该方法能够识别 spatially resolved、cell-type-specific 的 transcript isoforms，说明空间转录组可从基因层面推进到剪接异构体层面。",
+        "limitations": "目前可直接确认的信息主要来自期刊页面与摘要；通量、组织适配范围、与现有空间平台的成本和误差权衡仍需阅读全文与后续独立复现支持。"
+      },
+      "relevance": "它扩展了空间组学训练与验证数据的分辨率上限，为后续单细胞基础模型、虚拟细胞和时空调控建模提供更细粒度观测层。",
+      "followUp": "继续核对全文中的实验规模、平台兼容性、公开数据入口以及是否已被后续模型工作采用。",
+      "priority": 6
     }
   ]
 }
