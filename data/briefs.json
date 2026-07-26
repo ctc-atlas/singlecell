@@ -2,11 +2,11 @@
   "updatedAt": "2026-07-26 10:40 CST",
   "statusMessage": "2026-07-26 检索确认 2026-07-24 至 2026-07-26 有 3 条高相关更新：1 条 Nature Communications 多组学细胞图谱论文、1 条 Nature Methods 临床兼容单核转录组方法、1 条 bioRxiv 单细胞参考驱动反卷积预印本；未发现更高相关的单细胞 foundation model / virtual cell 新正式发表。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-07-26 10:40 CST",
-    "commit": "",
+    "state": "success",
+    "updatedAt": "2026-07-26 10:48 CST",
+    "commit": "c1aa5e1",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "本次文献简报已生成，等待提交并推送到 ctc-atlas/singlecell 的 main。"
+    "message": "GitHub Pages 已同步到 ctc-atlas/singlecell 的 main 文献内容提交（c1aa5e1）。"
   },
   "categories": [
     {
