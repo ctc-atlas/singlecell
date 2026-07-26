@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-07-25 09:45 CST",
-  "statusMessage": "2026-07-25 检索确认 2026-07-24 至 2026-07-25 有 1 条高相关正式发表更新：Nature Methods 发表 primate brain 全长单细胞空间转录组方法论文；其余重点来源未发现更高相关新增、修订、代码数据发布或勘误。",
+  "updatedAt": "2026-07-26 10:40 CST",
+  "statusMessage": "2026-07-26 检索确认 2026-07-24 至 2026-07-26 有 3 条高相关更新：1 条 Nature Communications 多组学细胞图谱论文、1 条 Nature Methods 临床兼容单核转录组方法、1 条 bioRxiv 单细胞参考驱动反卷积预印本；未发现更高相关的单细胞 foundation model / virtual cell 新正式发表。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-07-25 23:26 CST",
-    "commit": "7f8d1c6",
+    "state": "pending",
+    "updatedAt": "2026-07-26 10:40 CST",
+    "commit": "",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "GitHub Pages 已同步到 ctc-atlas/singlecell 的 main 文献内容提交（7f8d1c6）。"
+    "message": "本次文献简报已生成，等待提交并推送到 ctc-atlas/singlecell 的 main。"
   },
   "categories": [
     {
@@ -1143,6 +1143,72 @@
       },
       "relevance": "它扩展了空间组学训练与验证数据的分辨率上限，为后续单细胞基础模型、虚拟细胞和时空调控建模提供更细粒度观测层。",
       "followUp": "继续核对全文中的实验规模、平台兼容性、公开数据入口以及是否已被后续模型工作采用。",
+      "priority": 6
+    },
+    {
+      "id": "10.1101/2026.07.23.740352",
+      "title": "An Integrated Multi-omics Single Cell Atlas of the Human RPE and Choroid",
+      "link": "https://doi.org/10.1101/2026.07.23.740352",
+      "source": "bioRxiv",
+      "date": "2026-07-24",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "细胞图谱与数据底座",
+        "多组学与调控"
+      ],
+      "summary": "这项预印本发布人眼 retinal pigment epithelium 与 choroid 的整合多组学单细胞图谱，直接服务于高分辨率细胞图谱与训练数据底座建设。研究把细胞类型、状态和调控线索放到同一框架中，是图谱资源侧的重要新增。",
+      "details": {
+        "methods": "根据 bioRxiv 摘要页与检索摘要，研究整合单细胞多组学测量构建人类 RPE 与 choroid 图谱，联合解析细胞组成和分子状态。当前可直接确认的信息以预印本标题、摘要检索摘录和 DOI 落地页为准。",
+        "findings": "作者报告获得整合的单细胞多组学 atlas，可用于刻画 RPE 和 choroid 的细胞异质性，并为相关眼科疾病研究提供参考背景。作为资源型工作，它的主要价值在于补充高质量组织特异图谱。",
+        "limitations": "当前证据来自预印本，尚未经同行评审；具体样本量、测量模态、批次整合策略和外部验证范围仍需阅读全文或等待正式发表确认。"
+      },
+      "relevance": "它直接扩充细胞图谱与训练数据底座，并为后续单细胞基础模型、疾病虚拟细胞和跨模态推断提供组织特异参考。",
+      "followUp": "关注公开数据入口、模态覆盖范围、供体规模以及是否附带可复用分析代码。",
+      "priority": 4
+    },
+    {
+      "id": "10.1038/s41592-026-03187-7",
+      "title": "Routine FFPE sections support clinically compatible single-nucleus transcriptomics across six human cancer types",
+      "link": "https://doi.org/10.1038/s41592-026-03187-7",
+      "source": "Nature Methods",
+      "date": "2026-07-24",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "测序与方法学",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "论文表明常规 FFPE 病理切片可以支持跨六种人类癌症的临床兼容 single-nucleus transcriptomics，把高价值临床存档样本纳入单细胞测序流程。对单细胞数据供给和真实世界队列扩展，这是一条很实际的方法学更新。",
+      "details": {
+        "methods": "根据 Nature Methods 文章页检索摘要，作者从 routine FFPE sections 建立临床兼容的 single-nucleus transcriptomics 流程，并在六种人类癌症类型上验证。论文还结合 foundation model-based automated cell annotation 进行分析。",
+        "findings": "检索摘要显示，该流程能够从 FFPE 样本中恢复可用于细胞类型解析的转录组信息，并把方法扩展到多癌种场景，说明 FFPE 单核转录组已更接近临床可部署条件。",
+        "limitations": "目前我能直接核实的事实主要来自期刊文章页和摘要摘录；核提取效率、低质量 RNA 影响、与新鲜样本的一致性、成本和失败率仍需阅读全文确认。"
+      },
+      "relevance": "它扩大了单细胞与空间组学可用样本池，为基础模型训练、临床图谱建设和疾病虚拟细胞验证提供更现实的数据来源。",
+      "followUp": "继续核对全文中的癌种分层表现、和 fresh/frozen 对照的一致性，以及公开协议或数据是否可获得。",
+      "priority": 5
+    },
+    {
+      "id": "10.1101/2026.07.23.740343",
+      "title": "cellGeometry: ultra-fast single-cell deconvolution of bulk RNA-Seq using a geometric solution",
+      "link": "https://doi.org/10.1101/2026.07.23.740343",
+      "source": "bioRxiv",
+      "date": "2026-07-23",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "测序与方法学",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "cellGeometry 提出用几何解法做 bulk RNA-seq 的单细胞参考反卷积，重点是提升速度并降低计算开销。虽然它不是 foundation model，但属于单细胞参考库向临床和大队列应用外溢的关键方法链条。",
+      "details": {
+        "methods": "根据 bioRxiv 落地页检索摘要，方法使用几何求解策略，把单细胞参考映射到 bulk RNA-seq 反卷积任务，以实现 ultra-fast deconvolution。输入是单细胞参考与 bulk 表达谱，目标是估计细胞组成。",
+        "findings": "作者主张该方法在保持可用精度的同时显著提高运行效率，从而更适合大规模 bulk 队列或常规分析流程。该类方法有助于把既有单细胞图谱知识迁移到历史 bulk 数据。",
+        "limitations": "当前证据仍是预印本层面；具体 benchmark、与既有反卷积器的定量差距、对参考图谱偏差的敏感性以及跨平台稳健性仍需以全文和代码验证。"
+      },
+      "relevance": "它把单细胞图谱和参考表达空间转化为可规模化使用的解析工具，有助于连接单细胞资源、临床 bulk 队列和后续 AI 生物模型。",
+      "followUp": "关注作者是否开源代码、速度与精度基准、以及在肿瘤微环境等复杂场景中的外部验证。",
       "priority": 6
     }
   ]
