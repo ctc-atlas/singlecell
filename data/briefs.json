@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-07-26 10:40 CST",
-  "statusMessage": "2026-07-26 检索确认 2026-07-24 至 2026-07-26 有 3 条高相关更新：1 条 Nature Communications 多组学细胞图谱论文、1 条 Nature Methods 临床兼容单核转录组方法、1 条 bioRxiv 单细胞参考驱动反卷积预印本；未发现更高相关的单细胞 foundation model / virtual cell 新正式发表。",
+  "updatedAt": "2026-07-28 09:10 CST",
+  "statusMessage": "2026-07-28 检索确认 2026-07-26 至 2026-07-28 有 2 条高相关新增预印本，并补录 1 条 2026-07-24 已正式发表的高相关空间组学方法论文；未发现更高相关的单细胞 foundation model / virtual cell 新正式发表或勘误。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-07-26 10:48 CST",
-    "commit": "c1aa5e1",
+    "state": "pending",
+    "updatedAt": "2026-07-28 09:10 CST",
+    "commit": "",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "GitHub Pages 已同步到 ctc-atlas/singlecell 的 main 文献内容提交（c1aa5e1）。"
+    "message": "2026-07-28 文献内容已更新，等待首次推送后回填 GitHub 同步状态。"
   },
   "categories": [
     {
@@ -1210,6 +1210,75 @@
       "relevance": "它把单细胞图谱和参考表达空间转化为可规模化使用的解析工具，有助于连接单细胞资源、临床 bulk 队列和后续 AI 生物模型。",
       "followUp": "关注作者是否开源代码、速度与精度基准、以及在肿瘤微环境等复杂场景中的外部验证。",
       "priority": 6
+    },
+    {
+      "id": "10.64898/2026.07.26.740813",
+      "title": "Interpretable gene networks from single-cell foundation models reveal conserved neurogenic dysfunction in Parkinson's disease",
+      "link": "https://doi.org/10.64898/2026.07.26.740813",
+      "source": "bioRxiv",
+      "date": "2026-07-27",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "虚拟细胞与扰动",
+        "多组学与调控"
+      ],
+      "summary": "scGENet 试图把单细胞 foundation model 的 gene embedding 还原为可解释的上下文特异基因网络，并在帕金森病类器官与人脑数据中寻找保守异常神经发生程序。它把“表征强但难解释”的基础模型问题直接连接到疾病机制提取。",
+      "details": {
+        "methods": "作者提出 scGENet，从 foundation model 导出的基因嵌入构建 context-specific gene interaction networks，并在 human midbrain organoid transcriptomic data 上微调预训练模型；随后结合 single-nucleus RNA sequencing 与独立 substantia nigra 数据集做交叉验证。",
+        "findings": "预印本摘要称，fine-tuned scGPT brain model 导出的网络与 curated neuronal pathways、PD genetic risk loci 和独立患者转录组 signature 的一致性最高；在人 iPSC 来源 PD 中脑类器官中识别出与神经元分化、突触信号和细胞周期相关的模块，并观察到多巴胺能神经元减少、radial glia-like progenitors 扩增，以及表达 SNCA 和 VGLUT2 的多巴胺能神经元亚型。",
+        "limitations": "当前证据来自预印本摘要，网络可解释性和疾病关联仍主要基于计算一致性而非因果干预；微调场景聚焦脑组织与 PD，跨组织泛化、不同 foundation model 稳定性及实验验证强度仍待独立复现。"
+      },
+      "relevance": "它把单细胞基础模型直接推进到可解释疾病网络和虚拟病理细胞程序提取。",
+      "followUp": "关注 scGENet 代码、微调数据划分、外部疾病队列复现与实验扰动验证。",
+      "priority": 1
+    },
+    {
+      "id": "10.1038/s41467-026-74928-7",
+      "title": "RETROFIT: Reference-free deconvolution of cell-type mixtures in spatial transcriptomics",
+      "link": "https://doi.org/10.1038/s41467-026-74928-7",
+      "source": "Nature Communications",
+      "date": "2026-07-24",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "细胞图谱与数据底座",
+        "测序与方法学"
+      ],
+      "summary": "RETROFIT 正式发表，主打在没有匹配单细胞参考或 marker gene 的情况下，直接对 spatial transcriptomics spot mixture 做 reference-free 去卷积。对于高分辨率空间平台，这类“无参考”能力比单一任务提分更关键，因为它决定很多组织和平台能否被纳入后续图谱与模型流程。",
+      "details": {
+        "methods": "论文提出 Bayesian reference-free deconvolution framework，直接基于空间转录组测序读数推断 cell-type composition 与表达，并把外部信息限定在 post hoc annotation 阶段；评估覆盖 simulations、多组真实数据和 Visium HD。",
+        "findings": "摘要称 RETROFIT 在多组模拟和真实数据上优于已有 reference-free 方法，并在参考不完美时达到或超过 reference-based 方法；在 near-single-cell resolution 的 Visium HD 数据上仍可恢复细粒度空间模式。",
+        "limitations": "它解决的是空间去卷积而非通用 foundation model；Bayesian 假设、细胞类型数设定、分辨率变化和组织复杂度都会影响结果，真实部署仍需关注计算成本、注释后处理和跨平台稳健性。"
+      },
+      "relevance": "它增强了空间组学在缺参考场景下的可用性，为空间图谱底座和后续单细胞大模型训练提供更广的数据入口。",
+      "followUp": "关注 Bioconductor 包的外部复现、Visium HD 之外平台表现以及与参考驱动模型的混合使用策略。",
+      "priority": 2
+    },
+    {
+      "id": "10.64898/2026.07.23.740264",
+      "title": "Spatium: A Protein Language Foundation Model for Spatial Proteomics",
+      "link": "https://doi.org/10.64898/2026.07.23.740264",
+      "source": "bioRxiv",
+      "date": "2026-07-26",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "空间与时空组学",
+        "多组学与调控"
+      ],
+      "summary": "Spatium 把 spatial proteomics 当作 protein language foundation model 的训练对象，在受限且跨数据集不重合的蛋白 panel 上学习稳定细胞状态表征。它把 foundation model 路线从单细胞 RNA 扩展到空间蛋白组学，是跨模态虚拟细胞的重要补充。",
+      "details": {
+        "methods": "作者在多个 spatial proteomics platforms 的超过 5,100 万细胞上训练 protein language foundation model，目标是在受限 protein panel 与不同 measurement scale 下学习鲁棒表征，并通过轻量任务适配完成下游分析。",
+        "findings": "摘要称 Spatium 能恢复与已知 biology 一致的 cell identity 和 marker expression pattern，识别具有连贯 marker enrichment signature 的功能性 spatial microenvironment，并在保持生物学意义的前提下重建缺失蛋白测量。",
+        "limitations": "结果仍来自预印本摘要，训练语料的 panel 组成和平台偏倚可能决定泛化边界；空间蛋白组与转录组之间并不等价，缺失重建和微环境解释仍需独立 benchmark 与实验验证。"
+      },
+      "relevance": "它拓展了单细胞/空间基础模型的模态边界，使虚拟细胞建模更接近真实多模态细胞状态。",
+      "followUp": "关注模型权重、跨平台 benchmark、缺失蛋白重建评测和与空间转录组联合建模的可能性。",
+      "priority": 3
     }
   ]
 }
