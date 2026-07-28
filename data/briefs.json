@@ -2,11 +2,11 @@
   "updatedAt": "2026-07-28 09:10 CST",
   "statusMessage": "2026-07-28 检索确认 2026-07-26 至 2026-07-28 有 2 条高相关新增预印本，并补录 1 条 2026-07-24 已正式发表的高相关空间组学方法论文；未发现更高相关的单细胞 foundation model / virtual cell 新正式发表或勘误。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-07-28 09:10 CST",
-    "commit": "",
+    "state": "success",
+    "updatedAt": "2026-07-28 09:13 CST",
+    "commit": "f572dd0",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-07-28 文献内容已更新，等待首次推送后回填 GitHub 同步状态。"
+    "message": "GitHub Pages 已同步到 ctc-atlas/singlecell 的 main 文献内容提交（f572dd0）。"
   },
   "categories": [
     {
