@@ -3,10 +3,10 @@
   "statusMessage": "2026-07-29 检索确认 2026-07-27 有 2 条高相关单细胞扰动方向新预印本，并补录 1 条 2026-07-22 正式发表的高相关空间多模态测序论文；未发现 2026-07-28 至 2026-07-29 的更高相关正式发表、勘误或代码/数据发布。",
   "sync": {
     "state": "success",
-    "updatedAt": "2026-07-28 09:13 CST",
-    "commit": "f572dd0",
+    "updatedAt": "2026-07-29 09:49 CST",
+    "commit": "0a54bd1",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "GitHub Pages 已同步到 ctc-atlas/singlecell 的 main 文献内容提交（f572dd0）。"
+    "message": "GitHub Pages 已同步到 ctc-atlas/singlecell 的 main 文献内容提交（0a54bd1）。"
   },
   "categories": [
     {
