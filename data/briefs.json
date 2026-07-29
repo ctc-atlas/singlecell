@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-28 09:10 CST",
-  "statusMessage": "2026-07-28 检索确认 2026-07-26 至 2026-07-28 有 2 条高相关新增预印本，并补录 1 条 2026-07-24 已正式发表的高相关空间组学方法论文；未发现更高相关的单细胞 foundation model / virtual cell 新正式发表或勘误。",
+  "updatedAt": "2026-07-29 09:44 CST",
+  "statusMessage": "2026-07-29 检索确认 2026-07-27 有 2 条高相关单细胞扰动方向新预印本，并补录 1 条 2026-07-22 正式发表的高相关空间多模态测序论文；未发现 2026-07-28 至 2026-07-29 的更高相关正式发表、勘误或代码/数据发布。",
   "sync": {
     "state": "success",
     "updatedAt": "2026-07-28 09:13 CST",
@@ -41,6 +41,72 @@
     }
   ],
   "items": [
+    {
+      "id": "10.64898/2026.07.24.740459",
+      "title": "Perturbation response decomposition enables biologically aligned generalization to unseen perturbations and cellular contexts",
+      "link": "https://doi.org/10.64898/2026.07.24.740459",
+      "source": "bioRxiv",
+      "date": "2026-07-27",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "这项预印本主张，单细胞扰动预测的泛化瓶颈不主要在模型复杂度，而在于是否把不同来源的转录响应拆开建模。作者把响应显式分解为全局、扰动特异、细胞系特异以及扰动-细胞系交互四部分，并据此设计对齐模型，在 unseen perturbation、unseen cell line 和组合外推设置下优于更复杂的 SOTA 架构。",
+      "details": {
+        "methods": "研究基于 4 个多细胞系 CRISPRi Perturb-seq screen，先做 response decomposition，再把基因共必需性等 biological priors 对齐到观测转录响应几何，用线性模型和 MLP 作为 response-component-aligned predictor；代码已在 GitHub 公布。",
+        "findings": "摘要称，全局响应是低维的，主要反映增殖与应激程序，可由 control expression 推断；而扰动特异和细胞系特异部分是高维的，不能从 control expression 恢复。利用这种分解后，简单线性或 MLP 模型在多个泛化评测中超过现有更复杂模型，包括未见细胞系和未见扰动组合。",
+        "limitations": "当前仍是预印本，结论依赖 4 个 CRISPRi 数据集和作者设定的分解假设。该框架强调生物先验与响应成分匹配，但其在药物扰动、跨平台 Perturb-seq 以及更复杂组织背景中的稳定性仍需独立复核。"
+      },
+      "relevance": "它直接服务于 virtual cell 与单细胞扰动预测，把“模型更大”转向“响应拆分更合理”的设计原则。",
+      "followUp": "优先关注 response decomposition 是否能迁移到药物、组合扰动和跨实验室 benchmark。",
+      "priority": 1
+    },
+    {
+      "id": "10.64898/2026.07.23.740433",
+      "title": "Towards Principled Evaluation of Single-Cell Perturbation Prediction Models",
+      "link": "https://doi.org/10.64898/2026.07.23.740433",
+      "source": "bioRxiv",
+      "date": "2026-07-27",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "这篇预印本不再比较单个模型谁更强，而是系统拆解单细胞扰动预测 benchmark 为什么常得出互相矛盾的结论。作者提出覆盖表示、度量、分数变换和报告策略的 evaluation taxonomy，并发布 `scPertEval` 参考实现，试图把 virtual cell 方向的评测协议标准化。",
+      "details": {
+        "methods": "作者构建了 perturbation prediction evaluation taxonomy，并用自建的 Python 包 scPertEval 在 7 个公开单细胞扰动数据集上比较不同 protocol behavior；同时公开了代码仓库和图表复现仓库。",
+        "findings": "摘要指出，不同 benchmark 在表示、metric、score transformation 和 reporting choices 上差异很大，因此测到的是不同维度的预测质量，直接横向比较经常失真。论文目标不是给出唯一最佳协议，而是把 trade-off 显式化，让社区能按具体 benchmarking goal 选择更可比、任务对齐的评测。",
+        "limitations": "这是方法学与社区规范层面的预印本，不直接证明某类 virtual cell 模型在生物学上更可信。7 个公开数据集和作者选取的协议覆盖面仍有限，后续是否被社区采纳还要看外部复现与扩展。"
+      },
+      "relevance": "它为单细胞大模型和 virtual cell 的核心瓶颈之一，即“评测不一致”，提供了更规范的基线框架。",
+      "followUp": "关注 scPertEval 是否被主流 perturbation benchmark、竞赛和新模型论文实际采用。",
+      "priority": 2
+    },
+    {
+      "id": "10.1038/s41587-026-03194-1",
+      "title": "Single-nucleus multimodal spatial transcriptomics reveals spatial colocalization of neoantigen-expressing tumor cells and cognate T cells",
+      "link": "https://doi.org/10.1038/s41587-026-03194-1",
+      "source": "Nature Biotechnology",
+      "date": "2026-07-22",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "这篇 `Nature Biotechnology` 正式发表论文提出 Slide-GoTags，把 targeted transcript genotyping、TCR sequencing 和 single-nucleus RNA-seq 融合到同一张冷冻组织切片的 droplet-based spatial transcriptomics 工作流中。它把空间组学从“看细胞在哪”推进到“看肿瘤新抗原细胞与对应 T 细胞是否共定位”，对空间免疫图谱和多模态组织测序都很关键。",
+      "details": {
+        "methods": "Slide-GoTags 是单核、多模态空间转录组方法，在同一组织切片上联合 targeted transcript genotyping、TCR sequencing 与 snRNA-seq；论文在小鼠和人肿瘤样本上应用，并将数据沉淀到 Broad Single Cell Portal。",
+        "findings": "摘要报告该方法观察到克隆扩增的 neoantigen-specific T cells 与表达相应新抗原的肿瘤细胞发生空间共定位，并识别出受 anti-PD1 或 anti-CTLA4 影响的不同空间免疫景观。在人肿瘤中，作者还报告 interferon-driven immunogenicity niches 在“hot” tumor 中更富集，并能通过空间邻近性检测 TCR-neoantigen interaction。",
+        "limitations": "论文是同行评审正式发表，但当前证据集中在肿瘤免疫场景，不等于可直接迁移到一般组织图谱或非肿瘤空间组学。方法依赖 targeted genotyping 与可检测的 TCR/neoantigen 线索，实验成本、切片质量和平台兼容性也会影响推广。"
+      },
+      "relevance": "它拓展了空间与时空组学的数据底座，为面向组织微环境的 AI 生物模型和更真实的虚拟细胞上下文提供多模态观测。",
+      "followUp": "继续关注 Slide-GoTags 在更多肿瘤类型、免疫治疗队列和非肿瘤空间图谱中的扩展。",
+      "priority": 3
+    },
     {
       "id": "10.1038/s41586-026-10689-z",
       "title": "Universal cell embedding provides a foundation model for cell biology",
