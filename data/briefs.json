@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-07-29 09:44 CST",
-  "statusMessage": "2026-07-29 检索确认 2026-07-27 有 2 条高相关单细胞扰动方向新预印本，并补录 1 条 2026-07-22 正式发表的高相关空间多模态测序论文；未发现 2026-07-28 至 2026-07-29 的更高相关正式发表、勘误或代码/数据发布。",
+  "updatedAt": "2026-07-30 09:16 CST",
+  "statusMessage": "2026-07-30 检索确认在 2026-07-29 至 2026-07-30 的严格时间窗内，未发现更高相关的 single-cell foundation model、virtual cell、细胞图谱、空间组学、测序技术及相关 AI 生物模型新论文、正式发表、修订、代码数据发布或勘误；今日未新增或修订高相关条目。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-07-29 09:49 CST",
-    "commit": "0a54bd1",
+    "state": "pending",
+    "updatedAt": "2026-07-30 09:16 CST",
+    "commit": "",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "GitHub Pages 已同步到 ctc-atlas/singlecell 的 main 文献内容提交（0a54bd1）。"
+    "message": "2026-07-30 检索结果已写入本地，等待本次文献内容提交与 GitHub Pages 同步状态刷新。"
   },
   "categories": [
     {
