@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-07-30 09:16 CST",
-  "statusMessage": "2026-07-30 检索确认在 2026-07-29 至 2026-07-30 的严格时间窗内，未发现更高相关的 single-cell foundation model、virtual cell、细胞图谱、空间组学、测序技术及相关 AI 生物模型新论文、正式发表、修订、代码数据发布或勘误；今日未新增或修订高相关条目。",
+  "updatedAt": "2026-08-01 11:34 CST",
+  "statusMessage": "2026-08-01 检索确认在 2026-07-31 至 2026-08-01 的严格时间窗内，未发现更高相关的 single-cell foundation model、virtual cell、细胞图谱、空间组学、测序技术及相关 AI 生物模型新论文、正式发表、修订、代码数据发布或勘误；本次同时回填 1 条此前未收录的高相关同行评审正式发表条目。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-07-30 09:17 CST",
-    "commit": "2892250",
+    "state": "pending",
+    "updatedAt": "2026-08-01 11:34 CST",
+    "commit": "",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "GitHub Pages 已同步到 ctc-atlas/singlecell 的 main 文献内容提交（2892250）。"
+    "message": "2026-08-01 文献简报已更新待同步；仅在两阶段推送全部成功后回填 success。"
   },
   "categories": [
     {
@@ -1322,6 +1322,28 @@
       "relevance": "它增强了空间组学在缺参考场景下的可用性，为空间图谱底座和后续单细胞大模型训练提供更广的数据入口。",
       "followUp": "关注 Bioconductor 包的外部复现、Visium HD 之外平台表现以及与参考驱动模型的混合使用策略。",
       "priority": 2
+    },
+    {
+      "id": "10.1126/science.adx0673",
+      "title": "Human body single-cell atlas of three-dimensional genome organization and DNA methylation",
+      "link": "https://doi.org/10.1126/science.adx0673",
+      "source": "Science",
+      "date": "2026-07-23",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "细胞图谱与数据底座",
+        "多组学与调控"
+      ],
+      "summary": "这篇 `Science` 论文把单细胞图谱从转录组进一步扩展到三维基因组结构与 DNA 甲基化，给出覆盖 16 种人体组织的单核多组学 body map。它不是狭义 foundation model 论文，但为单细胞大模型、调控建模和虚拟细胞提供了更深层的细胞状态底座。",
+      "details": {
+        "methods": "根据 PubMed 摘要和对应预印本公开正文，研究使用 single-nucleus methyl-3C sequencing（snm3C-seq）对 16 种人体组织的 86,689 个单核同时测量三维基因组结构与 DNA 甲基化，并整合得到 35 个 major cell types 与 206 个 cell subtypes。",
+        "findings": "论文报告在几乎所有细胞类型中观察到广泛的 CG 与 non-CG methylation 差异，并在单细胞分辨率下描绘 3D chromatin structure。作者还指出，按 DNA methylation 与按 genome structure 划分的细胞类型之间存在广泛不一致，提示不同谱系维持细胞身份所依赖的表观基因组特征可能不同。",
+        "limitations": "该研究已同行评审正式发表，但主要提供图谱与关联性观察，不直接建立因果调控机制。其 16 个组织与 86,689 个单核虽已具规模，仍不能覆盖全部人体状态、疾病场景与动态扰动过程；不同组织供体、测序深度和整合策略也会影响可比性。"
+      },
+      "relevance": "它补强了细胞图谱与调控层训练数据底座，为单细胞基础模型从表达表征走向表观调控与跨模态虚拟细胞提供高价值参考。",
+      "followUp": "继续关注配套浏览器、原始数据下载、跨模态整合资源，以及是否被后续 foundation model 用作预训练或外部验证底座。",
+      "priority": 3
     },
     {
       "id": "10.64898/2026.07.23.740264",
