@@ -2,11 +2,11 @@
   "updatedAt": "2026-08-03 09:11 CST",
   "statusMessage": "2026-08-03 检索确认在 2026-08-02 至 2026-08-03 的严格时间窗内，新增 2 条高相关 bioRxiv 预印本，分别涉及谱系约束细胞图谱重建与单细胞测序处理基础设施。",
   "sync": {
-    "state": "pending",
+    "state": "success",
     "updatedAt": "2026-08-03 09:11 CST",
-    "commit": "4639310",
+    "commit": "399cb14",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-03 文献简报已更新，等待本次白名单文件提交与 GitHub Pages 同步结果。"
+    "message": "GitHub Pages 已同步到 ctc-atlas/singlecell 的 main 文献内容提交（399cb14）。"
   },
   "categories": [
     {
