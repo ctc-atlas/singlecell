@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-06 09:14 CST",
-  "statusMessage": "2026-08-06 检索确认在 2026-08-05 至 2026-08-06 的严格时间窗内，未发现新的高相关单细胞基础模型、虚拟细胞、细胞图谱、空间组学或测序方法更新；已复核主要期刊、预印本平台与 DOI/索引来源。",
+  "updatedAt": "2026-08-06 09:15 CST",
+  "statusMessage": "2026-08-06 检索确认在 2026-08-05 至 2026-08-06 的严格时间窗内，未发现新的高相关单细胞基础模型、虚拟细胞、细胞图谱、空间组学或测序方法更新；主要来源已复核且网页同步状态已刷新。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-08-06 09:14 CST",
-    "commit": null,
+    "state": "success",
+    "updatedAt": "2026-08-06 09:15 CST",
+    "commit": "cd6d928",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-06 文献简报待推送；首次内容提交成功后将回填网页同步状态。"
+    "message": "2026-08-06 文献简报已同步到 GitHub Pages；文献内容提交为 cd6d928。"
   },
   "categories": [
     {
