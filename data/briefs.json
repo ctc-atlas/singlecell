@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-06 09:15 CST",
-  "statusMessage": "2026-08-06 检索确认在 2026-08-05 至 2026-08-06 的严格时间窗内，未发现新的高相关单细胞基础模型、虚拟细胞、细胞图谱、空间组学或测序方法更新；主要来源已复核且网页同步状态已刷新。",
+  "updatedAt": "2026-08-08 10:18 CST",
+  "statusMessage": "2026-08-08 检索确认在 2026-08-06 至 2026-08-08 的严格时间窗内，新增 1 条高相关 arXiv 预印本更新（BioM-JEPA）；主要来源已复核，当前内容已写入并等待本轮 GitHub 同步完成后刷新网页状态。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-08-06 09:15 CST",
-    "commit": "cd6d928",
+    "state": "pending",
+    "updatedAt": "2026-08-08 10:18 CST",
+    "commit": "",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-06 文献简报已同步到 GitHub Pages；文献内容提交为 cd6d928。"
+    "message": "2026-08-08 文献简报内容已更新待同步；完成两阶段推送后再回填成功状态与文献内容提交哈希。"
   },
   "categories": [
     {
@@ -41,6 +41,29 @@
     }
   ],
   "items": [
+    {
+      "id": "arxiv:2608.05928",
+      "title": "BioM-JEPA: joint-embedding prediction of graph-connected gene blocks in single cells",
+      "link": "https://arxiv.org/abs/2608.05928",
+      "source": "arXiv",
+      "date": "2026-08-06",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "虚拟细胞与扰动",
+        "多组学与调控"
+      ],
+      "summary": "这篇 arXiv 预印本把单细胞自监督学习目标从逐基因重构转向对图连接基因块的 joint-embedding prediction。作者用蛋白互作和语料共表达定义 gene block，再让 student 网络根据剩余基因去预测 teacher 给出的目标块表示，目标是学习更少受测序深度混杂影响的细胞表征。",
+      "details": {
+        "methods": "BioM-JEPA 采用 student-teacher 的 JEPA 架构，以 protein-association 与 corpus-derived coexpression 证据构建 graph-connected gene blocks；student 从同一细胞的剩余基因预测目标块表示，teacher 用完整观测基因集提供目标表示。论文在 CellBench 任务、hPancreas 实验和多种 representation diagnostics 上，将该目标与 token prediction、random-block 和 reconstruction 控制进行比较，并使用 linear attention 降低基因级注意力的二次复杂度。",
+        "findings": "摘要报告，block-level prediction 产生了更高 effective rank、与 detected-gene depth 更弱关联的嵌入；在 CellBench 评测中，冻结的 BioM-JEPA 嵌入保留了表达、pathway 和 neighborhood 信息，并在比较模型中取得最低的 aggregate perturbation-response error。作者还报告，在匹配的一轮 hPancreas 实验中，其 fine-tuning throughput 比 scFoundation 高 5.75 倍，held-out embedding throughput 高 3.76 倍。",
+        "limitations": "当前证据全部来自 arXiv 预印本摘要与作者自报基准，尚未经同行评审。gene block 的构造依赖外部蛋白关联与共表达先验，结果也主要集中在作者选定的 CellBench 和 pancreas 设置；摘要仅说明训练代码与 checkpoint 将经 GitHub 发布，当前还不能从公开仓库独立复核实现与可重复性。"
+      },
+      "relevance": "它与单细胞基础模型直接相关，同时把更高效的表征学习和扰动响应评测连接起来，属于从“基因重构式预训练”转向“结构化表示预测”的新路线。",
+      "followUp": "关注代码与 checkpoint 何时发布，以及该目标在跨组织、跨物种和未见扰动设置下是否仍优于重构式预训练。",
+      "priority": 1
+    },
     {
       "id": "10.64898/2026.07.30.741939",
       "title": "Reconstructing whole-organism cell phylogenies with resolved ancestral transcriptional states",
