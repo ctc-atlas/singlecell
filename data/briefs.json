@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-08 10:18 CST",
-  "statusMessage": "2026-08-08 检索确认在 2026-08-06 至 2026-08-08 的严格时间窗内，新增 1 条高相关 arXiv 预印本更新（BioM-JEPA）；主要来源已复核，当前内容已写入并等待本轮 GitHub 同步完成后刷新网页状态。",
+  "updatedAt": "2026-08-08 10:20 CST",
+  "statusMessage": "2026-08-08 检索确认在 2026-08-06 至 2026-08-08 的严格时间窗内，新增 1 条高相关 arXiv 预印本更新（BioM-JEPA）；主要来源已复核，GitHub Pages 同步状态已刷新。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-08-08 10:18 CST",
-    "commit": "",
+    "state": "success",
+    "updatedAt": "2026-08-08 10:20 CST",
+    "commit": "e9916c2",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-08 文献简报内容已更新待同步；完成两阶段推送后再回填成功状态与文献内容提交哈希。"
+    "message": "2026-08-08 文献简报已同步到 GitHub Pages；文献内容提交为 e9916c2。"
   },
   "categories": [
     {
