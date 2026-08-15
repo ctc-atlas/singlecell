@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-15 09:45 CST",
-  "statusMessage": "2026-08-15 检索确认在 2026-08-14 至 2026-08-15 的严格时间窗内，未发现更晚的高相关原始更新；本次补录 2 条此前站内未收录、发表于 2026-08-07 的 arXiv 预印本，涉及数字细胞构建基础模型与空间转录组几何基础模型。",
+  "updatedAt": "2026-08-15 09:49 CST",
+  "statusMessage": "2026-08-15 检索确认在 2026-08-14 至 2026-08-15 的严格时间窗内，未发现更晚的高相关原始更新；已补录 2 条发表于 2026-08-07 的 arXiv 预印本并完成 GitHub Pages 同步刷新。",
   "sync": {
     "state": "success",
-    "updatedAt": "2026-08-14 09:15 CST",
-    "commit": "dca90b9",
+    "updatedAt": "2026-08-15 09:49 CST",
+    "commit": "fd5c771",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-14 文献简报已同步到 GitHub Pages；文献内容提交为 dca90b9。"
+    "message": "2026-08-15 文献简报已同步到 GitHub Pages；文献内容提交为 fd5c771。"
   },
   "categories": [
     {
