@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-14 09:15 CST",
-  "statusMessage": "2026-08-14 检索确认在 2026-08-12 至 2026-08-14 的严格时间窗内，未发现新的高相关单细胞大模型、virtual cell、空间组学或测序方法原始更新；主要来源已复核，GitHub Pages 同步状态已刷新。",
+  "updatedAt": "2026-08-15 09:45 CST",
+  "statusMessage": "2026-08-15 检索确认在 2026-08-14 至 2026-08-15 的严格时间窗内，未发现更晚的高相关原始更新；本次补录 2 条此前站内未收录、发表于 2026-08-07 的 arXiv 预印本，涉及数字细胞构建基础模型与空间转录组几何基础模型。",
   "sync": {
     "state": "success",
     "updatedAt": "2026-08-14 09:15 CST",
@@ -41,6 +41,52 @@
     }
   ],
   "items": [
+    {
+      "id": "arxiv:2608.06659",
+      "title": "CellWorld: a unified foundation model for digital cell construction",
+      "link": "https://arxiv.org/abs/2608.06659",
+      "source": "arXiv",
+      "date": "2026-08-07",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "虚拟细胞与扰动",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "这篇 arXiv 预印本把“digital cell construction”明确表述为统一基础模型问题，尝试用一个预训练模型同时覆盖细胞表征、跨物种泛化和药物响应预测。作者提出 agentic world model 结构，用多专家编码器和路由机制处理不同尺度与任务的单细胞信号。",
+      "details": {
+        "methods": "CellWorld 由 12 个 expert encoders、swarm-like router 和约 5.8 亿参数的主干组成，预训练语料覆盖 26 个数据集、约 2.6 亿细胞，跨 6 个物种并包含健康与疾病状态。摘要称作者在 zero-shot 与 linear-probe 细胞注释、drug response generalization 等任务上评估模型，并开放代码、预训练模型与在线 demo。",
+        "findings": "arXiv 摘要报告，该模型在多种下游设置中超过现有单细胞基础模型，同时在仅微调顶层约 5% 参数时仍能保持有竞争力的跨任务性能。作者将其定位为面向 digital cell construction 的统一基础模型，而不是只服务于单一注释或整合任务的表征器。",
+        "limitations": "当前证据来自 arXiv 预印本摘要与作者给出的 benchmark 结论，尚未经同行评审。260M 细胞级预训练和多任务优势仍需独立复现，且“digital cell construction”或“virtual cell”表述本身并不等于已实现可验证的机制级细胞模拟。"
+      },
+      "relevance": "它直接连接单细胞基础模型、虚拟细胞和大规模细胞图谱三条主线，代表该领域开始把统一细胞世界模型作为更明确的目标陈述。",
+      "followUp": "优先关注公开代码和模型权重能否支持独立 benchmark，以及药物响应与跨物种泛化是否能在外部数据上复现。",
+      "priority": 1
+    },
+    {
+      "id": "arxiv:2608.06824",
+      "title": "GeneGeoFlow: A Large Geometric Foundation Model for Spatial Transcriptomics",
+      "link": "https://arxiv.org/abs/2608.06824",
+      "source": "arXiv",
+      "date": "2026-08-07",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "单细胞基础模型",
+        "多组学与调控"
+      ],
+      "summary": "GeneGeoFlow 把空间转录组基础模型从纯表达表征推进到显式几何建模，目标是在同一框架中学习空间上下文、组织结构和转录信号。作者强调 spatial transcriptomics 的关键难点并非只在基因表达本身，而在于如何把组织坐标与局部几何关系纳入预训练目标。",
+      "details": {
+        "methods": "该模型在约 1,520 万个细胞或 spot 上预训练，覆盖转录组与空间转录组数据，并在架构中引入几何感知组件与空间先验。摘要报告评测包括 zero-shot tissue classification、batch correction、clustering、spatial domain identification、spatial context recovery 和 deconvolution 等任务。",
+        "findings": "摘要称，GeneGeoFlow 相比此前方法在 zero-shot tissue classification、batch correction、clustering、spatial domain identification、spatial context recovery 和 deconvolution 上分别提升 7.89%、19.79%、28.07%、9.38%、44.05% 和 7.4%。作者据此主张，大规模几何预训练可提升空间组学基础模型在组织结构理解与跨数据泛化上的表现。",
+        "limitations": "这些结果目前仅来自 arXiv 预印本摘要与作者自报对比，尚未经同行评审。预训练语料组成、几何先验选择和任务定义都可能影响提升幅度，zero-shot 指标的改进也不直接等同于对生物机制或空间因果关系的可靠刻画。"
+      },
+      "relevance": "它把单细胞基础模型与空间组学几何建模直接融合，是“空间 foundation model”从表达压缩走向结构感知的重要信号。",
+      "followUp": "继续关注代码、权重和数据覆盖说明，以及几何先验在跨平台空间组学和时空组学任务中的稳健性。",
+      "priority": 2
+    },
     {
       "id": "arxiv:2608.05928",
       "title": "BioM-JEPA: joint-embedding prediction of graph-connected gene blocks in single cells",
