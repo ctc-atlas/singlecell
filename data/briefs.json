@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-15 09:49 CST",
-  "statusMessage": "2026-08-15 检索确认在 2026-08-14 至 2026-08-15 的严格时间窗内，未发现更晚的高相关原始更新；已补录 2 条发表于 2026-08-07 的 arXiv 预印本并完成 GitHub Pages 同步刷新。",
+  "updatedAt": "2026-08-17 09:13 CST",
+  "statusMessage": "2026-08-17 检索确认在 2026-08-16 至 2026-08-17 的严格时间窗内，未发现更晚的高相关原始更新；本轮修订 1 条错误关联的 arXiv 记录，并补录 2 条发表于 2026-07-27 的高相关预印本，待 GitHub Pages 同步。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-08-15 09:49 CST",
+    "state": "pending",
+    "updatedAt": "2026-08-17 09:13 CST",
     "commit": "fd5c771",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-15 文献简报已同步到 GitHub Pages；文献内容提交为 fd5c771。"
+    "message": "2026-08-17 文献简报已生成，等待本轮文献内容提交与 GitHub Pages 同步。"
   },
   "categories": [
     {
@@ -66,25 +66,25 @@
     },
     {
       "id": "arxiv:2608.06824",
-      "title": "GeneGeoFlow: A Large Geometric Foundation Model for Spatial Transcriptomics",
+      "title": "Control-Anchored Attention and Flow: A Generative Virtual Cell Model for Efficient Perturbation Prediction",
       "link": "https://arxiv.org/abs/2608.06824",
       "source": "arXiv",
       "date": "2026-08-07",
-      "updateType": "新预印本",
+      "updateType": "修订预印本记录",
       "evidence": "预印本",
       "categories": [
-        "空间与时空组学",
+        "虚拟细胞与扰动",
         "单细胞基础模型",
         "多组学与调控"
       ],
-      "summary": "GeneGeoFlow 把空间转录组基础模型从纯表达表征推进到显式几何建模，目标是在同一框架中学习空间上下文、组织结构和转录信号。作者强调 spatial transcriptomics 的关键难点并非只在基因表达本身，而在于如何把组织坐标与局部几何关系纳入预训练目标。",
+      "summary": "这条记录依据原始 arXiv 页面修订：`2608.06824` 实际对应的是一个 generative virtual cell 预印本，而不是此前误记的空间组学基础模型。论文提出以 control 状态为锚点的 attention 与 flow matching 方案，目标是在大规模单细胞扰动数据上更高效地做 perturbation prediction。",
       "details": {
-        "methods": "该模型在约 1,520 万个细胞或 spot 上预训练，覆盖转录组与空间转录组数据，并在架构中引入几何感知组件与空间先验。摘要报告评测包括 zero-shot tissue classification、batch correction、clustering、spatial domain identification、spatial context recovery 和 deconvolution 等任务。",
-        "findings": "摘要称，GeneGeoFlow 相比此前方法在 zero-shot tissue classification、batch correction、clustering、spatial domain identification、spatial context recovery 和 deconvolution 上分别提升 7.89%、19.79%、28.07%、9.38%、44.05% 和 7.4%。作者据此主张，大规模几何预训练可提升空间组学基础模型在组织结构理解与跨数据泛化上的表现。",
-        "limitations": "这些结果目前仅来自 arXiv 预印本摘要与作者自报对比，尚未经同行评审。预训练语料组成、几何先验选择和任务定义都可能影响提升幅度，zero-shot 指标的改进也不直接等同于对生物机制或空间因果关系的可靠刻画。"
+        "methods": "根据 arXiv 原始摘要，作者将 control-conditioned attention 与 flow matching 结合到 generative virtual cell 框架中，以 control 细胞状态为锚点生成扰动后的表达分布，并在单细胞 perturbation prediction 任务上与现有方法比较效率和泛化表现。论文标题与摘要未把它描述为空间转录组模型，`GeneGeoFlow` 更像文中提出的技术组件名称而非论文题名。",
+        "findings": "arXiv 摘要把该方法定位为 efficient perturbation prediction 的生成式 virtual cell 模型，强调其在保持预测质量的同时降低计算负担，并以 control-anchored 建模改善对扰动响应的表征。与此前错误记录相比，这篇工作真正聚焦的是虚拟细胞与扰动外推，而非空间几何预训练。",
+        "limitations": "当前证据仅来自 arXiv 页面可见的题名与摘要，尚未经同行评审。由于此前站内记录把同一 arXiv 编号误关联到另一篇空间组学叙事，本次只修正可由原始来源确认的信息，不补写无法从 arXiv 原文直接核实的 benchmark 细节。"
       },
-      "relevance": "它把单细胞基础模型与空间组学几何建模直接融合，是“空间 foundation model”从表达压缩走向结构感知的重要信号。",
-      "followUp": "继续关注代码、权重和数据覆盖说明，以及几何先验在跨平台空间组学和时空组学任务中的稳健性。",
+      "relevance": "修订后，这条工作与 virtual cell、单细胞扰动预测和生成式基础模型直接相关，比此前误写的空间组学定位更符合本专题主线。",
+      "followUp": "继续关注作者是否公开代码、数据切分和外部基准，以及 control-anchored 生成式方案在未见扰动上的独立复现。",
       "priority": 2
     },
     {
@@ -198,6 +198,52 @@
       },
       "relevance": "它为单细胞大模型和 virtual cell 的核心瓶颈之一，即“评测不一致”，提供了更规范的基线框架。",
       "followUp": "关注 scPertEval 是否被主流 perturbation benchmark、竞赛和新模型论文实际采用。",
+      "priority": 2
+    },
+    {
+      "id": "10.64898/2026.07.26.740813",
+      "title": "Interpretable gene networks from single-cell foundation models reveal disease mechanisms",
+      "link": "https://doi.org/10.64898/2026.07.26.740813",
+      "source": "bioRxiv",
+      "date": "2026-07-27",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "多组学与调控",
+        "虚拟细胞与扰动"
+      ],
+      "summary": "这篇 bioRxiv 预印本尝试把单细胞基础模型从“高性能表征器”推进到“可解释调控网络发现器”。作者从 foundation model 学到的表示中重建 gene network，并将其用于解析疾病机制与关键调控因子，而不只停留在细胞注释或整合任务。",
+      "details": {
+        "methods": "根据 bioRxiv 原始摘要，作者以单细胞 foundation model 为表示底座，从模型编码的细胞状态结构中提取可解释基因网络，并在疾病相关数据上评估这些网络对机制发现和调控解释的价值。论文主张重点不在额外堆叠更大的下游预测器，而在把预训练表示转化为可审视的 gene-gene interaction structure。",
+        "findings": "摘要表述表明，该框架可从单细胞 foundation model 中恢复与疾病机制相关的 interpretable gene networks，并据此识别潜在调控程序。相较仅报告分类或整合指标，这项工作把 foundation model 的价值转向更贴近机制解释的网络层输出。",
+        "limitations": "目前证据仅来自 bioRxiv 预印本标题与摘要，尚未经同行评审。基因网络的可解释性并不自动等于因果正确性，网络边的稳定性、跨队列可重复性以及对实验验证的支持力度仍需外部复核。"
+      },
+      "relevance": "它把单细胞基础模型与调控网络解释直接连接起来，属于从表征学习迈向机制导向 virtual cell 的关键过渡方向。",
+      "followUp": "优先关注公开代码、外部疾病队列复现，以及网络边是否能被 CRISPR 或其它功能实验验证。",
+      "priority": 2
+    },
+    {
+      "id": "10.64898/2026.07.23.740217",
+      "title": "Spaceland: Histology-Guided Reconstruction of High-Resolution Whole-Organ 3D Molecular Atlases from Sparse Spatial Transcriptomics",
+      "link": "https://doi.org/10.64898/2026.07.23.740217",
+      "source": "bioRxiv",
+      "date": "2026-07-27",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "细胞图谱与数据底座",
+        "单细胞基础模型"
+      ],
+      "summary": "Spaceland 关注如何用稀疏 spatial transcriptomics 切片和组织学信息重建全器官三维分子图谱。它不直接是 foundation model 论文，但对空间图谱数据底座建设和后续空间基础模型训练都高度相关，因为目标是把稀疏、离散的空间观测提升为连续的 3D atlas。",
+      "details": {
+        "methods": "根据 bioRxiv 原始摘要，作者提出 histology-guided reconstruction 框架，将 sparse spatial transcriptomics 与组织学图像联合，用于恢复 whole-organ scale 的高分辨率 3D molecular atlas。方法重点在于利用组织学连续结构补足稀疏空间转录组采样在体积覆盖和分辨率上的不足。",
+        "findings": "摘要显示，该方法能够从有限空间切片重建更完整的器官级三维分子分布，并把组织学先验转化为空间连续性约束。若该结果稳健，它将为时空组学、细胞图谱和空间 foundation model 提供更高密度的训练与验证底座。",
+        "limitations": "目前仍是 bioRxiv 预印本证据，尚未经同行评审。重建质量会强烈依赖组织学图像质量、切片采样密度和配准假设，三维恢复结果也需要更多外部器官、平台与实验验证来确认可靠性。"
+      },
+      "relevance": "它直接关联空间与时空组学的数据底座扩展，能为后续空间基础模型、虚拟组织和大规模细胞图谱提供更连续的三维训练对象。",
+      "followUp": "继续关注公开代码、配准流程与外部器官数据复现，以及是否能与空间基础模型预训练联动。",
       "priority": 2
     },
     {
