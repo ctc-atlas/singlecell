@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-17 09:13 CST",
-  "statusMessage": "2026-08-17 检索确认在 2026-08-16 至 2026-08-17 的严格时间窗内，未发现更晚的高相关原始更新；本轮修订 1 条错误关联的 arXiv 记录，并补录 2 条发表于 2026-07-27 的高相关预印本，待 GitHub Pages 同步。",
+  "updatedAt": "2026-08-17 09:16 CST",
+  "statusMessage": "2026-08-17 检索确认在 2026-08-16 至 2026-08-17 的严格时间窗内，未发现更晚的高相关原始更新；本轮修订 1 条错误关联的 arXiv 记录，并补录 2 条发表于 2026-07-27 的高相关预印本，已完成 GitHub Pages 同步刷新。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-08-17 09:13 CST",
-    "commit": "fd5c771",
+    "state": "success",
+    "updatedAt": "2026-08-17 09:16 CST",
+    "commit": "c8d0ca4",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-17 文献简报已生成，等待本轮文献内容提交与 GitHub Pages 同步。"
+    "message": "2026-08-17 文献简报已同步到 GitHub Pages；文献内容提交为 c8d0ca4。"
   },
   "categories": [
     {
