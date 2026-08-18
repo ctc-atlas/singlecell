@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-18 09:10 CST",
-  "statusMessage": "2026-08-18 检索确认在 2026-08-17 至 2026-08-18 的严格时间窗内，未发现新的高相关原始更新；本轮补充核对了 bioRxiv、medRxiv、PubMed 与期刊端时间窗结果，并已完成 GitHub Pages 同步刷新。",
+  "updatedAt": "2026-08-18 13:41 CST",
+  "statusMessage": "2026-08-18 检索补检覆盖 2026-08-16 至 2026-08-18（Asia/Shanghai），新增 4 条、修订 0 条，最新收录论文发布日期为 2026-08-17；本轮在 arXiv、PubMed 与 DOI 原始记录中确认了 2 条预印本和 2 条同行评审方法/模型更新，待 GitHub 同步。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-08-18 09:10 CST",
-    "commit": "e3a724d",
+    "state": "pending",
+    "updatedAt": "2026-08-18 13:41 CST",
+    "commit": "",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-18 文献简报已同步到 GitHub Pages；文献内容提交为 e3a724d。"
+    "message": "2026-08-18 文献简报内容已更新，待推送 origin/main 后回填同步提交哈希。"
   },
   "categories": [
     {
@@ -41,6 +41,96 @@
     }
   ],
   "items": [
+    {
+      "id": "arxiv:2608.16718",
+      "title": "CytoFormer: A Molecularly Supervised Cell Foundation Model for Histopathology Cell Classification",
+      "link": "https://arxiv.org/abs/2608.16718",
+      "source": "arXiv",
+      "date": "2026-08-17",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "空间与时空组学",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "这篇 arXiv 预印本把成像型空间转录组配对的 H&E 细胞图像直接用于训练 cell foundation model，试图绕开病理人工标注瓶颈，把 routine histology 接到单细胞尺度的分子监督上。CytoFormer 以 81 张 Xenium 配对切片、16 个器官和 1540 万个细胞为训练底座，是近期把空间组学数据底座外溢到细胞级病理基础模型的代表性进展。",
+      "details": {
+        "methods": "根据 arXiv 原始摘要，作者收集 81 张 imaging-based spatial transcriptomics 与后续 H&E 染色配对的 Xenium 切片，覆盖 16 个器官；通过聚类、marker gene 注释、器官内人工复核和质控生成 23 类细胞标签，并以每个细胞的 H&E patch 训练带多任务、按器官划分分类头的 CytoFormer。",
+        "findings": "摘要报告，CytoFormer 在空间留出组织上的总体准确率为 0.85、macro-F1 为 0.78；冻结编码器后，其线性探针在 4 个专家标注基准上超过 6 个病理 foundation model，并在主动学习设置下以更少标注实现更高的正常上皮与肿瘤区分性能。",
+        "limitations": "当前证据仅来自 arXiv 预印本摘要，尚未经同行评审。该模型的监督信号依赖 Xenium 与 H&E 配对数据、作者定义的 23 类细胞标签及器官分布，是否能泛化到未覆盖组织、平台和更细粒度细胞状态仍需独立复现。"
+      },
+      "relevance": "它直接连接单细胞基础模型、空间组学和细胞图谱数据底座，说明空间转录组正在被用来训练可迁移的细胞级视觉基础模型，而不只是做下游配准或虚拟表达预测。",
+      "followUp": "继续跟踪作者是否公开模型权重、数据切分和外部复现基准，以及该表示能否迁移到细胞状态识别而非仅细胞类型分类。",
+      "priority": 1
+    },
+    {
+      "id": "arxiv:2608.16669",
+      "title": "Concept-based explanation of gene expression prediction from H&E images",
+      "link": "https://arxiv.org/abs/2608.16669",
+      "source": "arXiv",
+      "date": "2026-08-17",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "单细胞基础模型",
+        "测序与方法学"
+      ],
+      "summary": "这篇 arXiv 预印本把“virtual spatial transcriptomics”从只做预测推进到做可解释性分析：作者为 ViT 型 H&E-to-ST 模型引入 relevance propagation 与 concept discovery，希望把转录程序与可见形态学概念对齐，而不是停留在热图层面的解释。",
+      "details": {
+        "methods": "根据 arXiv 原始摘要，作者构建 ViT-based H&E 到 spatial transcriptomics 的预测框架，并结合 ViT-aware layer-wise relevance propagation 与 relaxed archetypal TopK sparse autoencoder-based concept discovery，从局部相关性和全局概念两层解释组织形态与转录程序之间的映射。方法在 HEST-1k 结直肠癌空间转录组数据上开发，并在 TCGA COAD 做泛化评估。",
+        "findings": "摘要称，该框架能够较准确地预测临床相关空间转录特征和分子表型；空间分辨与汇总后的 iCMS 分类加权 F1 分别达到 0.872 和 0.819，在 TCGA COAD 上为 0.770。作者还报告，基于 relevance 提取的概念比 activation-derived 概念更直接地连接到下游分子预测。",
+        "limitations": "当前证据仅来自 arXiv 预印本摘要，尚未经同行评审。该工作集中于 H&E 到空间表达预测的解释层，是否能稳定迁移到其它器官、平台和更广泛的空间 foundation model 仍待外部验证。"
+      },
+      "relevance": "它与空间基础模型和虚拟空间组学直接相关，补的是“模型能预测但难解释”的关键缺口，适合作为空间 AI 生物模型可解释性方向的跟踪条目。",
+      "followUp": "关注代码与概念图库是否公开，以及概念级解释是否能被病理学家或外部空间数据独立验证。",
+      "priority": 2
+    },
+    {
+      "id": "10.1016/j.cels.2026.101703",
+      "title": "Robust identification of cell-cell communication heterogeneity in single cells.",
+      "link": "https://doi.org/10.1016/j.cels.2026.101703",
+      "source": "Cell Systems",
+      "date": "2026-08-17",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "多组学与调控",
+        "测序与方法学"
+      ],
+      "summary": "Cell Systems 正式发表的 scRICH 把单细胞与空间转录组的细胞间通讯推断从“细胞类型平均值”推进到“细胞内异质性 + 动态剪接 + 调控网络”联合建模。对虚拟细胞和组织级信号传递建模而言，这比只做 ligand-receptor 打分更接近机制层。",
+      "details": {
+        "methods": "根据 PubMed 原始记录摘要，scRICH 整合 single-cell 与 spatial transcriptomics 数据，显式刻画同一细胞类型内部的 communication heterogeneity；同时引入 RNA splicing 动态信息，把细胞通讯与 cell fate decisions 关联起来，并通过 multilayer regulatory networks 连接细胞间作用与细胞内调控响应。作者还用角质形成细胞中的 EGF ligand/receptor 共表达实验验证了预测结果。",
+        "findings": "摘要表明，scRICH 能在多个生物场景下捕获不同 communication pathways 与分化趋势、空间分布之间的关系，并比既有通讯推断方法更稳健地揭示细胞类型内部的通讯异质性。该论文已随正式同行评审过程公开透明审稿记录。",
+        "limitations": "虽然已同行评审，但证据主要集中在作者选择的通信场景和验证实验上。它是分析框架而非基础模型本身，实际效果仍依赖输入单细胞/空间数据质量、配体受体先验和动态剪接信息的可用性。"
+      },
+      "relevance": "它直接补强单细胞与空间组学中“跨细胞信号如何驱动状态变化”的分析链路，可作为后续虚拟细胞、空间调控和多层网络模型的重要方法学基线。",
+      "followUp": "关注 scRICH 是否公开可复现实验代码，以及社区是否把它纳入标准 cell-cell communication benchmark。",
+      "priority": 2
+    },
+    {
+      "id": "10.1371/journal.pone.0355867",
+      "title": "Accurate quantification of spliced and unspliced transcripts for single-cell RNA sequencing with tidesurf.",
+      "link": "https://doi.org/10.1371/journal.pone.0355867",
+      "source": "PLOS ONE",
+      "date": "2026-08-17",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "测序与方法学"
+      ],
+      "summary": "PLOS ONE 正式发表的 tidesurf 直指 RNA velocity 里一个实际且常被忽略的问题：velocyto 在 10x 5′ 单细胞测序中会系统性假定相反的转录方向，导致剪接/未剪接计数和后续速度推断偏离。论文给出兼容 3′ 与 5′ 化学体系的替代量化工具。",
+      "details": {
+        "methods": "根据 PubMed 原始记录摘要，tidesurf 是一个命令行工具，用于在 3′ 和 5′ scRNA-seq 协议下准确量化 spliced 与 unspliced transcript。作者在 4 个公开 10x Genomics Chromium 数据集上，将其与 velocyto 及其它现有量化方法比较，重点检验 5′ 测序中转录方向和计数分配差异对 RNA velocity 的影响。",
+        "findings": "摘要称，velocyto 在 5′ 数据上会系统性采用与 10x Cell Ranger 相反的转录方向假设，进而造成速度推断和生物学解释显著偏离；tidesurf 在 velocyto 表现正常的 3′ 体系和 velocyto 出现异常的 5′ 体系中都能恢复更可靠的 spliced/unspliced 计数。",
+        "limitations": "该工作已同行评审，但定位是底层量化方法改进，不直接证明下游所有 RNA velocity 结论都会改变。结果主要来自 10x Chromium 数据集和与既有工具的比较，跨平台泛化和社区采纳情况仍需继续跟踪。"
+      },
+      "relevance": "它属于单细胞测序分析基础设施更新，会直接影响 RNA velocity、动态轨迹推断以及依赖剪接状态的下游模型训练与评测。",
+      "followUp": "关注 Scanpy/scVelo 等主流生态是否整合 tidesurf，以及已有 5′ 单细胞 velocity 研究是否开始回溯重算。",
+      "priority": 3
+    },
     {
       "id": "arxiv:2608.06659",
       "title": "CellWorld: a unified foundation model for digital cell construction",
