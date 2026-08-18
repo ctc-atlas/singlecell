@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-18 09:07 CST",
-  "statusMessage": "2026-08-18 检索确认在 2026-08-17 至 2026-08-18 的严格时间窗内，未发现新的高相关原始更新；本轮补充核对了 bioRxiv、medRxiv、PubMed 与期刊端时间窗结果，并将当日报告标记为待同步。",
+  "updatedAt": "2026-08-18 09:10 CST",
+  "statusMessage": "2026-08-18 检索确认在 2026-08-17 至 2026-08-18 的严格时间窗内，未发现新的高相关原始更新；本轮补充核对了 bioRxiv、medRxiv、PubMed 与期刊端时间窗结果，并已完成 GitHub Pages 同步刷新。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-08-18 09:07 CST",
-    "commit": "c8d0ca4",
+    "state": "success",
+    "updatedAt": "2026-08-18 09:10 CST",
+    "commit": "e3a724d",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-18 检索已完成；当日文献简报待同步到 GitHub Pages。"
+    "message": "2026-08-18 文献简报已同步到 GitHub Pages；文献内容提交为 e3a724d。"
   },
   "categories": [
     {
