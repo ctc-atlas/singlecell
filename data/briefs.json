@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-18 13:44 CST",
-  "statusMessage": "2026-08-18 检索补检覆盖 2026-08-16 至 2026-08-18（Asia/Shanghai），新增 4 条、修订 0 条，最新收录论文发布日期为 2026-08-17；文献内容提交 4adc081 已推送，网页同步元数据已回填。",
+  "updatedAt": "2026-08-19 09:15 CST",
+  "statusMessage": "2026-08-19 检索覆盖 2026-08-16 至 2026-08-19（Asia/Shanghai，含缺失日报 2026-08-16 的补检重叠），新增 2 条、修订 0 条，最新收录论文发布日期为 2026-08-18；文献内容待推送，网页同步元数据尚未回填。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-08-18 13:44 CST",
-    "commit": "4adc081",
+    "state": "pending",
+    "updatedAt": "2026-08-19 09:15 CST",
+    "commit": "pending",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-18 文献简报已同步到 GitHub Pages；文献内容提交为 4adc081。"
+    "message": "2026-08-19 文献简报待推送；完成文献内容提交后回填同步状态。"
   },
   "categories": [
     {
@@ -41,6 +41,52 @@
     }
   ],
   "items": [
+    {
+      "id": "pmid:42584997",
+      "title": "Canon enables causal inference of downstream genes in single-cell CRISPR studies via instrumental variable analysis.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42584997/",
+      "source": "Proceedings of the National Academy of Sciences of the United States of America",
+      "date": "2026-08-18",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "虚拟细胞与扰动",
+        "多组学与调控",
+        "测序与方法学"
+      ],
+      "summary": "PNAS 正式发表的 Canon 直击单细胞 CRISPR 筛选里“相关不等于因果”的核心问题：作者把每个细胞的 gRNA 扰动状态作为工具变量，构建一套一体化的 IV 分析框架，从 sc-CRISPR 数据里识别真正受目标基因因果影响的下游基因，而不是停留在关联分析。",
+      "details": {
+        "methods": "根据 PubMed 原始摘要，作者把 sc-CRISPR 中单细胞的 gRNA perturbation status 作为 instrumental variables，提出基于 IV analysis 的因果推断框架，并进一步开发一体化方法 Canon，以在不同 sc-CRISPR 平台上系统识别被扰动目标基因潜在因果影响的下游基因。论文用综合模拟和真实数据应用评估其 type I error control、统计功效和跨平台适用性。",
+        "findings": "摘要表明，Canon 在保持稳健 I 类错误控制的同时具备较高统计功效；相较传统 association-based 方法，它更适合从单细胞 CRISPR 筛选中恢复因果 gene-gene relationships，并据此构建更可信的 causal regulatory network 与候选治疗靶点。",
+        "limitations": "该工作已同行评审，但当前能直接核验的证据主要来自 PubMed 摘要。其因果识别建立在工具变量假设、gRNA 设计质量与 sc-CRISPR 数据噪声控制之上，实际表现仍会受平台差异和实验设计约束。"
+      },
+      "relevance": "它与单细胞扰动预测和 Perturb-seq 生态直接相关，因为更可靠的因果下游基因识别能改善扰动效应建模、调控网络学习和生成式虚拟细胞训练的监督信号。",
+      "followUp": "继续跟踪 Canon 的代码实现、与现有 sc-CRISPR benchmark 的公开比较，以及它是否被纳入扰动预测模型的数据处理基线。",
+      "priority": 1
+    },
+    {
+      "id": "pmid:42608830",
+      "title": "SPCC: Inferring Spatial Cell-Cell Interaction by Integrating Single-cell and Spatial Transcriptomics.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42608830/",
+      "source": "Genomics, Proteomics & Bioinformatics",
+      "date": "2026-08-17",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学",
+        "多组学与调控"
+      ],
+      "summary": "Genomics, Proteomics & Bioinformatics 正式发表的 SPCC 聚焦单细胞与空间转录组的未配对整合，目标是在缺少细胞级坐标的空间数据里，为单细胞分配伪空间位置，并进一步提升空间细胞互作推断与空间变异基因发现。",
+      "details": {
+        "methods": "根据 PubMed 原始摘要，SPCC 使用 adversarial joint-variational autoencoder 与 Random Forest 组合框架，对未配对的 single-cell 和 spatial transcriptomics 数据做 alignment 与 mapping，生成 single-cell 到 spatial positions 的映射矩阵，再用伪空间信息执行 cell-cell communication 和 spatial variable gene identification 等下游分析。",
+        "findings": "摘要称，SPCC 在小鼠 somatosensory cortex、breast cancer 和 melanoma brain metastasis 三类空间测序数据上，相比当前常用整合方法对测序噪声更稳健，并能更准确恢复空间结构；作者还报告其识别出此前工具较少发现的 PECAM1-SOX4 癌细胞与内皮细胞互作信号，并已公开 GitHub 代码。",
+        "limitations": "该工作已同行评审，但当前可直接核验的信息仍主要限于 PubMed 摘要。它依赖伪空间映射质量和作者选定数据集的评估设定，跨平台、跨组织和不同空间分辨率下的稳定性仍需外部复现。"
+      },
+      "relevance": "它直接对应空间与时空组学分析方法更新，并为虚拟组织结构、空间调控网络和空间基础模型提供更细粒度的细胞定位与互作推断入口。",
+      "followUp": "关注 SPCC 的代码仓库、与 Tangram 等整合基线的复现实验，以及社区是否将其纳入空间转录组 benchmark。",
+      "priority": 2
+    },
     {
       "id": "arxiv:2608.16718",
       "title": "CytoFormer: A Molecularly Supervised Cell Foundation Model for Histopathology Cell Classification",
