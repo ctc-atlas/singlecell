@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-20 09:10 CST",
-  "statusMessage": "2026-08-20 检索覆盖 2026-08-16 至 2026-08-20（Asia/Shanghai，含缺失日报 2026-08-16 的补检重叠），新增 1 条、修订 0 条，最新收录论文发布日期为 2026-08-19；文献内容提交待本轮推送后回填，网页同步元数据尚未回填。",
+  "updatedAt": "2026-08-20 09:13 CST",
+  "statusMessage": "2026-08-20 检索覆盖 2026-08-16 至 2026-08-20（Asia/Shanghai，含缺失日报 2026-08-16 的补检重叠），新增 1 条、修订 0 条，最新收录论文发布日期为 2026-08-19；文献内容提交 6c2204f 已推送，网页同步元数据已回填。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-08-20 09:10 CST",
-    "commit": "pending",
+    "state": "success",
+    "updatedAt": "2026-08-20 09:13 CST",
+    "commit": "6c2204f",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-20 文献简报已生成，待本轮文献内容提交与网页同步完成后回填。"
+    "message": "2026-08-20 文献简报已同步到 GitHub Pages；文献内容提交为 6c2204f。"
   },
   "categories": [
     {
