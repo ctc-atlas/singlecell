@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-19 09:18 CST",
-  "statusMessage": "2026-08-19 检索覆盖 2026-08-16 至 2026-08-19（Asia/Shanghai，含缺失日报 2026-08-16 的补检重叠），新增 2 条、修订 0 条，最新收录论文发布日期为 2026-08-18；文献内容提交 c2b20b2 已推送，网页同步元数据已回填。",
+  "updatedAt": "2026-08-20 09:10 CST",
+  "statusMessage": "2026-08-20 检索覆盖 2026-08-16 至 2026-08-20（Asia/Shanghai，含缺失日报 2026-08-16 的补检重叠），新增 1 条、修订 0 条，最新收录论文发布日期为 2026-08-19；文献内容提交待本轮推送后回填，网页同步元数据尚未回填。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-08-19 09:18 CST",
-    "commit": "c2b20b2",
+    "state": "pending",
+    "updatedAt": "2026-08-20 09:10 CST",
+    "commit": "pending",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-19 文献简报已同步到 GitHub Pages；文献内容提交为 c2b20b2。"
+    "message": "2026-08-20 文献简报已生成，待本轮文献内容提交与网页同步完成后回填。"
   },
   "categories": [
     {
@@ -41,6 +41,28 @@
     }
   ],
   "items": [
+    {
+      "id": "pmid:42616853",
+      "title": "Pesci: fast and user-friendly software to compare single-cell gene expression across species.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42616853/",
+      "source": "Bioinformatics",
+      "date": "2026-08-19",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "细胞图谱与数据底座",
+        "测序与方法学"
+      ],
+      "summary": "Bioinformatics 正式发表的 Pesci 把跨物种单细胞图谱比较里常被引用但缺乏易用实现的 ICC 算法落成了可直接部署的软件工具，目标是量化不同物种间单细胞表达相似性并辅助识别同源细胞类型。",
+      "details": {
+        "methods": "根据 PubMed 原始 XML 摘要，Pesci 是对 Iterative Correlation of Coexpression (ICC) 算法的 Python 实现，用于对两套 single-cell gene expression atlases 做跨物种 pairwise comparison，以比较表达模式并量化细胞类型相似性。摘要同时给出官方发布渠道：软件可通过 pip、conda 和 GitHub 安装，源码另行归档到 Zenodo。",
+        "findings": "原始摘要没有提供新的大规模 benchmark 数值，而是明确把 Pesci 定位为对既有 ICC 方法的高效、易用实现，填补“算法已提出但缺乏软件实现”的空缺，使跨物种单细胞图谱比较能以更低门槛进入实际分析流程。",
+        "limitations": "该工作已同行评审，但当前可直接核验的信息主要来自 PubMed 摘要，未在摘要中给出系统性能对比或跨多数据集的量化结果。它是软件实现和分析基础设施更新，而非新的单细胞基础模型；实际价值仍取决于 ICC 本身在不同物种、不同基因同源映射设定下的稳健性。"
+      },
+      "relevance": "它属于细胞图谱与数据底座、单细胞分析方法学的直接更新，因为跨物种图谱对齐是构建通用细胞表征、评估跨物种 foundation model 泛化能力和整理训练语料的重要基础环节。",
+      "followUp": "继续跟踪 Pesci 的 GitHub 与 Zenodo 版本、是否补充系统 benchmark，以及社区是否将其纳入跨物种单细胞图谱比较工作流。",
+      "priority": 3
+    },
     {
       "id": "pmid:42584997",
       "title": "Canon enables causal inference of downstream genes in single-cell CRISPR studies via instrumental variable analysis.",
