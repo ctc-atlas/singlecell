@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-20 09:13 CST",
-  "statusMessage": "2026-08-20 检索覆盖 2026-08-16 至 2026-08-20（Asia/Shanghai，含缺失日报 2026-08-16 的补检重叠），新增 1 条、修订 0 条，最新收录论文发布日期为 2026-08-19；文献内容提交 6c2204f 已推送，网页同步元数据已回填。",
+  "updatedAt": "2026-08-21 09:33 CST",
+  "statusMessage": "2026-08-21 检索覆盖 2026-08-18 至 2026-08-21（Asia/Shanghai，含至少 48 小时重叠；reports/ 历史缺失日报日期仍为 2026-08-16），新增 1 条、修订 0 条，最新收录论文发布日期为 2026-08-19；本次检索不完整，待首次推送后回填文献内容提交哈希。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-08-20 09:13 CST",
+    "state": "pending",
+    "updatedAt": "2026-08-21 09:33 CST",
     "commit": "6c2204f",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-20 文献简报已同步到 GitHub Pages；文献内容提交为 6c2204f。"
+    "message": "2026-08-21 文献简报内容已更新，待首次推送成功后回填本次文献内容提交哈希与同步状态。"
   },
   "categories": [
     {
@@ -41,6 +41,28 @@
     }
   ],
   "items": [
+    {
+      "id": "pmid:42615345",
+      "title": "STWave: Fine-Scale Spatial Structure Discovery in Microscopic-Resolution Spatial Transcriptomics via Patchwise Wavelet Graphs.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42615345/",
+      "source": "Advanced Science",
+      "date": "2026-08-19",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "Advanced Science 正式发表的 STWave 直击 microscopic-resolution spatial transcriptomics 在 Visium HD、Xenium、CosMx 等平台上日益突出的两类瓶颈：超大规模数据带来的算力与内存压力，以及单尺度建模对弱生物信号和技术噪声的分离能力不足。",
+      "details": {
+        "methods": "根据 PubMed 原始 XML，STWave 是面向 microscopic-resolution spatial transcriptomics 的 spatial domain identification 框架。方法以 decoupled patch-based learning 缓解训练和推理阶段的硬件限制，并用 discrete wavelet transform 在多尺度上编码基因表达特征，以同时保留全局上下文与细粒度局部结构。",
+        "findings": "原始摘要称，STWave 在空间域聚类任务上达到 state-of-the-art 表现，同时保持较高计算效率；作者在 Visium HD、Xenium 和 CosMx 数据上报告其能够更准确解析复杂组织结构、识别肿瘤微环境中的 distinct immune niches，并揭示更细粒度的发育子结构。",
+        "limitations": "该工作已同行评审，但当前可直接核验的信息主要来自 PubMed 原始 XML 摘要。摘要未给出统一 benchmark 数值表，也尚不能仅凭摘要判断其在不同组织、不同测序深度和不同 patch 划分策略下的稳定性；它是空间分析方法学更新，而非空间基础模型本身。"
+      },
+      "relevance": "它直接属于空间与时空组学、测序与方法学更新，因为微米级空间转录组的可扩展分析正在成为空间基础模型和高分辨率组织图谱训练前的重要前处理环节。",
+      "followUp": "继续跟踪 STWave 的代码与复现实验是否公开，以及它与 GraphST、BayesSpace、SpaSeg、HErGAST、STofM 等空间分析/建模基线的系统比较。",
+      "priority": 2
+    },
     {
       "id": "pmid:42616853",
       "title": "Pesci: fast and user-friendly software to compare single-cell gene expression across species.",
