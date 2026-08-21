@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-21 09:33 CST",
-  "statusMessage": "2026-08-21 检索覆盖 2026-08-18 至 2026-08-21（Asia/Shanghai，含至少 48 小时重叠；reports/ 历史缺失日报日期仍为 2026-08-16），新增 1 条、修订 0 条，最新收录论文发布日期为 2026-08-19；本次检索不完整，待首次推送后回填文献内容提交哈希。",
+  "updatedAt": "2026-08-21 09:36 CST",
+  "statusMessage": "2026-08-21 检索覆盖 2026-08-18 至 2026-08-21（Asia/Shanghai，含至少 48 小时重叠；reports/ 历史缺失日报日期仍为 2026-08-16），新增 1 条、修订 0 条，最新收录论文发布日期为 2026-08-19；文献内容提交 bca6ab7 已推送，但因 arXiv 原始来源本轮不可稳定访问，本次检索不完整。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-08-21 09:33 CST",
-    "commit": "6c2204f",
+    "state": "success",
+    "updatedAt": "2026-08-21 09:36 CST",
+    "commit": "bca6ab7",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-21 文献简报内容已更新，待首次推送成功后回填本次文献内容提交哈希与同步状态。"
+    "message": "2026-08-21 文献简报已同步到 GitHub Pages；文献内容提交为 bca6ab7。本次检索不完整，原因是 arXiv 原始来源未能稳定访问。"
   },
   "categories": [
     {
