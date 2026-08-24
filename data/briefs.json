@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-22 09:05 CST",
-  "statusMessage": "2026-08-22 检索覆盖 2026-08-19 至 2026-08-22（Asia/Shanghai，含至少 48 小时重叠；reports/ 历史缺失日报日期仍为 2026-08-16），新增 0 条、修订 0 条，最新收录论文发布日期为 2026-08-19；今日未发现高相关更新，文献内容提交 1f7136e 已推送并完成网页同步刷新。",
+  "updatedAt": "2026-08-24 11:08 CST",
+  "statusMessage": "2026-08-24 检索覆盖常规窗口 2026-08-20 至 2026-08-24，并因 reports/ 缺失日报补检 2026-08-23，且按周一回溯扩展至 2026-07-25 至 2026-08-24（Asia/Shanghai，含至少 48 小时重叠；历史缺失日报日期为 2026-08-16、2026-08-23）；新增 2 条、修订 0 条，最新收录论文发布日期为 2026-08-19。当前为内容已更新待同步状态，最新补录论文发布日期分别为 2026-08-07 与 2026-08-04。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-08-22 09:05 CST",
+    "state": "pending",
+    "updatedAt": "2026-08-24 11:08 CST",
     "commit": "1f7136e",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-22 文献简报已同步到 GitHub Pages；文献内容提交为 1f7136e。今日未发现高相关更新。"
+    "message": "2026-08-24 文献简报内容已更新待同步；本轮补录 2 条周一回溯命中的高相关预印本，网页状态以下一次推送结果为准。"
   },
   "categories": [
     {
@@ -222,6 +222,28 @@
       "priority": 3
     },
     {
+      "id": "10.64898/2026.08.03.739553",
+      "title": "Benchmarking single-cell foundation models in a zero-shot setting",
+      "link": "https://doi.org/10.64898/2026.08.03.739553",
+      "source": "bioRxiv",
+      "date": "2026-08-07",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "测序与方法学"
+      ],
+      "summary": "这篇 bioRxiv 预印本专门检验单细胞 foundation model 在 zero-shot 条件下是否真的比传统方法更实用。作者把 scGPT、SCimilarity、UCE 和 Transcriptformer 放到细胞类型注释、人类数据整合、跨物种整合和蛋白表达预测四类任务里直接比较，结论是当前 foundation model 表征并未稳定压过经典基线。",
+      "details": {
+        "methods": "根据 bioRxiv 原始条目页摘要，研究评估 4 个 foundation model 在 4 类下游任务上的零样本嵌入表现：cell type annotation、human data integration、cross-species data integration 和 protein expression prediction；作者使用多个公开单细胞数据集，并用分类、整合和回归等 task-specific 指标与传统 machine learning baseline 比较。",
+        "findings": "摘要显示，foundation model embeddings 在细胞类型注释任务上多数情况下未能超过基线；在人类数据整合任务中整体表现中等，而 scVI 这一基线方法更强；但在蛋白表达预测上 foundation model 嵌入通常更准，其中 SCimilarity 的预测误差最低，Transcriptformer 的相关性最高。作者据此认为 current-generation scFM 在 zero-shot 场景下对部分任务有用，但还不是 task-specific method 的通用替代品。",
+        "limitations": "当前证据来自 bioRxiv 预印本摘要，尚未经同行评审。该基准只覆盖 4 个模型和 4 类任务，未直接纳入扰动预测、生成式 virtual cell 或空间组学任务；不同预训练语料、数据预处理和 baseline 选择也会影响结论。"
+      },
+      "relevance": "它直接属于单细胞基础模型评测基准更新，补的是“零样本是否真有优势”这一当前最核心的可验证问题，对模型选择和后续 virtual cell 路线判断都很关键。",
+      "followUp": "继续跟踪是否公开完整评测代码、数据切分和可重复脚本，以及后续版本是否扩展到扰动、空间和多组学任务。",
+      "priority": 2
+    },
+    {
       "id": "arxiv:2608.06659",
       "title": "CellWorld: a unified foundation model for digital cell construction",
       "link": "https://arxiv.org/abs/2608.06659",
@@ -312,6 +334,29 @@
       "relevance": "它补强了细胞图谱从静态 atlas 走向动态谱系 atlas 的数据底座，对虚拟细胞、发育轨迹建模和带谱系约束的单细胞基础模型都有直接参考价值。",
       "followUp": "关注 LEAP 是否公开代码与数据，以及能否迁移到哺乳动物发育、肿瘤谱系追踪和时空组学整合。",
       "priority": 2
+    },
+    {
+      "id": "10.64898/2026.07.29.741565",
+      "title": "Multi-scale modeling of human tissues from spatial transcriptomics with TERRA",
+      "link": "https://doi.org/10.64898/2026.07.29.741565",
+      "source": "bioRxiv",
+      "date": "2026-08-04",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "单细胞基础模型",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "TERRA 是近期最直接的空间 foundation model 候选之一：作者把 1.12 亿个人类空间转录组单细胞轮廓预训练成单一骨干，试图在不重训的前提下同时输出基因、细胞和邻域三层表示，并进一步做 spatial in silico perturbation。",
+      "details": {
+        "methods": "根据 bioRxiv 原始条目页摘要，TERRA 预训练于 112 million human cells 的 spatial transcriptomics 语料，输入只需单细胞表达与空间坐标；模型通过将 index cell 及其邻域 tokenization 成单个序列，并用 joint-embedding predictive architecture 预测被遮蔽的分子与空间上下文，在一个 pretrained backbone 上同时学习 genes、cells 和 neighborhoods 三个尺度的表示。",
+        "findings": "摘要表明，TERRA 在 zero-shot 条件下可直接用于 unseen tissues，并支持 spatial in silico perturbation。作者报告它在 developing pancreas 数据中识别出 islet-associated capillary state，在未处理肾脏切片中对 immune-checkpoint target 的 in silico knockout 预测出与 checkpoint-blockade nephrotoxicity 相关的基因程序，并在跨组织巨噬细胞分析中发现与肾癌差预后相关的 recurring cross-organ niche archetype。",
+        "limitations": "当前证据来自 bioRxiv 预印本摘要，尚未经同行评审。112M 细胞级预训练和多尺度输出仍需外部复现；模型当前聚焦 imaging-based spatial transcriptomics，跨 assay 泛化、真实扰动验证和临床转化价值还不能仅凭摘要定论。"
+      },
+      "relevance": "它同时覆盖空间基础模型、细胞图谱数据底座和 tissue-level virtualization，是本专题“空间与时空组学 + foundation model + perturbation”三者交汇处的重要新增条目。",
+      "followUp": "继续跟踪官方代码、预训练权重与 HST-Corpus-112M 的开放范围，以及 TERRA 的 zero-shot 与 in silico perturbation 结论能否被外部数据独立验证。",
+      "priority": 1
     },
     {
       "id": "10.64898/2026.03.09.710580",
