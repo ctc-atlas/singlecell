@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-24 11:15 CST",
-  "statusMessage": "2026-08-24 检索覆盖常规窗口 2026-08-20 至 2026-08-24，并因 reports/ 缺失日报补检 2026-08-23，且按周一回溯扩展至 2026-07-25 至 2026-08-24（Asia/Shanghai，含至少 48 小时重叠；历史缺失日报日期为 2026-08-16、2026-08-23）；新增 2 条、修订 0 条，最新收录论文发布日期为 2026-08-19。本轮文献内容提交 ed85cc6 已推送，最新补录论文发布日期分别为 2026-08-07 与 2026-08-04，网页同步元数据已刷新。",
+  "updatedAt": "2026-08-25 10:11 CST",
+  "statusMessage": "2026-08-25 检索覆盖常规窗口 2026-08-22 至 2026-08-25（Asia/Shanghai，含至少 48 小时重叠；历史缺失日报日期为 2026-08-16、2026-08-23）；新增 2 条、修订 0 条，最新收录论文发布日期为 2026-08-22。本轮在 bioRxiv 与 PubMed 原始来源核验到 2 条高相关更新，但 arXiv 原始 API/搜索页三次重试仍不可用，当前同步状态待本轮推送完成后刷新。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-08-24 11:15 CST",
-    "commit": "ed85cc6",
+    "state": "pending",
+    "updatedAt": "2026-08-25 10:11 CST",
+    "commit": "pending",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-24 文献简报已同步到 GitHub Pages；文献内容提交为 ed85cc6。本轮补录 2 条周一回溯命中的高相关预印本。"
+    "message": "2026-08-25 文献简报已生成，待本轮文献内容提交与网页同步元数据刷新。"
   },
   "categories": [
     {
@@ -41,6 +41,50 @@
     }
   ],
   "items": [
+    {
+      "id": "10.64898/2026.08.13.744615",
+      "title": "CLEAR-ST: Physics-informed probabilistic decontamination of spatial transcriptomics by modeling mRNA lateral diffusion",
+      "link": "https://doi.org/10.64898/2026.08.13.744615",
+      "source": "bioRxiv",
+      "date": "2026-08-22",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "CLEAR-ST 是一篇 bioRxiv 预印本，直接针对 capture-based spatial transcriptomics 中常见但长期缺乏统一校正框架的 mRNA lateral diffusion 污染问题。它把物理扩散先验和概率生成建模结合起来，目标不是仅做一般去噪，而是恢复更可信的空间表达场、边界信号和下游生物学解释。",
+      "details": {
+        "methods": "根据 bioRxiv 原始 API 摘要，CLEAR-ST 先用 denoising autoencoder 推断 latent clean expression field，再通过带可学习 diffusion parameters 的 graph-Laplacian forward contamination model 将其映射到观测 counts，并允许选择不同 count likelihood。作者首先比较 10X 官方与独立生成的 Visium 样本，确认 out-of-tissue counts 与邻近 in-tissue expression、boundary halo 和基因间一致扩散方向等污染模式。",
+        "findings": "原始摘要称，CLEAR-ST 在不同污染负担的真实样本中提升了 spatial domain recovery、gene-level spatial autocorrelation，以及 marker gene discovery、pathway identification 和 cell type deconvolution 的生物学特异性；与 benchmark methods 相比，其聚类质量和与人工注释的一致性也更高。",
+        "limitations": "当前证据仅来自 bioRxiv 预印本摘要，尚未经同行评审。方法主要针对 Visium-like capture-based spatial transcriptomics 的 diffusion-like contamination，跨平台泛化、参数稳定性和计算成本仍需外部复现与系统 benchmark。"
+      },
+      "relevance": "它直接属于空间与时空组学和方法学更新，因为污染校正质量会影响空间图谱、空间 foundation model 训练语料和后续细胞类型/通路解释的可信度。",
+      "followUp": "继续跟踪 CLEAR-ST 是否公开代码、是否补充 Xenium/CosMx 等非 capture-based 平台比较，以及社区对 boundary contamination benchmark 的采用情况。",
+      "priority": 1
+    },
+    {
+      "id": "10.64898/2026.08.13.744704",
+      "title": "Bridging Biomedical Atlas Ecosystem: Cross-Atlas Alignment And Scalable Tissue Specimen Registration",
+      "link": "https://doi.org/10.64898/2026.08.13.744704",
+      "source": "bioRxiv",
+      "date": "2026-08-22",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "细胞图谱与数据底座",
+        "空间与时空组学"
+      ],
+      "summary": "这篇 bioRxiv 预印本面向 Human Reference Atlas 及其周边 atlasing 生态的扩展瓶颈，讨论如何把跨联盟、跨器官、跨空间尺度的组织数据更稳定地注册到共同坐标框架中。它不是狭义基础模型论文，但属于单细胞与空间图谱训练底座的重要基础设施更新。",
+      "details": {
+        "methods": "根据 bioRxiv 原始 API 摘要，作者基于 Human Reference Atlas common coordinate framework，提出两条扩展路线：一是跨 biomedical reference atlas systems 的 projection，二是用 millitomes 将 tissue blocks 批量注册到 reference organs。两条路线均使用 AutoMated Alignment and Projection (AMAP) pipeline，通过 point cloud registration 对 3D mesh models 对齐。",
+        "findings": "摘要称，团队已把来自 20 个 consortia、超过 13,000 个 tissue datasets 和 200+ million cells 的数据接入 HRA 对齐生态，并演示了 6 个 atlas models 的跨 atlas 对齐，以及 7 个 millitome models 跨 5 个器官投影整合 300+ tissue extraction sites，从而降低样本级手工注册负担。",
+        "limitations": "当前证据来自预印本摘要，尚未经同行评审。该工作更偏 atlas registration 基础设施，而非直接发布新的单细胞 foundation model；其在不同器官形变、不同 assay 分辨率和外部联盟工作流中的稳健性仍需长期验证。"
+      },
+      "relevance": "它属于细胞图谱与数据底座、空间组学基础设施的直接更新，因为跨 atlas 对齐和规模化 specimen registration 决定了多联盟单细胞/空间数据能否形成更统一的训练与检索底座。",
+      "followUp": "继续跟踪 AMAP 与 HRA 相关代码、浏览器和标准规范是否更新，以及这套流程是否被 Gut Cell Atlas、SPARC 等外部联盟稳定采用。",
+      "priority": 3
+    },
     {
       "id": "pmid:42615345",
       "title": "STWave: Fine-Scale Spatial Structure Discovery in Microscopic-Resolution Spatial Transcriptomics via Patchwise Wavelet Graphs.",
