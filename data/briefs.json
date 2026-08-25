@@ -1,12 +1,12 @@
 {
   "updatedAt": "2026-08-25 10:11 CST",
-  "statusMessage": "2026-08-25 检索覆盖常规窗口 2026-08-22 至 2026-08-25（Asia/Shanghai，含至少 48 小时重叠；历史缺失日报日期为 2026-08-16、2026-08-23）；新增 2 条、修订 0 条，最新收录论文发布日期为 2026-08-22。本轮在 bioRxiv 与 PubMed 原始来源核验到 2 条高相关更新，但 arXiv 原始 API/搜索页三次重试仍不可用，当前同步状态待本轮推送完成后刷新。",
+  "statusMessage": "2026-08-25 检索覆盖常规窗口 2026-08-22 至 2026-08-25（Asia/Shanghai，含至少 48 小时重叠；历史缺失日报日期为 2026-08-16、2026-08-23）；新增 2 条、修订 0 条，最新收录论文发布日期为 2026-08-22。文献内容提交 9341de3 已推送；本轮在 bioRxiv 与 PubMed 原始来源核验到 2 条高相关更新，但 arXiv 原始 API/搜索页三次重试仍不可用，因此本次检索不完整。",
   "sync": {
-    "state": "pending",
+    "state": "success",
     "updatedAt": "2026-08-25 10:11 CST",
-    "commit": "pending",
+    "commit": "9341de3",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-25 文献简报已生成，待本轮文献内容提交与网页同步元数据刷新。"
+    "message": "2026-08-25 文献简报已同步到 GitHub Pages；文献内容提交为 9341de3。本轮新增 2 条高相关预印本，arXiv 原始来源失败因此健康状态为 incomplete。"
   },
   "categories": [
     {
