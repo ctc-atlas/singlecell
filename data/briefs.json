@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-25 10:11 CST",
-  "statusMessage": "2026-08-25 检索覆盖常规窗口 2026-08-22 至 2026-08-25（Asia/Shanghai，含至少 48 小时重叠；历史缺失日报日期为 2026-08-16、2026-08-23）；新增 2 条、修订 0 条，最新收录论文发布日期为 2026-08-22。文献内容提交 9341de3 已推送；本轮在 bioRxiv 与 PubMed 原始来源核验到 2 条高相关更新，但 arXiv 原始 API/搜索页三次重试仍不可用，因此本次检索不完整。",
+  "updatedAt": "2026-08-26 09:47 CST",
+  "statusMessage": "2026-08-26 检索覆盖 2026-08-23 至 2026-08-26（Asia/Shanghai，含至少 48 小时重叠；本轮补检缺失日报日期 2026-08-23）；新增 3 条、修订 0 条，最新收录论文发布日期为 2026-08-25。当前为待同步内容提交，检索时间与论文发布日期已区分记录；本轮已完成 arXiv 搜索页、bioRxiv API、medRxiv API 与 PubMed 原始 XML 核验。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-08-25 10:11 CST",
-    "commit": "9341de3",
+    "state": "pending",
+    "updatedAt": "2026-08-26 09:47 CST",
+    "commit": "pending",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-25 文献简报已同步到 GitHub Pages；文献内容提交为 9341de3。本轮新增 2 条高相关预印本，arXiv 原始来源失败因此健康状态为 incomplete。"
+    "message": "2026-08-26 文献简报内容已完成本地整理，待文献内容提交与元数据刷新推送成功后再回填最终同步状态。"
   },
   "categories": [
     {
@@ -41,6 +41,71 @@
     }
   ],
   "items": [
+    {
+      "id": "pmid:42640827",
+      "title": "HOSCA: Human Ocular Single-Cell Atlas for Decoding Ocular Biology and Disease Complexity.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42640827/",
+      "source": "Genomics, Proteomics & Bioinformatics",
+      "date": "2026-08-25",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "细胞图谱与数据底座"
+      ],
+      "summary": "HOSCA 是一篇正式发表的单细胞图谱资源论文，围绕眼组织与眼病场景，把快速增长但分散的眼科 scRNA-seq 数据整理成统一的 atlas 级数据库与分析平台。它不属于基础模型论文，但属于高相关的数据底座更新，因为其目标正是让跨组织、跨疾病、跨样本的人眼单细胞数据可复用、可比较、可直接进入下游分析与模型训练流程。",
+      "details": {
+        "methods": "根据 PubMed 原始 XML 摘要，HOSCA 以统一 bioinformatics pipeline 对 60 个高质量人类眼科 scRNA-seq 数据集做标准化、跨平台 batch correction 与 cell type annotation，整合 704 个样本、16 个眼部解剖区域、15 类相关疾病，共超过 3.88 million single-cell transcriptomic profiles，并提供交互式跨组织、跨疾病和人口学比较工具。",
+        "findings": "原始摘要称，HOSCA 目前是规模最大的 human ocular single-cell resource，可把分散的眼组织与眼病单细胞数据桥接成统一 atlas 和分析平台，支持对 ocular biology 与 disease complexity 的系统解码，并已公开上线 `http://www.bio-data.cn/HOSCA/`。",
+        "limitations": "该工作已同行评审，但当前可直接核验的信息主要来自 PubMed 原始摘要。它是面向眼科领域的专门 atlas 资源，而非全器官泛化的单细胞基础模型；跨队列标签一致性、疾病定义差异和后续持续更新质量仍需长期观察。"
+      },
+      "relevance": "它直接对应细胞图谱与数据底座更新，因为大规模、标准化、可查询的人类单细胞 atlas 是构建领域基础模型、做跨疾病对照和整理训练语料的前提。",
+      "followUp": "继续跟踪 HOSCA 网站是否开放批量下载、API 或程序化访问，以及后续是否接入空间组学、单细胞多组学或模型基准任务。",
+      "priority": 2
+    },
+    {
+      "id": "pmid:42637977",
+      "title": "Beyond benchmarking: an expert-guided consensus approach to spatially aware clustering.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42637977/",
+      "source": "Nature Methods",
+      "date": "2026-08-24",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "这篇 Nature Methods 论文把空间转录组分析里最常见的 spatially aware clustering benchmark 重新做了方法论审计：作者认为现有基准过度依赖 Visium 和脑组织，且经常把人工解剖标注误当作绝对真值，因此提出不再简单给方法排总榜，而是用专家引导的共识式评估框架来检查高分歧区域与真实生物学边界。",
+      "details": {
+        "methods": "根据 PubMed 原始 XML 摘要，作者提出社区驱动、可扩展的 SACCELERATOR 框架，用于标准化 spatially aware clustering (SAC) 的数据格式、方法接入与 metric evaluation，并通过 descriptive spatial metrics 标记不同方法 disagreement 较高的高熵区域，再把这些区域交给 tissue experts 做迭代反馈与共识分析。",
+        "findings": "原始摘要指出，当前 SAC methods 在泛化性与可重复性上存在明显局限，而常用 anatomical labels 作为 benchmark ground truth 往往有偏差、易出错且并不适合作为绝对基准。作者在 brain 和 cancer 数据上展示，这种 expert-in-the-loop 共识工作流能发现单一方法和人工注释都容易忽略的 biologically meaningful spatial patterns。",
+        "limitations": "该工作已同行评审，但从摘要可直接确认的内容仍以评测框架和总体结论为主，尚不能仅凭摘要还原全部 benchmark 数据集、指标细节与方法覆盖范围。它是空间分析与评测框架更新，而不是新的空间基础模型。"
+      },
+      "relevance": "它直接属于空间与时空组学的方法学和评测基准更新，因为空间 foundation model 与空间分析流程都依赖更可靠的聚类评估，而不是沿用有偏的人工标注排行榜。",
+      "followUp": "继续跟踪 SACCELERATOR 是否公开代码、标准化数据接口和新方法接入流程，以及社区是否把它作为空间组学 benchmark 的默认框架。",
+      "priority": 1
+    },
+    {
+      "id": "arxiv:2608.23114",
+      "title": "DeMixPert: Decomposed Response Modeling with Gaussian Mixtures for OOD Single-Cell Perturbation Prediction",
+      "link": "https://arxiv.org/abs/2608.23114",
+      "source": "arXiv",
+      "date": "2026-08-24",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "单细胞基础模型"
+      ],
+      "summary": "DeMixPert 是 8 月 24 日提交到 arXiv 的新预印本，直接命中单细胞扰动预测主线。它针对 unseen genetic perturbations 下 transcriptome-wide response prediction 的难点，把可重复的系统响应、扰动特异响应和群体异质性显式拆开建模，以减少共享主效应掩盖弱扰动信号的问题。",
+      "details": {
+        "methods": "根据 arXiv 原始条目页摘要，DeMixPert 将扰动后的表达变化分解为三部分：基于 control-cell expression 编码得到的 basal-state-dependent systematic response、由 pretrained target embeddings 推断的 perturbation-specific response，以及用 Gaussian prototype invertible network 建模的 population-level variation。模型再依据 basal state 与 perturbation condition 自适应组合可复用 Gaussian prototypes，采样条件特异的 variation distribution，并与前两部分联合解码重建 perturbed-cell gene expression。",
+        "findings": "原始摘要称，DeMixPert 在 unseen-perturbation 设置下比现有方法更好地捕获 heterogeneous single-cell perturbation responses，并在 out-of-distribution 单细胞扰动预测任务上取得更优表现。作者同时说明源码将在论文发表时公开。",
+        "limitations": "当前证据仅来自 arXiv 原始条目页摘要，尚未经同行评审。摘要未给出具体 benchmark 数据集、评价指标数值和与主流 Perturb-seq 基线的完整比较，因此现阶段只能确认其方法设计和作者声称的整体优势，不能夸大其泛化幅度。"
+      },
+      "relevance": "它与虚拟细胞、Perturb-seq 和生成式细胞模型直接相关，因为 OOD 扰动预测正是构建可泛化 virtual cell 系统的核心能力之一。",
+      "followUp": "继续跟踪 DeMixPert 是否公开代码、是否使用标准 Perturb-seq benchmark，以及其 target embeddings 与基础模型预训练之间的关系是否在正式版本中补充说明。",
+      "priority": 1
+    },
     {
       "id": "10.64898/2026.08.13.744615",
       "title": "CLEAR-ST: Physics-informed probabilistic decontamination of spatial transcriptomics by modeling mRNA lateral diffusion",
