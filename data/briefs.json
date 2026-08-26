@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-26 09:47 CST",
-  "statusMessage": "2026-08-26 检索覆盖 2026-08-23 至 2026-08-26（Asia/Shanghai，含至少 48 小时重叠；本轮补检缺失日报日期 2026-08-23）；新增 3 条、修订 0 条，最新收录论文发布日期为 2026-08-25。当前为待同步内容提交，检索时间与论文发布日期已区分记录；本轮已完成 arXiv 搜索页、bioRxiv API、medRxiv API 与 PubMed 原始 XML 核验。",
+  "updatedAt": "2026-08-26 09:51 CST",
+  "statusMessage": "2026-08-26 检索覆盖 2026-08-23 至 2026-08-26（Asia/Shanghai，含至少 48 小时重叠；本轮补检缺失日报日期 2026-08-23）；新增 3 条、修订 0 条，最新收录论文发布日期为 2026-08-25。检索时间与论文发布日期已区分记录；文献内容提交 1d7fbb4 已推送，待本次元数据刷新提交推送后网页状态即完成更新。本轮已完成 arXiv 搜索页、bioRxiv API、medRxiv API 与 PubMed 原始 XML 核验。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-08-26 09:47 CST",
-    "commit": "pending",
+    "state": "success",
+    "updatedAt": "2026-08-26 09:51 CST",
+    "commit": "1d7fbb4",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-26 文献简报内容已完成本地整理，待文献内容提交与元数据刷新推送成功后再回填最终同步状态。"
+    "message": "2026-08-26 文献简报已同步到 GitHub Pages；文献内容提交为 1d7fbb4。本轮新增 3 条高相关更新，并完成缺失日报日期 2026-08-23 的重叠补检。"
   },
   "categories": [
     {
