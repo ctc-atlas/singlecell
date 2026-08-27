@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-26 09:51 CST",
-  "statusMessage": "2026-08-26 检索覆盖 2026-08-23 至 2026-08-26（Asia/Shanghai，含至少 48 小时重叠；本轮补检缺失日报日期 2026-08-23）；新增 3 条、修订 0 条，最新收录论文发布日期为 2026-08-25。检索时间与论文发布日期已区分记录；文献内容提交 1d7fbb4 已推送，待本次元数据刷新提交推送后网页状态即完成更新。本轮已完成 arXiv 搜索页、bioRxiv API、medRxiv API 与 PubMed 原始 XML 核验。",
+  "updatedAt": "2026-08-27 09:19 CST",
+  "statusMessage": "2026-08-27 检索覆盖 2026-08-24 至 2026-08-27（Asia/Shanghai，含至少 48 小时重叠；无漏跑补检）；新增 1 条、修订 0 条，最新收录论文发布日期为 2026-08-26。检索时间与论文发布日期已区分记录；本轮已完成 arXiv API、bioRxiv API、medRxiv API 与 PubMed 原始 XML / 记录核验。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-08-26 09:51 CST",
+    "state": "pending",
+    "updatedAt": "2026-08-27 09:19 CST",
     "commit": "1d7fbb4",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-26 文献简报已同步到 GitHub Pages；文献内容提交为 1d7fbb4。本轮新增 3 条高相关更新，并完成缺失日报日期 2026-08-23 的重叠补检。"
+    "message": "2026-08-27 文献简报内容已本地生成，待文献内容提交与元数据刷新提交通知完成后更新网页状态。"
   },
   "categories": [
     {
@@ -41,6 +41,28 @@
     }
   ],
   "items": [
+    {
+      "id": "pmid:42647174",
+      "title": "STcompare: comparative spatial transcriptomics data analysis of structurally matched tissues to characterize differentially spatially patterned genes.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42647174/",
+      "source": "Bioinformatics",
+      "date": "2026-08-26",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "STcompare 是 2026 年 8 月 26 日正式发表的空间转录组比较分析方法，直接解决“不同条件下空间表达模式怎么比较”这一常见但长期处理不好的问题。与只看表达量变化或只看 spatial variability 显著性的方法不同，它显式检验结构匹配位置之间的 spatial correlation 和 spatial fold-change 差异，目标是找出真正发生空间模式重排的基因。",
+      "details": {
+        "methods": "根据 PubMed 原始 XML 摘要，STcompare 是一个用于 structurally matched tissues 的统计框架，围绕差异空间模式基因检测，测试不同条件间 spatial correlation 与 spatial fold-change 的变化。作者在模拟数据上将其与 bulk differential expression、spatially variable gene analysis 及其他空间比较方法对照，并在小鼠脑生物学重复样本和急性肾损伤对照数据上验证。",
+        "findings": "原始摘要称，STcompare 能在存在空间自相关时稳健控制假阳性，并提供与传统差异表达和空间变异分析不同的比较视角。作者用其确认小鼠脑重复样本间高度一致的空间表达对应关系，并在小鼠肾脏 acute kidney injury 场景中识别出组织区室特异的分子失调基因；官方同时公开了 R 包与文档。",
+        "limitations": "该工作已同行评审，但当前可直接核验的信息主要来自 PubMed 原始摘要。摘要未给出完整 benchmark 数值表和所有对照方法细节，因此目前只能确认其核心统计思路、应用场景和作者声称的总体性能；它属于空间分析方法学更新，不是空间基础模型本身。"
+      },
+      "relevance": "它直接对应空间与时空组学和评测方法学主线，因为空间图谱、空间基础模型和组织比较研究都需要判断“模式是否重排”，而不仅是判断基因均值是否变化。",
+      "followUp": "继续跟踪 STcompare 的 GitHub 仓库、教程和真实数据 benchmark 是否补充更多平台验证，以及社区是否将其纳入空间转录组 comparative analysis 标准工作流。",
+      "priority": 1
+    },
     {
       "id": "pmid:42640827",
       "title": "HOSCA: Human Ocular Single-Cell Atlas for Decoding Ocular Biology and Disease Complexity.",
