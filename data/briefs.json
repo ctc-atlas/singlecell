@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-27 09:20 CST",
-  "statusMessage": "2026-08-27 检索覆盖 2026-08-24 至 2026-08-27（Asia/Shanghai，含至少 48 小时重叠；无漏跑补检）；新增 1 条、修订 0 条，最新收录论文发布日期为 2026-08-26。检索时间与论文发布日期已区分记录；文献内容提交 9944337 已推送，待本次元数据刷新提交推送后网页状态即完成更新。本轮已完成 arXiv API、bioRxiv API、medRxiv API 与 PubMed 原始 XML / 记录核验。",
+  "updatedAt": "2026-08-28 09:22 CST",
+  "statusMessage": "2026-08-28 检索覆盖 2026-08-25 至 2026-08-28（Asia/Shanghai，含至少 48 小时重叠；无漏跑补检）；新增 2 条、修订 0 条，最新收录论文发布日期为 2026-08-26。检索时间与论文发布日期已区分记录；本轮内容已完成本地核验与落盘，待文献内容提交与元数据刷新两阶段推送后网页状态才算完成更新。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-08-27 09:20 CST",
-    "commit": "9944337",
+    "state": "pending",
+    "updatedAt": "2026-08-28 09:22 CST",
+    "commit": "",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-27 文献简报已同步到 GitHub Pages；文献内容提交为 9944337。本轮新增 1 条高相关更新，并完成 2026-08-24 至 2026-08-27 的重叠检索。"
+    "message": "2026-08-28 文献简报已完成本地更新，待文献内容提交与元数据刷新两阶段推送成功后再标记网页已同步。"
   },
   "categories": [
     {
@@ -41,6 +41,50 @@
     }
   ],
   "items": [
+    {
+      "id": "arxiv:2608.26208",
+      "title": "Learning Interpretable Tumor Microenvironment Representations by Fitting Pan-Cancer Cell State-Niche Correlation",
+      "link": "https://arxiv.org/abs/2608.26208",
+      "source": "arXiv",
+      "date": "2026-08-26",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "单细胞基础模型"
+      ],
+      "summary": "GITIII-scale 是 2026 年 8 月 26 日提交到 arXiv 的空间转录组基础模型预印本，直接瞄准“如何在单细胞分辨率下学习可解释的肿瘤微环境表征”这一主线问题。它把成像空间转录组与匹配的 scRNA-seq 联合起来，不只学习邻域表征，还显式追踪细胞状态与 niche 之间的关联及其潜在配体-受体信号。",
+      "details": {
+        "methods": "根据 arXiv 原始条目页摘要，GITIII-scale 是分层、可解释的 pan-cancer spatial transcriptomics foundation model。它使用 transformers 建模不同空间距离上的细胞对相互作用，用不含前馈网络的单层可解释 graph transformer 分解接收细胞每个基因受邻近发送细胞影响的方式，再用图 transformer 生成 cellular-neighborhood embeddings。训练数据来自作者整理的 specimen-matched scRNA-seq 与 imaging-based spatial transcriptomics 泛癌数据库。",
+        "findings": "原始摘要称，GITIII-scale 在训练中未见过的癌种上，比现有空间转录组基础模型更准确恢复 niche-associated state changes。作者还在一个未见过的乳腺癌数据集案例中展示，模型可以定位与 endothelial overgrowth 和 tumorigenesis 相关、可能具有药物靶向价值的 ligand-receptor 通路。",
+        "limitations": "当前证据仅来自 arXiv 原始摘要，尚未经同行评审。摘要未披露完整训练语料规模、全部对照基线、定量指标表和代码发布状态，因此目前只能确认其模型结构、数据类型和作者声称的总体优势，不能夸大其跨癌种泛化效果或机制解释可靠性。"
+      },
+      "relevance": "它同时命中空间基础模型、单细胞与空间联合建模、细胞间相互作用解释这三条主线，且明确使用 specimen-matched scRNA-seq 与 imaging-based spatial transcriptomics 训练可解释表征模型。",
+      "followUp": "继续跟踪 GITIII-scale 是否公开代码、训练数据清单和基线评测细节，以及是否发布可复用权重或下游 TME 分析基准。",
+      "priority": 1
+    },
+    {
+      "id": "arxiv:2608.24823",
+      "title": "BioKERN: Biological Kernel Regularization for Histology-to-Transcriptomics Neighborhood Retrieval",
+      "link": "https://arxiv.org/abs/2608.24823",
+      "source": "arXiv",
+      "date": "2026-08-25",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "BioKERN 是 2026 年 8 月 25 日提交到 arXiv 的空间多模态表示学习预印本，目标不是做一般图像检索，而是让组织学到转录组的跨模态表征更忠实地保留 biologically meaningful neighborhood structure。它把转录组相似性与空间邻近性合成为训练期 biological kernel，用显式可学习的归纳偏置约束 embedding geometry。",
+      "details": {
+        "methods": "根据 arXiv 原始条目页摘要，BioKERN 是 histology-transcriptomics multimodal representation-learning framework。它在训练时构建由 transcriptomic similarity 与 spatial proximity 共同决定的 biological kernel，为跨模态表示提供 graded neighborhood supervision，并以固定、模型无关的 biological neighborhood definition 评估不同方法。作者在 Mouse Brain Visium 与 Human Liver GSE240429 上比较单尺度和多尺度设置下的 biological-neighborhood retrieval。",
+        "findings": "原始摘要称，BioKERN 在 Mouse Brain Visium 和 Human Liver GSE240429 上都持续优于 BLEEP 的 biological-neighborhood retrieval 表现。作者还通过共享架构对照实验指出，多数改进来自 biological-kernel regularization，而不是单纯增加模型容量。",
+        "limitations": "当前证据仅来自 arXiv 原始摘要，尚未经同行评审。它是空间多模态表示学习/检索方法，而不是通用空间 foundation model；摘要也未给出完整数值表、更多组织类型测试或代码权重发布状态，因此现阶段只能确认其监督设计和作者声称的相对改进。"
+      },
+      "relevance": "它属于空间与时空组学和方法学主线，因为组织学-转录组联合表示会直接影响空间图谱检索、邻域匹配和后续空间模型训练语料的几何结构。",
+      "followUp": "继续跟踪 BioKERN 是否公开代码、是否扩展到 Xenium/CosMx 等更高分辨率平台，以及其评测框架是否被空间多模态基准采用。",
+      "priority": 2
+    },
     {
       "id": "pmid:42647174",
       "title": "STcompare: comparative spatial transcriptomics data analysis of structurally matched tissues to characterize differentially spatially patterned genes.",
