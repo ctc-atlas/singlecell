@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-28 09:24 CST",
-  "statusMessage": "2026-08-28 检索覆盖 2026-08-25 至 2026-08-28（Asia/Shanghai，含至少 48 小时重叠；无漏跑补检）；新增 2 条、修订 0 条，最新收录论文发布日期为 2026-08-26。检索时间与论文发布日期已区分记录；文献内容提交 7eb8829 已推送，待本次元数据刷新提交推送后网页状态即完成更新。",
+  "updatedAt": "2026-08-29 09:07 CST",
+  "statusMessage": "2026-08-29 检索覆盖 2026-08-26 至 2026-08-29（Asia/Shanghai，含至少 48 小时重叠；无漏跑补检）；新增 4 条、修订 0 条，最新收录论文发布日期为 2026-08-28。检索时间与论文发布日期已区分记录；本轮内容已写入待同步版本，尚未完成 GitHub 推送与网页状态刷新。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-08-28 09:24 CST",
-    "commit": "7eb8829",
+    "state": "pending",
+    "updatedAt": "2026-08-29 09:07 CST",
+    "commit": "",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-28 文献简报已同步到 GitHub Pages；文献内容提交为 7eb8829。本轮新增 2 条高相关更新，并完成 2026-08-25 至 2026-08-28 的重叠检索。"
+    "message": "2026-08-29 文献简报已生成待同步版本；待文献内容提交与元数据刷新提交推送成功后，再确认网页状态。"
   },
   "categories": [
     {
@@ -41,6 +41,94 @@
     }
   ],
   "items": [
+    {
+      "id": "pmid:42664347",
+      "title": "scProtoTransformer: Scalable reference mapping across molecules, cells, and donors.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42664347/",
+      "source": "Science Advances",
+      "date": "2026-08-28",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "单细胞基础模型",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "scProtoTransformer 是 2026 年 8 月 28 日正式发表在 Science Advances 的单细胞参考映射模型，明确把 reference mapping 从基因、细胞一直拉到 donor 层级，并直接借用了 foundation model 蒸馏知识来降低预训练成本。它不是一般的批次校正工具，而是试图把可解释 pathway prototypes、跨层级表征和可扩展映射统一到一个 Transformer 框架里。",
+      "details": {
+        "methods": "根据 PubMed 原始 XML 摘要，scProtoTransformer 是 prototype-based Transformer architecture，用 knowledge-guided prototype tokenizer 将 gene expression 投影到具生物学可解释性的 pathway prototypes，以此减少数值批次效应并保留生物语义模式；同时结合来自 foundation model 的 distilled knowledge 和 dynamic supervised fine-tuning，在分子、细胞和 donor 三个层级做可扩展 reference mapping benchmark。",
+        "findings": "原始摘要称，scProtoTransformer 在分子、细胞和 donor-level reference mapping 上达到与当前 state-of-the-art 方法相当或更优的表现，并通过 biological prototypes 提供可解释性；作者将其定位为从 genes 到 individuals 的统一可扩展框架。",
+        "limitations": "该工作已同行评审，但当前可直接核验的信息主要来自 PubMed 原始摘要。摘要没有给出全部 benchmark 数据集、foundation model 蒸馏来源和每个层级上的完整量化表，因此目前只能确认其核心架构、对照结论和作者声称的整体优势，不能夸大其通用性或解释性深度。"
+      },
+      "relevance": "它直接命中单细胞基础模型与图谱底座主线，因为 reference mapping 是训练语料整合、跨队列标签迁移和 foundation model 下游评测的核心环节，而且摘要明确提到 foundation model knowledge distillation。",
+      "followUp": "继续跟踪 scProtoTransformer 的代码、预训练依赖和 benchmark 清单是否公开，以及其 donor-level 映射是否会进入常用 atlas 整合基准。",
+      "priority": 1
+    },
+    {
+      "id": "pmid:42664339",
+      "title": "Hi-Cformer enables multiscale chromatin contact map modeling for single-cell Hi-C data analysis.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42664339/",
+      "source": "Science Advances",
+      "date": "2026-08-28",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "多组学与调控",
+        "测序与方法学"
+      ],
+      "summary": "Hi-Cformer 是 2026 年 8 月 28 日正式发表的 single-cell Hi-C 分析方法，针对单细胞染色质接触图极端稀疏、近对角强信号和多尺度结构难以共同建模的问题，提出了专门的 transformer 建模框架。它不属于表达 foundation model，但属于与单细胞调控建模直接相关的高价值方法学更新。",
+      "details": {
+        "methods": "根据 PubMed 原始 XML 摘要，Hi-Cformer 是 transformer-based method，通过 specialized attention mechanism 同时建模 single-cell chromatin contact maps 的多尺度 block 与跨 genomic regions 依赖关系，从稀疏 scHi-C 数据中学习低维 cell representations，并执行接触图信号插补和 cell type annotation。",
+        "findings": "原始摘要称，Hi-Cformer 学到的 embeddings 能比现有方法更好地区分细胞类型，同时更准确插补与细胞异质性相关的 chromatin interaction signals，包括 TAD-like boundaries 和 A/B compartments；这些 embeddings 还可支持更稳健的 intra- 与 inter-dataset cell type annotation。",
+        "limitations": "该工作已同行评审，但当前直接可核验的信息仍主要来自 PubMed 摘要。摘要没有展开不同 scHi-C 数据集规模、计算成本和对照基线细节，因此现阶段只能确认其多尺度建模目标和作者声称的整体提升；它是单细胞调控组学方法更新，而非通用细胞基础模型。"
+      },
+      "relevance": "它直接对应多组学与调控主线，因为单细胞 3D 基因组结构表征是虚拟细胞和跨模态细胞状态建模的重要上游输入，且方法目标就是从稀疏单细胞调控数据中提取可迁移表征。",
+      "followUp": "继续跟踪 Hi-Cformer 是否公开代码与预训练权重，以及其是否与 scRNA/scATAC 多组学整合或细胞基础模型评测产生直接连接。",
+      "priority": 2
+    },
+    {
+      "id": "pmid:42658029",
+      "title": "st2traj: deconvolution-informed trajectory inference for multi-timepoint spatial transcriptomics.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42658029/",
+      "source": "Bioinformatics",
+      "date": "2026-08-27",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "st2traj 是 2026 年 8 月 27 日正式上线的多时间点空间转录组轨迹推断方法，专门处理跨切片、跨时间点数据里 spot 混合和空间对应关系不直接成立的问题。它把 deconvolution 得到的 spot-state composition 当成轨迹推断主输入，目标是让空间发育和状态迁移分析比直接用 spot expression 更稳定。",
+      "details": {
+        "methods": "根据 PubMed 原始 XML 摘要，st2traj 是 deconvolution-informed trajectory framework，先在 human heart pseudo-spot benchmark 中比较五种 deconvolution methods，再用 DECODE-derived proportions 在 multi-timepoint spatial transcriptomics 数据上推断轨迹场；作者还将其与 spaTrack、moscot 和 CASCAT 做探索性对照，并公开了 GitHub 代码和 Zenodo 归档数据。",
+        "findings": "原始摘要称，在 human heart 多时间点数据上，未缩放的 DECODE-derived proportions 能产生更平滑的 trajectory fields，并与 expression-derived marker programs 更一致；st2traj 的空间一致性也优于 spaTrack，在独立 chicken heart 数据上还能恢复 D7、D10、D14 的阶段相关轨迹变化。",
+        "limitations": "该工作已同行评审，但当前可直接核验的信息主要来自 PubMed 摘要。摘要没有给出全部定量指标和不同 deconvolution 误差对轨迹稳定性的影响，因此目前只能确认其方法思路、公开代码状态和作者声称的总体表现，不能夸大其在所有时空组学场景中的泛化能力。"
+      },
+      "relevance": "它直接属于空间与时空组学方法学更新，因为多时间点空间轨迹推断是构建时空细胞图谱、评估动态基础模型和连接单细胞状态迁移的重要分析环节。",
+      "followUp": "继续跟踪 st2traj 在更多器官和更高分辨率平台上的评测，以及社区是否把它纳入空间时序 benchmark。",
+      "priority": 2
+    },
+    {
+      "id": "pmid:42648290",
+      "title": "Virtual Cell Challenge 2026: Benchmarking zero-shot generalization across cellular contexts.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42648290/",
+      "source": "Cell",
+      "date": "2026-08-26",
+      "updateType": "观点/基准公告",
+      "evidence": "观点与解读",
+      "categories": [
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "Cell 于 2026 年 8 月 26 日发表的 Virtual Cell Challenge 2026 不是实验论文，而是一次高相关基准公告：它把评测焦点放到 unseen cell lines 上的 zero-shot gene knockdown response prediction，直接检验虚拟细胞模型能否跨 cellular contexts 泛化。对单细胞扰动预测和 virtual cell 赛道来说，这比单一数据集上的静态排行榜更有方法论意义。",
+      "details": {
+        "methods": "根据 PubMed 原始 XML 摘要，本次 Challenge 将使用新的 Arc-generated dataset，要求参与者在未见过的 cell lines 上预测 gene knockdown responses，以 zero-shot prediction across multiple independent cellular contexts 为核心测试设定；其目标是评估模型能否缩小 preclinical experimental predictions 与 human biology 之间的差距。",
+        "findings": "这篇 Cell 文章本身不报告新的模型结果，而是明确给出了 2026 版 Virtual Cell Challenge 的评测任务边界、测试数据性质和零样本泛化目标，把 benchmark 重心从单场景拟合转向跨细胞环境泛化。",
+        "limitations": "它属于观点/基准公告而非原创研究结果，当前可直接核验的信息仅限 PubMed 摘要中披露的赛题目标和数据概述。摘要没有提供完整数据规模、提交规则、评价指标细节或参赛模型结果，因此不能把它写成已证明某类模型优越性的同行评审成果。"
+      },
+      "relevance": "它直接命中虚拟细胞与扰动主线，因为 zero-shot knockdown prediction 正是 virtual cell 领域最关键的泛化测试之一，且该公告来自 Cell 与 Arc Virtual Cell Initiative 团队。",
+      "followUp": "继续跟踪 Challenge 官方数据发布、评分规则、基线模型和获胜方案，以及这些结果是否反哺单细胞扰动 foundation model 设计。",
+      "priority": 1
+    },
     {
       "id": "arxiv:2608.26208",
       "title": "Learning Interpretable Tumor Microenvironment Representations by Fitting Pan-Cancer Cell State-Niche Correlation",
