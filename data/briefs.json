@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-29 09:10 CST",
-  "statusMessage": "2026-08-29 检索覆盖 2026-08-26 至 2026-08-29（Asia/Shanghai，含至少 48 小时重叠；无漏跑补检）；新增 4 条、修订 0 条，最新收录论文发布日期为 2026-08-28。检索时间与论文发布日期已区分记录；文献内容提交 2b91a87 和元数据刷新提交 5b0cd7d 均已推送，网页状态已更新。",
+  "updatedAt": "2026-08-30 09:25 CST",
+  "statusMessage": "2026-08-30 检索覆盖 2026-08-27 至 2026-08-30（Asia/Shanghai，含至少 48 小时重叠；无漏跑补检）；新增 4 条、修订 0 条，最新收录论文发布日期为 2026-08-29。检索时间与论文发布日期已区分记录；本轮文献内容已更新，GitHub 同步状态待首次推送后回填。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-08-29 09:10 CST",
-    "commit": "2b91a87",
+    "state": "pending",
+    "updatedAt": "2026-08-30 09:25 CST",
+    "commit": "",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-29 文献简报已同步到 GitHub Pages；文献内容提交为 2b91a87。本轮新增 4 条高相关更新，并完成 2026-08-26 至 2026-08-29 的重叠检索。"
+    "message": "2026-08-30 文献简报内容已完成本地更新，待首次推送成功后回填文献内容提交哈希与网页同步状态。"
   },
   "categories": [
     {
@@ -41,6 +41,93 @@
     }
   ],
   "items": [
+    {
+      "id": "pmid:42667121",
+      "title": "Predicting Single-Cell Perturbation Responses Across Biological Contexts With a Deep Generative Model Integrating Optimal Transport.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42667121/",
+      "source": "Advanced Science",
+      "date": "2026-08-29",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "虚拟细胞与扰动",
+        "单细胞基础模型"
+      ],
+      "summary": "scPILOT 是 2026 年 8 月 29 日正式发表的单细胞扰动预测生成模型，核心目标不是在单一细胞系内拟合已见条件，而是把已观察扰动在不同 cell type、patient、species 和 cell line 之间转移。它直接面向 virtual cell 最关键的跨 biological context 泛化问题，并把 latent optimal transport 明确放进 query-conditioned 预测框架中。",
+      "details": {
+        "methods": "根据 PubMed 原始 XML 摘要，scPILOT 是 single-cell perturbation inference via latent optimal transport 的 query-conditioned framework。模型通过 discriminator-assisted training 学习生成式 latent representation，把 perturbation inference 拆成来自已观测 context 的 cell-level response estimation，以及面向 query context 的 latent optimal transport response transfer，用于跨 cell type、patient、species 和 cell line 迁移已观测扰动效应。",
+        "findings": "原始摘要称，scPILOT 在 held-out cell-type、patient 和 species benchmarks 上分别达到 context-averaged R2_mean/MMD2 为 0.945/0.137、0.598/0.025 和 0.853/0.287，并在 held-out cell-line benchmark 中保持较强 population-average accuracy。作者还指出，预测表现与数据集可学习性以及 query-context 匹配程度相关。",
+        "limitations": "该工作已同行评审，但当前可直接核验的信息主要来自 PubMed 原始摘要。摘要没有展开全部 benchmark 数据集组成、对照基线实现细节、训练成本和代码权重发布状态，因此现阶段只能确认其任务设定、核心方法和作者声称的整体表现，不能夸大其跨上下文泛化幅度。"
+      },
+      "relevance": "它直接命中虚拟细胞与单细胞基础模型主线，因为跨 biological context 的扰动响应迁移正是构建可泛化 AIVC/virtual cell 系统的核心能力，而摘要也明确将其与 emerging artificial intelligence virtual cell research 关联。",
+      "followUp": "继续跟踪 scPILOT 的代码和权重是否公开，以及其与主流 Perturb-seq benchmark、foundation model cell embeddings 和跨物种泛化评测的衔接方式。",
+      "priority": 1
+    },
+    {
+      "id": "pmid:42664972",
+      "title": "Genome-scale perturb-seq in primary human CD4+ T cells maps context-specific regulators of T cell programs and human immune traits.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42664972/",
+      "source": "Cell",
+      "date": "2026-08-28",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "虚拟细胞与扰动",
+        "多组学与调控"
+      ],
+      "summary": "这篇 2026 年 8 月 28 日发表在 Cell 的 genome-scale Perturb-seq 论文，是本轮最重要的实验资源更新之一。作者在 4 名供体、2200 万个原代人 CD4+ T 细胞上系统扰动全部表达基因，并同时测量静息与刺激条件下的转录组效应，把 context-specific gene regulation 直接推到原代免疫细胞尺度。",
+      "details": {
+        "methods": "根据 PubMed 原始 XML 摘要，研究在 4 名供体来源的 2200 万 primary human CD4+ T cells 上实施 all expressed genes 的系统扰动，并开发 probe-based perturb-seq platform，在 resting 和 stimulated 条件下测量单细胞转录组响应；随后利用 perturbation signatures 连接 population-scale transcriptomic atlases、T cell polarization 和 autoimmune disease risk 相关通路。",
+        "findings": "原始摘要称，这套数据可系统绘制调控免疫通路的基因网络，识别此前未表征的 cytokine production regulators，并显示 active regulators 及其控制的 gene programs 会随刺激条件显著变化。作者还利用 perturbation signatures 对接大规模 T cell atlas，提名了影响 T cell polarization、年龄相关表型和自身免疫病风险的 context-specific 调控路径。",
+        "limitations": "该工作已同行评审，但当前直接可核验的信息仍主要来自 PubMed 摘要。摘要没有提供全部 perturbation design、统计检验、供体差异和公开数据/代码入口细节，因此目前只能确认资源规模、实验设定和作者声称的核心发现，不能据此外推所有调控关系都已获得充分机制验证。"
+      },
+      "relevance": "它与虚拟细胞和 Perturb-seq 主线高度相关，因为大规模、原代、跨刺激条件的 perturbation-response 数据本身就是训练和评估生成式细胞模型的重要基座。",
+      "followUp": "继续跟踪 Cell 原文附带的数据门户、代码仓库和可下载矩阵，以及这些 perturbation signatures 是否被后续 virtual cell benchmark 或 foundation model 直接采用。",
+      "priority": 1
+    },
+    {
+      "id": "pmid:42664957",
+      "title": "Pan-tumor spatial transcriptomics reveals conserved properties of tumor organization.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42664957/",
+      "source": "Cell Reports Medicine",
+      "date": "2026-08-28",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "这篇 2026 年 8 月 28 日正式发表的 pan-tumor spatial transcriptomics 论文，把 262 例实体瘤空间转录组统一到一个跨癌种组织架构分析框架中，并提出离散、分层组织的 multicellular sub-regions“spatial groups”。它不是空间 foundation model，但属于高价值的空间图谱底座更新。",
+      "details": {
+        "methods": "根据 PubMed 原始 XML 摘要，作者分析了 262 个 solid tumors 的 spatial transcriptomics 数据，识别出被称为 spatial groups 的离散、层级化 multicellular sub-regions；并借助 orthogonal spatial measurements 与 expert pathologist review 将这些结构关联到 global tissue context 与 local cellular neighborhoods。研究随后比较不同肿瘤中的 spatial groups，并在 16 例 retrospective NSCLC immune checkpoint blockade 队列中评估该 pan-tumor spatial biology classification 与疗效的关系。",
+        "findings": "原始摘要称，肿瘤微环境可被划分为保守的 spatial groups，跨肿瘤比较后可得到一个以 immune biology spatial heterogeneity 为主轴的 pan-tumor classification。作者还报告，在独立 NSCLC ICB 回顾性队列中，这一分类能够区分临床响应，并捕捉与 ICB 敏感性相关的结构和生物学特征。",
+        "limitations": "该工作已同行评审，但当前可直接核验的信息主要来自 PubMed 原始摘要。摘要未给出全部肿瘤类型分布、平台差异控制、空间 group 稳定性量化和外部队列规模细节，因此目前只能确认其 pan-tumor 组织框架和作者声称的总体关联，不能把它写成普适的因果机制定论。"
+      },
+      "relevance": "它直接服务空间与时空组学和细胞图谱底座主线，因为跨癌种、可比较的空间组织单元会影响空间模型训练语料组织、TME 表征学习和后续疗效分层基准。",
+      "followUp": "继续跟踪论文是否公开 spatial group 注释、代码与可复用 reference schema，以及社区是否将这一 pan-tumor 组织框架用于空间基础模型评测。",
+      "priority": 1
+    },
+    {
+      "id": "pmid:42664975",
+      "title": "PROFET predicts continuous gene expression dynamics from scRNA-seq data to elucidate heterogeneity of cancer treatment responses.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42664975/",
+      "source": "Cell Systems",
+      "date": "2026-08-28",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "测序与方法学"
+      ],
+      "summary": "PROFET 是 2026 年 8 月 28 日正式发表的单细胞动态重建方法，重点解决 scRNA-seq 只能给出静态快照、难以恢复连续表达轨迹的问题。它把 particle-based gradient flow 与 simulation-free force matching 结合起来，在癌症治疗响应等场景中重建连续细胞状态演化。",
+      "details": {
+        "methods": "根据 PubMed 原始 XML 摘要，PROFET 是 particle-based reconstruction of generative force-matched expression trajectories 框架，利用 particle-based gradient-flow algorithm 和 simulation-free force matching，从稀疏采样的 scRNA-seq time series 中重建连续、非线性的单细胞轨迹。作者在 mouse 和 human in vitro 数据集及 in vivo axolotl regeneration 数据集上做评测，并将其应用到新生成的 palbociclib-treated MCF7 scRNA-seq 数据和 3 个已发表乳腺癌患者数据集。",
+        "findings": "原始摘要称，PROFET 在多个数据集上的预测误差比 10 个 state-of-the-art trajectory inference 方法低 2.6 到 12.5 倍。应用于乳腺癌治疗响应时，作者重建了 treatment-response trajectories，并识别出一个发生显著表型偏移、富集 UNC5B、TLR3、PCDH19、PROCR、SLITRK6 和 SEMA6B 等表面标志的耐药细胞亚群。",
+        "limitations": "该工作已同行评审，但当前可直接核验的信息主要来自 PubMed 摘要。摘要没有完整给出全部时间序列设置、误差定义、计算成本和代码可用性，因此现阶段只能确认其连续轨迹重建目标和作者声称的相对改进，不能夸大其在任意 scRNA-seq 轨迹任务中的普适优势。"
+      },
+      "relevance": "它属于高相关方法学更新，因为连续动态重建能力会直接影响单细胞状态转移分析、治疗响应建模以及后续生成式细胞模型的动力学评测。",
+      "followUp": "继续跟踪 PROFET 的代码和可复现实验资源是否公开，以及其是否被纳入更通用的单细胞动态 benchmark。",
+      "priority": 2
+    },
     {
       "id": "pmid:42664347",
       "title": "scProtoTransformer: Scalable reference mapping across molecules, cells, and donors.",
