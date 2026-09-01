@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-31 09:13 CST",
-  "statusMessage": "2026-08-31 检索覆盖 2026-08-28 至 2026-08-31（Asia/Shanghai，含至少 48 小时重叠；无漏跑补检），并执行最近 30 天回溯检索（2026-08-01 至 2026-08-31）；新增 4 条、修订 0 条，最新收录论文发布日期仍为 2026-08-29。检索时间与论文发布日期已区分记录；文献内容提交 8e30652 已推送，待元数据刷新提交推送后网页状态更新。",
+  "updatedAt": "2026-09-01 09:10 CST",
+  "statusMessage": "2026-09-01 检索覆盖 2026-08-29 至 2026-09-01（Asia/Shanghai，含至少 48 小时重叠；无漏跑补检）；新增 1 条、修订 0 条，最新收录论文发布日期为 2026-08-31。检索时间与论文发布日期已区分记录；bioRxiv 原始来源本轮受限，文献内容提交与元数据刷新尚待推送。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-08-31 09:13 CST",
-    "commit": "8e30652",
+    "state": "failed",
+    "updatedAt": "2026-09-01 09:10 CST",
+    "commit": "",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-08-31 文献简报内容已推送到 GitHub；文献内容提交为 8e30652。本轮新增 4 条高相关预印本，覆盖 2026-08-28 至 2026-08-31 常规窗口与 2026-08-01 至 2026-08-31 周一回溯检索。"
+    "message": "2026-09-01 文献简报已完成检索与写库，覆盖 2026-08-29 至 2026-09-01 常规窗口并新增 1 条同行评审方法学更新；bioRxiv 原始来源本轮受限，待文献内容提交与元数据刷新推送后再确认网页状态。"
   },
   "categories": [
     {
@@ -41,6 +41,28 @@
     }
   ],
   "items": [
+    {
+      "id": "pmid:42673453",
+      "title": "Single-cell profiling of mitochondrial phenotyping-coupled mtDNA genotyping.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42673453/",
+      "source": "Proceedings of the National Academy of Sciences of the United States of America",
+      "date": "2026-08-31",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "测序与方法学",
+        "多组学与调控"
+      ],
+      "summary": "这篇 2026 年 8 月 31 日上线的 PNAS 方法论文提出 scMPCDS，把单细胞 mtDNA 突变与异质性测量直接和线粒体膜电位、活性氧等功能表型耦合到同一实验流程里。它不属于单细胞基础模型，但属于本任务明确覆盖的单细胞测序技术与方法学更新，尤其适合跟踪单细胞基因型-表型耦合测量的进展。",
+      "details": {
+        "methods": "根据 PubMed 原始 XML 摘要，作者提出 human single-cell mitochondrial phenotype-coupled mtDNA sequencing（scMPCDS）平台，在单细胞层面同时定量 mtDNA mutations、heteroplasmy、mitochondrial membrane potential 和 reactive oxygen species，从而把线粒体基因型与功能状态直接配对。作者将方法应用于 DdCBE 介导的 mtDNA 编辑体系、HeLa 细胞和透明细胞肾细胞癌组织。",
+        "findings": "原始摘要称，scMPCDS 能揭示 DdCBE-mediated mtDNA editing 引入的 cell-specific 线粒体 off-target mutations，并显示这些变异伴随多样的功能表型变化。应用到 HeLa 细胞和 clear cell renal cell carcinoma tissues 时，作者进一步识别出具有不同 mtDNA mutation burden 和 altered bioenergetic profiles 的单细胞亚群，提示线粒体异质性可能参与肿瘤演化。",
+        "limitations": "该工作已同行评审，但当前可直接核验的信息主要来自 PubMed 原始摘要。摘要没有展开实验通量、测序深度、误差率、与现有单细胞 mtDNA 或功能成像流程的系统对照，也未在本轮直接核到代码和完整协议，因此现阶段只能确认其平台设定与作者声称的代表性结果，不能夸大其普适性或临床可转化程度。"
+      },
+      "relevance": "它对应本任务的单细胞测序技术、方法学和多组学耦合主线，因为 scMPCDS 把单细胞线粒体基因型与功能表型直接联测，可作为后续细胞状态建模、异质性分析和机制验证的重要上游数据层。",
+      "followUp": "继续跟踪 scMPCDS 是否公开更完整实验协议、软件分析流程和原始数据，以及它能否扩展到更大规模样本或与其他单细胞组学联合测量。",
+      "priority": 2
+    },
     {
       "id": "pmid:42667121",
       "title": "Predicting Single-Cell Perturbation Responses Across Biological Contexts With a Deep Generative Model Integrating Optimal Transport.",
