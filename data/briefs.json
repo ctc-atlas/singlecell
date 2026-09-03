@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-02 09:14 CST",
-  "statusMessage": "2026-09-02 检索覆盖 2026-08-30 至 2026-09-02（Asia/Shanghai，含至少 48 小时重叠；无漏跑补检）；新增 0 条、修订 0 条，最新收录论文发布日期仍为 2026-08-31。检索时间与论文发布日期已区分记录；本轮识别 1 条待核验 DOI 候选但未满足摘要级事实核验，文献内容提交 0603f90 已推送，待元数据刷新提交推送后网页状态更新。",
+  "updatedAt": "2026-09-03 09:10 CST",
+  "statusMessage": "2026-09-03 检索覆盖 2026-08-31 至 2026-09-03（Asia/Shanghai，含至少 48 小时重叠；无漏跑补检）；新增 5 条、修订 0 条，最新收录论文发布日期为 2026-09-02。检索时间与论文发布日期已区分记录；文献内容待本轮首次推送，网页状态待元数据刷新提交推送后更新。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-09-02 09:14 CST",
-    "commit": "0603f90",
+    "state": "pending",
+    "updatedAt": "2026-09-03 09:10 CST",
+    "commit": "",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-09-02 文献简报内容已推送到 GitHub；文献内容提交为 0603f90。本轮覆盖 2026-08-30 至 2026-09-02 常规窗口，新增 0 条、修订 0 条；另有 1 条 DOI 候选因缺少可直接核验的摘要级方法与结果信息而暂列待核验。待元数据刷新提交推送后网页状态更新。"
+    "message": "2026-09-03 文献简报已完成本地更新，覆盖 2026-08-31 至 2026-09-03 常规窗口；新增 5 条、修订 0 条，待文献内容提交推送后回填提交哈希，并在元数据刷新提交推送成功后确认网页状态更新。"
   },
   "categories": [
     {
@@ -41,6 +41,115 @@
     }
   ],
   "items": [
+    {
+      "id": "arxiv:2609.01357",
+      "title": "PopPert: Population-level Joint-Distribution Modeling for Single-Cell Perturbation Prediction",
+      "link": "https://arxiv.org/abs/2609.01357",
+      "source": "arXiv",
+      "date": "2026-09-01",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "单细胞基础模型"
+      ],
+      "summary": "PopPert 是 2026 年 9 月 1 日上线的单细胞扰动预测预印本，核心转向是放弃对 unpaired 单细胞做伪一一对应，直接建模 control population 与 perturbation condition 下的群体联合分布。它既面向 Perturb-seq/扰动预测主线，也把 synthetic perturbed profiles 的生成能力明确纳入 population-level framework。",
+      "details": {
+        "methods": "根据 arXiv 原始条目页摘要，PopPert 显式参数化 population-level joint gene expression distributions：输入 control population distribution 和 perturbation condition，预测扰动引起的分布参数变化，而不是假设 control cell 与 perturbed cell 可逐一配对。模型使用 low-rank Gaussian Copula 建模跨基因统计依赖，并可从联合分布中采样 synthetic perturbed single-cell profiles。",
+        "findings": "原始摘要称，PopPert 在涵盖 genetic perturbations 与 chemical perturbations 的多个 single-cell benchmarks 上，在 differential expression recovery、perturbation effect estimation 和 population-level distribution matching 三类指标上取得整体更优表现。作者同时公开了 PopPert 代码仓库。",
+        "limitations": "当前证据仅来自 arXiv 原始摘要，尚未经同行评审。摘要没有给出各 benchmark 的具体数据集规模、对照方法名单、全部量化指标和训练成本，因此目前只能确认其建模假设、copula 结构与作者声称的总体优势，不能夸大其在所有扰动任务中的泛化幅度。"
+      },
+      "relevance": "它直接命中虚拟细胞与扰动预测主线，因为许多真实单细胞扰动数据天然是 unpaired population comparison，而 PopPert 正是在这一设定下做联合分布级别的 response modeling。",
+      "followUp": "继续跟踪 PopPert 的公开代码、可复现实验配置，以及它与现有 Perturb-seq benchmark 和 foundation-model cell embeddings 的衔接方式。",
+      "priority": 1
+    },
+    {
+      "id": "arxiv:2609.00681",
+      "title": "Operationalizing open-ended biological discovery across single-cell representations",
+      "link": "https://arxiv.org/abs/2609.00681",
+      "source": "arXiv",
+      "date": "2026-09-01",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "测序与方法学"
+      ],
+      "summary": "PROSPECTor 是 2026 年 9 月 1 日提交的单细胞分析预印本，重点不是再做一个 embedding，而是把“跨 conventional expression representations 与 foundation-model embeddings 的开放式生物发现”流程做成可审计框架。它对单细胞基础模型的价值在于：把表示学习结果直接转成可量化、可外推、可验证的候选假设。",
+      "details": {
+        "methods": "根据 arXiv 原始条目页摘要，PROSPECTor 是 end-to-end framework，先在 conventional expression representations 与 diverse foundation-model embeddings 中搜索可重复的 biological structures，再把这些信号转译为可定量检验的 candidate hypotheses，并通过投影到 unseen datasets 评估其泛化性与 phenotype association。",
+        "findings": "原始摘要称，PROSPECTor 支持的生物学信号来自不同表示空间和搜索策略；作者在独立场景中进一步检查其候选，报告 fibroblast extracellular-matrix programmes 能迁移到独立小鼠干预队列，而 patient-resolved gastric-cancer T-cell programme 能在 single-cell、bulk 和 spatial cohorts 中重复出现。",
+        "limitations": "当前证据仅来自 arXiv 原始摘要，尚未经同行评审。摘要没有展开搜索策略的统计控制、假设筛选阈值、与现有 discovery pipeline 的对照细节，也未直接给出代码或资源链接，因此现阶段只能确认其框架目标和作者声称的代表性验证案例，不能把它写成已普遍成立的发现引擎。"
+      },
+      "relevance": "它直接关联单细胞基础模型与评测方法学主线，因为随着 embedding 和 foundation model 增多，如何系统复查既有单细胞数据并产生可验证假设，正在变成下游分析的重要瓶颈。",
+      "followUp": "继续跟踪 PROSPECTor 是否公开代码与筛选协议，以及其在更多单细胞 atlas、空间队列和不同 foundation-model 表示上的稳定性。",
+      "priority": 1
+    },
+    {
+      "id": "arxiv:2609.02344",
+      "title": "Subcellularly Resolved Single-Cell Embedding Learning with Transcriptomic data, Protein Structure and Localization Information",
+      "link": "https://arxiv.org/abs/2609.02344",
+      "source": "arXiv",
+      "date": "2026-09-02",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "多组学与调控"
+      ],
+      "summary": "这篇 2026 年 9 月 2 日提交的预印本把 single-cell embedding 从“整细胞一个向量”推进到 subcellularly resolved 表示：同时联合 RNA expression、protein sequence representation 和 protein structural information，并按不同亚细胞区室建模。它不是通用大模型发布，但属于高相关的单细胞表征学习方向更新。",
+      "details": {
+        "methods": "根据 arXiv 原始条目页摘要，作者提出一个 multimodal framework，联合 RNA expression profiles、protein sequence representations 与 protein structural information，并用 cross-attention architecture 在 distinct subcellular compartments 内建模这些模态的相互作用，输出具细粒度亚细胞组织信息的 cell embeddings。",
+        "findings": "原始摘要称，该框架能够在单细胞表示中同时保留分子表达模式与相关蛋白功能属性，并把 spatially organized biological information 与多层分子信号整合到统一表示中；作者将其定位为首个把 transcriptomic、protein sequence 与 protein structural knowledge 共同纳入 subcellularly resolved cell embeddings 的框架。",
+        "limitations": "当前证据仅来自 arXiv 原始摘要，尚未经同行评审。摘要没有提供 benchmark 数据集、对照基线、下游任务指标和代码发布状态，因此目前只能确认其多模态设计与作者声称的创新点，不能断言它已在实际单细胞任务中超越现有 foundation-model embeddings。"
+      },
+      "relevance": "它对应单细胞基础模型与多组学调控主线，因为工作试图把转录组、蛋白序列和结构知识统一进更细粒度的细胞表征，而这正是未来跨模态 cell foundation model 可能演化的方向。",
+      "followUp": "继续跟踪该框架是否公开代码、训练数据与 benchmark 结果，以及其在细胞注释、扰动迁移和跨模态检索上的实际增益。",
+      "priority": 2
+    },
+    {
+      "id": "pmid:42684056",
+      "title": "COBRA: Cell-type-specific Orthogonal Batch effect Removal Algorithm in single cell RNA-sequencing data.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42684056/",
+      "source": "Bioinformatics",
+      "date": "2026-09-02",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "测序与方法学",
+        "单细胞基础模型"
+      ],
+      "summary": "COBRA 是 2026 年 9 月 2 日正式发表在 Bioinformatics 的批次校正方法，针对现有方法常把 batch effect 视为 cell-type homogeneous、又往往在低维空间里做修正的问题，提出 cell-type-specific 的正交化线性框架。它属于单细胞整合与参考映射生态里非常实用的方法学更新。",
+      "details": {
+        "methods": "根据 PubMed 原始 XML 摘要，COBRA 是 linear model-based batch correction method，显式调整 cell-type-specific batch effect，并通过对 biological variables 做正交化来移除技术伪影、保留有生物意义的转录差异。若缺少 cell type annotation，COBRA 还会迭代估计 pseudo-cell types 并同时处理 batch effects；输出保留完整 gene expression matrix。",
+        "findings": "原始摘要称，作者在 simulated 与 real-world datasets 上评测 COBRA，包括 type 2 diabetes 和 COVID-19 数据，报告其在 batch mixing efficiency、biological group structure preservation 和 differentially expressed gene detection accuracy 上表现更优。摘要还直接给出官方 GitHub 与 Zenodo 复现链接。",
+        "limitations": "该工作已同行评审，但当前可直接核验的信息主要来自 PubMed 原始摘要。摘要没有展开与哪些主流整合方法对照、不同细胞组成偏移下的稳健性边界以及计算成本，因此目前只能确认其方法假设、完整矩阵保留策略和作者声称的总体表现，不能夸大其对所有 batch integration 场景的普适优势。"
+      },
+      "relevance": "它直接关联单细胞基础模型和方法学主线，因为高质量 batch correction 是 atlas 整合、foundation-model 训练语料清洗、reference mapping 和下游差异分析的前置环节。",
+      "followUp": "继续跟踪 COBRA 在大规模 atlas、跨平台整合和无标签场景中的表现，以及社区是否将其纳入常用 scRNA-seq integration benchmark。",
+      "priority": 2
+    },
+    {
+      "id": "doi:10.64898/2026.08.26.747418",
+      "title": "scPyviewer: a Python-native interactive viewer from AnnData single-cell data",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.26.747418v1",
+      "source": "bioRxiv",
+      "date": "2026-08-31",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "测序与方法学"
+      ],
+      "summary": "scPyviewer 是 2026 年 8 月 31 日上线的 bioRxiv 软件预印本，瞄准 Python/scanpy 用户长期缺少原生、可分享的单细胞交互查看器这一实际痛点。它不是基础模型论文，但属于本任务明确覆盖的软件与分析方法更新。",
+      "details": {
+        "methods": "根据 bioRxiv 原始摘要页，scPyviewer 是一个直接摄取 AnnData 的 web-based viewer，复现主流 R Shiny 单细胞查看器的核心交互模式，同时暴露可脚本化的 Python API 以返回 Matplotlib figures 和 pandas tables。作者用三套数据在相同操作下，将其与现有基于 R/Seurat 的渲染底座做 head-to-head benchmark。",
+        "findings": "原始摘要称，scPyviewer 在对三个活跃维护的 R Shiny 基线工具做 feature-parity audit 时达到或超过全部基线能力（7/7），并且是其中唯一原生支持 AnnData 且无需 Seurat conversion 的方案。作者还报告，在 22,315 到约 313,000 细胞的三套数据上，scPyviewer 的核心视图渲染都更快，单视图最高约 3.6 倍，同时内存占用更低；在最大数据集上，Seurat 渲染底座在 8 GB 内存预算下失败，而 scPyviewer 仍可完成全部视图。",
+        "limitations": "当前证据仅来自 bioRxiv 原始摘要页，尚未经同行评审。摘要没有展开所有交互场景、前端延迟定义、跨浏览器稳定性和真实部署限制，因此现阶段只能确认其软件定位、公开代码状态和作者声称的性能对比，不能把它写成所有单细胞可视化场景的通用最优解。"
+      },
+      "relevance": "它对应单细胞方法学与代码生态主线，因为可直接分享的 AnnData 原生查看器会影响团队协作、atlas 浏览和 foundation-model 下游结果的可审计展示。",
+      "followUp": "继续跟踪 scPyviewer 的安装稳定性、社区采用情况，以及其对空间与多组学 AnnData 工作流的支持是否扩展。",
+      "priority": 3
+    },
     {
       "id": "pmid:42673453",
       "title": "Single-cell profiling of mitochondrial phenotyping-coupled mtDNA genotyping.",
