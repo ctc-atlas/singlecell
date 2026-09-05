@@ -1,12 +1,12 @@
 {
   "updatedAt": "2026-09-05 09:17 CST",
-  "statusMessage": "2026-09-05 检索覆盖 2026-09-01 至 2026-09-05（Asia/Shanghai）；补检缺失日报日期 2026-09-04，含两天重叠；新增 19 条、修订 0 条、累计 121 条；最新收录论文发布日期为 2026-09-04。本次检索不完整：arXiv API 三次超时，列表页仅部分补偿。",
+  "statusMessage": "2026-09-05 检索覆盖 2026-09-01 至 2026-09-05（Asia/Shanghai）；补检缺失日报日期 2026-09-04，含两天重叠；新增 19 条、修订 0 条、累计 121 条；最新收录论文发布日期为 2026-09-04。本次检索不完整：arXiv API 三次超时，列表页仅部分补偿。 文献内容已推送，GitHub 同步记录随元数据刷新提交发布。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-09-05 09:17 CST",
-    "commit": "41a1298",
+    "state": "success",
+    "updatedAt": "2026-09-05 09:18 CST",
+    "commit": "bfb5977701431725e8e0e1ab285ce6e1b57cd105",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-09-05 内容待推送；commit 暂保留上轮内容提交，不代表本轮成功。"
+    "message": "2026-09-05 文献内容提交 bfb5977701431725e8e0e1ab285ce6e1b57cd105 已推送；新增 19 条、修订 0 条，累计 121 条。本同步记录随元数据刷新提交发布；检索健康 incomplete（arXiv API 超时），同步成功不等于检索完整。"
   },
   "categories": [
     {
