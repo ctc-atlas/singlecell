@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-05 09:17 CST",
-  "statusMessage": "2026-09-05 检索覆盖 2026-09-01 至 2026-09-05（Asia/Shanghai）；补检缺失日报日期 2026-09-04，含两天重叠；新增 19 条、修订 0 条、累计 121 条；最新收录论文发布日期为 2026-09-04。本次检索不完整：arXiv API 三次超时，列表页仅部分补偿。 文献内容已推送，GitHub 同步记录随元数据刷新提交发布。",
+  "updatedAt": "2026-09-06 10:30 CST",
+  "statusMessage": "2026-09-06 检索窗口 2026-09-03 至 2026-09-06（Asia/Shanghai），另补查 arXiv 2026-09-01 至 09-02 的上轮来源缺口；新增 16 条、修订 1 条、累计 137 条；最新收录论文/版本发布日期为 2026-09-05。本次检索不完整：OUP 勘误正文访问失败；文献内容待推送。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-09-05 09:18 CST",
-    "commit": "bfb5977701431725e8e0e1ab285ce6e1b57cd105",
+    "state": "pending",
+    "updatedAt": "2026-09-06 10:30 CST",
+    "commit": null,
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-09-05 文献内容提交 bfb5977701431725e8e0e1ab285ce6e1b57cd105 已推送；新增 19 条、修订 0 条，累计 121 条。本同步记录随元数据刷新提交发布；检索健康 incomplete（arXiv API 超时），同步成功不等于检索完整。"
+    "message": "2026-09-06 内容尚未推送；成功状态仅在内容推送后回填。"
   },
   "categories": [
     {
@@ -41,6 +41,358 @@
     }
   ],
   "items": [
+    {
+      "id": "doi:10.1093/bib/bbag469",
+      "title": "Gene-Chronos: parameter-efficient developmental time inference using a pretrained single-cell foundation model.",
+      "link": "https://doi.org/10.1093/bib/bbag469",
+      "source": "Briefings in Bioinformatics",
+      "date": "2026-09-04",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "单细胞基础模型",
+        "空间与时空组学"
+      ],
+      "summary": "Gene-Chronos 用冻结 Geneformer 与少量可训练时间参数推断发育时间。",
+      "details": {
+        "methods": "在冻结 Geneformer 上引入可学习时间提示 token 和时间对比目标；评测覆盖不同物种和发育阶段。",
+        "findings": "作者报告在所评测任务中优于对照，并泛化至未见样本；注意力分析给出发育相关基因线索。",
+        "limitations": "Crossref 与 Europe PMC 摘要核验；9 月 4 日为在线发表，9 月 1 日为印刷期次日期。摘要未列完整误差与切分；注意力关联不证明因果。"
+      },
+      "relevance": "直接关联单细胞基础模型、空间与时空组学，为相应模型训练、分析或评测提供参考。",
+      "followUp": "跟踪代码与数据版本、独立复现及跨数据集验证；重点检查上述证据边界。",
+      "priority": 1
+    },
+    {
+      "id": "doi:10.1038/s41588-026-02706-8",
+      "title": "Scalable, generalizable and uncertainty-aware integration of spatial multiomics across diverse modalities and platforms with SCIGMA.",
+      "link": "https://doi.org/10.1038/s41588-026-02706-8",
+      "source": "Nature Genetics",
+      "date": "2026-09-03",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "多组学与调控"
+      ],
+      "summary": "SCIGMA 结合多视图图网络与不确定性感知对比学习整合空间多组学。",
+      "details": {
+        "methods": "评测 19 个数据集，覆盖 8 类模态、10 种组织和 9 个平台；单次支持至多五模态及超过百万空间位置。",
+        "findings": "作者在可比较数据集报告空间域识别、模态保留、特征重建与可重复性优势，并输出局部不确定性估计。",
+        "limitations": "期刊摘要与原始索引一致；不确定性可反映生物或技术异质性，不能直接等同真实测量误差；尚未独立复现。"
+      },
+      "relevance": "直接关联空间与时空组学、多组学与调控，为相应模型训练、分析或评测提供参考。",
+      "followUp": "跟踪代码与数据版本、独立复现及跨数据集验证；重点检查上述证据边界。",
+      "priority": 1
+    },
+    {
+      "id": "doi:10.1038/s41592-026-03211-w",
+      "title": "Spatial isoform sequencing at single-cell resolution reveals cell-type-specific spatial isoform variability in multiple brain cell types.",
+      "link": "https://doi.org/10.1038/s41592-026-03211-w",
+      "source": "Nature Methods",
+      "date": "2026-09-04",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "Spl-ISO-Seq2 将空间长读长异构体分析推进至亚微米尺度。",
+      "details": {
+        "methods": "结合 500 nm 分辨率 Spl-ISO-Seq2 与 Spl-IsoQuant-2、Spl-IsoFind，在成年小鼠脑分析区域内和不依赖预定义区域的异构体变化。",
+        "findings": "作者报告支持超过 4.5 亿条形码；识别兴奋性神经元 Snap25 等空间异构体模式，部分变化不能仅由细胞组成解释。",
+        "limitations": "500 nm 指平台空间分辨率，不等于每个细胞的完整转录本覆盖；示例以小鼠脑为主，疾病应用仍需验证。"
+      },
+      "relevance": "直接关联空间与时空组学、测序与方法学，为相应模型训练、分析或评测提供参考。",
+      "followUp": "跟踪代码与数据版本、独立复现及跨数据集验证；重点检查上述证据边界。",
+      "priority": 1
+    },
+    {
+      "id": "doi:10.64898/2026.08.31.748446",
+      "title": "Cross-domain confidence reliability and remappability of frozen single-cell representations",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.31.748446v1",
+      "source": "bioRxiv",
+      "date": "2026-09-04",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "测序与方法学"
+      ],
+      "summary": "跨域置信度审计发现冻结单细胞表示的分类概率需要目标域校准。",
+      "details": {
+        "methods": "比较来源域与目标域分类器最大 softmax 概率，将置信度差异分为排序错误与系统概率漂移，并用少量目标标签重校准。",
+        "findings": "作者报告原始概率在分布变化后不可靠；重校准改善自动接受结果的可信度，但会增加需人工复核的细胞数量。",
+        "limitations": "预印本；摘要未提供数据集规模和量化增益；目标标签代表性影响校准，校准不能自动修复排序错误。"
+      },
+      "relevance": "直接关联单细胞基础模型、测序与方法学，为相应模型训练、分析或评测提供参考。",
+      "followUp": "跟踪代码与数据版本、独立复现及跨数据集验证；重点检查上述证据边界。",
+      "priority": 1
+    },
+    {
+      "id": "doi:10.64898/2026.09.01.748536",
+      "title": "Unifying physical and molecular coordinate systems across modalities in spatial biology",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.09.01.748536v1",
+      "source": "bioRxiv",
+      "date": "2026-09-04",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "MAPS 将多平台空间数据对齐、整合及三维探索放入统一框架。",
+      "details": {
+        "methods": "MAPS-alignment、integration、Explorer 分别负责对齐、锚定或无锚整合与交互分析；基准含 34 个数据集、16 个技术平台、6 类模态。",
+        "findings": "作者整合 18 个图谱、434 张切片、2,100 万细胞、5 类模态构建三维小鼠脑图谱，并展示人肝癌深度相关免疫状态。",
+        "limitations": "预印本；跨切片重建不是同一细胞全部模态的直接联测；摘要未充分提供配准误差和对照细节。"
+      },
+      "relevance": "直接关联空间与时空组学、细胞图谱与数据底座，为相应模型训练、分析或评测提供参考。",
+      "followUp": "跟踪代码与数据版本、独立复现及跨数据集验证；重点检查上述证据边界。",
+      "priority": 1
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10838361/v1",
+      "title": "Generative atlasing in universal gene expression space defines cell types and microenvironment spectra during disease progression",
+      "link": "https://doi.org/10.21203/rs.3.rs-10838361/v1",
+      "source": "Research Square",
+      "date": "2026-09-04",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "UniGeneX 以可重建的通用基因表达空间进行生成式图谱整合。",
+      "details": {
+        "methods": "生成式单细胞模型将多数据集转录组重建到 Universal Gene Expression 空间，整合单细胞队列与空间转录组；应用于肺纤维化和胶质瘤。",
+        "findings": "作者展示细胞类型识别、微环境结构及空间生态位拟时序，并报告血管分区与肿瘤状态转换的关联。",
+        "limitations": "Research Square 预印本；依据 Europe PMC 原始 PPR 摘要；未列训练规模或量化基准，拟时序与重建表达不等于真实动态观测。"
+      },
+      "relevance": "直接关联单细胞基础模型、细胞图谱与数据底座，为相应模型训练、分析或评测提供参考。",
+      "followUp": "跟踪代码与数据版本、独立复现及跨数据集验证；重点检查上述证据边界。",
+      "priority": 1
+    },
+    {
+      "id": "arxiv:2608.02961",
+      "title": "Scaling an Autoregressive Transformer for Single-Cell Generation",
+      "link": "https://arxiv.org/abs/2608.02961v2",
+      "source": "arXiv",
+      "date": "2026-09-01",
+      "updateType": "预印本修订 v2（首次收录；补检）",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "虚拟细胞与扰动"
+      ],
+      "summary": "单细胞自回归生成研究发布 v2，本轮补检首次收录。",
+      "details": {
+        "methods": "因果 Transformer 配合学习式量化 VAE tokenizer，用交叉熵训练；改变参数量和训练数据量，按留出细胞类型表达向量评估生成分布。",
+        "findings": "作者报告联合拟合的双指数缩放律和计算最优前沿，并讨论后续扰动微调。",
+        "limitations": "预印本；日期为 9 月 1 日 v2，属于上一轮 arXiv 缺口补检；未比较逐版实验差异，讨论扰动微调不代表已验证扰动预测。"
+      },
+      "relevance": "直接关联单细胞基础模型、虚拟细胞与扰动，为相应模型训练、分析或评测提供参考。",
+      "followUp": "跟踪代码与数据版本、独立复现及跨数据集验证；重点检查上述证据边界。",
+      "priority": 1
+    },
+    {
+      "id": "doi:10.1101/2025.04.16.649236",
+      "title": "Single-cell Pharmacogenomic Landscapes of Epigenetic Drug Resistance Revealed by Gastric Cancer Perturb-seq",
+      "link": "https://www.biorxiv.org/content/10.1101/2025.04.16.649236v3",
+      "source": "bioRxiv",
+      "date": "2026-09-03",
+      "updateType": "预印本修订 v3（首次收录）",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "胃癌 Perturb-seq v3 提供跨基因、药物与细胞系的响应数据。",
+      "details": {
+        "methods": "direct capture Perturb-seq 靶向超过 200 个胃癌相关基因，覆盖四类表观遗传药物与多个细胞系，测量 625,866 个细胞。",
+        "findings": "作者解析 1,770 万药物基因组表达交互，识别耐药相关共享和背景特异程序，并映射至原发胃癌数据。",
+        "limitations": "预印本 v3 首次收录；未逐版比较新增实验；体外响应与患者空间/预后关联不能作为治疗效果证据。"
+      },
+      "relevance": "直接关联虚拟细胞与扰动、细胞图谱与数据底座，为相应模型训练、分析或评测提供参考。",
+      "followUp": "跟踪代码与数据版本、独立复现及跨数据集验证；重点检查上述证据边界。",
+      "priority": 1
+    },
+    {
+      "id": "doi:10.1126/science.adw0855",
+      "title": "Spatially resolved single-cell atlas reveals the macroevolutionary trajectory of animal hearts.",
+      "link": "https://doi.org/10.1126/science.adw0855",
+      "source": "Science",
+      "date": "2026-09-03",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "细胞图谱与数据底座",
+        "多组学与调控"
+      ],
+      "summary": "27 物种心脏多组学图谱支持比较细胞类型和演化程序。",
+      "details": {
+        "methods": "比较脊索、节肢和软体动物中的 27 个物种成年心脏，以多组学联合分析组织与细胞特征。",
+        "findings": "作者提出共享核心基因库及逐步增加的演化模式，发现保守心肌状态动态和与心腔演化有关的共同程序。",
+        "limitations": "基于 Europe PMC 原始摘要；跨物种比较不直接重建祖先细胞，状态与发育/应激的联系仍为推断。"
+      },
+      "relevance": "直接关联细胞图谱与数据底座、多组学与调控，为相应模型训练、分析或评测提供参考。",
+      "followUp": "跟踪代码与数据版本、独立复现及跨数据集验证；重点检查上述证据边界。",
+      "priority": 2
+    },
+    {
+      "id": "doi:10.64898/2026.09.01.748518",
+      "title": "Systematic benchmarking of commercial workflows for isoform-resolved single-nucleus transcriptomics",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.09.01.748518v1",
+      "source": "bioRxiv",
+      "date": "2026-09-04",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "测序与方法学"
+      ],
+      "summary": "四种商业长读长单核测序流程的基准揭示异构体检测权衡。",
+      "details": {
+        "methods": "标准化多物种细胞核样本结合 Nanopore 长读长，比较 10x 3′、10x 5′、ArgenTag 与 Parse，并对照匹配短读长数据。",
+        "findings": "读长、产量、覆盖、异构体检出和生物信息恢复存在方法差异；作者认为两种 10x 流程在测试条件下最均衡。",
+        "limitations": "预印本；结论限于测试样本和建库配置，不能推广为所有组织、成本条件或软件版本的最优选择。"
+      },
+      "relevance": "直接关联测序与方法学，为相应模型训练、分析或评测提供参考。",
+      "followUp": "跟踪代码与数据版本、独立复现及跨数据集验证；重点检查上述证据边界。",
+      "priority": 2
+    },
+    {
+      "id": "doi:10.1101/2025.11.03.683998",
+      "title": "FADVI: disentangled representation learning for robust integration of single-cell and spatial omics data",
+      "link": "https://www.biorxiv.org/content/10.1101/2025.11.03.683998v2",
+      "source": "bioRxiv",
+      "date": "2026-09-04",
+      "updateType": "预印本修订 v2（首次收录）",
+      "evidence": "预印本",
+      "categories": [
+        "多组学与调控",
+        "空间与时空组学"
+      ],
+      "summary": "FADVI v2 将批次、标签与残差信息分开表示，以保留整合后的生物差异。",
+      "details": {
+        "methods": "变分自编码器划分三个潜空间，组合监督分类、对抗训练与交叉协方差惩罚；评测涵盖 scRNA、scATAC 与高分辨率空间数据。",
+        "findings": "作者报告在所选基准中的整合优势，并通过特征归因识别批次和细胞类型相关基因。",
+        "limitations": "预印本 v2 首次收录，未逐版比较；标签质量和批次—生物因素混杂可能限制解耦，摘要未列量化效果。"
+      },
+      "relevance": "直接关联多组学与调控、空间与时空组学，为相应模型训练、分析或评测提供参考。",
+      "followUp": "跟踪代码与数据版本、独立复现及跨数据集验证；重点检查上述证据边界。",
+      "priority": 2
+    },
+    {
+      "id": "doi:10.1101/2025.06.03.657769",
+      "title": "Comparing phenotypic manifolds with Kompot: Cluster-free differential expression at single-cell resolution",
+      "link": "https://www.biorxiv.org/content/10.1101/2025.06.03.657769v5",
+      "source": "bioRxiv",
+      "date": "2026-09-04",
+      "updateType": "预印本修订 v5（首次收录）",
+      "evidence": "预印本",
+      "categories": [
+        "测序与方法学",
+        "虚拟细胞与扰动"
+      ],
+      "summary": "Kompot v5 在连续细胞状态空间比较丰度和表达，无需预先分群。",
+      "details": {
+        "methods": "将细胞密度和基因表达建模为共享表型空间中的连续函数，输出不确定性并处理样本间异质性；应用于小鼠骨髓衰老及黑色素瘤免疫治疗。",
+        "findings": "作者区分组成变化与状态相关表达重塑，识别跨细胞类型方向不同的应激基因变化。",
+        "limitations": "预印本 v5 首次收录；结果依赖共享表示与样本设计，未逐版确认新增内容；关联分析不等于干预因果效应。"
+      },
+      "relevance": "直接关联测序与方法学、虚拟细胞与扰动，为相应模型训练、分析或评测提供参考。",
+      "followUp": "跟踪代码与数据版本、独立复现及跨数据集验证；重点检查上述证据边界。",
+      "priority": 2
+    },
+    {
+      "id": "doi:10.64898/2026.08.10.743911",
+      "title": "Covariance Nonstationarity is Evident in Spatial Transcriptomics and Provides a New Categorization of Spatially Varying Genes",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.10.743911v2",
+      "source": "bioRxiv",
+      "date": "2026-09-05",
+      "updateType": "预印本修订 v2（首次收录）",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "空间协方差非平稳性研究 v2 提醒空间变异基因分析检查平稳假设。",
+      "details": {
+        "methods": "在 12 个 Visium 数据集以 R-INLA 近似贝叶斯因子比较平稳与非平稳 Matérn 协方差模型。",
+        "findings": "作者报告各组织中约 3%–50% 基因呈非平稳证据，并发现免疫、细胞因子与效应功能基因富集。",
+        "limitations": "预印本 v2 首次收录；比例随样本和模型设定变化；空间结构不能单独区分细胞组成、技术因素及调控机制。"
+      },
+      "relevance": "直接关联空间与时空组学、测序与方法学，为相应模型训练、分析或评测提供参考。",
+      "followUp": "跟踪代码与数据版本、独立复现及跨数据集验证；重点检查上述证据边界。",
+      "priority": 2
+    },
+    {
+      "id": "doi:10.64898/2026.05.26.727917",
+      "title": "platpy: A spatial-first framework for multi-layer spatial transcriptomic analysis",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.05.26.727917v2",
+      "source": "bioRxiv",
+      "date": "2026-09-05",
+      "updateType": "预印本修订 v2（首次收录）",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "platpy v2 用统一微米坐标管理空间转录组的多层数据。",
+      "details": {
+        "methods": "以带空间元数据的 Channel 管理图像、转录本、矩阵、分割细胞和 ROI；ViewPort 可视化，DataPort 提取原生数据。",
+        "findings": "展示 ROI 表达分箱、皮层展开及亚微米图像—转录本精配准；官方 GitHub 仓库可访问。",
+        "limitations": "预印本 v2 首次收录；摘要没有完整速度或内存基准；软件提供坐标管理能力，不自动消除数据质量和配准偏差。"
+      },
+      "relevance": "直接关联空间与时空组学、测序与方法学，为相应模型训练、分析或评测提供参考。",
+      "followUp": "跟踪代码与数据版本、独立复现及跨数据集验证；重点检查上述证据边界。",
+      "priority": 2
+    },
+    {
+      "id": "doi:10.64898/2026.08.27.747606",
+      "title": "spatialMET: an open and scalable framework for spatial metabolomics analysis",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.27.747606v1",
+      "source": "bioRxiv",
+      "date": "2026-09-03",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "spatialMET 提供空间代谢组的开放端到端分析流程。",
+      "details": {
+        "methods": "集成预处理、C 实现层次聚类、空间域识别与可视化，提供 Shiny、命令行和 Docker；测试约 28.5 万及 33.8 万像素的小鼠肺癌 MSI 数据。",
+        "findings": "作者识别与组织学相符的肿瘤、基质和邻近肺区域，并报告 117 个差异 m/z 特征。",
+        "limitations": "预印本；m/z 特征不必然对应已确认代谢物身份；摘要未提供全部速度和内存对照，跨仪器复现仍待检查。"
+      },
+      "relevance": "直接关联空间与时空组学、测序与方法学，为相应模型训练、分析或评测提供参考。",
+      "followUp": "跟踪代码与数据版本、独立复现及跨数据集验证；重点检查上述证据边界。",
+      "priority": 2
+    },
+    {
+      "id": "doi:10.1038/s41592-026-03182-y",
+      "title": "Benchmarking biomedical foundation models",
+      "link": "https://www.nature.com/articles/s41592-026-03182-y",
+      "source": "Nature Methods",
+      "date": "2026-09-04",
+      "updateType": "观点文章发表",
+      "evidence": "观点与解读",
+      "categories": [
+        "单细胞基础模型",
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "Nature Methods 观点文章讨论基础模型评测的可重复性、泛化与科学证据标准。",
+      "details": {
+        "methods": "Perspective，讨论基础模型能否被证伪、验证或按实用性评价，并引用单细胞与扰动模型评测研究。",
+        "findings": "提出评测原则与社区参与问题，强调透明评价、可重复性及跨情境检验。",
+        "limitations": "观点与方法论讨论；本轮读取原始摘要及参考文献，不能写成新模型、实证性能排名或新的量化基准。"
+      },
+      "relevance": "为单细胞基础模型及虚拟细胞评测设计提供方法论背景。",
+      "followUp": "结合原始评测论文检查强基线、泄漏、任务特异指标和独立验证。",
+      "priority": 2
+    },
     {
       "id": "doi:10.1016/j.cell.2026.08.010",
       "title": "Tabula Sapiens 2.0: A comprehensive transcriptomic atlas of human cell types.",
@@ -2427,26 +2779,55 @@
     },
     {
       "id": "arxiv:2605.26904",
-      "title": "SpCAST: Decoding spatial transcriptomics at single-cell resolution with fast and interpretable analysis",
-      "link": "https://arxiv.org/abs/2605.26904",
+      "title": "SpCAST enables scalable and interpretable integration of single-cell RNA sequencing and single-cell-resolved spatial transcriptomics",
+      "link": "https://arxiv.org/abs/2605.26904v2",
       "source": "arXiv",
-      "date": "2026-05-26",
-      "updateType": "新预印本",
+      "date": "2026-09-03",
+      "updateType": "预印本修订 v2",
       "evidence": "预印本",
       "categories": [
         "空间与时空组学",
         "细胞图谱与数据底座",
         "测序与方法学"
       ],
-      "summary": "SpCAST 用单细胞 RNA 参考为稀疏或靶向空间转录组做细胞类型迁移、表达重建和 marker 候选排序，强调快速、可解释和跨技术迁移。",
+      "summary": "SpCAST v2 更新题名与摘要，明确小批量联合学习和 SAGA 基因归因。",
       "details": {
-        "methods": "框架采用 Kolmogorov–Arnold network 学习参考与空间表达之间的非线性映射，并用 feature attribution 解释支撑预测的基因。",
-        "findings": "在 5 种技术、53 个数据集和 413,376 个空间细胞上，作者报告竞争力注释精度和更低运行时间，并展示跨物种标签迁移。",
-        "limitations": "参考标签和跨物种同源映射会把偏差传入空间结果；表达重建不能替代直接测量。"
+        "methods": "联合参考细胞分类、参考—查询对齐与查询表达重建；SAGA 以稀疏加性 Kolmogorov–Arnold 网络近似决策函数。",
+        "findings": "v2 摘要报告五种技术、53 张切片、413,404 个空间细胞，在七种方法中取得最高综合注释排名；扩展至一千万模拟细胞。",
+        "limitations": "预印本；旧记录为 413,376 个细胞，v2 原始摘要为 413,404；这是版本记录变化，不据摘要断言全部实验均为新增。重建不能替代直接测量。"
       },
       "relevance": "它连接大型细胞图谱与单细胞分辨空间数据。",
       "followUp": "关注代码、跨平台盲测、稀有细胞表现和解释稳定性。",
-      "priority": 25
+      "priority": 2,
+      "history": [
+        {
+          "archivedAt": "2026-09-06",
+          "reason": "更新至 arXiv v2，保存此前完整条目",
+          "record": {
+            "id": "arxiv:2605.26904",
+            "title": "SpCAST: Decoding spatial transcriptomics at single-cell resolution with fast and interpretable analysis",
+            "link": "https://arxiv.org/abs/2605.26904",
+            "source": "arXiv",
+            "date": "2026-05-26",
+            "updateType": "新预印本",
+            "evidence": "预印本",
+            "categories": [
+              "空间与时空组学",
+              "细胞图谱与数据底座",
+              "测序与方法学"
+            ],
+            "summary": "SpCAST 用单细胞 RNA 参考为稀疏或靶向空间转录组做细胞类型迁移、表达重建和 marker 候选排序，强调快速、可解释和跨技术迁移。",
+            "details": {
+              "methods": "框架采用 Kolmogorov–Arnold network 学习参考与空间表达之间的非线性映射，并用 feature attribution 解释支撑预测的基因。",
+              "findings": "在 5 种技术、53 个数据集和 413,376 个空间细胞上，作者报告竞争力注释精度和更低运行时间，并展示跨物种标签迁移。",
+              "limitations": "参考标签和跨物种同源映射会把偏差传入空间结果；表达重建不能替代直接测量。"
+            },
+            "relevance": "它连接大型细胞图谱与单细胞分辨空间数据。",
+            "followUp": "关注代码、跨平台盲测、稀有细胞表现和解释稳定性。",
+            "priority": 25
+          }
+        }
+      ]
     },
     {
       "id": "arxiv:2605.00930",
