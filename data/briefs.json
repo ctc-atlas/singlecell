@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-06 10:30 CST",
-  "statusMessage": "2026-09-06 检索窗口 2026-09-03 至 2026-09-06（Asia/Shanghai），另补查 arXiv 2026-09-01 至 09-02 的上轮来源缺口；新增 16 条、修订 1 条、累计 137 条；最新收录论文/版本发布日期为 2026-09-05。本次检索不完整：OUP 勘误正文访问失败；文献内容已推送；同步记录随元数据刷新提交发布。累计为 137 条记录、136 个唯一 ID，含一组历史重复身份待核验。",
+  "updatedAt": "2026-09-07 11:24 CST",
+  "statusMessage": "2026-09-07 检索：常规窗口 2026-09-04 至 09-07，周一 30 天回溯 2026-08-09 至 09-07（Asia/Shanghai）；新增 24 条、修订 2 条、累计 161 条记录；最新收录论文/版本发布日期 2026-09-05。本次检索不完整：arXiv 全量关键词与修订检索失败，部分候选正文待核验。历史含一组重复 DOI，累计记录数不等于唯一文献数。 历史身份审计另发现两条 arXiv 题名与原始 v1 冲突，均隔离在日报审计中、未覆盖原记录。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-09-06 10:32 CST",
-    "commit": "36501825fdcca9ce4f06e469119c18313c752f00",
+    "state": "pending",
+    "updatedAt": "2026-09-07 11:24 CST",
+    "commit": null,
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-09-06 文献内容提交 36501825fdcca9ce4f06e469119c18313c752f00 已推送；新增 16 条、修订 1 条、累计 137 条记录（136 个唯一 ID）。本记录随元数据刷新提交发布；检索健康 incomplete，OUP 勘误访问失败及历史身份待核验不因同步成功而消除。"
+    "message": "2026-09-07 文献内容已在本地更新，尚未推送；上次成功内容提交 36501825fdcca9ce4f06e469119c18313c752f00。"
   },
   "categories": [
     {
@@ -41,6 +41,728 @@
     }
   ],
   "items": [
+    {
+      "id": "doi:10.1038/s41588-026-02696-7",
+      "title": "SpatialVista as a unified ecosystem for high-performance visualization and exploration of 3D spatial transcriptomics data",
+      "link": "https://www.nature.com/articles/s41588-026-02696-7",
+      "source": "Nature Genetics",
+      "date": "2026-08-14",
+      "updateType": "软件资源 Correspondence（30 天回溯补录）",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "SpatialVista 提供跨界面的三维空间转录组可视化生态。",
+      "details": {
+        "methods": "共享可视化能力连接在线浏览器、桌面应用及 Jupyter/Python 组件；原始页明确开源仓库与 BSD 3-Clause 许可。",
+        "findings": "原文可确认统一探索接口与软件可用性；期刊明确记载同行评审。",
+        "limitations": "本轮读取预览与代码可用性段落，未读取订阅后完整实验；不报告未核验的性能、规模或排名。"
+      },
+      "relevance": "支持空间与时空组学、测序与方法学方向的方法选择与可重复分析。",
+      "followUp": "核查开源实现、数据许可、跨数据集表现和上述证据边界。",
+      "priority": 2
+    },
+    {
+      "id": "arxiv:2608.28849",
+      "title": "Confounder-Aware Feature Correction for Single-Cell Batch Integration",
+      "link": "https://arxiv.org/abs/2608.28849v1",
+      "source": "arXiv",
+      "date": "2026-08-28",
+      "updateType": "新预印本（30 天回溯补录）",
+      "evidence": "预印本",
+      "categories": [
+        "测序与方法学",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "ConDo 在细胞类型条件下对齐表达分布，输出校正后的基因表达。",
+      "details": {
+        "methods": "把整合视为有混杂的域适配，按共享细胞类型建立批次兼容图并逐步合并；在 Open Problems 的 6 个数据集评测。",
+        "findings": "作者报告在 5/6 数据集的特征空间整合方法中第一，4/6 数据集总体得分第一。",
+        "limitations": "预印本；MLCB 非归档海报不视为正式研究论文；依赖细胞类型注释，组成与注释质量影响条件对齐。"
+      },
+      "relevance": "支持测序与方法学、细胞图谱与数据底座方向的方法选择与可重复分析。",
+      "followUp": "核查开源实现、数据许可、跨数据集表现和上述证据边界。",
+      "priority": 2
+    },
+    {
+      "id": "doi:10.1038/s41587-026-03259-1",
+      "title": "Simultaneous single-cell profiling of chromatin, transcriptome and surface markers with OneCell CUT&Tag captures epigenomic reprogramming",
+      "link": "https://doi.org/10.1038/s41587-026-03259-1",
+      "source": "Nature Biotechnology",
+      "date": "2026-08-12",
+      "updateType": "正式发表（30 天回溯补录）",
+      "evidence": "同行评审",
+      "categories": [
+        "多组学与调控",
+        "测序与方法学"
+      ],
+      "summary": "OneCell CUT&Tag 联测同一细胞的染色质、转录组与表面标记。",
+      "details": {
+        "methods": "最低单个细胞输入，不依赖 metacell 聚合；研究乳腺基底细胞转换和合子表达调节。",
+        "findings": "作者观察到表观基因组预激活，以及基底向腔面转换中表观与转录重塑不同步。",
+        "limitations": "单细胞最低输入不等于所有模态无缺失；罕见样本推广需要质控和独立验证。"
+      },
+      "relevance": "关联多组学与调控、测序与方法学，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.crossref.org/works/10.1038/s41587-026-03259-1",
+          "https://europepmc.org/article/MED/42587135"
+        ],
+        "basis": "Crossref DOI/题名/期刊及在线日期；Europe PMC 原始 core 摘要核验方法结果；无在线日时采用 EPMC firstPublicationDate。"
+      }
+    },
+    {
+      "id": "doi:10.1093/nargab/lqag095",
+      "title": "A systematic assessment of single-cell language model configurations",
+      "link": "https://doi.org/10.1093/nargab/lqag095",
+      "source": "NAR Genomics and Bioinformatics",
+      "date": "2026-08-20",
+      "updateType": "正式发表（30 天回溯补录）",
+      "evidence": "同行评审",
+      "categories": [
+        "单细胞基础模型",
+        "测序与方法学"
+      ],
+      "summary": "bento-sc 系统分离单细胞语言模型的预训练配置影响。",
+      "details": {
+        "methods": "逐项控制输入处理、重建损失、掩码和任务组合，并同简单基线比较；代码发布于 bento-sc。",
+        "findings": "作者建议最少处理计数、使用符合计数分布的损失、掩码及多任务目标；总体尚未体现跨代性能飞跃。",
+        "limitations": "采用 Crossref 在线日 08-20，印刷期次日为 06-27；配置结论受所测任务限制。"
+      },
+      "relevance": "关联单细胞基础模型、测序与方法学，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.crossref.org/works/10.1093/nargab/lqag095",
+          "https://europepmc.org/article/MED/42626084"
+        ],
+        "basis": "Crossref DOI/题名/期刊及在线日期；Europe PMC 原始 core 摘要核验方法结果；无在线日时采用 EPMC firstPublicationDate。"
+      }
+    },
+    {
+      "id": "doi:10.1016/j.cell.2026.07.039",
+      "title": "Integrative spatial profiling of 3D genome organization and gene expression in tissue",
+      "link": "https://doi.org/10.1016/j.cell.2026.07.039",
+      "source": "Cell",
+      "date": "2026-08-25",
+      "updateType": "正式发表（30 天回溯补录）",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "多组学与调控",
+        "测序与方法学"
+      ],
+      "summary": "Spatial Hi-C-RNA 在同一切片联合测量三维基因组与表达。",
+      "details": {
+        "methods": "近单细胞分辨率，覆盖小鼠脑、发育胚胎与人黑色素瘤，联合分析区室、TAD、环与转录程序。",
+        "findings": "作者发现互补的空间模式，染色质结构可区分单凭 RNA 未检出的部分肿瘤亚区。",
+        "limitations": "EPMC 原始在线记录为 08-25；近单细胞分辨率不等于每细胞完整双模态覆盖，结构—表达联系主要为关联。"
+      },
+      "relevance": "关联空间与时空组学、多组学与调控、测序与方法学，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.crossref.org/works/10.1016/j.cell.2026.07.039",
+          "https://europepmc.org/article/MED/42641604"
+        ],
+        "basis": "Crossref DOI/题名/期刊及在线日期；Europe PMC 原始 core 摘要核验方法结果；无在线日时采用 EPMC firstPublicationDate。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.05.07.723486",
+      "title": "Spurious correlation inflates performance in single-cell perturbation prediction",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.05.07.723486v2",
+      "source": "bioRxiv",
+      "date": "2026-08-11",
+      "updateType": "预印本修订 v2（首次收录；30 天回溯）",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "共享对照可系统性抬高扰动预测的差异表达相关性。",
+      "details": {
+        "methods": "分析相对同一对照群体定义的预测与实测差异表达相关/余弦指标，并对公开数据实施对照拆分。",
+        "findings": "作者发现非信息性方法也可获得偏高分；拆分对照后，原先归因于生物信号的性能明显下降。",
+        "limitations": "预印本；v2 首次收录，未逐版比较；影响随对照数量和指标变化，不能推出所有既有模型无效。"
+      },
+      "relevance": "关联虚拟细胞与扰动、测序与方法学，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.05.07.723486",
+          "https://www.biorxiv.org/content/10.64898/2026.05.07.723486v2"
+        ],
+        "version": "2",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.08.06.743174",
+      "title": "AdaGeneBudget: Cell-Adaptive Gene-Token Allocation for Efficient Single-Cell Foundation Models",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.06.743174v1",
+      "source": "bioRxiv",
+      "date": "2026-08-12",
+      "updateType": "新预印本（30 天回溯补录）",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "测序与方法学"
+      ],
+      "summary": "AdaGeneBudget 用细胞自适应 token 预算降低冻结基础模型推理成本。",
+      "details": {
+        "methods": "结合表达量与参考逆检出频率，为每个细胞选择达到目标分数质量的最短基因前缀；在 scGPT、Geneformer 与 scPRINT 上评测。",
+        "findings": "作者报告吞吐量最高提升 4.63 倍并减少显存，scGPT/Geneformer 注释总体效用保持；scPRINT 的 HVG 对照在宏 F1 上更好。",
+        "limitations": "预印本；性能依赖骨干与输入政策，不能将最高加速值推广到所有任务；不是重新训练基础模型。"
+      },
+      "relevance": "关联单细胞基础模型、测序与方法学，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.08.06.743174",
+          "https://www.biorxiv.org/content/10.64898/2026.08.06.743174v1"
+        ],
+        "version": "1",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.08.06.743394",
+      "title": "PIANO: Probabilistic Inference Autoencoder Networks for multi-Omics enables robust generative modeling of gene expression and scales single-cell integration to 100 million cells",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.06.743394v1",
+      "source": "bioRxiv",
+      "date": "2026-08-12",
+      "updateType": "新预印本（30 天回溯补录）",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "细胞图谱与数据底座",
+        "虚拟细胞与扰动"
+      ],
+      "summary": "PIANO 将生成式表达建模与亿级细胞整合结合。",
+      "details": {
+        "methods": "概率自编码框架建模协变量影响，评测跨物种及单细胞—空间整合，应用于人脑阿尔茨海默病和癌细胞药物扰动。",
+        "findings": "作者报告训练较此前方法快 10 倍，并整合超过一亿癌细胞以建模药物扰动。",
+        "limitations": "预印本；速度是特定实验对照；摘要未给完整硬件、切分与预测误差，生成表达不等于真实干预。"
+      },
+      "relevance": "关联单细胞基础模型、细胞图谱与数据底座、虚拟细胞与扰动，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.08.06.743394",
+          "https://www.biorxiv.org/content/10.64898/2026.08.06.743394v1"
+        ],
+        "version": "1",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.08.14.744845",
+      "title": "Single-cell foundation models benefit from cross-modal training: adding proteomics data beats parameter scaling",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.14.744845v1",
+      "source": "bioRxiv",
+      "date": "2026-08-19",
+      "updateType": "新预印本（30 天回溯补录）",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "多组学与调控"
+      ],
+      "summary": "蛋白组继续预训练在所测任务中优于单纯扩大神经网络参数。",
+      "details": {
+        "methods": "以 Tahoe-x1 为基础，在 440 项质谱研究的 48,843 个蛋白组样本上对 70M 参数模型训练一轮。",
+        "findings": "作者报告在多数原有基准中达到或超过 1B/3B RNA-only 模型，并改善留出蛋白扰动任务迁移。",
+        "limitations": "预印本；蛋白组样本不等于配对单细胞蛋白测量；仅限所测模型、语料和基准，需排查跨研究数据泄漏。"
+      },
+      "relevance": "关联单细胞基础模型、多组学与调控，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.08.14.744845",
+          "https://www.biorxiv.org/content/10.64898/2026.08.14.744845v1"
+        ],
+        "version": "1",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.08.14.744937",
+      "title": "Signature Recontextualization: Mapping perturbational signatures across biological contexts",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.14.744937v1",
+      "source": "bioRxiv",
+      "date": "2026-08-19",
+      "updateType": "新预印本（30 天回溯补录）",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "sigRecon 统一跨背景扰动签名预测任务与目标数据可用性。",
+      "details": {
+        "methods": "4 类数据覆盖细胞系 CRISPR/药物及 DrugMatrix 大鼠组织；比较 control-only、低覆盖和高覆盖条件下的 projectCor、netProp、scGPT、STACK 与统计基线。",
+        "findings": "作者报告投影与网络传播在若干任务匹配或超过基础模型，预测性随通路保守性和响应强度变化。",
+        "limitations": "预印本；不能跨目标数据条件直接比较；体内大鼠组织结果不等于人类单细胞临床响应。"
+      },
+      "relevance": "关联虚拟细胞与扰动、测序与方法学，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.08.14.744937",
+          "https://www.biorxiv.org/content/10.64898/2026.08.14.744937v1"
+        ],
+        "version": "1",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.08.12.743536",
+      "title": "A Generative Virtual Tissue Model Enables Computational Design of Therapeutic Perturbation Strategies",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.12.743536v1",
+      "source": "bioRxiv",
+      "date": "2026-08-20",
+      "updateType": "新预印本（30 天回溯补录）",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "空间与时空组学",
+        "单细胞基础模型"
+      ],
+      "summary": "CIFM 以空间转录组为起点生成多细胞组织扰动轨迹。",
+      "details": {
+        "methods": "几何图神经网络在数百万细胞微环境上做掩码转录组预训练，再通过自回归蒙特卡洛展开模拟组合扰动。",
+        "findings": "作者展示表达预测/填补、疾病分类、前列腺癌扰动与 T 细胞—肿瘤信号重现，并提出组合免疫调节候选。",
+        "limitations": "预印本；治疗设计主要来自计算模拟；不将候选策略写成临床疗效，不从 API 中格式丢失的指数推断组合数量。"
+      },
+      "relevance": "关联虚拟细胞与扰动、空间与时空组学、单细胞基础模型，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.08.12.743536",
+          "https://www.biorxiv.org/content/10.64898/2026.08.12.743536v1"
+        ],
+        "version": "1",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.02.12.705613",
+      "title": "Genome-wide single-cell perturbation screens with VIPerturb-seq",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.02.12.705613v2",
+      "source": "bioRxiv",
+      "date": "2026-08-20",
+      "updateType": "预印本修订 v2（首次收录；30 天回溯）",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "测序与方法学",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "VIPerturb-seq v2 用拆分探针与组合索引扩展全基因组扰动筛选。",
+      "details": {
+        "methods": "固定细胞探针检测兼容表型预富集与组合索引；使用 GuEST-List 全基因组 CRISPRi 文库完成 3 项筛选。",
+        "findings": "作者报告组合索引流程可将吞吐量提高 50 倍，并支持无偏和表型富集筛选。",
+        "limitations": "预印本；v2 首次收录；50 倍依赖具体流程基线，富集会改变细胞组成与响应分布。"
+      },
+      "relevance": "关联虚拟细胞与扰动、测序与方法学、细胞图谱与数据底座，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.02.12.705613",
+          "https://www.biorxiv.org/content/10.64898/2026.02.12.705613v2"
+        ],
+        "version": "2",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.08.15.745056",
+      "title": "BoYueGRN: Zero-shot causal discovery of directed gene regulatory networks from single-cell transcriptomes via amortized inference over synthetic structural causal models",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.15.745056v1",
+      "source": "bioRxiv",
+      "date": "2026-08-20",
+      "updateType": "新预印本（30 天回溯补录）",
+      "evidence": "预印本",
+      "categories": [
+        "多组学与调控",
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "BoYueGRN 用合成因果模型预训练实现零样本有向网络推断。",
+      "details": {
+        "methods": "在 10,000 个合成结构因果模型训练，以 TF 滑动窗口扩展转录组；评测 BEELINE 和两项全基因组 CRISPRi。",
+        "findings": "作者报告两项筛选保留边方向准确率为 0.86 与 0.95，并在五类疾病超过 27 万细胞中产生待检验网络假说。",
+        "limitations": "预印本；准确率仅针对保留边，不能等同全网络召回或所有方向正确；合成结构假设与真实细胞仍有差距。"
+      },
+      "relevance": "关联多组学与调控、虚拟细胞与扰动、测序与方法学，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.08.15.745056",
+          "https://www.biorxiv.org/content/10.64898/2026.08.15.745056v1"
+        ],
+        "version": "1",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.04.01.714123",
+      "title": "Task-dependent Performance of Single-cell Foundation Models under Low Supervision",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.04.01.714123v2",
+      "source": "bioRxiv",
+      "date": "2026-08-21",
+      "updateType": "预印本修订 v2（首次收录；30 天回溯）",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "测序与方法学",
+        "虚拟细胞与扰动"
+      ],
+      "summary": "低监督评测显示单细胞基础模型优势高度依赖任务。",
+      "details": {
+        "methods": "比较 7 个基础模型与 3 类既有表示，覆盖聚类、批次校正、少样本注释、表达重建和扰动预测。",
+        "findings": "作者报告 CellPLM 在聚类/注释/批次校正综合比较领先，scMulan 在扰动预测领先，PCA 在表达重建领先。",
+        "limitations": "预印本；v2 首次收录；排名仅适用于所用数据、任务头与监督水平，不能形成通用模型总榜。"
+      },
+      "relevance": "关联单细胞基础模型、测序与方法学、虚拟细胞与扰动，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.04.01.714123",
+          "https://www.biorxiv.org/content/10.64898/2026.04.01.714123v2"
+        ],
+        "version": "2",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.08.17.744355",
+      "title": "RegFM: an interpretable context-aware foundation model for human transcriptional regulation",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.17.744355v1",
+      "source": "bioRxiv",
+      "date": "2026-08-21",
+      "updateType": "新预印本（30 天回溯补录）",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "多组学与调控",
+        "虚拟细胞与扰动"
+      ],
+      "summary": "RegFM 联合顺式序列与细胞背景学习基因调控表示。",
+      "details": {
+        "methods": "耦合长程 CRE 表示和转录因子/染色质调节因子活性，在 ENCODE 与 CELLxGENE 转录组上训练。",
+        "findings": "作者报告在未见细胞背景中的表达、CRE 注释、双价启动子/剂量敏感性分类及扰动响应任务改善。",
+        "limitations": "预印本；摘要未列训练规模及量化增益；表示解释与预测优势不能单独证明调控因果关系。"
+      },
+      "relevance": "关联单细胞基础模型、多组学与调控、虚拟细胞与扰动，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.08.17.744355",
+          "https://www.biorxiv.org/content/10.64898/2026.08.17.744355v1"
+        ],
+        "version": "1",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.08.21.746324",
+      "title": "On the robustness of scRNA-seq foundation models for plant perturbation response prediction under cross-experiment shift",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.21.746324v1",
+      "source": "bioRxiv",
+      "date": "2026-08-22",
+      "updateType": "新预印本（30 天回溯补录）",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "植物 scAraFM 评测揭示随机划分对跨实验泛化的高估。",
+      "details": {
+        "methods": "拟南芥模型分别采用单实验随机划分、重复划分与跨实验迁移，比较基因身份表示、池化嵌入与简单基线。",
+        "findings": "作者报告随机划分较跨实验结果最高高估 30 分；保留基因身份及预训练在跨实验少标签条件下更有价值。",
+        "limitations": "预印本；“30 分”沿用原摘要，不擅自指定指标；结论限于所测植物扰动与切分。"
+      },
+      "relevance": "关联单细胞基础模型、虚拟细胞与扰动、测序与方法学，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.08.21.746324",
+          "https://www.biorxiv.org/content/10.64898/2026.08.21.746324v1"
+        ],
+        "version": "1",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.08.21.746243",
+      "title": "Virtual-cell models compress unseen intervention geometry through a target-specific generalization bottleneck",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.21.746243v1",
+      "source": "bioRxiv",
+      "date": "2026-08-24",
+      "updateType": "新预印本（30 天回溯补录）",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "干预几何压缩解释高表达相似度下的扰动身份丢失。",
+      "details": {
+        "methods": "检查未见干预的局部/全局几何、方差和谱结构，用残差子空间及独立 Jiang 数据检验，并分析早期响应锚定。",
+        "findings": "作者报告同一靶点的实测锚定比增加其他干预曝光更有助跨背景保持干预身份。",
+        "limitations": "预印本；摘要未列完整模型数量和效应量；经验锚定需要目标干预观测，不应标作纯零样本能力。"
+      },
+      "relevance": "关联虚拟细胞与扰动、测序与方法学，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.08.21.746243",
+          "https://www.biorxiv.org/content/10.64898/2026.08.21.746243v1"
+        ],
+        "version": "1",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.08.19.745729",
+      "title": "A mechanism-annotated benchmark reveals limited fidelity to drug-response signatures in single-cell perturbation models",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.19.745729v2",
+      "source": "bioRxiv",
+      "date": "2026-08-26",
+      "updateType": "预印本修订 v2（首次收录；30 天回溯）",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "scDrugPerturb-Bench v2 直接检验药物响应机制特征保真度。",
+      "details": {
+        "methods": "汇集 181 个数据集、423 个注释响应案例、717 个关键基因及 250 万细胞；MFS 评估方向、效应量、基因集与通路响应。",
+        "findings": "在 12 个模型、3 个基线与 10 种切分中，表达相似性与 MFS 弱一致；机制感知选择改善早期药物检索。",
+        "limitations": "预印本；v2 首次收录；文献注释和关键基因覆盖限制机制基准，MFS 不能视作完整因果真值。"
+      },
+      "relevance": "关联虚拟细胞与扰动、测序与方法学，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.08.19.745729",
+          "https://www.biorxiv.org/content/10.64898/2026.08.19.745729v2"
+        ],
+        "version": "2",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.08.22.746357",
+      "title": "Robustness to nuisance perturbations enables unsupervised evaluation of single-cell foundation models",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.22.746357v1",
+      "source": "bioRxiv",
+      "date": "2026-08-26",
+      "updateType": "新预印本（30 天回溯补录）",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "测序与方法学"
+      ],
+      "summary": "无监督邻域稳定性评测揭示常规任务榜单掩盖的表示差异。",
+      "details": {
+        "methods": "在 5 个 scFM、PCA 和 39 个数据集上加入模拟技术/采样变动，测量局部邻域及聚类稳定性。",
+        "findings": "作者报告丢弃仅 5% 计数时模型邻域保持度可相差近两倍；重采样聚类稳定性与生物保真指标相关系数为 0.78。",
+        "limitations": "预印本；稳定性是必要审计维度，不能单独证明生物正确性；结果依赖扰动设计和邻域尺度。"
+      },
+      "relevance": "关联单细胞基础模型、测序与方法学，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.08.22.746357",
+          "https://www.biorxiv.org/content/10.64898/2026.08.22.746357v1"
+        ],
+        "version": "1",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.08.25.747021",
+      "title": "OmicsFM brings proteomics into the foundation model era",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.25.747021v1",
+      "source": "bioRxiv",
+      "date": "2026-08-28",
+      "updateType": "新预印本（30 天回溯补录）",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "多组学与调控"
+      ],
+      "summary": "OmicsFM 用质谱蛋白组预训练并迁移至细胞与扰动任务。",
+      "details": {
+        "methods": "模态无关 Transformer 以掩码丰度重建训练，语料为 1,397 个 PRIDE 项目重处理后的 48,837 个蛋白组。",
+        "findings": "作者报告留出项目的注意力网络恢复分子关联，并在细胞类型、基因必需性和扰动响应任务体现迁移价值。",
+        "limitations": "预印本；语料主要是蛋白组样本，不能写成同等数量单细胞；注意力恢复关联不是因果发现。"
+      },
+      "relevance": "关联单细胞基础模型、多组学与调控，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.08.25.747021",
+          "https://www.biorxiv.org/content/10.64898/2026.08.25.747021v1"
+        ],
+        "version": "1",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
+    {
+      "id": "doi:10.1093/bioinformatics/btag652",
+      "title": "mmVelo: A deep generative model for estimating cell state-dependent dynamics across multiple modalities",
+      "link": "https://doi.org/10.1093/bioinformatics/btag652",
+      "source": "Bioinformatics",
+      "date": "2026-08-31",
+      "updateType": "正式发表（30 天回溯补录）",
+      "evidence": "同行评审",
+      "categories": [
+        "多组学与调控",
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "mmVelo 将 RNA 动力学投射到染色质等模态并描述不确定性。",
+      "details": {
+        "methods": "从剪接/未剪接 mRNA 推断细胞状态动力学，再映射到单峰染色质速度；小鼠脑、皮肤与人脑数据验证。",
+        "findings": "作者报告恢复可及性动态、发现分支附近更高染色质波动，并通过多组学桥接推断缺失模态动力学。",
+        "limitations": "速度是快照数据上的模型推断，非直接时间测量；结果受动力学假设与桥接数据代表性限制。"
+      },
+      "relevance": "关联多组学与调控、空间与时空组学、测序与方法学，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.crossref.org/works/10.1093/bioinformatics/btag652",
+          "https://europepmc.org/article/MED/42675615"
+        ],
+        "basis": "Crossref DOI/题名/期刊及在线日期；Europe PMC 原始 core 摘要核验方法结果；无在线日时采用 EPMC firstPublicationDate。"
+      }
+    },
+    {
+      "id": "doi:10.1093/bib/bbag462",
+      "title": "Correction to: scAnno: a deconvolution strategy-based automatic cell type annotation tool for single-cell RNA-sequencing data sets",
+      "link": "https://academic.oup.com/bib/article/doi/10.1093/bib/bbag462/8780944",
+      "source": "Briefings in Bioinformatics",
+      "date": "2026-09-03",
+      "updateType": "勘误发表（首次收录；待核验解除）",
+      "evidence": "同行评审",
+      "categories": [
+        "测序与方法学"
+      ],
+      "summary": "scAnno 勘误更正两条公式，复现需同步采用更正表达。",
+      "details": {
+        "methods": "勘误针对原文 10.1093/bib/bbad179 的公式 1 和公式 5，不是新的数据或模型实验。",
+        "findings": "公式 1 的乘数由 j−1 改为 n−1；公式 5 根号内偏差项补平方；更正仅载于勘误通知以保留原始版本。",
+        "limitations": "通知未报告重新运行实验或性能变化，不猜测代码实现和结论受到何种影响。"
+      },
+      "relevance": "关联测序与方法学，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 2
+    },
+    {
+      "id": "doi:10.64898/2026.08.13.26360300",
+      "title": "Scalable context-dependent single-cell eQTL mapping reveals disease-relevant regulatory variation beyond static models",
+      "link": "https://www.medrxiv.org/content/10.64898/2026.08.13.26360300v1",
+      "source": "medRxiv",
+      "date": "2026-08-17",
+      "updateType": "新预印本（30 天回溯补录）",
+      "evidence": "预印本",
+      "categories": [
+        "多组学与调控",
+        "细胞图谱与数据底座",
+        "测序与方法学"
+      ],
+      "summary": "CASTIE 用细胞背景交互项发现静态 eQTL 分析遗漏的调控关联。",
+      "details": {
+        "methods": "Poisson 混合模型直接建模稀疏计数；OneK1K 含 982 名供体、120 万 PBMC，另验证代谢刺激的间充质干细胞。",
+        "findings": "作者报告 3,155 个背景依赖 eQTL 关联、94 个性状的 374 次共定位，并在刺激数据提高 eGene 检出。",
+        "limitations": "预印本；medRxiv 版本日为 08-17，EPMC 首发索引为 08-14，明确按原始平台记录；共定位不等于已证明因果基因。"
+      },
+      "relevance": "关联多组学与调控、细胞图谱与数据底座、测序与方法学，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/medrxiv/10.64898/2026.08.13.26360300",
+          "https://www.medrxiv.org/content/10.64898/2026.08.13.26360300v1"
+        ],
+        "version": "1",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.03.01.708392",
+      "title": "scUnify: a unified framework for training and inference across multiple single-cell foundation models",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.03.01.708392v2",
+      "source": "bioRxiv",
+      "date": "2026-08-20",
+      "updateType": "预印本修订 v2（首次收录；30 天回溯）",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "测序与方法学"
+      ],
+      "summary": "scUnify v2 统一多个单细胞基础模型的训练、推理和适配接口。",
+      "details": {
+        "methods": "保留每个骨干原生预处理，将模型训练器、下游任务与适配策略拆为复用组件；覆盖 5 个基础模型。",
+        "findings": "作者报告复现原始训练/推理流程，接入多种参数高效微调及跨骨干自定义任务。",
+        "limitations": "预印本；v2 首次收录；统一接口不保证跨模型公平性，原生输入和优化设置仍需单独记录。"
+      },
+      "relevance": "关联单细胞基础模型、测序与方法学，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.03.01.708392",
+          "https://www.biorxiv.org/content/10.64898/2026.03.01.708392v2"
+        ],
+        "version": "2",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      }
+    },
     {
       "id": "doi:10.1093/bib/bbag469",
       "title": "Gene-Chronos: parameter-efficient developmental time inference using a pretrained single-cell foundation model.",
@@ -2283,26 +3005,60 @@
     },
     {
       "id": "10.64898/2026.07.02.736180",
-      "title": "The SEA-AD DREAM Challenge: Community benchmarking human and AI agent solutions for Alzheimer’s disease neuropathology prediction from single-nucleus transcriptomics",
-      "link": "https://doi.org/10.64898/2026.07.02.736180",
+      "title": "The SEA-AD DREAM Challenge: Community benchmarking human and AI agent solutions for Alzheimer's disease neuropathology prediction from single-nucleus transcriptomics",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.07.02.736180v2",
       "source": "bioRxiv",
-      "date": "2026-07-08",
-      "updateType": "新预印本",
+      "date": "2026-08-11",
+      "updateType": "预印本修订 v2（30 天回溯）",
       "evidence": "预印本",
       "categories": [
-        "细胞图谱与数据底座",
         "单细胞基础模型",
+        "细胞图谱与数据底座",
         "测序与方法学"
       ],
-      "summary": "SEA-AD DREAM Challenge 用阿尔茨海默病脑细胞图谱评测从单核转录组预测病理分期和定量负担，并首次加入 AI Agent Track，同时暴露 donor metadata 捷径。",
+      "summary": "SEA-AD DREAM v2 强调分期预测中的供体元数据捷径。",
       "details": {
-        "methods": "17 支来自 15 个国家的团队提交容器化模型，预测 ADNC、Braak、Thal、CERAD 及淀粉样蛋白和磷酸化 tau 定量负担。",
-        "findings": "最佳 ADNC quadratic weighted kappa 为 1.0，定量预测最高 concordance correlation coefficient 为 0.48；分类较依赖 donor metadata。",
-        "limitations": "近乎完美分类含明显泄漏风险，不能说明模型理解 AD 机制；参赛数量与任务特异性也限制泛化。"
+        "methods": "17 个合资格团队提交容器化模型，预测分类病理分期及 Aβ/phospho-tau 定量负担，并开展事后特征扰动审计。",
+        "findings": "作者报告最高分类加权 kappa 为 1.0，但依赖供体元数据；定量预测最高一致相关为 0.48，与转录组和细胞特征关系更强。",
+        "limitations": "预印本；v2 为回溯修订，未逐版比较；单一挑战成绩不等于临床泛化，需严格供体隔离与元数据泄漏控制。"
       },
-      "relevance": "它为细胞图谱驱动疾病预测和 AI agent 提供社区基准。",
-      "followUp": "关注去除 metadata 后榜单、容器公开和外部队列验证。",
-      "priority": 31
+      "relevance": "关联单细胞基础模型、细胞图谱与数据底座、测序与方法学，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.07.02.736180",
+          "https://www.biorxiv.org/content/10.64898/2026.07.02.736180v2"
+        ],
+        "version": "2",
+        "basis": "官方 API 的 DOI、title、date、version 与 abstract；日期采用平台版本日期。"
+      },
+      "history": [
+        {
+          "id": "10.64898/2026.07.02.736180",
+          "title": "The SEA-AD DREAM Challenge: Community benchmarking human and AI agent solutions for Alzheimer’s disease neuropathology prediction from single-nucleus transcriptomics",
+          "link": "https://doi.org/10.64898/2026.07.02.736180",
+          "source": "bioRxiv",
+          "date": "2026-07-08",
+          "updateType": "新预印本",
+          "evidence": "预印本",
+          "categories": [
+            "细胞图谱与数据底座",
+            "单细胞基础模型",
+            "测序与方法学"
+          ],
+          "summary": "SEA-AD DREAM Challenge 用阿尔茨海默病脑细胞图谱评测从单核转录组预测病理分期和定量负担，并首次加入 AI Agent Track，同时暴露 donor metadata 捷径。",
+          "details": {
+            "methods": "17 支来自 15 个国家的团队提交容器化模型，预测 ADNC、Braak、Thal、CERAD 及淀粉样蛋白和磷酸化 tau 定量负担。",
+            "findings": "最佳 ADNC quadratic weighted kappa 为 1.0，定量预测最高 concordance correlation coefficient 为 0.48；分类较依赖 donor metadata。",
+            "limitations": "近乎完美分类含明显泄漏风险，不能说明模型理解 AD 机制；参赛数量与任务特异性也限制泛化。"
+          },
+          "relevance": "它为细胞图谱驱动疾病预测和 AI agent 提供社区基准。",
+          "followUp": "关注去除 metadata 后榜单、容器公开和外部队列验证。",
+          "priority": 31
+        }
+      ]
     },
     {
       "id": "arxiv:2607.07467",
@@ -2966,26 +3722,59 @@
     },
     {
       "id": "arxiv:2603.17380",
-      "title": "SCALE: Scalable Conditional Atlas-Level Endpoint transport for virtual cell perturbation prediction",
-      "link": "https://arxiv.org/abs/2603.17380",
+      "title": "SCALE:Scalable Conditional Atlas-Level Endpoint transport for virtual cell perturbation prediction",
+      "link": "https://arxiv.org/abs/2603.17380v3",
       "source": "arXiv",
-      "date": "2026-03-19",
-      "updateType": "新预印本",
+      "date": "2026-08-31",
+      "updateType": "预印本修订 v3（30 天回溯；版本语义澄清）",
       "evidence": "预印本",
       "categories": [
         "单细胞基础模型",
-        "虚拟细胞与扰动",
-        "细胞图谱与数据底座"
+        "虚拟细胞与扰动"
       ],
-      "summary": "SCALE 同时处理虚拟细胞的系统吞吐、稀疏高维状态建模和生物学评测问题。它把扰动预测表述为 conditional transport，并在 atlas 级数据上使用 set-aware flow。",
+      "summary": "SCALE arXiv v3 用无配对细胞群体的条件输运预测扰动响应。",
       "details": {
-        "methods": "系统基于 BioNeMo，耦合 LLaMA 风格细胞编码与 endpoint-oriented supervision；在 Tahoe-100M 上使用细胞级、生物学导向指标评测。",
-        "findings": "作者报告预训练吞吐提升 12.51 倍、推理提升 1.29 倍；相对 STATE，PDCorr 提升 12.02%，差异表达重叠提升 10.66%。",
-        "limitations": "加速和精度来自匹配系统条件下的作者评测；对其他硬件、数据集和未见扰动能否保持优势尚不清楚。"
+        "methods": "共享集合编码器与条件 DiT 学习潜空间输运，端点监督对齐表达变化；覆盖遗传、化学、发育和免疫扰动。",
+        "findings": "作者报告在细胞系效应占主导的 CRISPR 数据上改善 7 个指标；3 名供体匹配 PBMC 实验支持不同细胞因子响应预测。",
+        "limitations": "仅依据 arXiv v3；bioRxiv v2 的摘要仍为另一套表述与结果，未合并数值；小规模 PBMC 实验不足以支持广泛外推。"
       },
-      "relevance": "它强调虚拟细胞需要模型、基础设施和评测共同设计。",
-      "followUp": "关注 Tahoe-100M 切分、硬件复现、未见扰动和开放训练流水线。",
-      "priority": 12
+      "relevance": "关联单细胞基础模型、虚拟细胞与扰动，可用于设计数据、模型或验证方案。",
+      "followUp": "核查代码与数据版本、独立切分和强基线；复现时检查上述证据边界。",
+      "priority": 1,
+      "history": [
+        {
+          "id": "arxiv:2603.17380",
+          "title": "SCALE: Scalable Conditional Atlas-Level Endpoint transport for virtual cell perturbation prediction",
+          "link": "https://arxiv.org/abs/2603.17380",
+          "source": "arXiv",
+          "date": "2026-03-19",
+          "updateType": "新预印本",
+          "evidence": "预印本",
+          "categories": [
+            "单细胞基础模型",
+            "虚拟细胞与扰动",
+            "细胞图谱与数据底座"
+          ],
+          "summary": "SCALE 同时处理虚拟细胞的系统吞吐、稀疏高维状态建模和生物学评测问题。它把扰动预测表述为 conditional transport，并在 atlas 级数据上使用 set-aware flow。",
+          "details": {
+            "methods": "系统基于 BioNeMo，耦合 LLaMA 风格细胞编码与 endpoint-oriented supervision；在 Tahoe-100M 上使用细胞级、生物学导向指标评测。",
+            "findings": "作者报告预训练吞吐提升 12.51 倍、推理提升 1.29 倍；相对 STATE，PDCorr 提升 12.02%，差异表达重叠提升 10.66%。",
+            "limitations": "加速和精度来自匹配系统条件下的作者评测；对其他硬件、数据集和未见扰动能否保持优势尚不清楚。"
+          },
+          "relevance": "它强调虚拟细胞需要模型、基础设施和评测共同设计。",
+          "followUp": "关注 Tahoe-100M 切分、硬件复现、未见扰动和开放训练流水线。",
+          "priority": 12
+        }
+      ],
+      "verification": {
+        "checkedAt": "2026-09-07",
+        "sources": [
+          "https://arxiv.org/abs/2603.17380v3"
+        ],
+        "basis": "同一 arXiv ID 的 v3 原始题名、08-31 版本日和摘要。原 date=03-19 实为 v2 日期；保留旧条目。",
+        "relatedRecord": "https://www.biorxiv.org/content/10.64898/2026.03.17.712536v2",
+        "relatedRecordNote": "跨平台摘要不同，不拼接。"
+      }
     },
     {
       "id": "arxiv:2602.19685",
