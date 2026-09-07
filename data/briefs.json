@@ -2,11 +2,11 @@
   "updatedAt": "2026-09-07 11:24 CST",
   "statusMessage": "2026-09-07 检索：常规窗口 2026-09-04 至 09-07，周一 30 天回溯 2026-08-09 至 09-07（Asia/Shanghai）；新增 24 条、修订 2 条、累计 161 条记录；最新收录论文/版本发布日期 2026-09-05。本次检索不完整：arXiv 全量关键词与修订检索失败，部分候选正文待核验。历史含一组重复 DOI，累计记录数不等于唯一文献数。 历史身份审计另发现两条 arXiv 题名与原始 v1 冲突，均隔离在日报审计中、未覆盖原记录。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-09-07 11:24 CST",
-    "commit": null,
+    "state": "success",
+    "updatedAt": "2026-09-07 11:29 CST",
+    "commit": "97d7b2fc6efaf21df70b9b5a8bc96e7972c4bba5",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-09-07 文献内容已在本地更新，尚未推送；上次成功内容提交 36501825fdcca9ce4f06e469119c18313c752f00。"
+    "message": "2026-09-07 文献内容提交 97d7b2fc6efaf21df70b9b5a8bc96e7972c4bba5 已推送；新增 24 条、修订 2 条、累计 161 条记录（160 个唯一 ID）。本记录随元数据刷新提交发布；检索健康 incomplete，arXiv 检索缺口、候选正文待核验及历史身份冲突不因同步成功而消除。"
   },
   "categories": [
     {
