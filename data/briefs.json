@@ -2,11 +2,11 @@
   "updatedAt": "2026-09-08 09:15 CST",
   "statusMessage": "2026-09-08 检索：常规窗口 2026-09-05 至 09-08（Asia/Shanghai），另补核 arXiv 09-04 条目及 08-15 RobustCell 历史待核验；新增 11 条、修订 0 条、累计 172 条记录；最新收录论文/版本发布日期 2026-09-07。本次检索不完整：arXiv 跨分类关键词/旧 ID 修订检索失败，历史身份冲突仍待处理。检索时间不等于论文发布日期。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-09-08 09:15 CST",
-    "commit": "",
+    "state": "success",
+    "updatedAt": "2026-09-08 09:17 CST",
+    "commit": "b34101738eba7dab8b0150c679cc3cd4ea402fe8",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-09-08 文献内容尚未推送；检索健康 incomplete，等待内容与元数据两阶段同步。"
+    "message": "2026-09-08 文献内容提交 b34101738eba7dab8b0150c679cc3cd4ea402fe8 已推送；新增 11 条、修订 0 条、累计 172 条记录（171 个唯一规范 ID）。本同步记录随元数据刷新提交发布；检索健康 incomplete，arXiv 检索缺口与历史待核验不因同步成功而消除。"
   },
   "categories": [
     {
