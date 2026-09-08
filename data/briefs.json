@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-07 11:24 CST",
-  "statusMessage": "2026-09-07 检索：常规窗口 2026-09-04 至 09-07，周一 30 天回溯 2026-08-09 至 09-07（Asia/Shanghai）；新增 24 条、修订 2 条、累计 161 条记录；最新收录论文/版本发布日期 2026-09-05。本次检索不完整：arXiv 全量关键词与修订检索失败，部分候选正文待核验。历史含一组重复 DOI，累计记录数不等于唯一文献数。 历史身份审计另发现两条 arXiv 题名与原始 v1 冲突，均隔离在日报审计中、未覆盖原记录。",
+  "updatedAt": "2026-09-08 09:15 CST",
+  "statusMessage": "2026-09-08 检索：常规窗口 2026-09-05 至 09-08（Asia/Shanghai），另补核 arXiv 09-04 条目及 08-15 RobustCell 历史待核验；新增 11 条、修订 0 条、累计 172 条记录；最新收录论文/版本发布日期 2026-09-07。本次检索不完整：arXiv 跨分类关键词/旧 ID 修订检索失败，历史身份冲突仍待处理。检索时间不等于论文发布日期。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-09-07 11:29 CST",
-    "commit": "97d7b2fc6efaf21df70b9b5a8bc96e7972c4bba5",
+    "state": "pending",
+    "updatedAt": "2026-09-08 09:15 CST",
+    "commit": "",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-09-07 文献内容提交 97d7b2fc6efaf21df70b9b5a8bc96e7972c4bba5 已推送；新增 24 条、修订 2 条、累计 161 条记录（160 个唯一 ID）。本记录随元数据刷新提交发布；检索健康 incomplete，arXiv 检索缺口、候选正文待核验及历史身份冲突不因同步成功而消除。"
+    "message": "2026-09-08 文献内容尚未推送；检索健康 incomplete，等待内容与元数据两阶段同步。"
   },
   "categories": [
     {
@@ -3909,6 +3909,341 @@
       "relevance": "此类标准化图谱是训练多模态基础模型和 virtual tissue 的关键底座。",
       "followUp": "关注配对多模态比例、下载接口、版本追踪和数据许可。",
       "priority": 35
+    },
+    {
+      "id": "doi:10.1093/bioinformatics/btag662",
+      "title": "DECANT: Decoupling mechanism from context in single-cell drug perturbation representation",
+      "link": "https://doi.org/10.1093/bioinformatics/btag662",
+      "source": "Bioinformatics",
+      "date": "2026-09-07",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "DECANT 将药物机制相关表示与细胞、剂量和时间背景分离。",
+      "details": {
+        "methods": "以匹配的处理—对照细胞集合表示扰动，将背景抑制的机制表示与背景相关响应信息解耦；采用固定的药物级未见化合物基准。",
+        "findings": "作者报告在基因和程序级响应差异指标上整体领先所比较模型与伪 bulk 基线；嵌入跨剂量、细胞系和处理时间更稳定，并恢复机制家族富集邻域。",
+        "limitations": "机制家族注释富集不是因果机制验证；摘要未给完整数值与切分规模，不能外推为所有未见药物通用最优。代码 v1.0.0 发布于 07-06，非本窗口新 release。"
+      },
+      "relevance": "关联虚拟细胞与扰动、测序与方法学，支持数据、模型或验证方案的选择。",
+      "followUp": "核查可复用代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "sources": [
+          "https://api.crossref.org/works/10.1093/bioinformatics/btag662",
+          "https://europepmc.org/article/MED/42704667",
+          "https://github.com/bliulab/DECANT/releases/tag/v1.0.0"
+        ],
+        "basis": "Crossref DOI/题名/期刊/在线日期与 EPMC core 正式期刊摘要一致；官方 release 核对代码日期。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.08.19.745674",
+      "title": "RevPert: predicting candidate drivers of transcriptomic state transitions via gallery-native reverse perturbation",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.19.745674v2",
+      "source": "bioRxiv",
+      "date": "2026-09-06",
+      "updateType": "预印本修订 v2（首次收录）",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "RevPert v2 从表达状态差异反向排序固定目录中的遗传扰动。",
+      "details": {
+        "methods": "将带符号 Pearson 连通性与学习残差结合；在 Replogle Essential Perturb-seq 的 4 个细胞系和 LINCS-KO 的 10 个细胞系评测。",
+        "findings": "作者报告对留出干预的恢复领先匹配基线；HCC/CML 耐药表达对比中，预设疾病锚点在预期方向的排序优于差异表达幅度排序。",
+        "limitations": "预印本；候选限于固定扰动目录；外部疾病分析是文献锚点的有符号几何检验，作者明确不视为留出干预恢复，CML 使用传导式模型。v2 首次收录，未逐版比较。"
+      },
+      "relevance": "关联虚拟细胞与扰动、测序与方法学，支持数据、模型或验证方案的选择。",
+      "followUp": "核查可复用代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.08.19.745674"
+        ],
+        "version": "2",
+        "basis": "官方日期窗口 API 返回的 DOI、完整题名、版本日期与摘要；方法和结果仅据原始摘要。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.09.02.748788",
+      "title": "Systematic Comparison of 10X Genomics and Parse Single Cell RNA Technologies across PBMC and CD8+ TEMRA Cells",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.09.02.748788v1",
+      "source": "bioRxiv",
+      "date": "2026-09-06",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "测序与方法学",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "10X 与 Parse 的平台偏差影响免疫细胞表达及细胞类型解释。",
+      "details": {
+        "methods": "在人 PBMC 和 CD8+ TEMRA 细胞比较两种 scRNA-seq 平台的表达变异、核糖体/线粒体基因与转录本长度偏差。",
+        "findings": "作者报告 10X 偏向较短基因、Parse 更易检出较长转录本；Parse TEMRA 中 GNLY、PRF1 和 GZMB 等表达相对不足。",
+        "limitations": "预印本；限于所测样本和流程；摘要未给供体数或全部试剂版本，不能推断某一平台在所有应用中更优。"
+      },
+      "relevance": "关联测序与方法学、细胞图谱与数据底座，支持数据、模型或验证方案的选择。",
+      "followUp": "核查可复用代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.09.02.748788"
+        ],
+        "version": "1",
+        "basis": "官方日期窗口 API 返回的 DOI、完整题名、版本日期与摘要；方法和结果仅据原始摘要。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.09.02.748725",
+      "title": "Single-Cell Indel Detection Enhances Genetic Ancestry and Cellular Lineage Analysis",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.09.02.748725v1",
+      "source": "bioRxiv",
+      "date": "2026-09-07",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "测序与方法学",
+        "多组学与调控",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "Monopogen-Indel 从稀疏单细胞数据提取遗传祖源与谱系信息。",
+      "details": {
+        "methods": "结合单倍型变异检测、重复区域动态模板匹配和群体等位基因分离；用配对 WGS 验证视网膜 snRNA-seq，并分析 65 个心脏 snATAC 样本及一名卵巢癌患者四部位的 43,717 个细胞。",
+        "findings": "作者报告视网膜每样本检出 4.1—4.5 万胚系 Indel，精确率超过 70%、基因型准确率超过 90%；卵巢癌胚系 Indel 的 WGS 验证精确率为 86%。",
+        "limitations": "预印本；新检出 Indel 不全是体细胞突变，可含 RNA 编辑和技术误差；肿瘤例证仅一名患者，不能将基因型准确率等同变异检出精确率。"
+      },
+      "relevance": "关联测序与方法学、多组学与调控、细胞图谱与数据底座，支持数据、模型或验证方案的选择。",
+      "followUp": "核查可复用代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.09.02.748725"
+        ],
+        "version": "1",
+        "basis": "官方日期窗口 API 返回的 DOI、完整题名、版本日期与摘要；方法和结果仅据原始摘要。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.09.02.748851",
+      "title": "EISCA and EISTA: Full-Spectrum Pipelines for Single-Cell and Spatial Transcriptomics Analysis",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.09.02.748851v1",
+      "source": "bioRxiv",
+      "date": "2026-09-07",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "测序与方法学",
+        "空间与时空组学",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "EISCA/EISTA 将单细胞与成像空间转录组分析组织为模块化流程。",
+      "details": {
+        "methods": "基于 Nextflow nf-core，覆盖原始处理至下游；EISCA 支持液滴/板式 scRNA-seq，EISTA 面向 MERFISH 和 Xenium，整合质控、注释、差异表达、细胞通信和空间统计。",
+        "findings": "作者在植物免疫与人败血症案例中展示可复用分析和报告生成；流程支持完整运行与模块化迭代。",
+        "limitations": "预印本；摘要未提供统一硬件下的速度或成本基准；标准化流程不自动保证每种平台参数或生物学结论可靠。"
+      },
+      "relevance": "关联测序与方法学、空间与时空组学、细胞图谱与数据底座，支持数据、模型或验证方案的选择。",
+      "followUp": "核查可复用代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.09.02.748851"
+        ],
+        "version": "1",
+        "basis": "官方日期窗口 API 返回的 DOI、完整题名、版本日期与摘要；方法和结果仅据原始摘要。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.09.01.748618",
+      "title": "SCG: Spatially Co-Expressed Gene Identification through Spatially Varying Networks",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.09.01.748618v1",
+      "source": "bioRxiv",
+      "date": "2026-09-05",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "多组学与调控",
+        "测序与方法学"
+      ],
+      "summary": "SCR 用空间变化的协方差网络识别空间共表达基因。",
+      "details": {
+        "methods": "采用可扩展的贝叶斯因子模型估计跨组织区域的空间分辨基因共表达网络。",
+        "findings": "原始摘要确认可生成基因相关性的空间图并识别空间共表达基因。",
+        "limitations": "预印本；摘要没有列出数据规模、量化基准或外部验证；潜在标志物和治疗靶点仍是假说，相关网络不等于因果调控。"
+      },
+      "relevance": "关联空间与时空组学、多组学与调控、测序与方法学，支持数据、模型或验证方案的选择。",
+      "followUp": "核查可复用代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.09.01.748618"
+        ],
+        "version": "1",
+        "basis": "官方日期窗口 API 返回的 DOI、完整题名、版本日期与摘要；方法和结果仅据原始摘要。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.09.01.748633",
+      "title": "Evaluating the Robustness of Path-Preservation Benchmarks for Dimensionality Reduction Across Point-Density Thresholds: Linear and Cyclic Single-Cell Trajectories",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.09.01.748633v1",
+      "source": "bioRxiv",
+      "date": "2026-09-05",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "测序与方法学",
+        "空间与时空组学"
+      ],
+      "summary": "轨迹保真度评测显示方法排名对采样密度较稳健，但会随轨迹拓扑改变。",
+      "details": {
+        "methods": "在线性 CD4+ T 细胞蛋白数据（3,096 细胞、51 蛋白）和 B 细胞 CyTOF 环形参考上比较 16 种降维方法、12 类几何指标；改变参考路径点密度。",
+        "findings": "作者报告两种数据内综合排名对密度变化稳定，但 UMAP/t-SNE 从线性参考的高排名降至环形参考的中间；全局距离指标与综合排名不总一致。",
+        "limitations": "预印本；仅两个参考几何；PC1 构造路径不是实验追踪的真实发育轨迹；不能以此给所有降维和轨迹推断任务排通用榜。"
+      },
+      "relevance": "关联测序与方法学、空间与时空组学，支持数据、模型或验证方案的选择。",
+      "followUp": "核查可复用代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.09.01.748633"
+        ],
+        "version": "1",
+        "basis": "官方日期窗口 API 返回的 DOI、完整题名、版本日期与摘要；方法和结果仅据原始摘要。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.08.30.748106",
+      "title": "Chromosomal mutational signatures of DNA damaging agents at single cell resolution",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.08.30.748106v1",
+      "source": "bioRxiv",
+      "date": "2026-09-07",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "测序与方法学",
+        "多组学与调控"
+      ],
+      "summary": "单细胞全基因组框架刻画 DNA 损伤药物诱发的近期染色体突变谱。",
+      "details": {
+        "methods": "将系统发育祖先重建与突变签名分解结合，分析细胞私有 CNA；覆盖不同遗传背景及药物处理的患者来源异种移植模型。",
+        "findings": "作者报告不同 DNA 损伤药物共同呈现端粒边界拷贝数增减签名，暴露与剂量相关；顺铂与 CX5461 停药后签名至少持续三周。",
+        "limitations": "预印本；PDX 和细胞实验不能直接推定人体停药后的毒性持续时间；签名与耐药/肿瘤响应的关联不单独证明机制因果。"
+      },
+      "relevance": "关联虚拟细胞与扰动、测序与方法学、多组学与调控，支持数据、模型或验证方案的选择。",
+      "followUp": "核查可复用代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.08.30.748106"
+        ],
+        "version": "1",
+        "basis": "官方日期窗口 API 返回的 DOI、完整题名、版本日期与摘要；方法和结果仅据原始摘要。"
+      }
+    },
+    {
+      "id": "arxiv:2609.04710",
+      "title": "Simulation-free Unbalanced Dynamic Optimal Transport with General Growth Penalty",
+      "link": "https://arxiv.org/abs/2609.04710v1",
+      "source": "arXiv",
+      "date": "2026-09-04",
+      "updateType": "新预印本（arXiv 检索缺口补录）",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "SUDO 在无配对单细胞快照中联合建模状态输运与增殖/死亡。",
+      "details": {
+        "methods": "学习条件路径及输运代价，求解半耦合，再使用非平衡 flow matching；允许非二次凸增长惩罚。",
+        "findings": "作者报告在 WFR 基准达到解析方法精度并快于仿真方法；非对称增长先验在合成和单细胞数据中产生更合理轨迹。",
+        "limitations": "预印本；轨迹依赖增长先验，摘要未给量化加速值或具体细胞数据规模；模型推断不是直接谱系追踪。"
+      },
+      "relevance": "关联虚拟细胞与扰动、空间与时空组学、测序与方法学，支持数据、模型或验证方案的选择。",
+      "followUp": "核查可复用代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "sources": [
+          "https://arxiv.org/abs/2609.04710v1"
+        ],
+        "basis": "原始 v1 的题名、ID、09-04 UTC 提交日期和摘要。09-07 为列表公告日，不替代版本日。"
+      }
+    },
+    {
+      "id": "arxiv:2609.04658",
+      "title": "VizIt: A multi-view framework for exploring single-cell, spatial, and genetic data online",
+      "link": "https://arxiv.org/abs/2609.04658v1",
+      "source": "arXiv",
+      "date": "2026-09-04",
+      "updateType": "新预印本（arXiv 检索缺口补录）",
+      "evidence": "预印本",
+      "categories": [
+        "细胞图谱与数据底座",
+        "空间与时空组学",
+        "多组学与调控"
+      ],
+      "summary": "VizIt 连接单细胞、空间、表观组与遗传数据的互补浏览视图。",
+      "details": {
+        "methods": "开源多视图框架连接基因、细胞类型、条件、空间、基因组区段和变异中心视图。",
+        "findings": "作者以 Parkinson’s Cell Atlas 展示可定制的交互多组学资源。",
+        "limitations": "预印本；摘要未列数据规模、性能评测或独立用户验证，不把可浏览资源等同经过质量审计的模型训练集。"
+      },
+      "relevance": "关联细胞图谱与数据底座、空间与时空组学、多组学与调控，支持数据、模型或验证方案的选择。",
+      "followUp": "核查可复用代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "sources": [
+          "https://arxiv.org/abs/2609.04658v1"
+        ],
+        "basis": "原始 v1 题名、ID、09-04 UTC 日期和摘要；09-07 为列表公告日。"
+      }
+    },
+    {
+      "id": "doi:10.1038/s41540-026-00799-9",
+      "title": "RobustCell: a model attack-defense framework for robust transcriptomic data analysis",
+      "link": "https://www.nature.com/articles/s41540-026-00799-9",
+      "source": "npj Systems Biology and Applications",
+      "date": "2026-08-15",
+      "updateType": "同行评审接受稿在线发布（历史待核验解除）",
+      "evidence": "同行评审",
+      "categories": [
+        "单细胞基础模型",
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "RobustCell 系统评测单细胞和空间分析模型面对输入攻击时的稳定性。",
+      "details": {
+        "methods": "框架比较三类攻击和两类防御，覆盖聚类与注释；以单基因和基因组攻击分析基因贡献。",
+        "findings": "原文报告攻击可降低包括单细胞基础模型在内的方法性能，适当防御可减轻下降。",
+        "limitations": "当前期刊页为经同行评审的接受稿预览，尚会编辑替换为最终记录版；摘要未给各攻击名称、规模和效应值，不推断自然分布偏移下同等表现。"
+      },
+      "relevance": "关联单细胞基础模型、空间与时空组学、测序与方法学，支持数据、模型或验证方案的选择。",
+      "followUp": "核查可复用代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "sources": [
+          "https://www.nature.com/articles/s41540-026-00799-9"
+        ],
+        "basis": "期刊原始页面恢复；DOI、题名、08-15 发表日期、期刊和正式版摘要均可确认，页面明确已同行评审。未混用 bioRxiv 摘要。"
+      }
     }
   ]
 }
