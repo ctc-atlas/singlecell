@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-08 09:15 CST",
-  "statusMessage": "2026-09-08 检索：常规窗口 2026-09-05 至 09-08（Asia/Shanghai），另补核 arXiv 09-04 条目及 08-15 RobustCell 历史待核验；新增 11 条、修订 0 条、累计 172 条记录；最新收录论文/版本发布日期 2026-09-07。本次检索不完整：arXiv 跨分类关键词/旧 ID 修订检索失败，历史身份冲突仍待处理。检索时间不等于论文发布日期。",
+  "updatedAt": "2026-09-09 09:13 CST",
+  "statusMessage": "2026-09-09 检索：窗口 2026-09-06 至 2026-09-09（Asia/Shanghai），无新的漏跑补检；新增 13 条、修订 0 条、累计 185 条记录；最新收录论文/版本发布日期 2026-09-08。本次检索不完整：arXiv API 失败，bioRxiv 5 页未取回；检索时间不等于论文发布日期。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-09-08 09:17 CST",
-    "commit": "b34101738eba7dab8b0150c679cc3cd4ea402fe8",
+    "state": "pending",
+    "updatedAt": "2026-09-09 09:13 CST",
+    "commit": "",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-09-08 文献内容提交 b34101738eba7dab8b0150c679cc3cd4ea402fe8 已推送；新增 11 条、修订 0 条、累计 172 条记录（171 个唯一规范 ID）。本同步记录随元数据刷新提交发布；检索健康 incomplete，arXiv 检索缺口与历史待核验不因同步成功而消除。"
+    "message": "2026-09-09 内容和同步元数据尚未完成两阶段推送；检索健康 incomplete。"
   },
   "categories": [
     {
@@ -4243,6 +4243,397 @@
           "https://www.nature.com/articles/s41540-026-00799-9"
         ],
         "basis": "期刊原始页面恢复；DOI、题名、08-15 发表日期、期刊和正式版摘要均可确认，页面明确已同行评审。未混用 bioRxiv 摘要。"
+      }
+    },
+    {
+      "id": "doi:10.1038/s41592-026-03213-8",
+      "title": "Reconstructing signaling histories of single cells via perturbation screens and transfer learning",
+      "link": "https://doi.org/10.1038/s41592-026-03213-8",
+      "source": "Nature Methods",
+      "date": "2026-09-08",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "虚拟细胞与扰动",
+        "多组学与调控"
+      ],
+      "summary": "IRIS 从体外扰动学习可迁移信号响应，重建体内细胞信号历史。",
+      "details": {
+        "methods": "在人多能干细胞建立高通量信号扰动图谱，训练神经网络 IRIS，并迁移至小鼠胚胎单细胞图谱。",
+        "findings": "作者识别组合信号使用规律与细胞异质性，并沿多条发育谱系重建信号历史；期刊公开 IRIS GitHub 与 GEO/ArrayExpress 数据链接。",
+        "limitations": "模型推断的历史不是直接的信号记录；跨细胞与物种迁移仅在所测体系得到支持，不推断所有信号通路通用可迁移。"
+      },
+      "relevance": "关联虚拟细胞与扰动、多组学与调控，为数据、模型或验证方案提供依据。",
+      "followUp": "核查公开代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-09",
+        "sources": [
+          "https://api.crossref.org/works/10.1038/s41592-026-03213-8",
+          "https://www.nature.com/articles/s41592-026-03213-8"
+        ],
+        "basis": "原始记录核对 DOI、完整题名、来源、在线或版本日期与摘要；仅写可核实的方法和结果。"
+      }
+    },
+    {
+      "id": "doi:10.1038/s44161-026-00861-z",
+      "title": "Spatially guided in vivo single-cell functional genomics of postnatal heart",
+      "link": "https://doi.org/10.1038/s44161-026-00861-z",
+      "source": "Nature Cardiovascular Research",
+      "date": "2026-09-07",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "虚拟细胞与扰动",
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "PIP-seq 将空间心脏图谱与体内单细胞功能筛选连接。",
+      "details": {
+        "methods": "整合出生后小鼠心脏 snRNA-seq 和成像空间转录组；PIP-seq 在固定细胞核中检测 sgRNA、推断编辑并测量转录。",
+        "findings": "研究识别 21 个此前未表征的心肌成熟调控因子，涉及肌节组装、代谢重编程及电生理转换。",
+        "limitations": "证据来自出生后小鼠心脏；不等同人心脏疗效或所有组织可直接复用；本简报不引入未经核对的编辑检出率。"
+      },
+      "relevance": "关联虚拟细胞与扰动、空间与时空组学、测序与方法学，为数据、模型或验证方案提供依据。",
+      "followUp": "核查公开代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-09",
+        "sources": [
+          "https://api.crossref.org/works/10.1038/s44161-026-00861-z",
+          "https://europepmc.org/article/MED/42706440"
+        ],
+        "basis": "原始记录核对 DOI、完整题名、来源、在线或版本日期与摘要；仅写可核实的方法和结果。"
+      }
+    },
+    {
+      "id": "doi:10.1002/ijc.70733",
+      "title": "Impact of Single‐Cell RNA Reference Selection for the Deconvolution of Breast Cancer Spatial Transcriptomics Datasets",
+      "link": "https://doi.org/10.1002/ijc.70733",
+      "source": "International Journal of Cancer",
+      "date": "2026-09-08",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "空间去卷积参考匹配可提高准确性，大图谱可稳定结果。",
+      "details": {
+        "methods": "用原发 Xenium 与转移 MERFISH 乳腺癌数据构建 55 μm 伪 Visium spots，比较 RCTD/Cell2location 的参考规模、组成与样本配对。",
+        "findings": "小参考亦可取得准确结果；样本匹配优于跨患者参考，大型乳腺癌图谱也可靠；主要细胞群仍可能系统性高估或低估。",
+        "limitations": "仅两种去卷积方法及乳腺癌场景；伪 spots 不等同真实 Visium 所有噪声，表现随细胞类型与注释粒度改变。"
+      },
+      "relevance": "关联空间与时空组学、测序与方法学，为数据、模型或验证方案提供依据。",
+      "followUp": "核查公开代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-09",
+        "sources": [
+          "https://api.crossref.org/works/10.1002/ijc.70733",
+          "https://europepmc.org/article/MED/42709043"
+        ],
+        "basis": "原始记录核对 DOI、完整题名、来源、在线或版本日期与摘要；仅写可核实的方法和结果。"
+      }
+    },
+    {
+      "id": "doi:10.1038/s41467-026-77458-4",
+      "title": "Systematic benchmarking of ambient RNA decontamination tools to advance precision in single-cell transcriptomic analysis",
+      "link": "https://doi.org/10.1038/s41467-026-77458-4",
+      "source": "Nature Communications",
+      "date": "2026-09-08",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "测序与方法学",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "环境 RNA 去污染工具的最佳选择随任务而变。",
+      "details": {
+        "methods": "用跨组织、跨物种模拟与实验数据评估七种工具的污染比例估计、稳健性和细胞亚型特异污染。",
+        "findings": "作者报告 DecontX 污染比例估计最准确；scAR 跨条件最稳健但倾向高估；CellClear 对相近细胞亚型的区分最好。",
+        "limitations": "期刊当前提供已同行评审的接受稿预览；结论限于所测数据和指标，不存在摘要支持的全任务通用冠军。"
+      },
+      "relevance": "关联测序与方法学、细胞图谱与数据底座，为数据、模型或验证方案提供依据。",
+      "followUp": "核查公开代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-09",
+        "sources": [
+          "https://www.nature.com/articles/s41467-026-77458-4"
+        ],
+        "basis": "原始记录核对 DOI、完整题名、来源、在线或版本日期与摘要；仅写可核实的方法和结果。"
+      }
+    },
+    {
+      "id": "doi:10.1038/s41559-026-03164-5",
+      "title": "Flexible use of conserved motifs constrains genome access in cell type evolution",
+      "link": "https://doi.org/10.1038/s41559-026-03164-5",
+      "source": "Nature Ecology & Evolution",
+      "date": "2026-09-08",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "多组学与调控",
+        "单细胞基础模型"
+      ],
+      "summary": "细胞家族级调控词汇保守，但细胞类型级组合规则跨物种变化。",
+      "details": {
+        "methods": "单核多组学与深度学习联合分析扁形动物和脊椎动物的可及染色质及序列 motif。",
+        "findings": "跨物种模型可预测细胞家族级可及性；同家族内具体细胞类型模型跨物种预测力下降，提出保守 motif 集合的集体维持模型。",
+        "limitations": "摘要级证据；机制模型是作者解释，跨物种预测不等同 motif 因果功能逐一验证，也不是通用基础模型发布。"
+      },
+      "relevance": "关联多组学与调控、单细胞基础模型，为数据、模型或验证方案提供依据。",
+      "followUp": "核查公开代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-09",
+        "sources": [
+          "https://www.nature.com/articles/s41559-026-03164-5"
+        ],
+        "basis": "原始记录核对 DOI、完整题名、来源、在线或版本日期与摘要；仅写可核实的方法和结果。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.09.03.749125",
+      "title": "AnnoAudit: a marker-based protocol for auditing single-cell atlas annotations reveals annotation-driven artifacts in a widely used traumatic brain injury resource",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.09.03.749125v1",
+      "source": "bioRxiv",
+      "date": "2026-09-08",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "细胞图谱与数据底座",
+        "测序与方法学",
+        "单细胞基础模型"
+      ],
+      "summary": "AnnoAudit 提出图谱注释审计，并报告 TBI 资源中的严重标签混杂。",
+      "details": {
+        "methods": "组合 marker 评分、无监督聚类、门控模块评分和适用性门控预训练模型，构建 ACS 与轨迹相关指纹；分析 CEREBRI 等资源。",
+        "findings": "作者报告 CEREBRI 的 45,051 个标注谷氨酸能神经元中，仅 963 个获 marker 支持，并将多种轨迹信号归因于非神经元混入。",
+        "limitations": "预印本指控尚需数据维护者及独立复核；marker 定义不是无误的真实标签。ACS 与特定细胞标签比例不是同一指标，不将作者审计结论当成已达成共识的勘误。"
+      },
+      "relevance": "关联细胞图谱与数据底座、测序与方法学、单细胞基础模型，为数据、模型或验证方案提供依据。",
+      "followUp": "核查公开代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-09",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.09.03.749125"
+        ],
+        "basis": "原始记录核对 DOI、完整题名、来源、在线或版本日期与摘要；仅写可核实的方法和结果。",
+        "version": "1"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.09.03.749294",
+      "title": "CellART: a unified framework for extracting single-cell information from high-resolution spatial transcriptomics",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.09.03.749294v1",
+      "source": "bioRxiv",
+      "date": "2026-09-08",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "CellART 联合细胞分割与类型注释，适配多种高分辨空间平台。",
+      "details": {
+        "methods": "融合染色图像、空间表达及 scRNA-seq 参考，结合深度学习和概率模型；覆盖 VisiumHD、Xenium、MERFISH、Stereo-seq。",
+        "findings": "作者报告可处理数百万 spots，在乳腺癌和结直肠癌中恢复细胞状态与免疫亚型，并分析候选配体—受体通信。",
+        "limitations": "预印本；spots 不等同细胞数，推断的通信不构成功能验证；摘要未给统一硬件速度或各平台定量误差。"
+      },
+      "relevance": "关联空间与时空组学、测序与方法学，为数据、模型或验证方案提供依据。",
+      "followUp": "核查公开代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-09",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.09.03.749294"
+        ],
+        "basis": "原始记录核对 DOI、完整题名、来源、在线或版本日期与摘要；仅写可核实的方法和结果。",
+        "version": "1"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.09.03.748766",
+      "title": "Atlas-scale single-cell analysis beyond in-memory paradigm with scAtlasPy",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.09.03.748766v1",
+      "source": "bioRxiv",
+      "date": "2026-09-08",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "细胞图谱与数据底座",
+        "单细胞基础模型",
+        "测序与方法学"
+      ],
+      "summary": "scAtlasPy 用磁盘驻留计算支持亿级细胞分析。",
+      "details": {
+        "methods": "将图谱规模与内存容量解耦，评测亿级全分辨率分析及随机 minibatch 读取。",
+        "findings": "作者报告一亿细胞分析峰值内存 42.9 GB；随机读取 137,745 cells/s，比 scDataset 快 10.4 倍、内存少 82.6%。",
+        "limitations": "预印本；数字仅对应作者所测任务、硬件与数据布局，不能解释为所有分析流程均具同样加速或可直接代替模型训练。"
+      },
+      "relevance": "关联细胞图谱与数据底座、单细胞基础模型、测序与方法学，为数据、模型或验证方案提供依据。",
+      "followUp": "核查公开代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-09",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.09.03.748766"
+        ],
+        "basis": "原始记录核对 DOI、完整题名、来源、在线或版本日期与摘要；仅写可核实的方法和结果。",
+        "version": "1"
+      }
+    },
+    {
+      "id": "doi:10.1007/s11103-026-01758-y",
+      "title": "PlantCCC prioritizes context-specific candidate ligand–receptor communication patterns in plant spatial transcriptomics",
+      "link": "https://doi.org/10.1007/s11103-026-01758-y",
+      "source": "Plant Molecular Biology",
+      "date": "2026-09-07",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "多组学与调控",
+        "测序与方法学"
+      ],
+      "summary": "PlantCCC 在植物组织中排序空间背景相关的候选细胞通信。",
+      "details": {
+        "methods": "结合植物配体—受体候选库、表达增强、有向异构图、空间权重、图注意力与对比学习；在半合成基准、杨树及独立拟南芥 Visium HD 数据评测。",
+        "findings": "作者报告可区分注入相互作用与纯共定位混杂，对 dropout 较稳健；候选信号轴与组织结构及已有证据相符。",
+        "limitations": "植物细胞壁与胞间连丝使空间邻近不等于有效通信；同源映射和配体—受体证据不均衡，候选边不是已验证因果相互作用。"
+      },
+      "relevance": "关联空间与时空组学、多组学与调控、测序与方法学，为数据、模型或验证方案提供依据。",
+      "followUp": "核查公开代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-09-09",
+        "sources": [
+          "https://api.crossref.org/works/10.1007/s11103-026-01758-y",
+          "https://europepmc.org/article/MED/42706460"
+        ],
+        "basis": "原始记录核对 DOI、完整题名、来源、在线或版本日期与摘要；仅写可核实的方法和结果。"
+      }
+    },
+    {
+      "id": "doi:10.1172/jci.insight.206951",
+      "title": "Spatial multiomics in biomedical research: advances beyond transcriptomics",
+      "link": "https://doi.org/10.1172/jci.insight.206951",
+      "source": "JCI Insight",
+      "date": "2026-09-08",
+      "updateType": "综述发表",
+      "evidence": "观点与解读",
+      "categories": [
+        "空间与时空组学",
+        "多组学与调控",
+        "测序与方法学"
+      ],
+      "summary": "综述梳理超越转录组的空间多组学技术。",
+      "details": {
+        "methods": "综述组织原位基因组、表观组、蛋白组与代谢组平台、样本兼容性、计算工具及应用。",
+        "findings": "文章归纳技术进展与商业化方向，为平台选择提供背景。",
+        "limitations": "综述与解读，不是新的统一实验基准；摘要未提供平台间定量优劣，不把商业化趋势当作独立性能验证。"
+      },
+      "relevance": "关联空间与时空组学、多组学与调控、测序与方法学，为数据、模型或验证方案提供依据。",
+      "followUp": "核查公开代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-09-09",
+        "sources": [
+          "https://api.crossref.org/works/10.1172/jci.insight.206951",
+          "https://europepmc.org/article/MED/42708363"
+        ],
+        "basis": "原始记录核对 DOI、完整题名、来源、在线或版本日期与摘要；仅写可核实的方法和结果。"
+      }
+    },
+    {
+      "id": "doi:10.1038/s41467-026-77191-y",
+      "title": "Distinct cell states define larval and adult body plans in a hemichordate",
+      "link": "https://doi.org/10.1038/s41467-026-77191-y",
+      "source": "Nature Communications",
+      "date": "2026-09-08",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "细胞图谱与数据底座",
+        "空间与时空组学"
+      ],
+      "summary": "半索动物全身图谱揭示生活史阶段是细胞状态的重要组织轴。",
+      "details": {
+        "methods": "对 Schizocardium californicum 幼体、变态与成体开展全身单细胞 RNA 测序，比较胚层及阶段的细胞转录状态。",
+        "findings": "外胚层和内胚层细胞跨阶段差异大，同阶段相似性更强；中胚层细胞跨阶段保持较相似转录谱。",
+        "limitations": "单一物种；转录相似性不是直接谱系追踪，不能仅凭聚类判定细胞来源或所有间接发育动物共有机制。"
+      },
+      "relevance": "关联细胞图谱与数据底座、空间与时空组学，为数据、模型或验证方案提供依据。",
+      "followUp": "核查公开代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-09-09",
+        "sources": [
+          "https://www.nature.com/articles/s41467-026-77191-y"
+        ],
+        "basis": "原始记录核对 DOI、完整题名、来源、在线或版本日期与摘要；仅写可核实的方法和结果。"
+      }
+    },
+    {
+      "id": "doi:10.1038/s41568-026-00970-8",
+      "title": "A single-cell lens into the co-evolution of genotypes and phenotypes in cancer",
+      "link": "https://doi.org/10.1038/s41568-026-00970-8",
+      "source": "Nature Reviews Cancer",
+      "date": "2026-09-08",
+      "updateType": "综述发表",
+      "evidence": "观点与解读",
+      "categories": [
+        "多组学与调控",
+        "测序与方法学"
+      ],
+      "summary": "综述同细胞基因型—表型联测对克隆演化研究的价值。",
+      "details": {
+        "methods": "梳理同一细胞中测量基因型和其他分子特征的多模态技术，以及系统发育重建与表型联测。",
+        "findings": "文章讨论突变特异表型、细胞状态依赖效应和克隆演化时间重建的研究机会。",
+        "limitations": "观点与综述；仅原始摘要预览可用，不给未经正文确认的技术排名或治疗有效性结论。"
+      },
+      "relevance": "关联多组学与调控、测序与方法学，为数据、模型或验证方案提供依据。",
+      "followUp": "核查公开代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-09-09",
+        "sources": [
+          "https://www.nature.com/articles/s41568-026-00970-8"
+        ],
+        "basis": "原始记录核对 DOI、完整题名、来源、在线或版本日期与摘要；仅写可核实的方法和结果。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.09.03.747958",
+      "title": "Division-resolved inference of flow and trajectories in proliferating cell populations",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.09.03.747958v2",
+      "source": "bioRxiv",
+      "date": "2026-09-08",
+      "updateType": "预印本修订 v2（首次收录）",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "DRIFT 从群体时间快照分离细胞状态推进与分裂造成的重分布。",
+      "details": {
+        "methods": "求解群体平衡方程，在模拟及 L1210/HeLa 细胞中研究体积、DNA 含量和面积，无须同步或逐细胞追踪。",
+        "findings": "模拟恢复平均体积轨迹；实验推断与纵向单细胞测量、DNA 合成实验及持续成像一致。",
+        "limitations": "预印本 v2 首次收录，未逐版比较；主要是体积、DNA 和面积状态，不等同高维转录组通用预测，也不恢复每个细胞真实轨迹。"
+      },
+      "relevance": "关联虚拟细胞与扰动、测序与方法学，为数据、模型或验证方案提供依据。",
+      "followUp": "核查公开代码、数据许可与独立验证，重点检查上述证据边界。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-09-09",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.09.03.747958"
+        ],
+        "basis": "原始记录核对 DOI、完整题名、来源、在线或版本日期与摘要；仅写可核实的方法和结果。",
+        "version": "2"
       }
     }
   ]
