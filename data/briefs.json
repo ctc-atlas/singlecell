@@ -2,11 +2,11 @@
   "updatedAt": "2026-09-10 09:11 CST",
   "statusMessage": "2026-09-10 检索：常规窗口 2026-09-07 至 09-10，来源补检 09-06 至 09-10，arXiv 历史补检 08-09 至 09-07（Asia/Shanghai）；新增 24 条、修订 2 条、累计 209 条；最新收录论文/版本发布日期 2026-09-09。本次检索不完整：bioRxiv 缺一页/30 版本；检索时间不等于发表日期。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-09-10 09:11 CST",
-    "commit": "d6e8ec395550f11b3c54eff971284a0f8a04d490",
+    "state": "success",
+    "updatedAt": "2026-09-10 09:12 CST",
+    "commit": "e1f13ac891713bd8bdec4040f57b1f20ecfddd3a",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-09-10 内容待推送；commit 暂保留上次成功内容提交，非本次成功。"
+    "message": "2026-09-10 文献内容提交 e1f13ac891713bd8bdec4040f57b1f20ecfddd3a 已推送；新增 24 条、修订 2 条、累计 209 条记录（208 个唯一 ID）。本记录随元数据刷新提交发布；检索健康 incomplete，bioRxiv 缺 30 个版本未因同步成功而消除。"
   },
   "categories": [
     {
