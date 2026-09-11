@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-10 09:11 CST",
-  "statusMessage": "2026-09-10 检索：常规窗口 2026-09-07 至 09-10，来源补检 09-06 至 09-10，arXiv 历史补检 08-09 至 09-07（Asia/Shanghai）；新增 24 条、修订 2 条、累计 209 条；最新收录论文/版本发布日期 2026-09-09。本次检索不完整：bioRxiv 缺一页/30 版本；检索时间不等于发表日期。",
+  "updatedAt": "2026-09-11 09:09 CST",
+  "statusMessage": "2026-09-11 检索：常规窗口 2026-09-08 至 09-11，bioRxiv 补检尝试 09-06 至 09-11（Asia/Shanghai）；新增 8 条、修订 0 条、累计 217 条记录；最新收录论文发布日期 2026-09-09。本次检索不完整：arXiv/bioRxiv/medRxiv API 失败；检索时间不等于发表日期。",
   "sync": {
-    "state": "success",
-    "updatedAt": "2026-09-10 09:12 CST",
+    "state": "pending",
+    "updatedAt": "2026-09-11 09:09 CST",
     "commit": "e1f13ac891713bd8bdec4040f57b1f20ecfddd3a",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-09-10 文献内容提交 e1f13ac891713bd8bdec4040f57b1f20ecfddd3a 已推送；新增 24 条、修订 2 条、累计 209 条记录（208 个唯一 ID）。本记录随元数据刷新提交发布；检索健康 incomplete，bioRxiv 缺 30 个版本未因同步成功而消除。"
+    "message": "2026-09-11 内容已生成，尚未完成本轮内容推送；commit 暂保留上轮成功内容哈希，不代表本轮同步成功。"
   },
   "categories": [
     {
@@ -5411,6 +5411,252 @@
           "https://arxiv.org/abs/2608.08430v1"
         ],
         "basis": "原始记录核对编号、题名、来源、在线/版本日期及摘要；只报告可确认的方法结果。"
+      }
+    },
+    {
+      "id": "doi:10.1126/sciadv.aed3414",
+      "title": "A systematic comparison of single-cell perturbation response prediction models",
+      "link": "https://doi.org/10.1126/sciadv.aed3414",
+      "source": "Science Advances",
+      "date": "2026-09-09",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "虚拟细胞与扰动",
+        "单细胞基础模型",
+        "测序与方法学"
+      ],
+      "summary": "扰动预测跨任务基准揭示保守预测偏差与跨细胞类型泛化瓶颈。",
+      "details": {
+        "methods": "在 25 个数据集比较 13 种代表方法与基线，以 24 项指标评估未见单基因扰动、组合扰动和跨细胞类型迁移。",
+        "findings": "作者报告微调基础模型压缩响应方差、低估组合协同；PerturbNet 在前两类任务的差异表达恢复较好，跨细胞类型没有稳定优胜者。",
+        "limitations": "结论受任务、效应强度及指标影响；正式摘要写 13 种方法与基线，项目页旧口径为 12 模型加 3 基线，不混用版本计数。"
+      },
+      "relevance": "关联虚拟细胞与扰动、单细胞基础模型、测序与方法学，支持数据、模型与评估方案选择。",
+      "followUp": "检查原文方法、数据和代码，复核独立切分、强基线与上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-11",
+        "sources": [
+          "https://api.crossref.org/works/10.1126/sciadv.aed3414",
+          "https://europepmc.org/article/MED/42715312"
+        ],
+        "basis": "Crossref 核对 DOI 与题名；Europe PMC core 原始记录核对来源、摘要及日期。正式论文另核对 PubMed XML Electronic ArticleDate；Science Advances 的 09-11 为期次日，09-09 为在线日。"
+      }
+    },
+    {
+      "id": "doi:10.1016/j.ccell.2026.07.010",
+      "title": "UniCure: A multi-modal model for predicting personalized cancer therapy response",
+      "link": "https://doi.org/10.1016/j.ccell.2026.07.010",
+      "source": "Cancer Cell",
+      "date": "2026-09-09",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "虚拟细胞与扰动",
+        "单细胞基础模型",
+        "多组学与调控"
+      ],
+      "summary": "UniCure 融合生物与化学基础模型，预测跨细胞和组织背景的药物表达响应。",
+      "details": {
+        "methods": "训练数据为 190 万扰动转录谱，覆盖超过 2.2 万化合物、166 种细胞类型和 24 种组织；另在 345 个患者来源肿瘤样细胞簇转录谱上微调。",
+        "findings": "作者报告剂量与组合响应预测、bulk/单细胞迁移，以及 396 个真实世界临床谱上的验证；还包括细胞系和患者来源模型实验。",
+        "limitations": "转录谱数量不等于单细胞数量或独立患者数；摘要未提供完整切分与临床效用指标，不能据此认定可指导个体用药。"
+      },
+      "relevance": "关联虚拟细胞与扰动、单细胞基础模型、多组学与调控，支持数据、模型与评估方案选择。",
+      "followUp": "检查原文方法、数据和代码，复核独立切分、强基线与上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-11",
+        "sources": [
+          "https://api.crossref.org/works/10.1016/j.ccell.2026.07.010",
+          "https://europepmc.org/article/MED/42716007"
+        ],
+        "basis": "Crossref 核对 DOI 与题名；Europe PMC core 原始记录核对来源、摘要及日期。正式论文另核对 PubMed XML Electronic ArticleDate；Science Advances 的 09-11 为期次日，09-09 为在线日。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.09.07.749926",
+      "title": "Independent benchmark of H&E-based gene expression prediction in skin",
+      "link": "https://doi.org/10.64898/2026.09.07.749926",
+      "source": "bioRxiv",
+      "date": "2026-09-09",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "单细胞基础模型",
+        "测序与方法学"
+      ],
+      "summary": "皮肤独立基准指出 H&E 推断单细胞表达的可恢复信号有限。",
+      "details": {
+        "methods": "三个皮肤疾病背景、两套 Xenium panel；比较三类已发表方法及多种基础模型表示上的线性对照，共 16 个模型。",
+        "findings": "作者报告多数基因预测准确性接近零，可靠信号主要限于角质形成细胞；岭回归匹配或超过复杂架构，预测难以保留其他细胞类型和空间组织。",
+        "limitations": "预印本；结论限定于所测皮肤组织、面板和模型，不推广至所有组织；官方 HTML 未读通，身份与摘要由 Crossref 和 Europe PMC 原始记录交叉核验，不指定未核实的版本号。"
+      },
+      "relevance": "关联空间与时空组学、单细胞基础模型、测序与方法学，支持数据、模型与评估方案选择。",
+      "followUp": "检查原文方法、数据和代码，复核独立切分、强基线与上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-11",
+        "sources": [
+          "https://api.crossref.org/works/10.64898/2026.09.07.749926",
+          "https://europepmc.org/article/PPR/PPR1315883"
+        ],
+        "basis": "Crossref 核对 DOI、题名与发布日期，Europe PMC core 核对平台、摘要及 firstPublicationDate；Research Square 版本链由 EPMC versionList 确认。"
+      }
+    },
+    {
+      "id": "doi:10.1126/sciadv.aeb4205",
+      "title": "Learning stochastic dynamics and cell-fate landscapes from single-cell snapshots via optimal transport",
+      "link": "https://doi.org/10.1126/sciadv.aeb4205",
+      "source": "Science Advances",
+      "date": "2026-09-09",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "虚拟细胞与扰动",
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "DiffusionOT 从多时间点快照学习随机细胞动力学与命运景观。",
+      "details": {
+        "methods": "将随机微分方程转化为常微分方程，以最优传输和神经网络估计高维景观与随机力；在模拟及四个真实数据集（含 Stereo-seq）评测。",
+        "findings": "框架支持轨迹、速度、群体增长、调控网络与景观推断，并提供谱系分析及计算敲除/过表达模块。",
+        "limitations": "快照推断及计算干预不等同真实谱系追踪或因果实验；本轮未复现，摘要未给所有任务定量误差。"
+      },
+      "relevance": "关联虚拟细胞与扰动、空间与时空组学、测序与方法学，支持数据、模型与评估方案选择。",
+      "followUp": "检查原文方法、数据和代码，复核独立切分、强基线与上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-11",
+        "sources": [
+          "https://api.crossref.org/works/10.1126/sciadv.aeb4205",
+          "https://europepmc.org/article/MED/42715336"
+        ],
+        "basis": "Crossref 核对 DOI 与题名；Europe PMC core 原始记录核对来源、摘要及日期。正式论文另核对 PubMed XML Electronic ArticleDate；Science Advances 的 09-11 为期次日，09-09 为在线日。"
+      }
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10783563/v1",
+      "title": "SPRINT enables spatial proteomic profile reconstruction through multimodal fusion of histology and transcriptomics",
+      "link": "https://doi.org/10.21203/rs.3.rs-10783563/v1",
+      "source": "Research Square",
+      "date": "2026-09-09",
+      "updateType": "新预印本",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "多组学与调控",
+        "测序与方法学"
+      ],
+      "summary": "SPRINT 联合组织图像与空间表达重建空间蛋白谱。",
+      "details": {
+        "methods": "分辨率自适应图像编码器和 token 自注意力融合 H&E 与空间转录组；测试人扁桃体、小鼠脾脏及人脑，含跨切片、供者和空间分离区域。",
+        "findings": "作者报告多模态融合补偿单模态弱相关蛋白的重建，支持部分跨物种预测与组织域恢复；直接用代谢测量训练时也重建独立切片代谢分布。",
+        "limitations": "预印本；预测不是实测蛋白；代谢物实验有专门训练，不是无训练跨模态泛化；需核查配对、切分和平台偏差。"
+      },
+      "relevance": "关联空间与时空组学、多组学与调控、测序与方法学，支持数据、模型与评估方案选择。",
+      "followUp": "检查原文方法、数据和代码，复核独立切分、强基线与上述证据边界。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-09-11",
+        "sources": [
+          "https://api.crossref.org/works/10.21203/rs.3.rs-10783563/v1",
+          "https://europepmc.org/article/PPR/PPR1315650"
+        ],
+        "basis": "Crossref 核对 DOI、题名与发布日期，Europe PMC core 核对平台、摘要及 firstPublicationDate；Research Square 版本链由 EPMC versionList 确认。"
+      }
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10448056/v2",
+      "title": "Two largely independent axes of drug transcriptional response in Tahoe-100M",
+      "link": "https://doi.org/10.21203/rs.3.rs-10448056/v2",
+      "source": "Research Square",
+      "date": "2026-09-08",
+      "updateType": "预印本修订 v2（首次收录）",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "细胞图谱与数据底座",
+        "测序与方法学"
+      ],
+      "summary": "Tahoe-100M 描述性分析将药物响应拆成背景稳健性与剂量出现顺序。",
+      "details": {
+        "methods": "使用覆盖 50 个癌细胞系、379 种小分子和三个浓度的资源，对药物 pseudobulk 响应做保守核心/背景特异外围与剂量出现分解。",
+        "findings": "作者报告两轴在 268 个药物上的 Spearman 相关为 −0.03；靶点相对转录机器的位置与剂量出现有中等关联，但与背景稳健性的早期关联未通过更正。",
+        "limitations": "预印本 v2 首次收录，未逐版比较；描述性关联不是药物因果机制，pseudobulk 分析不能恢复全部细胞异质性。"
+      },
+      "relevance": "关联虚拟细胞与扰动、细胞图谱与数据底座、测序与方法学，支持数据、模型与评估方案选择。",
+      "followUp": "检查原文方法、数据和代码，复核独立切分、强基线与上述证据边界。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-09-11",
+        "sources": [
+          "https://api.crossref.org/works/10.21203/rs.3.rs-10448056/v2",
+          "https://europepmc.org/article/PPR/PPR1314241"
+        ],
+        "basis": "Crossref 核对 DOI、题名与发布日期，Europe PMC core 核对平台、摘要及 firstPublicationDate；Research Square 版本链由 EPMC versionList 确认。"
+      }
+    },
+    {
+      "id": "doi:10.1109/tcbbio.2026.3731145",
+      "title": "scCGC 2 T: Curriculum-Guided Contrastive Co-Training Framework for scRNA-Seq Data Clustering",
+      "link": "https://doi.org/10.1109/tcbbio.2026.3731145",
+      "source": "IEEE Transactions on Computational Biology and Bioinformatics",
+      "date": "2026-09-08",
+      "updateType": "正式发表",
+      "evidence": "同行评审",
+      "categories": [
+        "测序与方法学",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "scCGC²T 用课程式伪标签筛选改善单细胞聚类。",
+      "details": {
+        "methods": "双分支跨视图对比协同训练，先纳入高置信样本，再用动态阈值逐步纳入低置信样本，以缓解早期伪标签错误累积。",
+        "findings": "作者报告多个基准上的聚类提升并公开 scCGCT 源码；官方 release 列表为空，未将代码可用性计为新版本发布。",
+        "limitations": "摘要未列所有数据集、效果量和消融；伪标签鲁棒性声明需要外部数据复现，不等同跨组织零样本注释验证。"
+      },
+      "relevance": "关联测序与方法学、细胞图谱与数据底座，支持数据、模型与评估方案选择。",
+      "followUp": "检查原文方法、数据和代码，复核独立切分、强基线与上述证据边界。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-09-11",
+        "sources": [
+          "https://api.crossref.org/works/10.1109/tcbbio.2026.3731145",
+          "https://europepmc.org/article/MED/42709526"
+        ],
+        "basis": "Crossref 核对 DOI 与题名；Europe PMC core 原始记录核对来源、摘要及日期。正式论文另核对 PubMed XML Electronic ArticleDate；Science Advances 的 09-11 为期次日，09-09 为在线日。"
+      }
+    },
+    {
+      "id": "doi:10.1016/j.tips.2026.08.006",
+      "title": "AI virtual cells for drug discovery and pharmacology",
+      "link": "https://doi.org/10.1016/j.tips.2026.08.006",
+      "source": "Trends in Pharmacological Sciences",
+      "date": "2026-09-09",
+      "updateType": "综述发表",
+      "evidence": "观点与解读",
+      "categories": [
+        "虚拟细胞与扰动",
+        "单细胞基础模型"
+      ],
+      "summary": "药理学综述明确虚拟细胞支持实验优先排序所需的证据。",
+      "details": {
+        "methods": "梳理扰动图谱、单细胞与成像技术和干预条件化模型，讨论机制、疗效、安全性、耐药及联合用药。",
+        "findings": "作者将肿瘤学视为可能的早期验证场景，并提出扰动特异、机制和决策层面的验证要求。",
+        "limitations": "综述观点，不是新实验或模型性能基准；模型辅助设计不等同替代细胞实验。"
+      },
+      "relevance": "关联虚拟细胞与扰动、单细胞基础模型，支持数据、模型与评估方案选择。",
+      "followUp": "检查原文方法、数据和代码，复核独立切分、强基线与上述证据边界。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-09-11",
+        "sources": [
+          "https://api.crossref.org/works/10.1016/j.tips.2026.08.006",
+          "https://europepmc.org/article/MED/42716878"
+        ],
+        "basis": "Crossref 核对 DOI 与题名；Europe PMC core 原始记录核对来源、摘要及日期。正式论文另核对 PubMed XML Electronic ArticleDate；Science Advances 的 09-11 为期次日，09-09 为在线日。"
       }
     }
   ]
