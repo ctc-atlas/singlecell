@@ -2,11 +2,11 @@
   "updatedAt": "2026-09-11 09:09 CST",
   "statusMessage": "2026-09-11 检索：常规窗口 2026-09-08 至 09-11，bioRxiv 补检尝试 09-06 至 09-11（Asia/Shanghai）；新增 8 条、修订 0 条、累计 217 条记录；最新收录论文发布日期 2026-09-09。本次检索不完整：arXiv/bioRxiv/medRxiv API 失败；检索时间不等于发表日期。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-09-11 09:09 CST",
-    "commit": "e1f13ac891713bd8bdec4040f57b1f20ecfddd3a",
+    "state": "success",
+    "updatedAt": "2026-09-11 09:11 CST",
+    "commit": "5bf7762b0d98bd4911c9927d00de780d5deba171",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-09-11 内容已生成，尚未完成本轮内容推送；commit 暂保留上轮成功内容哈希，不代表本轮同步成功。"
+    "message": "2026-09-11 文献内容提交 5bf7762b0d98bd4911c9927d00de780d5deba171 已推送；新增 8 条、修订 0 条、累计 217 条记录（216 个唯一 ID）。本记录随元数据刷新提交发布；检索健康 incomplete，arXiv/bioRxiv/medRxiv API 缺口未因同步成功消除。"
   },
   "categories": [
     {
