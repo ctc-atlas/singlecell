@@ -1,12 +1,12 @@
 {
   "updatedAt": "2026-10-23T09:15:09+08:00",
-  "statusMessage": "2026-10-23检索（Asia/Shanghai），窗口2026-10-20至10-23，截至2026-10-23T09:15:09+08:00；无新增缺报补检。新增5、修订0、累计527；最新收录论文发布日期2026-10-21，区别于检索时间。本次检索不完整：arXiv和bioRxiv接口失败。GitHub连接已修复，拉取成功；正在补发内容与同步元数据。",
+  "statusMessage": "2026-10-23检索（Asia/Shanghai），窗口2026-10-20至10-23，截至2026-10-23T09:15:09+08:00；无新增缺报补检。新增5、修订0、累计527；最新收录论文发布日期2026-10-21，区别于检索时间。本次检索不完整：arXiv和bioRxiv接口失败。GitHub连接与身份已修复；文献内容已推送，同步记录已回填。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-10-23T09:21:46+08:00",
-    "commit": "5bf7762b0d98bd4911c9927d00de780d5deba171",
+    "state": "success",
+    "updatedAt": "2026-10-23T09:23:49+08:00",
+    "commit": "e79e871f0ae38bcd0f9bd12ff155a7e630401f51",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-10-23连接已修复，授权origin/main拉取成功；本次内容提交与元数据刷新尚待推送确认。commit暂保留历史值。"
+    "message": "文献内容提交e79e871f0ae38bcd0f9bd12ff155a7e630401f51已成功推送至授权origin/main，527项已同步；本记录关联该内容提交，Pages部署需单独核验。"
   },
   "categories": [
     {
