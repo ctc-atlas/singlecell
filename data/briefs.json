@@ -2,11 +2,11 @@
   "updatedAt": "2026-10-23T09:15:09+08:00",
   "statusMessage": "2026-10-23检索（Asia/Shanghai），窗口2026-10-20至10-23，截至2026-10-23T09:15:09+08:00；无新增缺报补检。新增5、修订0、累计527；最新收录论文发布日期2026-10-21，区别于检索时间。本次检索不完整：arXiv和bioRxiv接口失败。GitHub连接与身份已修复；文献内容已推送，同步记录已回填。 历史归档补交：2026-09-12至10-22共36份日报按日期补发，527条文献不变。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-10-23T09:30:42+08:00",
-    "commit": "e79e871f0ae38bcd0f9bd12ff155a7e630401f51",
+    "state": "success",
+    "updatedAt": "2026-10-23T09:31:29+08:00",
+    "commit": "6741695ba13dcdcd66353ce75cf1cb380834d1e9",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "36份历史失败日报已按日期创建补交提交，待推送确认；527条文献无增删。"
+    "message": "历史补交内容提交6741695ba13dcdcd66353ce75cf1cb380834d1e9已成功推送至origin/main；36份历史日报按日期补交，527条累计文献无增删。"
   },
   "categories": [
     {
