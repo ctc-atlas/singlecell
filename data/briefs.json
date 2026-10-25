@@ -2,11 +2,11 @@
   "updatedAt": "2026-10-25T11:35:24+08:00",
   "statusMessage": "2026-10-25检索（Asia/Shanghai），窗口2026-10-22至2026-10-25，截至2026-10-25T11:35:24+08:00；无新增漏跑补检。新增20、修订2、累计563；最新收录论文发布日期2026-10-24，区别于检索时间。本次检索不完整：Nature原文身份重定向不可访问，相关论文仅核验PubMed原始摘要。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-10-25T11:35:24+08:00",
-    "commit": "f4bc74999efeebdca25e00f239e6ab89397f37aa",
+    "state": "success",
+    "updatedAt": "2026-10-25T11:36:10+08:00",
+    "commit": "4a93f469a92d775267a862e88f90219dacf45377",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-10-25内容待提交推送；commit仍为历史成功内容提交，不代表本轮成功。"
+    "message": "2026-10-25文献内容提交4a93f469a92d775267a862e88f90219dacf45377已成功推送origin/main；新增20、修订2、累计563条记录。本条同步元数据随刷新提交发布；检索健康incomplete，详见日报。"
   },
   "categories": [
     {
