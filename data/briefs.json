@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-10-26T11:22:02+08:00",
-  "statusMessage": "2026-10-26检索（Asia/Shanghai），常规窗口2026-10-23至2026-10-26；周一30天回溯2026-09-26至2026-10-26；无新增漏跑补检。新增50、修订9、累计613条记录；最新收录论文/版本发布日期2026-10-25，区别于检索时间。本次检索不完整：arXiv API限流/超时，原始页面仅补核候选，未穷尽30天修订；OUP部分原文不可访问。",
+  "updatedAt": "2026-10-27T09:03:05+08:00",
+  "statusMessage": "2026-10-27检索（Asia/Shanghai），窗口2026-10-24至2026-10-27，无新增漏跑补检。新增9、修订0、累计622条记录；最新收录论文/版本发布日期2026-10-26，区别于检索时间。本次检索不完整：arXiv日期响应不符合窗口；VCC官方文档三次403。",
   "sync": {
-    "state": "success",
+    "state": "pending",
     "updatedAt": "2026-10-26T11:24:28+08:00",
     "commit": "47dd2366af126b26b8c249b0aa986ff220f6f3bc",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "2026-10-26文献内容提交47dd2366af126b26b8c249b0aa986ff220f6f3bc已成功推送origin/main；新增50、修订9、累计613条记录。本同步元数据随刷新提交发布；检索健康incomplete（arXiv及部分OUP来源限制），详见日报。"
+    "message": "本轮内容尚未提交推送；sync.commit保留上一轮成功内容提交。"
   },
   "categories": [
     {
@@ -18319,6 +18319,272 @@
         ],
         "basis": "arXiv原始HTML citation_title、编号、摘要及submission history核验；取当前版本日期。",
         "version": "4"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.10.21.760716",
+      "title": "Prediction transfer does not imply reliability transfer in single-cell foundation models",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.10.21.760716v1",
+      "source": "bioRxiv",
+      "date": "2026-10-26",
+      "updateType": "新收录预印本（当前v1；首次入库）",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "虚拟细胞与扰动",
+        "测序与方法学"
+      ],
+      "summary": "预测表现不能单独推断可靠性迁移；相同扰动预测配合不同可靠性估计器会产生不同优先排序。",
+      "details": {
+        "methods": "比较10个扰动预测系统；以严格交叉拟合SHAP构建可靠性归因指纹，研究源-目标背景迁移。",
+        "findings": "预测表现不能单独推断可靠性迁移；相同扰动预测配合不同可靠性估计器会产生不同优先排序。",
+        "limitations": "预印本，尚未经同行评审。指纹相似性与迁移表现的关系在更严格跨模型家族设置减弱；观察到的源集合内关联不能证明普遍可迁移。"
+      },
+      "relevance": "直接关联单细胞基础模型、虚拟细胞与扰动、测序与方法学，为模型构建、评测或数据解释提供依据。",
+      "followUp": "核查官方实现、数据划分与独立复现；跟踪版本和正式发表。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-10-27",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.10.21.760716"
+        ],
+        "basis": "原始日期API与按DOI API双核题名、编号、版本、日期及摘要。",
+        "version": "1"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.05.01.722166",
+      "title": "Building computational benchmarks: an Omnibenchmark reimplementation of a single-cell preprocessing pipeline evaluation",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.05.01.722166v2",
+      "source": "bioRxiv",
+      "date": "2026-10-26",
+      "updateType": "新收录预印本（当前v2；首次入库）",
+      "evidence": "预印本",
+      "categories": [
+        "测序与方法学"
+      ],
+      "summary": "统一框架支持参数、软件版本及架构扩展；流程协调发现不同工具对聚类resolution参数的实现并不一致。",
+      "details": {
+        "methods": "Omnibenchmark重实现5种scRNA-seq流程在3个数据集上的过滤、归一化、降维和聚类评测。",
+        "findings": "统一框架支持参数、软件版本及架构扩展；流程协调发现不同工具对聚类resolution参数的实现并不一致。",
+        "limitations": "预印本，尚未经同行评审。当前v2首次入库，计新增；摘要未提供通用优胜流程或量化加速，不能将统一参数值当等价复杂度。"
+      },
+      "relevance": "直接关联测序与方法学，为模型构建、评测或数据解释提供依据。",
+      "followUp": "核查官方实现、数据划分与独立复现；跟踪版本和正式发表。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-10-27",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.05.01.722166"
+        ],
+        "basis": "原始日期API与按DOI API双核题名、编号、版本、日期及摘要。",
+        "version": "2"
+      }
+    },
+    {
+      "id": "doi:10.1093/bib/bbag586",
+      "title": "scMAC: large language model-enhanced single-cell functional priors for completing functional context in bulk T cell receptor repertoires.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42932841/",
+      "source": "Briefings in bioinformatics",
+      "date": "2026-10-26",
+      "updateType": "新收录同行评审论文（含延迟索引补收）",
+      "evidence": "同行评审",
+      "categories": [
+        "单细胞基础模型",
+        "多组学与调控"
+      ],
+      "summary": "结直肠癌83亚型数据ARI为0.656；库组成估计R²为0.979、Bray-Curtis距离0.075。",
+      "details": {
+        "methods": "scMAC结合多尺度表达建模与基因/蛋白描述的语言模型语义先验；以成对RNA/TCR和原型正则学习TCR到功能状态的映射。",
+        "findings": "结直肠癌83亚型数据ARI为0.656；库组成估计R²为0.979、Bray-Curtis距离0.075。",
+        "limitations": "功能状态由转录组推断，非直接功能实验；数值限定对应数据和设置。PubMed缺精确电子日，Crossref published-online补核10-26。"
+      },
+      "relevance": "直接关联单细胞基础模型、多组学与调控，为模型构建、评测或数据解释提供依据。",
+      "followUp": "核查官方实现、数据划分与独立复现；跟踪版本和正式发表。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-10-27",
+        "sources": [
+          "https://pubmed.ncbi.nlm.nih.gov/42932841/",
+          "https://api.crossref.org/works/10.1093/bib/bbag586"
+        ],
+        "basis": "原始PubMed XML/Europe PMC core核验编号、题名、来源、电子日及摘要。"
+      }
+    },
+    {
+      "id": "doi:10.1093/nar/gkag1037",
+      "title": "SpatialRegNet: spatially resolved mapping of active regulatory network of human and mouse.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42929195/",
+      "source": "Nucleic acids research",
+      "date": "2026-10-26",
+      "updateType": "新收录同行评审论文（含延迟索引补收）",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "多组学与调控",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "提供逾1270万TF-靶基因对及802935个高活性空间生态位/细胞类型调控网络，支持交互空间分析。",
+      "details": {
+        "methods": "整合人鼠152个空间数据集、1322切片、68组织及93疾病/亚型，共3744216 spots；量化6733个TF regulon。",
+        "findings": "提供逾1270万TF-靶基因对及802935个高活性空间生态位/细胞类型调控网络，支持交互空间分析。",
+        "limitations": "spot级推断不能等同单细胞实测或已验证因果边；疾病覆盖不表示均衡采样。"
+      },
+      "relevance": "直接关联空间与时空组学、多组学与调控、细胞图谱与数据底座，为模型构建、评测或数据解释提供依据。",
+      "followUp": "核查官方实现、数据划分与独立复现；跟踪版本和正式发表。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-10-27",
+        "sources": [
+          "https://pubmed.ncbi.nlm.nih.gov/42929195/"
+        ],
+        "basis": "原始PubMed XML/Europe PMC core核验编号、题名、来源、电子日及摘要。"
+      }
+    },
+    {
+      "id": "doi:10.1093/nar/gkag1039",
+      "title": "4D-atlas: a multi-species four-dimensional spatiotemporal transcriptomics database spanning development, regeneration, and disease.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42922375/",
+      "source": "Nucleic acids research",
+      "date": "2026-10-23",
+      "updateType": "新收录同行评审论文（含延迟索引补收）",
+      "evidence": "同行评审",
+      "categories": [
+        "空间与时空组学",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "支持发育、再生及疾病背景下3D空间与时间整合探索。",
+      "details": {
+        "methods": "4D-atlas统一15数据集、6物种、1629切片、88个时间点，覆盖逾2220万细胞或spots；提供7个分析模块。",
+        "findings": "支持发育、再生及疾病背景下3D空间与时间整合探索。",
+        "limitations": "电子日10-23早于常规窗口，按10-24后索引补收；离散阶段的整合不是同一细胞连续追踪，细胞与spots计数不可混同。"
+      },
+      "relevance": "直接关联空间与时空组学、细胞图谱与数据底座，为模型构建、评测或数据解释提供依据。",
+      "followUp": "核查官方实现、数据划分与独立复现；跟踪版本和正式发表。",
+      "priority": 1,
+      "verification": {
+        "checkedAt": "2026-10-27",
+        "sources": [
+          "https://pubmed.ncbi.nlm.nih.gov/42922375/"
+        ],
+        "basis": "原始PubMed XML/Europe PMC core核验编号、题名、来源、电子日及摘要。"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.10.20.760373",
+      "title": "Multi-scale microenvironment covariance for unsupervised spatial domain identification",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.10.20.760373v1",
+      "source": "bioRxiv",
+      "date": "2026-10-24",
+      "updateType": "新收录预印本（当前v1；首次入库）",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学",
+        "测序与方法学"
+      ],
+      "summary": "作者报告16方法、8指标总体排名最佳；7个数据集的中位NMI均高于单尺度COVET。",
+      "details": {
+        "methods": "CoSMIM融合多个邻域尺度的基因协方差矩阵，对矩阵平方根执行PCA和Leiden；6个基准数据集覆盖5平台，另测Xenium鼠脑。",
+        "findings": "作者报告16方法、8指标总体排名最佳；7个数据集的中位NMI均高于单尺度COVET。",
+        "limitations": "预印本，尚未经同行评审。排名限于所测数据和指标；协方差差异不是因果调控证据。"
+      },
+      "relevance": "直接关联空间与时空组学、测序与方法学，为模型构建、评测或数据解释提供依据。",
+      "followUp": "核查官方实现、数据划分与独立复现；跟踪版本和正式发表。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-10-27",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.64898/2026.10.20.760373"
+        ],
+        "basis": "原始日期API与按DOI API双核题名、编号、版本、日期及摘要。",
+        "version": "1"
+      }
+    },
+    {
+      "id": "doi:10.1101/2024.11.13.623282",
+      "title": "Optimisation of single-nuclei isolation and RNA sequencing of parasitic nematodes",
+      "link": "https://www.biorxiv.org/content/10.1101/2024.11.13.623282v4",
+      "source": "bioRxiv",
+      "date": "2026-10-26",
+      "updateType": "新收录预印本（当前v4；首次入库）",
+      "evidence": "预印本",
+      "categories": [
+        "测序与方法学",
+        "细胞图谱与数据底座"
+      ],
+      "summary": "SNIP核回收为对照1.7–4.1倍，单核RNA为最佳对照3.2倍，并生成单核转录组。",
+      "details": {
+        "methods": "比较3种细胞核分离方案并开发SNIP；在Haemonchus contortus与Trichuris muris的不同生活阶段和性别验证。",
+        "findings": "SNIP核回收为对照1.7–4.1倍，单核RNA为最佳对照3.2倍，并生成单核转录组。",
+        "limitations": "预印本，尚未经同行评审。v4首次入库；优势限定所测寄生线虫和实验条件，不能外推为全部组织通用提升。"
+      },
+      "relevance": "直接关联测序与方法学、细胞图谱与数据底座，为模型构建、评测或数据解释提供依据。",
+      "followUp": "核查官方实现、数据划分与独立复现；跟踪版本和正式发表。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-10-27",
+        "sources": [
+          "https://api.biorxiv.org/details/biorxiv/10.1101/2024.11.13.623282"
+        ],
+        "basis": "原始日期API与按DOI API双核题名、编号、版本、日期及摘要。",
+        "version": "4"
+      }
+    },
+    {
+      "id": "doi:10.1016/j.isci.2026.117938",
+      "title": "StrokeTime: A comprehensive longitudinal scRNA-seq atlas of the ischemic mouse brain.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42927268/",
+      "source": "iScience",
+      "date": "2026-10-19",
+      "updateType": "新收录同行评审论文（含延迟索引补收）",
+      "evidence": "同行评审",
+      "categories": [
+        "细胞图谱与数据底座"
+      ],
+      "summary": "构建17主要细胞类及120精细转录状态图谱，显示髓系及血管细胞随阶段变化的程序。",
+      "details": {
+        "methods": "StrokeTime整合21个鼠卒中研究、103样本及414359细胞，覆盖多个模型和缺血后阶段。",
+        "findings": "构建17主要细胞类及120精细转录状态图谱，显示髓系及血管细胞随阶段变化的程序。",
+        "limitations": "电子日10-19，延迟索引补收；跨研究整合存在批次和模型差异，不能直接外推人类病程。"
+      },
+      "relevance": "直接关联细胞图谱与数据底座，为模型构建、评测或数据解释提供依据。",
+      "followUp": "核查官方实现、数据划分与独立复现；跟踪版本和正式发表。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-10-27",
+        "sources": [
+          "https://pubmed.ncbi.nlm.nih.gov/42927268/"
+        ],
+        "basis": "原始PubMed XML/Europe PMC core核验编号、题名、来源、电子日及摘要。"
+      }
+    },
+    {
+      "id": "doi:10.1007/s10142-026-02087-5",
+      "title": "scHGNN: A single-cell gene regulatory network inference method based on heuristic graph neural networks.",
+      "link": "https://pubmed.ncbi.nlm.nih.gov/42918896/",
+      "source": "Functional & integrative genomics",
+      "date": "2026-10-23",
+      "updateType": "新收录同行评审论文（含延迟索引补收）",
+      "evidence": "同行评审",
+      "categories": [
+        "多组学与调控",
+        "测序与方法学"
+      ],
+      "summary": "作者报告多种规模/来源GRN基准表现改善；TP53、OTX2、FOXP1案例在hTFtarget数据库支持率为76%–84%。",
+      "details": {
+        "methods": "scHGNN以统一启发矩阵和链接预测融合多阶邻域拓扑与基因表达，平衡局部和全局网络信息。",
+        "findings": "作者报告多种规模/来源GRN基准表现改善；TP53、OTX2、FOXP1案例在hTFtarget数据库支持率为76%–84%。",
+        "limitations": "电子日10-23，索引10-25补收；数据库支持率不等于新增边实验验证率，摘要未给统一性能增益。"
+      },
+      "relevance": "直接关联多组学与调控、测序与方法学，为模型构建、评测或数据解释提供依据。",
+      "followUp": "核查官方实现、数据划分与独立复现；跟踪版本和正式发表。",
+      "priority": 2,
+      "verification": {
+        "checkedAt": "2026-10-27",
+        "sources": [
+          "https://pubmed.ncbi.nlm.nih.gov/42918896/"
+        ],
+        "basis": "原始PubMed XML/Europe PMC core核验编号、题名、来源、电子日及摘要。"
       }
     }
   ]
