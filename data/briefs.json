@@ -2,11 +2,11 @@
   "updatedAt": "2026-10-27T09:03:05+08:00",
   "statusMessage": "2026-10-27检索（Asia/Shanghai），窗口2026-10-24至2026-10-27，无新增漏跑补检。新增9、修订0、累计622条记录；最新收录论文/版本发布日期2026-10-26，区别于检索时间。本次检索不完整：arXiv日期响应不符合窗口；VCC官方文档三次403。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-10-26T11:24:28+08:00",
-    "commit": "47dd2366af126b26b8c249b0aa986ff220f6f3bc",
+    "state": "success",
+    "updatedAt": "2026-10-27T09:10:30+08:00",
+    "commit": "4109b72d707e3ed0b0cc44d0c4895e8651b969a7",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "本轮内容尚未提交推送；sync.commit保留上一轮成功内容提交。"
+    "message": "2026-10-27文献内容提交4109b72d707e3ed0b0cc44d0c4895e8651b969a7已成功推送origin/main；新增9、修订0、累计622条记录。元数据随刷新提交发布；检索健康incomplete（arXiv日期过滤异常、VCC文档403），详见日报。"
   },
   "categories": [
     {
