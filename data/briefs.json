@@ -2,11 +2,11 @@
   "updatedAt": "2026-10-29T09:05:55.233175+08:00",
   "statusMessage": "本次检索2026-10-29，窗口2026-10-26至2026-10-29；检索不完整，新增0、修订0、累计644；最新收录论文发布日期2026-10-27。arXiv三次超时，其他来源尚未完成全窗口及分页核验。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-10-28T09:10:15+08:00",
-    "commit": "a86aef947ddf446e29c26702f5f973ceea5eff5a",
+    "state": "success",
+    "updatedAt": "2026-10-29T09:06:18.467148+08:00",
+    "commit": "72caa892719e26b5c151ecf36b3039957557cdfd",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "本次检索不完整；本次内容尚未推送。"
+    "message": "2026-10-29审计内容已推送；检索incomplete，新增0修订0累计644。同步元数据随刷新提交发布。"
   },
   "categories": [
     {
