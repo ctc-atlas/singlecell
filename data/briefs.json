@@ -2,11 +2,11 @@
   "updatedAt": "2026-10-29T09:09:18+08:00",
   "statusMessage": "2026-10-29历史文献内容回填：完成6条完整摘要中文翻译及摘要层面科研解读；累计644条，未新增论文；其余638条待回填。本操作非新的日期窗口检索，10-29日报原检索incomplete状态保留。",
   "sync": {
-    "state": "pending",
-    "updatedAt": "2026-10-29T09:06:18.467148+08:00",
-    "commit": "72caa892719e26b5c151ecf36b3039957557cdfd",
+    "state": "success",
+    "updatedAt": "2026-10-29T09:10:10.506506+08:00",
+    "commit": "f833f2b0296fb4c14032ab28022a10c1f8c7799f",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "历史文献补充内容待推送。"
+    "message": "历史文献首批6条摘要翻译和科研解读内容已推送；其余638条待回填；当日日检索仍incomplete。同步元数据随刷新提交发布。"
   },
   "categories": [
     {
