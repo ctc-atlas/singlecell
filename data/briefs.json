@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-31T08:58:44.681866+08:00",
-  "statusMessage": "2026-10-31检索，窗口2026-10-26至2026-10-31；新增0、修订0、累计644。最新收录论文/版本发布日期2026-10-27。本次检索不完整，不能判断无高相关更新。",
+  "updatedAt": "2026-10-31T13:41:02.934543+08:00",
+  "statusMessage": "2026-10-31补检，窗口2026-10-26至10-31；新增3、修订0、累计647；最新收录发布日期2026-10-30。已恢复核验收录，其他候选与来源仍待完成，检索incomplete。",
   "sync": {
-    "state": "success",
+    "state": "pending",
     "updatedAt": "2026-10-31T08:59:00.469610+08:00",
     "commit": "e8010692fa5fb7fc7b14c1b0fbc3d0d6a4245490",
     "url": "https://ctc-atlas.github.io/singlecell/",
@@ -41,6 +41,91 @@
     }
   ],
   "items": [
+    {
+      "id": "doi:10.64898/2026.10.28.761959",
+      "title": "Live Spatial Transcriptomics Enables Longitudinal Tissue Mapping",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.10.28.761959v1",
+      "source": "bioRxiv",
+      "date": "2026-10-30",
+      "updateType": "补检新收录预印本（v1）",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学"
+      ],
+      "summary": "该技术处理传统空间组学依赖破坏性取样、难以重复观察同一组织的问题。输入是保持活性的组织，输出是多次取样获得、带空间条形码的mRNA测序读数。核心步骤是电穿孔辅助细胞内取样与空间编码。作者报告了二维图案化细胞体系、患者来源黑色素瘤活组织及药物反应纵向追踪三个层面的验证。这里的纵向测量直接面向同一活组织，可为动态细胞模型提供观测约束；摘要没有报告定量精度、重复测量次数或组织样本数。",
+      "details": {
+        "methods": "摘要中文翻译：\n空间转录组通过保留组织中基因表达的空间背景，支持原位研究细胞状态与相互作用，已成为生物医学研究的重要技术。然而，现有方法大多只能提供单份组织标本的静态快照，需要从不同标本推断发育、疾病进展与治疗反应背后的分子动态，而不能在同一活组织中直接追踪。本文提出活体空间转录组技术（Live Spatial Transcriptomics，Live-ST），能够对活组织进行纵向、全转录组分析。Live-ST将基于电穿孔的细胞内取样与空间条形码结合，通过下一代测序，在完整活组织中反复进行具有空间分辨率的mRNA测量。作者通过以下实验展示其能力：（一）在图案化二维细胞体系中评测空间mRNA捕获；（二）在保持组织活性的同时，对完整、患者来源的活体黑色素瘤组织进行空间转录组分析；（三）纵向追踪肿瘤微环境中的药物反应动态。总之，Live-ST支持重复、非破坏性的空间基因表达测量，为在原生生理与病理背景下研究动态组织生物学提供了一种框架。\n\n研究解读（依据摘要，未核查全文）：\n该技术处理传统空间组学依赖破坏性取样、难以重复观察同一组织的问题。输入是保持活性的组织，输出是多次取样获得、带空间条形码的mRNA测序读数。核心步骤是电穿孔辅助细胞内取样与空间编码。",
+        "findings": "作者报告了二维图案化细胞体系、患者来源黑色素瘤活组织及药物反应纵向追踪三个层面的验证。这里的纵向测量直接面向同一活组织，可为动态细胞模型提供观测约束；摘要没有报告定量精度、重复测量次数或组织样本数。",
+        "limitations": "解读依据摘要，未核查全文。摘要未报告取样损伤的定量指标、长期活性保持时间、空间分辨率及与常规平台的灵敏度比较。作者所称非破坏性测量不能据此推广为任意组织、任意次数下无扰动。",
+        "abstractTranslation": "空间转录组通过保留组织中基因表达的空间背景，支持原位研究细胞状态与相互作用，已成为生物医学研究的重要技术。然而，现有方法大多只能提供单份组织标本的静态快照，需要从不同标本推断发育、疾病进展与治疗反应背后的分子动态，而不能在同一活组织中直接追踪。本文提出活体空间转录组技术（Live Spatial Transcriptomics，Live-ST），能够对活组织进行纵向、全转录组分析。Live-ST将基于电穿孔的细胞内取样与空间条形码结合，通过下一代测序，在完整活组织中反复进行具有空间分辨率的mRNA测量。作者通过以下实验展示其能力：（一）在图案化二维细胞体系中评测空间mRNA捕获；（二）在保持组织活性的同时，对完整、患者来源的活体黑色素瘤组织进行空间转录组分析；（三）纵向追踪肿瘤微环境中的药物反应动态。总之，Live-ST支持重复、非破坏性的空间基因表达测量，为在原生生理与病理背景下研究动态组织生物学提供了一种框架。",
+        "abstractOriginal": "Spatial transcriptomics has become an important technology in biomedical research by preserving the spatial context of gene expression in tissues and enabling the study of cellular states and interactions in situ. However, most existing methods provide only static snapshots of individual tissue specimens, requiring inference of the molecular dynamics underlying development, disease progression, and therapeutic response from different specimens rather than direct tracking in the same living tissue. Here, we introduce Live Spatial Transcriptomics (Live-ST), a technology that enables longitudinal, transcriptome-wide profiling of living tissue. Live-ST combines electroporation-based intracellular sampling and spatial barcoding to enable repeated, spatially resolved mRNA measurements in intact living tissue through next-generation sequencing. We demonstrate its capabilities by (i) benchmarking spatial mRNA capture in patterned two-dimensional cell systems, (ii) spatially profiling transcriptomes in intact, patient-derived living melanoma tissues while preserving tissue viability, and (iii) longitudinally tracking drug-response dynamics within the tumor microenvironment. Together, Live-ST enables repeated, non-destructive measurements of spatial gene expression, providing a new framework for studying dynamic tissue biology in native physiological and pathological contexts."
+      },
+      "relevance": "为动态观测、空间统计或表征评测提供可核验的方法依据。",
+      "followUp": "核查全文中的参数、样本规模及独立验证。",
+      "priority": 1,
+      "enrichment": {
+        "state": "complete",
+        "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+        "verifiedAt": "2026-10-31T13:41:02.934146+08:00"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.10.23.761453",
+      "title": "NicheCorr: Identifying Niche-Specific Differential Gene Co-Expression in Spatial Transcriptomics",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.10.23.761453v1",
+      "source": "bioRxiv",
+      "date": "2026-10-28",
+      "updateType": "补检新收录预印本（v1）",
+      "evidence": "预印本",
+      "categories": [
+        "空间与时空组学"
+      ],
+      "summary": "NicheCorr分析细胞类型内的基因对共表达如何随邻域细胞组成变化，重点区别于只比较均值的空间差异表达。输入涉及空间表达、细胞类型与生态位组成，输出是生态位相关的差异共表达基因对及候选配体—受体关系；摘要没有报告具体估计器形式。作者在均值随生态位非线性变化的模拟条件下比较CS-CORE、未调整均值的scHOT与Pearson检验，并报告更好的第一类错误控制。肝脏与胰腺癌数据分别检出52和48对相关基因。这些结果可用于检验空间模型是否保留条件性基因关系，而不能直接作为通讯因果真值。",
+      "details": {
+        "methods": "摘要中文翻译：\n细胞间通讯是免疫应答和肿瘤进展等生物过程的核心，但不同细胞类型的空间邻近如何塑造基因共表达，仍缺乏充分理解。现有方法主要识别组织区域之间平均基因表达的差异，往往忽略局部细胞微环境如何重塑细胞内基因间的相互关系。为弥补这一缺口，作者提出NicheCorr，一种统计程序，用于识别不同空间生态位中特定细胞类型与生态位相关的基因共表达变化。在模拟中，NicheCorr检测生态位依赖共表达的统计功效最高。它也是所评估方法中，唯一在平均表达随生态位非线性变化时仍能控制第一类错误的方法；在这一设置中，CS-CORE、未做均值调整的scHOT及Pearson检验均出现假阳性率膨胀。此外，NicheCorr整合配体—受体推断，以全面考察具有空间结构的信号相互作用。作者将该框架应用于CosMx SMI人肝脏FFPE数据集和Xenium人胰腺癌数据集，识别出肝肿瘤细胞中52对共表达随T细胞生态位组成而变化的基因，以及胰腺癌中48对基因，其成纤维细胞生态位依赖的共表达在肿瘤细胞与CFTR阴性肿瘤细胞之间存在差异，并发现可能解释这些差异共表达模式的潜在配体—受体相互作用。\n\n研究解读（依据摘要，未核查全文）：\nNicheCorr分析细胞类型内的基因对共表达如何随邻域细胞组成变化，重点区别于只比较均值的空间差异表达。输入涉及空间表达、细胞类型与生态位组成，输出是生态位相关的差异共表达基因对及候选配体—受体关系；摘要没有报告具体估计器形式。",
+        "findings": "作者在均值随生态位非线性变化的模拟条件下比较CS-CORE、未调整均值的scHOT与Pearson检验，并报告更好的第一类错误控制。肝脏与胰腺癌数据分别检出52和48对相关基因。这些结果可用于检验空间模型是否保留条件性基因关系，而不能直接作为通讯因果真值。",
+        "limitations": "解读依据摘要，未核查全文。摘要未报告样本数、模拟参数、显著性阈值与独立验证。配体—受体推断和空间共表达属于统计证据，未证明细胞间信号的因果作用。",
+        "abstractTranslation": "细胞间通讯是免疫应答和肿瘤进展等生物过程的核心，但不同细胞类型的空间邻近如何塑造基因共表达，仍缺乏充分理解。现有方法主要识别组织区域之间平均基因表达的差异，往往忽略局部细胞微环境如何重塑细胞内基因间的相互关系。为弥补这一缺口，作者提出NicheCorr，一种统计程序，用于识别不同空间生态位中特定细胞类型与生态位相关的基因共表达变化。在模拟中，NicheCorr检测生态位依赖共表达的统计功效最高。它也是所评估方法中，唯一在平均表达随生态位非线性变化时仍能控制第一类错误的方法；在这一设置中，CS-CORE、未做均值调整的scHOT及Pearson检验均出现假阳性率膨胀。此外，NicheCorr整合配体—受体推断，以全面考察具有空间结构的信号相互作用。作者将该框架应用于CosMx SMI人肝脏FFPE数据集和Xenium人胰腺癌数据集，识别出肝肿瘤细胞中52对共表达随T细胞生态位组成而变化的基因，以及胰腺癌中48对基因，其成纤维细胞生态位依赖的共表达在肿瘤细胞与CFTR阴性肿瘤细胞之间存在差异，并发现可能解释这些差异共表达模式的潜在配体—受体相互作用。",
+        "abstractOriginal": "Cell-cell communication is central to biological processes such as immune responses and tumor progression, yet the role of spatial proximity between distinct cell types in shaping gene co-expression remains poorly understood. Existing approaches primarily identify differences in average gene expression across tissue regions, often overlooking how local cellular microenvironments reshape gene-gene interactions within cells. To address this gap, we introduce NicheCorr, a statistical procedure that identifies cell type-specific niche-associated gene co-expression changes within distinct spatial niches. In simulations, NicheCorr attained the highest power for detecting niche-dependent co-expression. It was also the only method evaluated that maintained Type I error control when mean expression varied nonlinearly with the niche, a setting in which CS-CORE, scHOT without mean adjustment, and the Pearson test all exhibited inflated false positive rates. Furthermore, NicheCorr integrates ligand-receptor (LR) inference, enabling a comprehensive view of spatially structured signaling interactions. We applied the framework to the CosMx SMI Human Liver FFPE Dataset and the Xenium Human Pancreatic Cancer Dataset, identifying 52 gene pairs in liver tumor cells whose co-expression changes with T-cell niche composition and 48 gene pairs in pancreatic cancer whose fibroblast niche-dependent co-expression differs between tumor and CFTR- tumor cells, and uncovering potential LR interactions that may underlie these differential co-expression patterns."
+      },
+      "relevance": "为动态观测、空间统计或表征评测提供可核验的方法依据。",
+      "followUp": "核查全文中的参数、样本规模及独立验证。",
+      "priority": 1,
+      "enrichment": {
+        "state": "complete",
+        "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+        "verifiedAt": "2026-10-31T13:41:02.934417+08:00"
+      }
+    },
+    {
+      "id": "doi:10.64898/2026.10.27.762296",
+      "title": "Ground-truth evaluation of sparse autoencoder features on spatial, single-cell and language-model embeddings",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.10.27.762296v1",
+      "source": "bioRxiv",
+      "date": "2026-10-29",
+      "updateType": "补检新收录预印本（v1）",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "测序与方法学"
+      ],
+      "summary": "该研究检验“稳定特征是否具有生物学意义”，输入是空间模型、Geneformer或语言模型的嵌入，输出是稀疏特征及其概念覆盖、纯度与跨种子稳定性。五次SAE拟合的共识用于提高稳定性，旋转方法在匹配稀疏度后构成关键对照。单次SAE仅27%—46%的特征可复现，共识提高到78%—98%，但牺牲部分谱系覆盖，且不能恢复部分微弱合成状态。结果说明解释性评测应联合报告稳定性、概念覆盖和纯度，而不能以随机种子稳定性替代生物学有效性。",
+      "details": {
+        "methods": "摘要中文翻译：\n稀疏自编码器（SAE）越来越多地用于从生物基础模型的嵌入中提取可解释特征。由于不同随机种子训练的SAE会学习到不同特征，跨种子的可复现性已成为判断这些特征是否可信的常用检验。作者使用概念已知的嵌入，考察可复现特征是否也具有意义：包括两个结直肠癌切片的五种空间转录组嵌入、以细胞谱系为概念的Geneformer单细胞RNA表达谱嵌入、植入细胞状态的合成数据，以及以词元类别为概念的小型语言模型残差流。同一嵌入的varimax旋转几乎完全可复现，但旋转方法的特征（PCA、varimax和ICA）至多覆盖七个谱系中的三个、八个词元类别中的三个。单次SAE拟合表现相反：覆盖多数概念，基因程序更纯，但仅有27%—46%的特征可复现。五次SAE拟合形成的共识结合了两者优势：不同来源上的可复现性为78%—98%，纯度与单次拟合相当；其11%—40%的特征携带其他谱系的标记基因，而varimax为44%—70%。相对于最强基线，即稀疏化至SAE相同稀疏度的varimax，共识在PCA与Geneformer嵌入上覆盖同样多的概念，在学习得到的空间和文本嵌入上覆盖更多概念。共识也有代价：比单次拟合覆盖更少的谱系，并且与所有SAE一样，会遗漏旋转方法能够恢复的微弱植入状态；延长单次拟合，或在共识残差上训练第二个SAE，都未能恢复被丢弃的信息。因此，仅凭可复现性不能很好地评价特征：报告SAE特征时，应同时报告其覆盖的已知概念数与基因程序纯度，并与对同一嵌入进行旋转、且稀疏化到SAE相同稀疏度的结果比较。\n\n研究解读（依据摘要，未核查全文）：\n该研究检验“稳定特征是否具有生物学意义”，输入是空间模型、Geneformer或语言模型的嵌入，输出是稀疏特征及其概念覆盖、纯度与跨种子稳定性。五次SAE拟合的共识用于提高稳定性，旋转方法在匹配稀疏度后构成关键对照。",
+        "findings": "单次SAE仅27%—46%的特征可复现，共识提高到78%—98%，但牺牲部分谱系覆盖，且不能恢复部分微弱合成状态。结果说明解释性评测应联合报告稳定性、概念覆盖和纯度，而不能以随机种子稳定性替代生物学有效性。",
+        "limitations": "解读依据摘要，未核查全文。真实组织只明确涉及两个结直肠癌切片，不能推及所有组织或基础模型。标记基因纯度与已知谱系覆盖依赖现有概念标注，不等同于发现新的因果调控机制；摘要未报告训练切分和统计不确定性。",
+        "abstractTranslation": "稀疏自编码器（SAE）越来越多地用于从生物基础模型的嵌入中提取可解释特征。由于不同随机种子训练的SAE会学习到不同特征，跨种子的可复现性已成为判断这些特征是否可信的常用检验。作者使用概念已知的嵌入，考察可复现特征是否也具有意义：包括两个结直肠癌切片的五种空间转录组嵌入、以细胞谱系为概念的Geneformer单细胞RNA表达谱嵌入、植入细胞状态的合成数据，以及以词元类别为概念的小型语言模型残差流。同一嵌入的varimax旋转几乎完全可复现，但旋转方法的特征（PCA、varimax和ICA）至多覆盖七个谱系中的三个、八个词元类别中的三个。单次SAE拟合表现相反：覆盖多数概念，基因程序更纯，但仅有27%—46%的特征可复现。五次SAE拟合形成的共识结合了两者优势：不同来源上的可复现性为78%—98%，纯度与单次拟合相当；其11%—40%的特征携带其他谱系的标记基因，而varimax为44%—70%。相对于最强基线，即稀疏化至SAE相同稀疏度的varimax，共识在PCA与Geneformer嵌入上覆盖同样多的概念，在学习得到的空间和文本嵌入上覆盖更多概念。共识也有代价：比单次拟合覆盖更少的谱系，并且与所有SAE一样，会遗漏旋转方法能够恢复的微弱植入状态；延长单次拟合，或在共识残差上训练第二个SAE，都未能恢复被丢弃的信息。因此，仅凭可复现性不能很好地评价特征：报告SAE特征时，应同时报告其覆盖的已知概念数与基因程序纯度，并与对同一嵌入进行旋转、且稀疏化到SAE相同稀疏度的结果比较。",
+        "abstractOriginal": "Sparse autoencoders (SAEs) are increasingly used to extract interpretable features from the embeddings of biological foundation models. Because SAEs trained with different random seeds learn different features, reproducibility across seeds has become a common test of whether these features can be trusted. We asked whether reproducible features are also meaningful, using embeddings whose concepts are known: five spatial transcriptomics embeddings of two colorectal cancer sections and Geneformer embeddings of single-cell RNA profiles, with cell lineages as concepts; synthetic data with planted cell states; and the residual stream of a small language model, with token classes as concepts. Varimax rotations of the same embeddings were almost perfectly reproducible, yet rotation features (PCA, varimax and ICA) covered at most three of seven lineages and three of eight token classes. Single SAE fits showed the opposite profile: they covered most concepts with purer gene programs but reproduced only 27-46% of their features. A consensus over five SAE fits combined the two strengths. It was reproducible (78-98% across sources) and as pure as single fits: 11-40% of its features carried marker genes of another lineage, against 44-70% for varimax. Against the strongest baseline, varimax sparsified to the SAE's sparsity, the consensus covered as many concepts on PCA and Geneformer embeddings and more on learned spatial and text embeddings. The consensus also had costs. It covered fewer lineages than single fits and, like all SAEs, missed weak planted states that rotations recovered; neither a longer single fit nor a second SAE trained on the consensus residual recovered what it discarded. Reproducibility alone therefore ranks features poorly: SAE features should be reported with the number of known concepts they cover and the purity of their gene programs, against a rotation of the same embedding sparsified to the SAE's sparsity."
+      },
+      "relevance": "为动态观测、空间统计或表征评测提供可核验的方法依据。",
+      "followUp": "核查全文中的参数、样本规模及独立验证。",
+      "priority": 1,
+      "enrichment": {
+        "state": "complete",
+        "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+        "verifiedAt": "2026-10-31T13:41:02.934495+08:00"
+      }
+    },
     {
       "id": "doi:10.64898/2026.10.22.760932",
       "title": "ProtCell: a foundation model for single-cell proteomics",
