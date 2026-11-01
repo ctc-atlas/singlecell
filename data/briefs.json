@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-31T13:41:02.934543+08:00",
-  "statusMessage": "2026-10-31补检，窗口2026-10-26至10-31；新增3、修订0、累计647；最新收录发布日期2026-10-30。已恢复核验收录，其他候选与来源仍待完成，检索incomplete。",
+  "updatedAt": "2026-11-01T09:57:59.676098+08:00",
+  "statusMessage": "2026-11-01检索；窗口2026-10-26至11-01；新增1、修订0，累计648；最新收录论文发布日期2026-10-30；检索不完整。",
   "sync": {
-    "state": "success",
+    "state": "pending",
     "updatedAt": "2026-10-31T13:41:57.525169+08:00",
     "commit": "b4d7d100dfb54e15d132961572bae9071bf462f6",
     "url": "https://ctc-atlas.github.io/singlecell/",
@@ -41,6 +41,30 @@
     }
   ],
   "items": [
+    {
+      "id": "10.64898/2026.10.26.761895",
+      "title": "BLOOM: Biologically Informed Flow Matching for Transcriptomic Virtual Embryo Modeling",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.10.26.761895v1",
+      "source": "bioRxiv",
+      "date": "2026-10-27",
+      "updateType": "新增",
+      "evidence": "预印本",
+      "categories": [
+        "虚拟细胞与扰动",
+        "单细胞基础模型"
+      ],
+      "summary": "BLOOM以条件流匹配生成发育阶段的细胞表达分布，将时间群体背景与发育、调控先验结合，面向转录组虚拟胚胎建模。作者在三个小鼠发育图谱上与22种时间序列基线比较，报告基因和细胞表达相关性排名第一。模型还生成未测阶段的插值及历史、未来轨迹，并以输入基因编辑探查预测响应。摘要未给出具体数值与切分，扰动结果仍是待实验验证的计算假设。",
+      "details": {
+        "methods": "摘要中文翻译：构建虚拟胚胎需要一种生成式表征，描述异质细胞群体如何随发育时间变化。本文提出BLOOM，一个生物学信息引导的框架，用于有条件地生成发育中的细胞群体。BLOOM通过条件流匹配，将时间上的群体背景与发育和调控先验整合，在两个时间方向上生成所查询阶段的细胞表达分布。评测涵盖三个小鼠单细胞图谱，分别涉及产前发育、视觉皮层成熟及多器官内皮细胞特化。与22种时间序列预测基线比较时，BLOOM在全部三个数据集的基因表达相关性与细胞表达相关性上均排名第一。已测量阶段的评测支持其恢复发育表达模式、群体组织和标记基因特异的时间关系。生物学分析将这些预测与细胞状态身份、基因程序及调控关联联系起来。在未测量阶段，插值以及自回归的历史和未来滚动预测，将模拟表达动态扩展到已测时间点之间及其之外。标记基因和时间描述量分析识别出肌肉相关、神经及血管特化程序在时间安排上的候选差异。基于输入的基因扰动进一步探查编辑基因及相关分子程序随时间变化的预测响应。总体而言，BLOOM通过弥合时间采样空缺、探索延伸的发育轨迹，并优先筛选依赖基因的假设供实验研究，支持转录组层面的虚拟胚胎建模。\n\n研究解读：输入为发育单细胞群体及其时间背景，输出为查询阶段的细胞表达分布。模型用条件流匹配整合发育与调控先验，支持前向和反向生成。摘要未报告先验编码方式、网络结构、训练细胞数与训练目标的具体实现。",
+        "findings": "评测覆盖产前发育、视觉皮层成熟和多器官内皮特化三个小鼠图谱。作者在22种时间序列基线比较中报告三个数据集的基因和细胞表达相关性均排名第一，但摘要未给出指标数值、基线名称及切分。已测时间点评测支持表达与群体结构恢复；未测阶段的插值和滚动模拟提供可供检验的发育时间假设。",
+        "limitations": "解读依据摘要，未核查全文。摘要未报告留出时间点、跨图谱泛化、统计不确定性和独立实验验证。输入编辑得到的是计算预测，不能等同于真实基因扰动的因果效应；虚拟胚胎在此指转录组群体动态，未证明完整胚胎生理模拟。",
+        "abstractTranslation": "构建虚拟胚胎需要一种生成式表征，描述异质细胞群体如何随发育时间变化。本文提出BLOOM，一个生物学信息引导的框架，用于有条件地生成发育中的细胞群体。BLOOM通过条件流匹配，将时间上的群体背景与发育和调控先验整合，在两个时间方向上生成所查询阶段的细胞表达分布。评测涵盖三个小鼠单细胞图谱，分别涉及产前发育、视觉皮层成熟及多器官内皮细胞特化。与22种时间序列预测基线比较时，BLOOM在全部三个数据集的基因表达相关性与细胞表达相关性上均排名第一。已测量阶段的评测支持其恢复发育表达模式、群体组织和标记基因特异的时间关系。生物学分析将这些预测与细胞状态身份、基因程序及调控关联联系起来。在未测量阶段，插值以及自回归的历史和未来滚动预测，将模拟表达动态扩展到已测时间点之间及其之外。标记基因和时间描述量分析识别出肌肉相关、神经及血管特化程序在时间安排上的候选差异。基于输入的基因扰动进一步探查编辑基因及相关分子程序随时间变化的预测响应。总体而言，BLOOM通过弥合时间采样空缺、探索延伸的发育轨迹，并优先筛选依赖基因的假设供实验研究，支持转录组层面的虚拟胚胎建模。",
+        "abstractOriginal": "Constructing a virtual embryo requires a generative representation of how heterogeneous cell populations change across developmental time. Here we introduce BLOOM, a biologically informed framework for conditional generation of developmental cell populations. BLOOM integrates temporal population context with developmental and regulatory priors through conditional flow matching to generate cell-expression distributions at queried stages in either temporal direction. Evaluation spans three mouse single-cell atlases covering prenatal development, visual-cortex maturation and multi-organ endothelial specialization. In comparisons with 22 time-series forecasting baselines, BLOOM ranks first for gene- and cell-expression correlations across all three datasets. Measured-stage evaluations support recovery of developmental expression patterns, population organization and marker-specific temporal relationships. Biological analyses connect these predictions to cell-state identities, gene programmes and regulatory associations. At unmeasured stages, interpolation and autoregressive history and future rollouts extend simulated expression dynamics between and beyond measured timepoints. Analyses of marker genes and temporal descriptors identify candidate differences in the timing of muscle-associated, neural and vascular-specialization programmes. Input-based gene perturbations further probe predicted responses of edited genes and associated molecular programmes across time. Together, BLOOM supports transcriptomic virtual embryo modeling by bridging temporal sampling gaps, exploring extended developmental trajectories and prioritizing gene-dependent hypotheses for experimental investigation."
+      },
+      "relevance": "可用于设计发育时间留出评测，检验模型是否恢复群体变化而非仅拟合已测阶段。",
+      "followUp": "核查全文的时间切分、先验构建及扰动实验。",
+      "priority": 1
+    },
     {
       "id": "doi:10.64898/2026.10.28.761959",
       "title": "Live Spatial Transcriptomics Enables Longitudinal Tissue Mapping",
