@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-11-03T09:20:42.800757+08:00",
-  "statusMessage": "2026-11-03检索；窗口2026-10-26至11-03，10-03至11-02回溯待续；新增1、修订0、累计649；最新收录论文发布日期2026-11-01；本次检索不完整。",
+  "updatedAt": "2026-11-04T08:59:05.163176+08:00",
+  "statusMessage": "2026-11-04检索；窗口2026-10-26至2026-11-04；新增1、修订0、累计650；最新收录论文发布日期2026-11-01。检索不完整。",
   "sync": {
-    "state": "success",
+    "state": "pending",
     "updatedAt": "2026-11-03T09:20:58.271034+08:00",
     "commit": "97781fe31026296ed2d7b4941f53f1e8cbc0595a",
     "url": "https://ctc-atlas.github.io/singlecell/",
-    "message": "内容提交97781fe31026296ed2d7b4941f53f1e8cbc0595a已推送main；新增1修订0，检索incomplete；同步元数据随刷新提交发布，公开部署未核验。"
+    "message": "本轮内容等待推送，检索incomplete。"
   },
   "categories": [
     {
@@ -50521,6 +50521,30 @@
         "scope": "完整摘要译文与摘要层面解读",
         "contactDataPolicy": "作者联系方式不入库；若源摘要含联系方式，保存时以占位符移除。"
       }
+    },
+    {
+      "id": "10.64898/2026.10.28.762655",
+      "title": "EMBER: Contextualized gene representations enable compositional prediction across cellular perturbations",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.10.28.762655v2",
+      "source": "bioRxiv",
+      "date": "2026-11-01",
+      "updateType": "新增预印本",
+      "evidence": "预印本",
+      "categories": [
+        "单细胞基础模型",
+        "虚拟细胞与扰动"
+      ],
+      "summary": "EMBER以背景化基因表征连接单细胞预训练与多类扰动预测。模型结合相互作用引导的对比学习和掩蔽表达重建，在细胞类型与批次均衡采样的语料上预训练；冻结编码器后，轻量探针组合基因嵌入，预测单基因响应、双基因相互作用及多靶点药物响应。作者报告跨背景预测和相互作用排序改善，并提出mTOR抑制下的SCFD1候选依赖。摘要未给出数据规模、具体基线、切分及数值，结论限于所评测设置。",
+      "details": {
+        "methods": "摘要中文翻译\n预测单个及组合扰动的效应，是识别背景特异性脆弱性和设计靶向干预的核心。然而，学习能够整合功能关系与细胞状态、并迁移至不同扰动任务的基因表征仍有挑战。本文提出EMBER，一种以基因为中心、学习基因背景依赖功能表征的基础模型。EMBER在一个为多样性而整理、并在细胞类型和实验批次间进行均衡采样的单细胞语料上预训练，结合相互作用引导的对比学习与掩蔽表达重建。EMBER通过可组合嵌入框架，将基因表征学习与任务特异性预测解耦：预训练编码器保持冻结，轻量探针组合背景化基因嵌入，预测单个及组合扰动的效应。同一组预训练表征支持单基因扰动响应预测、双基因相互作用预测及多靶点药物响应预测。相较于所评测的基线，EMBER改善了跨背景扰动响应预测和遗传相互作用排序。EMBER还将参与自噬体与溶酶体融合的SCFD1优先列为mTOR抑制期间的候选依赖因子。总体而言，这些结果确立了背景化基因嵌入作为遗传及药理扰动建模的可复用构件，支持优先筛选遗传相互作用与背景特异性干预，供实验检验。\n\n研究解读（依据摘要，未核查全文）：该研究针对基因表征难以同时保留功能关系与细胞状态、并复用于不同扰动任务的问题。输入涉及单细胞表达和相互作用信息，编码器输出背景化基因嵌入；冻结编码器后，用轻量探针组合嵌入，输出不同任务的扰动效应。相互作用引导的对比学习与掩蔽表达重建共同构成预训练目标，摘要未报告具体网络结构和损失权重。\n\n预训练语料按细胞类型和实验批次均衡采样以覆盖多样性；摘要未报告细胞数、物种、组织组成、探针训练数据量和训练评测切分，不能将任务覆盖理解为已证明任意新背景泛化。",
+        "findings": "作者报告在所评测基线上改善跨背景响应预测和遗传相互作用排序，但摘要未给出基线名称、指标和数值。SCFD1被列为mTOR抑制背景下的候选依赖因子，支持后续实验优先级排序；摘要没有说明独立实验验证，不能将候选预测写成确认的因果依赖。",
+        "limitations": "证据限于预印本v2摘要，未核查全文。具体基线、切分、泄漏控制、模型规模和数值均未在摘要报告；单基因、双基因与多靶点任务的覆盖不等于未知组合均能可靠外推。上述泛化与验证边界为简报分析。",
+        "abstractTranslation": "预测单个及组合扰动的效应，是识别背景特异性脆弱性和设计靶向干预的核心。然而，学习能够整合功能关系与细胞状态、并迁移至不同扰动任务的基因表征仍有挑战。本文提出EMBER，一种以基因为中心、学习基因背景依赖功能表征的基础模型。EMBER在一个为多样性而整理、并在细胞类型和实验批次间进行均衡采样的单细胞语料上预训练，结合相互作用引导的对比学习与掩蔽表达重建。EMBER通过可组合嵌入框架，将基因表征学习与任务特异性预测解耦：预训练编码器保持冻结，轻量探针组合背景化基因嵌入，预测单个及组合扰动的效应。同一组预训练表征支持单基因扰动响应预测、双基因相互作用预测及多靶点药物响应预测。相较于所评测的基线，EMBER改善了跨背景扰动响应预测和遗传相互作用排序。EMBER还将参与自噬体与溶酶体融合的SCFD1优先列为mTOR抑制期间的候选依赖因子。总体而言，这些结果确立了背景化基因嵌入作为遗传及药理扰动建模的可复用构件，支持优先筛选遗传相互作用与背景特异性干预，供实验检验。",
+        "abstractOriginal": "Predicting the effects of individual and combined perturbations is central to identifying context-specific vulnerabilities and designing targeted interventions. Yet learning gene representations that integrate functional relationships with cellular state and transfer across perturbation tasks remains challenging. Here, we present EMBER, a gene-centric foundation model that learns context-dependent functional representations of genes. EMBER combines interaction-guided contrastive learning with masked expression reconstruction during pretraining on a single-cell corpus curated for diversity and balanced sampling across cell types and experimental batches. EMBER decouples gene representation learning from task-specific prediction through a composable embedding framework: the pretrained encoder remains frozen, while lightweight probes combine contextualized gene embeddings to predict individual and combined perturbation effects. The same pretrained representations support single-gene perturbation-response prediction, digenic interaction prediction, and multi-target drug-response prediction. EMBER improves cross-context perturbation-response prediction and genetic-interaction ranking relative to evaluated baselines. EMBER also prioritized SCFD1, a mediator of autophagosome-lysosome fusion, as a candidate dependency during mTOR inhibition. Together, these results establish contextualized gene embeddings as reusable building blocks for modeling genetic and pharmacological perturbations, supporting the prioritization of genetic interactions and context-specific interventions for experimental testing."
+      },
+      "relevance": "可用于比较冻结表征加探针与端到端扰动模型，并检验组合扰动评测设计。",
+      "followUp": "核查全文的训练切分、基线及SCFD1实验验证。",
+      "priority": 1
     }
   ],
   "backfillAudit": {
